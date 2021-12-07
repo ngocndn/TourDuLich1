@@ -21,7 +21,7 @@ namespace Tour.UI.QLTour
             InitializeComponent();
             Main = fT;
             LoadCB();LoadCB1();
-            Show();
+            ShowT();
 
         }
         public void LoadCB()
@@ -37,15 +37,11 @@ namespace Tour.UI.QLTour
         private frmQLTOUR Main;
         public int T_ID { get; set; }
 
-        public void Show()
+        public void ShowT()
         {
             List<dynamic> listDetailsTour = tb.GetTourDetailList(T_ID);
-
-            //Convert List<dynamic> sang Datatable để dễ hiển thị chi tiết tour
             var json = JsonConvert.SerializeObject(listDetailsTour);
             DataTable dataTableDetailsTour = (DataTable)JsonConvert.DeserializeObject(json, (typeof(DataTable)));
-
-            //Hiển thị
             txtTenTour.Text = dataTableDetailsTour.Rows[0][1].ToString();
             txtDD.Text = dataTableDetailsTour.Rows[0][4].ToString();
             comboBox_DiaDiem.SelectedIndex = comboBox_DiaDiem.FindString(dataTableDetailsTour.Rows[0][3].ToString());

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tour.UI.QLLoaiHinh;using Tour.UI.QLDiemDen;using Tour.UI.QLTour;using Tour.UI.QLNhanVien;
-using Tour.UI.QLKhachHang;
+using Tour.UI.QLKhachHang;using Tour.UI;
 
 namespace Tour
 {
@@ -18,7 +18,7 @@ namespace Tour
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmQLTOUR());
+            Application.Run(new Main());
            // dtgvDetail.DataSource = 
         }
     }

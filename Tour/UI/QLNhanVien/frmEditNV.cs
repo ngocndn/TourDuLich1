@@ -20,11 +20,11 @@ namespace Tour.UI.QLNhanVien
         {
             InitializeComponent();
             Main = fM;
-            this.NV_ID = NV_ID; Show();
+            this.NV_ID = NV_ID; ShowNV();
         }
         private frmNhanVien Main;
         public int NV_ID { get; set; }
-        public void Show()
+        public void ShowNV()
         {
             List<dynamic> listDetailsNhanVien = nvb.GetDetail(NV_ID);
 

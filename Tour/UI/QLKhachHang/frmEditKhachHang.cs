@@ -19,12 +19,12 @@ namespace Tour.UI.QLKhachHang
             InitializeComponent();
             Main = fK;
             this.KH_ID = KH_ID;
-            Show();
+            ShowKH();
         }
         private frmKhachHang Main;
         public int KH_ID { get; set; }
 
-        public void Show()
+        public void ShowKH()
         {
             List<dynamic> listDetailsKhachhang = khb.GetListDetailsKhachHang(KH_ID);
 

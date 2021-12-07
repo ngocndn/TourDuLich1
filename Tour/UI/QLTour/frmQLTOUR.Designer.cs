@@ -38,14 +38,11 @@ namespace Tour.UI.QLTour
             this.txtTenTour = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.MaTour = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenTour = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DacDiem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaLoaiHinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaDiaDiem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnDetail = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.txtGiaTour = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -120,46 +117,10 @@ namespace Tour.UI.QLTour
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaTour,
-            this.TenTour,
-            this.DacDiem,
-            this.MaLoaiHinh,
-            this.MaDiaDiem});
             this.dataGridView1.Location = new System.Drawing.Point(4, 164);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(557, 165);
             this.dataGridView1.TabIndex = 39;
-            // 
-            // MaTour
-            // 
-            this.MaTour.DataPropertyName = "MaTour";
-            this.MaTour.HeaderText = "Mã Tour";
-            this.MaTour.Name = "MaTour";
-            // 
-            // TenTour
-            // 
-            this.TenTour.DataPropertyName = "TenTour";
-            this.TenTour.HeaderText = "Tên Tour";
-            this.TenTour.Name = "TenTour";
-            // 
-            // DacDiem
-            // 
-            this.DacDiem.DataPropertyName = "DacDiem";
-            this.DacDiem.HeaderText = "Đặc Điểm";
-            this.DacDiem.Name = "DacDiem";
-            // 
-            // MaLoaiHinh
-            // 
-            this.MaLoaiHinh.DataPropertyName = "MaLoaiHinh";
-            this.MaLoaiHinh.HeaderText = "Mã Loại Hình";
-            this.MaLoaiHinh.Name = "MaLoaiHinh";
-            // 
-            // MaDiaDiem
-            // 
-            this.MaDiaDiem.DataPropertyName = "MaDiaDiem";
-            this.MaDiaDiem.HeaderText = "Mã Địa Điểm";
-            this.MaDiaDiem.Name = "MaDiaDiem";
             // 
             // btnDelete
             // 
@@ -191,11 +152,29 @@ namespace Tour.UI.QLTour
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // txtGiaTour
+            // 
+            this.txtGiaTour.Location = new System.Drawing.Point(397, 93);
+            this.txtGiaTour.Name = "txtGiaTour";
+            this.txtGiaTour.Size = new System.Drawing.Size(164, 20);
+            this.txtGiaTour.TabIndex = 52;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(327, 96);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(48, 13);
+            this.label4.TabIndex = 51;
+            this.label4.Text = "Gia Tour";
+            // 
             // frmQLTOUR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(566, 336);
+            this.Controls.Add(this.txtGiaTour);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.comboBox_DiaDiem);
             this.Controls.Add(this.comboBox_LoaiHinh);
             this.Controls.Add(this.txtDD);
@@ -231,10 +210,7 @@ namespace Tour.UI.QLTour
         private System.Windows.Forms.Button btnDetail;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaTour;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenTour;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DacDiem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaLoaiHinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaDiaDiem;
+        private System.Windows.Forms.TextBox txtGiaTour;
+        private System.Windows.Forms.Label label4;
     }
 }
