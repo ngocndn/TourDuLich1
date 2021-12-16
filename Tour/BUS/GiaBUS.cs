@@ -17,6 +17,11 @@ namespace Tour.BUS
             return gd.GetAll();
         }
 
+        public List<dynamic> GetGT()
+        {
+            return gd.getGT();
+        }
+
         public List<dynamic> GetListGiaTour()
         {
             return gd.GetListGiaTour();

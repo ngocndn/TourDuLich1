@@ -5,6 +5,17 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="QuanlyTour2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Booking">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaDOANDL" Type="int" />
+          <Property Name="MaKH" Type="int" />
+          <Property Name="MaTour" Type="int" />
+          <Property Name="Siso" Type="int" />
+          <Property Name="GiaTour" Type="int" />
+        </EntityType>
         <EntityType Name="CHIPHI">
           <Key>
             <PropertyRef Name="ChiPhi_ID" />
@@ -40,6 +51,7 @@
           <Property Name="MaKH" Type="int" />
           <Property Name="MaNV" Type="int" />
           <Property Name="MaTour" Type="int" />
+          <Property Name="TenDoan" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="GIA">
           <Key>
@@ -60,6 +72,7 @@
           <Property Name="TGKetThuc" Type="datetime2" Precision="6" />
           <Property Name="ThanhTien" Type="float" />
           <Property Name="MaTour" Type="int" />
+          <Property Name="status" Type="int" />
         </EntityType>
         <EntityType Name="KHACHHANG">
           <Key>
@@ -105,6 +118,7 @@
           <Property Name="MaDiaDiem" Type="int" />
         </EntityType>
         <EntityContainer Name="QuanlyTour2ModelStoreContainer">
+          <EntitySet Name="Booking" EntityType="Self.Booking" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CHIPHI" EntityType="Self.CHIPHI" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CHITIET" EntityType="Self.CHITIET" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DIADIEM" EntityType="Self.DIADIEM" Schema="dbo" store:Type="Tables" />
@@ -121,6 +135,7 @@
     <edmx:ConceptualModels>
       <Schema Namespace="QuanlyTour2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="TourENT" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Bookings" EntityType="QuanlyTour2Model.Booking" />
           <EntitySet Name="CHIPHIs" EntityType="QuanlyTour2Model.CHIPHI" />
           <EntitySet Name="CHITIETs" EntityType="QuanlyTour2Model.CHITIET" />
           <EntitySet Name="DIADIEMs" EntityType="QuanlyTour2Model.DIADIEM" />
@@ -132,6 +147,17 @@
           <EntitySet Name="NHANVIENs" EntityType="QuanlyTour2Model.NHANVIEN" />
           <EntitySet Name="TOURDULICHes" EntityType="QuanlyTour2Model.TOURDULICH" />
         </EntityContainer>
+        <EntityType Name="Booking">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaDOANDL" Type="Int32" />
+          <Property Name="MaKH" Type="Int32" />
+          <Property Name="MaTour" Type="Int32" />
+          <Property Name="Siso" Type="Int32" />
+          <Property Name="GiaTour" Type="Int32" />
+        </EntityType>
         <EntityType Name="CHIPHI">
           <Key>
             <PropertyRef Name="ChiPhi_ID" />
@@ -167,6 +193,7 @@
           <Property Name="MaKH" Type="Int32" />
           <Property Name="MaNV" Type="Int32" />
           <Property Name="MaTour" Type="Int32" />
+          <Property Name="TenDoan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="GIA">
           <Key>
@@ -187,6 +214,7 @@
           <Property Name="TGKetThuc" Type="DateTime" Precision="6" />
           <Property Name="ThanhTien" Type="Double" />
           <Property Name="MaTour" Type="Int32" />
+          <Property Name="status" Type="Int32" />
         </EntityType>
         <EntityType Name="KHACHHANG">
           <Key>
@@ -231,12 +259,24 @@
           <Property Name="MaLoaiHinh" Type="Int32" />
           <Property Name="MaDiaDiem" Type="Int32" />
         </EntityType>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="QuanlyTour2ModelStoreContainer" CdmEntityContainer="TourENT">
+          <EntitySetMapping Name="Bookings">
+            <EntityTypeMapping TypeName="QuanlyTour2Model.Booking">
+              <MappingFragment StoreEntitySet="Booking">
+                <ScalarProperty Name="GiaTour" ColumnName="GiaTour" />
+                <ScalarProperty Name="Siso" ColumnName="Siso" />
+                <ScalarProperty Name="MaTour" ColumnName="MaTour" />
+                <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+                <ScalarProperty Name="MaDOANDL" ColumnName="MaDOANDL" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="CHIPHIs">
             <EntityTypeMapping TypeName="QuanlyTour2Model.CHIPHI">
               <MappingFragment StoreEntitySet="CHIPHI">
@@ -268,6 +308,7 @@
           <EntitySetMapping Name="DOANDLs">
             <EntityTypeMapping TypeName="QuanlyTour2Model.DOANDL">
               <MappingFragment StoreEntitySet="DOANDL">
+                <ScalarProperty Name="TenDoan" ColumnName="TenDoan" />
                 <ScalarProperty Name="MaTour" ColumnName="MaTour" />
                 <ScalarProperty Name="MaNV" ColumnName="MaNV" />
                 <ScalarProperty Name="MaKH" ColumnName="MaKH" />
@@ -291,6 +332,7 @@
           <EntitySetMapping Name="GIATOURs">
             <EntityTypeMapping TypeName="QuanlyTour2Model.GIATOUR">
               <MappingFragment StoreEntitySet="GIATOUR">
+                <ScalarProperty Name="status" ColumnName="status" />
                 <ScalarProperty Name="MaTour" ColumnName="MaTour" />
                 <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
                 <ScalarProperty Name="TGKetThuc" ColumnName="TGKetThuc" />

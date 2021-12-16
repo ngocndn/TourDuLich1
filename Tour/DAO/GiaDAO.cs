@@ -18,6 +18,25 @@ namespace Tour.DAO
                 return gat.ToList<GIATOUR>();
             }
         }
+
+        public List<dynamic> getGT()
+        {
+            using (tour = new TourENT())
+            {
+                var getGT = (from tbTour in tour.TOURDULICHes
+                                   join tbGia in tour.GIATOURs on tbTour.MaTour equals tbGia.MaTour
+                                   select new
+                                   {
+                                       MaTour = tbTour.MaTour,
+                                       TenTour = tbTour.TenTour,
+                                       ThanhTien = tbGia.ThanhTien
+                                   });
+
+                return getGT.ToList<dynamic>();
+
+            }
+
+        }
         public List<dynamic> GetListGiaTour()
         {
             using (tour = new TourENT())

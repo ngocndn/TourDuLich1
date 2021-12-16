@@ -30,6 +30,8 @@ public partial class DOANDL
 
     public Nullable<int> MaTour { get; set; }
 
+    public string TenDoan { get; set; }
+
 }
 
 }

@@ -54,7 +54,7 @@ namespace Tour.UI.QLKhachHang
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 244);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 227);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(776, 194);
             this.dataGridView1.TabIndex = 0;
@@ -160,7 +160,7 @@ namespace Tour.UI.QLKhachHang
             // btnDelete
             // 
             this.btnDelete.Image = global::Tour.Properties.Resources.delete__2_;
-            this.btnDelete.Location = new System.Drawing.Point(656, 176);
+            this.btnDelete.Location = new System.Drawing.Point(414, 441);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(42, 42);
             this.btnDelete.TabIndex = 33;
@@ -170,7 +170,7 @@ namespace Tour.UI.QLKhachHang
             // btnDetail
             // 
             this.btnDetail.Image = global::Tour.Properties.Resources.edit__1_;
-            this.btnDetail.Location = new System.Drawing.Point(608, 176);
+            this.btnDetail.Location = new System.Drawing.Point(366, 441);
             this.btnDetail.Name = "btnDetail";
             this.btnDetail.Size = new System.Drawing.Size(42, 42);
             this.btnDetail.TabIndex = 32;
@@ -180,7 +180,7 @@ namespace Tour.UI.QLKhachHang
             // btnAdd
             // 
             this.btnAdd.Image = global::Tour.Properties.Resources.plus;
-            this.btnAdd.Location = new System.Drawing.Point(560, 176);
+            this.btnAdd.Location = new System.Drawing.Point(318, 441);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(42, 42);
             this.btnAdd.TabIndex = 31;
@@ -205,7 +205,7 @@ namespace Tour.UI.QLKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 491);
             this.Controls.Add(this.dp_NSKH);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnDetail);

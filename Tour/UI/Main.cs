@@ -13,6 +13,7 @@ using Tour.UI.QLKhachHang;
 using Tour.UI.QLLoaiHinh;
 using Tour.UI.QLNhanVien;
 using Tour.UI.QLTour;
+using Tour.UI.QLDoan;
 
 
 namespace Tour.UI
@@ -64,6 +65,12 @@ namespace Tour.UI
         {
             frmKhachHang fK = new frmKhachHang();
             fK.ShowDialog();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            frmDoan fd = new frmDoan();
+            fd.ShowDialog();
         }
     }
 }

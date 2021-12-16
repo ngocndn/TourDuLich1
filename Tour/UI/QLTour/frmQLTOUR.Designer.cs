@@ -117,15 +117,16 @@ namespace Tour.UI.QLTour
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(4, 164);
+            this.dataGridView1.Location = new System.Drawing.Point(4, 119);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(413, 165);
+            this.dataGridView1.Size = new System.Drawing.Size(557, 165);
             this.dataGridView1.TabIndex = 39;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnDelete
             // 
             this.btnDelete.Image = global::Tour.Properties.Resources.delete__2_;
-            this.btnDelete.Location = new System.Drawing.Point(519, 164);
+            this.btnDelete.Location = new System.Drawing.Point(315, 303);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(42, 42);
             this.btnDelete.TabIndex = 42;
@@ -135,7 +136,7 @@ namespace Tour.UI.QLTour
             // btnDetail
             // 
             this.btnDetail.Image = global::Tour.Properties.Resources.edit__1_;
-            this.btnDetail.Location = new System.Drawing.Point(471, 164);
+            this.btnDetail.Location = new System.Drawing.Point(267, 303);
             this.btnDetail.Name = "btnDetail";
             this.btnDetail.Size = new System.Drawing.Size(42, 42);
             this.btnDetail.TabIndex = 41;
@@ -145,7 +146,7 @@ namespace Tour.UI.QLTour
             // btnAdd
             // 
             this.btnAdd.Image = global::Tour.Properties.Resources.plus;
-            this.btnAdd.Location = new System.Drawing.Point(423, 164);
+            this.btnAdd.Location = new System.Drawing.Point(219, 303);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(42, 42);
             this.btnAdd.TabIndex = 40;
@@ -172,7 +173,7 @@ namespace Tour.UI.QLTour
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(566, 336);
+            this.ClientSize = new System.Drawing.Size(566, 350);
             this.Controls.Add(this.txtGiaTour);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.comboBox_DiaDiem);

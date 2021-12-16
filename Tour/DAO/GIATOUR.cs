@@ -28,6 +28,8 @@ public partial class GIATOUR
 
     public Nullable<int> MaTour { get; set; }
 
+    public Nullable<int> status { get; set; }
+
 }
 
 }

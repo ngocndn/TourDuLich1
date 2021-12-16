@@ -214,5 +214,10 @@ namespace Tour.UI.QLTour
 
             }
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
