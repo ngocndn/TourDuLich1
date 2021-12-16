@@ -119,13 +119,13 @@ namespace Tour.UI.QLTour
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(4, 164);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(557, 165);
+            this.dataGridView1.Size = new System.Drawing.Size(413, 165);
             this.dataGridView1.TabIndex = 39;
             // 
             // btnDelete
             // 
             this.btnDelete.Image = global::Tour.Properties.Resources.delete__2_;
-            this.btnDelete.Location = new System.Drawing.Point(308, 116);
+            this.btnDelete.Location = new System.Drawing.Point(519, 164);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(42, 42);
             this.btnDelete.TabIndex = 42;
@@ -135,7 +135,7 @@ namespace Tour.UI.QLTour
             // btnDetail
             // 
             this.btnDetail.Image = global::Tour.Properties.Resources.edit__1_;
-            this.btnDetail.Location = new System.Drawing.Point(260, 116);
+            this.btnDetail.Location = new System.Drawing.Point(471, 164);
             this.btnDetail.Name = "btnDetail";
             this.btnDetail.Size = new System.Drawing.Size(42, 42);
             this.btnDetail.TabIndex = 41;
@@ -145,7 +145,7 @@ namespace Tour.UI.QLTour
             // btnAdd
             // 
             this.btnAdd.Image = global::Tour.Properties.Resources.plus;
-            this.btnAdd.Location = new System.Drawing.Point(212, 116);
+            this.btnAdd.Location = new System.Drawing.Point(423, 164);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(42, 42);
             this.btnAdd.TabIndex = 40;
