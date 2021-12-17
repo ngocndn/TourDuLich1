@@ -20,6 +20,7 @@ namespace Tour.UI.QLTour
         {
             InitializeComponent();
             Main = fT;
+            this.ID = T_ID;
             LoadCB();LoadCB1();
             ShowT();
 
@@ -35,11 +36,11 @@ namespace Tour.UI.QLTour
             comboBox_LoaiHinh.DisplayMember = "TenLoaiHinh";
         }
         private frmQLTOUR Main;
-        public int T_ID { get; set; }
+        public int ID { get; set; }
 
         public void ShowT()
         {
-            List<dynamic> listDetailsTour = tb.GetTourDetailList(T_ID);
+            List<dynamic> listDetailsTour = tb.GetTourDetailList(ID);
             var json = JsonConvert.SerializeObject(listDetailsTour);
             DataTable dataTableDetailsTour = (DataTable)JsonConvert.DeserializeObject(json, (typeof(DataTable)));
             txtTenTour.Text = dataTableDetailsTour.Rows[0][1].ToString();
@@ -90,7 +91,7 @@ namespace Tour.UI.QLTour
                 }
                     try
                 {
-                    if(tb.EditTour(T, T_ID))
+                    //if(tb.EditTour(T, ID))
                     {
                         System.Diagnostics.Debug.WriteLine("Sửa tour thành công!");
                         Main.LoadTour();

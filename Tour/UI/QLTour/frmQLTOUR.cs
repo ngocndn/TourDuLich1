@@ -202,16 +202,14 @@ namespace Tour.UI.QLTour
         }
         private void Detail()
         {
-            foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+            foreach (DataGridViewRow r in dataGridView1.SelectedRows)
             {
-                if (!String.Equals(row.Cells[0].Value.ToString(), "System.Windows.Forms.DataGridViewTextBoxColumn"))
+                if (!String.Equals(r.Cells[0].Value.ToString(), "System.Windows.Forms.DataGridViewTextBoxColumn"))
                 {
-                    string T_ID = row.Cells[0].Value.ToString();
-                    frmDETAIL formChiTietTour = new frmDETAIL(int.Parse(T_ID), this);
-                    formChiTietTour.ShowDialog();
-
+                    string ID = r.Cells[0].Value.ToString();
+                    frmDETAIL fED = new frmDETAIL(int.Parse(ID), this);
+                    fED.ShowDialog();
                 }
-
             }
         }
 
