@@ -33,12 +33,11 @@ namespace Tour.UI.QLTour
             this.comboBox_LoaiHinh = new System.Windows.Forms.ComboBox();
             this.txtDD = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtGia = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtTenTour = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnPricing = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -61,7 +60,7 @@ namespace Tour.UI.QLTour
             // 
             // txtDD
             // 
-            this.txtDD.Location = new System.Drawing.Point(404, 46);
+            this.txtDD.Location = new System.Drawing.Point(406, 11);
             this.txtDD.Multiline = true;
             this.txtDD.Name = "txtDD";
             this.txtDD.Size = new System.Drawing.Size(164, 61);
@@ -70,27 +69,11 @@ namespace Tour.UI.QLTour
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(334, 49);
+            this.label5.Location = new System.Drawing.Point(336, 14);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(54, 13);
             this.label5.TabIndex = 57;
             this.label5.Text = "Đặc Điểm";
-            // 
-            // txtGia
-            // 
-            this.txtGia.Location = new System.Drawing.Point(404, 12);
-            this.txtGia.Name = "txtGia";
-            this.txtGia.Size = new System.Drawing.Size(164, 20);
-            this.txtGia.TabIndex = 56;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(334, 15);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(23, 13);
-            this.label4.TabIndex = 55;
-            this.label4.Text = "Giá";
             // 
             // label3
             // 
@@ -126,10 +109,20 @@ namespace Tour.UI.QLTour
             this.label1.TabIndex = 51;
             this.label1.Text = "Tên Tour";
             // 
+            // btnPricing
+            // 
+            this.btnPricing.Image = global::Tour.Properties.Resources.download1;
+            this.btnPricing.Location = new System.Drawing.Point(432, 79);
+            this.btnPricing.Name = "btnPricing";
+            this.btnPricing.Size = new System.Drawing.Size(42, 42);
+            this.btnPricing.TabIndex = 63;
+            this.btnPricing.UseVisualStyleBackColor = true;
+            this.btnPricing.Click += new System.EventHandler(this.btnPricing_Click);
+            // 
             // btnClose
             // 
             this.btnClose.Image = global::Tour.Properties.Resources.remove;
-            this.btnClose.Location = new System.Drawing.Point(634, 34);
+            this.btnClose.Location = new System.Drawing.Point(528, 79);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(42, 42);
             this.btnClose.TabIndex = 62;
@@ -139,7 +132,7 @@ namespace Tour.UI.QLTour
             // btnSave
             // 
             this.btnSave.Image = global::Tour.Properties.Resources.diskette;
-            this.btnSave.Location = new System.Drawing.Point(586, 34);
+            this.btnSave.Location = new System.Drawing.Point(480, 79);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(42, 42);
             this.btnSave.TabIndex = 61;
@@ -150,15 +143,14 @@ namespace Tour.UI.QLTour
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(687, 120);
+            this.ClientSize = new System.Drawing.Size(581, 133);
+            this.Controls.Add(this.btnPricing);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.comboBox_DiaDiem);
             this.Controls.Add(this.comboBox_LoaiHinh);
             this.Controls.Add(this.txtDD);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtGia);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtTenTour);
@@ -179,11 +171,10 @@ namespace Tour.UI.QLTour
         private System.Windows.Forms.ComboBox comboBox_LoaiHinh;
         private System.Windows.Forms.TextBox txtDD;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtGia;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtTenTour;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnPricing;
     }
 }

@@ -38,5 +38,9 @@ namespace Tour.BUS
         {
             return TD.SuaTour(T, T_ID);
         }
+        public bool SuaGiaTour(TOURDULICH T, int T_ID)
+        {
+            return TD.SuaGiaTour(T, T_ID);
+        }
     }
 }

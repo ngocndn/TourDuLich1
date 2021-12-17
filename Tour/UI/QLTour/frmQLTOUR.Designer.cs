@@ -41,8 +41,6 @@ namespace Tour.UI.QLTour
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnDetail = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.txtGiaTour = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -153,29 +151,11 @@ namespace Tour.UI.QLTour
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // txtGiaTour
-            // 
-            this.txtGiaTour.Location = new System.Drawing.Point(397, 93);
-            this.txtGiaTour.Name = "txtGiaTour";
-            this.txtGiaTour.Size = new System.Drawing.Size(164, 20);
-            this.txtGiaTour.TabIndex = 52;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(327, 96);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 13);
-            this.label4.TabIndex = 51;
-            this.label4.Text = "Gia Tour";
-            // 
             // frmQLTOUR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(566, 350);
-            this.Controls.Add(this.txtGiaTour);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.comboBox_DiaDiem);
             this.Controls.Add(this.comboBox_LoaiHinh);
             this.Controls.Add(this.txtDD);
@@ -211,7 +191,5 @@ namespace Tour.UI.QLTour
         private System.Windows.Forms.Button btnDetail;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox txtGiaTour;
-        private System.Windows.Forms.Label label4;
     }
 }

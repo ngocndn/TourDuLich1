@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tour.UI.QLDiemDen;
-using Tour.UI.QLGia;
 using Tour.UI.QLKhachHang;
 using Tour.UI.QLLoaiHinh;
 using Tour.UI.QLNhanVien;
@@ -45,8 +44,7 @@ namespace Tour.UI
 
         private void button3_Click(object sender, EventArgs e)
         {
-            frmGia fG = new frmGia();
-            fG.ShowDialog();
+           
         }
 
         private void button4_Click(object sender, EventArgs e)

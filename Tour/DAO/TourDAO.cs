@@ -127,5 +127,26 @@ namespace Tour.DAO
 
             }
         }
+        public bool SuaGiaTour(TOURDULICH T, int T_ID)
+        {
+            using (tour = new TourENT())
+            {
+                try
+                {
+                    TOURDULICH to = tour.TOURDULICHes.Where(t => t.MaTour == T_ID).SingleOrDefault();
+                    to.IDGiaTour = T.IDGiaTour;
+                    tour.SaveChanges();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex);
+                    return false;
+                }
+
+
+            }
+
+        }
     }
 }

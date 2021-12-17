@@ -95,7 +95,6 @@ namespace Tour.UI.QLTour
             List<DIADIEM> listDD = db.GetListDD();
             List<LOAIHINHDULICH> listLH = lb.GetLoaiHinh();
             List<TOURDULICH> listT = tb.GetAllTour();
-            List<GIATOUR> listG = gb.GetAllGiaTour();
             if (Checked() == true)
             {
                 TOURDULICH T = new TOURDULICH();
@@ -109,8 +108,6 @@ namespace Tour.UI.QLTour
                         T.MaDiaDiem = itemDD.MaDiaDiem;
                     }
                 }
-
-                //Lấy maLoaiHinhDuLich
                 foreach (var itemLHDL in listLH)
                 {
                     if (itemLHDL.TenLoaiHinh.Equals(comboBox_LoaiHinh.Text))
@@ -118,9 +115,6 @@ namespace Tour.UI.QLTour
                         T.MaLoaiHinh = itemLHDL.MaLoaiHinh;
                     }
                 }
-                G.ThanhTien = float.Parse(txtGiaTour.Text);
-                T.IDGiaTour = GetMaxIDGiaTour(listG)+1;
-                G.MaTour = GetMaxIDTour(listT) + 1;
                 try
                 {
                     if (tb.AddTour(T))
@@ -135,7 +129,6 @@ namespace Tour.UI.QLTour
                         System.Diagnostics.Debug.WriteLine("Thêm giá tour thành công!");
                         MessageBox.Show("Thêm tour thành công!", "Thông báo");
                         ClearFields();
-
                     }
 
                 }
@@ -150,7 +143,6 @@ namespace Tour.UI.QLTour
 
         public void Del()
         {
-            List<GIATOUR> listG = gb.GetAllGiaTour();
             GIATOUR g = new GIATOUR();
 
             if (dataGridView1.SelectedRows.Count > 0)
@@ -161,16 +153,6 @@ namespace Tour.UI.QLTour
                     tb.DelTour(T_ID);
                     LoadTour();
                     MessageBox.Show("Deleted", "Notify");
-                    foreach (var itemGiaTour in listG)
-                    {
-                        if (T_ID == itemGiaTour.MaTour)
-                        {
-                            if (gb.XoaGiaTour(g, itemGiaTour.IDGIATOUR))
-                            {
-                                System.Diagnostics.Debug.WriteLine("Xóa giá tour thành công!");
-                            }
-                        }
-                    }
                 }
 
             }

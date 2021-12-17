@@ -10,61 +10,38 @@ namespace Tour.DAO
     {
         TourENT tour;
 
-        public List<GIATOUR> GetAll()
+        public List<GIATOUR> GetGiaTour()
         {
             using (tour = new TourENT())
             {
-                var gat = tour.GIATOURs;
-                return gat.ToList<GIATOUR>();
-            }
-        }
+                var getListDetailsTour = from tbGiaTour in tour.GIATOURs select tbGiaTour;
 
-        public List<dynamic> getGT()
-        {
-            using (tour = new TourENT())
-            {
-                var getGT = (from tbTour in tour.TOURDULICHes
-                                   join tbGia in tour.GIATOURs on tbTour.MaTour equals tbGia.MaTour
-                                   select new
-                                   {
-                                       MaTour = tbTour.MaTour,
-                                       TenTour = tbTour.TenTour,
-                                       ThanhTien = tbGia.ThanhTien
-                                   });
-
-                return getGT.ToList<dynamic>();
+                return getListDetailsTour.ToList<GIATOUR>();
 
             }
 
         }
-        public List<dynamic> GetListGiaTour()
+
+
+        //Get giá tour qua mã số tour
+        public List<GIATOUR> GetGiaTourWithMaTour(int TourID)
         {
             using (tour = new TourENT())
             {
-                var getListGiaTour = (from tbTour in tour.TOURDULICHes
-                                      join tbLoaiHinhDuLich in tour.LOAIHINHDULICHes on tbTour.MaLoaiHinh equals tbLoaiHinhDuLich.MaLoaiHinh
-                                      join tbGiaTour in tour.GIATOURs on tbTour.IDGiaTour equals tbGiaTour.IDGIATOUR
-                                      select new
-                                      {
-                                          MaTour = tbTour.MaTour,
-                                          TenTour = tbTour.TenTour,
-                                          tenLoaiHinhDuLich = tbLoaiHinhDuLich.TenLoaiHinh,
-                                          giaTour = tbGiaTour.ThanhTien,
-                                          thoiGianBatDau = tbGiaTour.TGBatDau,
-                                          thoiGianKetThuc = tbGiaTour.TGKetThuc
-                                      });
+                var getList = tour.GIATOURs.Where(t => t.MaTour == TourID);
 
-                return getListGiaTour.ToList<dynamic>();
-
+                return getList.ToList<GIATOUR>();
             }
+
         }
-        public bool ThemGiaTour(GIATOUR GT)
+
+        public bool ThemGiaTour(GIATOUR G)
         {
             using (tour = new TourENT())
             {
                 try
                 {
-                    tour.GIATOURs.Add(GT);
+                    tour.GIATOURs.Add(G);
                     tour.SaveChanges();
                     return true;
                 }
@@ -79,40 +56,14 @@ namespace Tour.DAO
 
         }
 
-        public bool SuaGiaTour(GIATOUR GT, int G_ID)
+        public bool XoaGiaTour(GIATOUR G, int TourID)
         {
             using (tour = new TourENT())
             {
                 try
                 {
-                    GIATOUR gt = tour.GIATOURs.Where(t => t.IDGIATOUR == G_ID).SingleOrDefault(); ;
-                    gt.TGBatDau = GT.TGBatDau;
-                    gt.TGKetThuc = GT.TGKetThuc;
-                    gt.ThanhTien = GT.ThanhTien;
-                    tour.SaveChanges();
-                    return true;
-                }
-                catch (Exception ex)
-                {
-                    System.Diagnostics.Debug.WriteLine(ex);
-                    return false;
-                }
-
-
-            }
-
-        }
-
-
-        public bool XoaGiaTour(GIATOUR GT, int G_ID)
-        {
-            using (tour = new TourENT())
-            {
-                try
-                {
-                    GT = tour.GIATOURs.Where(t => t.IDGIATOUR == G_ID).SingleOrDefault();
-                    tour.GIATOURs.Remove(GT);
-
+                    G = tour.GIATOURs.Where(ddt => ddt.MaTour == TourID).SingleOrDefault();
+                    tour.GIATOURs.Remove(G);
                     tour.SaveChanges();
                     return true;
                 }
@@ -124,5 +75,8 @@ namespace Tour.DAO
 
             }
         }
+
+
+
     }
 }

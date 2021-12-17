@@ -12,34 +12,24 @@ namespace Tour.BUS
         GiaDAO gd= new GiaDAO();
 
         //Get list tour tùy chỉnh
-        public List<GIATOUR> GetAllGiaTour()
+        public List<GIATOUR> GetGiaTour()
         {
-            return gd.GetAll();
+            return gd.GetGiaTour();
         }
 
-        public List<dynamic> GetGT()
+        public List<GIATOUR> GetGiaTourWithMaTour(int TourID)
         {
-            return gd.getGT();
+            return gd.GetGiaTourWithMaTour(TourID);
         }
 
-        public List<dynamic> GetListGiaTour()
+        public bool ThemGiaTour(GIATOUR G)
         {
-            return gd.GetListGiaTour();
+            return gd.ThemGiaTour(G);
         }
 
-        public bool ThemGiaTour(GIATOUR GT)
+        public bool XoaGiaTour(GIATOUR G, int TourID)
         {
-            return gd.ThemGiaTour(GT);
-        }
-
-        public bool SuaGiaTour(GIATOUR GT, int G_ID)
-        {
-            return gd.SuaGiaTour(GT, G_ID);
-        }
-
-        public bool XoaGiaTour(GIATOUR GT, int G_ID)
-        {
-            return gd.XoaGiaTour(GT, G_ID);
+            return gd.XoaGiaTour(G, TourID);
         }
 
     }

@@ -154,18 +154,6 @@
     <Compile Include="UI\QLDoan\frmEditDoan.Designer.cs">
       <DependentUpon>frmEditDoan.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\QLGia\frmDetailGia.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\QLGia\frmDetailGia.Designer.cs">
-      <DependentUpon>frmDetailGia.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\QLGia\frmGia.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\QLGia\frmGia.Designer.cs">
-      <DependentUpon>frmGia.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\QLKhachHang\frmEditKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,6 +204,12 @@
     <Compile Include="UI\QLTour\frmDETAIL.Designer.cs">
       <DependentUpon>frmDETAIL.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\QLTour\frmGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\QLTour\frmGia.Designer.cs">
+      <DependentUpon>frmGia.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\QLTour\frmQLTOUR.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -236,9 +230,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\QLDoan\frmEditDoan.resx">
       <DependentUpon>frmEditDoan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\QLGia\frmGia.resx">
-      <DependentUpon>frmGia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\QLKhachHang\frmEditKhachHang.resx">
       <DependentUpon>frmEditKhachHang.cs</DependentUpon>
@@ -273,6 +264,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\QLTour\frmDETAIL.resx">
       <DependentUpon>frmDETAIL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\QLTour\frmGia.resx">
+      <DependentUpon>frmGia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\QLTour\frmQLTOUR.resx">
       <DependentUpon>frmQLTOUR.cs</DependentUpon>
@@ -317,6 +311,7 @@
     <Content Include="Resources\360-Virtual-Panoramic-Tour-icon-1-300x3002.png" />
     <None Include="Resources\6984777_preview.png" />
     <Content Include="Resources\a.png" />
+    <None Include="Resources\download2.png" />
     <Content Include="Resources\FreeVector-Travel-Background.jpg" />
     <Content Include="Resources\images2.jpeg" />
     <Content Include="Resources\istockphoto-1226810736-170667a2.jpg" />
@@ -332,6 +327,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="UI\QLChiPhi\" />
+    <Folder Include="UI\QLGia\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

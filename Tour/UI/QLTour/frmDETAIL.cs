@@ -50,13 +50,13 @@ namespace Tour.UI.QLTour
         }
         private bool Checked()
         {
-            if (!String.IsNullOrEmpty(txtTenTour.Text))
+            if (String.IsNullOrEmpty(txtTenTour.Text))
             {
-                MessageBox.Show("TenTour is required", "Caution!!!");
+                MessageBox.Show("Ten is required", "Caution!!!");
                 txtTenTour.Focus();
                 return false;
             }
-            if (!String.IsNullOrEmpty(txtDD.Text))
+            if (String.IsNullOrEmpty(txtDD.Text))
             {
                 MessageBox.Show("DD is required", "Caution!!!");
                 txtDD.Focus();
@@ -91,7 +91,7 @@ namespace Tour.UI.QLTour
                 }
                     try
                 {
-                    //if(tb.EditTour(T, ID))
+                    if(tb.EditTour(T, ID))
                     {
                         System.Diagnostics.Debug.WriteLine("Sửa tour thành công!");
                         Main.LoadTour();
@@ -120,6 +120,12 @@ namespace Tour.UI.QLTour
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void btnPricing_Click(object sender, EventArgs e)
+        {
+            frmGia fG = new frmGia(ID, this);
+            fG.ShowDialog();
         }
     }
 }
