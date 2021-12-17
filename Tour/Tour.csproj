@@ -148,6 +148,12 @@
     <Compile Include="UI\QLDoan\frmDoan.Designer.cs">
       <DependentUpon>frmDoan.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\QLDoan\frmEditDoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\QLDoan\frmEditDoan.Designer.cs">
+      <DependentUpon>frmEditDoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\QLGia\frmDetailGia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\QLDoan\frmDoan.resx">
       <DependentUpon>frmDoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\QLDoan\frmEditDoan.resx">
+      <DependentUpon>frmEditDoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\QLGia\frmGia.resx">
       <DependentUpon>frmGia.cs</DependentUpon>

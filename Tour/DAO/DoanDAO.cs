@@ -32,9 +32,35 @@ namespace Tour.DAO
                                    {
                                    DoanID = tbD.MaDOANDL,
                                    Ten = tbD.TenDoan ,
-                                   NgayKH = tbD.NgayKhoiHanh,KT=tbD.NgayKetThuc,TenTour = tbT.TenTour, HDV = tbN.TenNV
+                                   NgayKH = tbD.NgayKhoiHanh,
+                                   KT=tbD.NgayKetThuc,
+                                   TenTour = tbT.TenTour,
+                                   HDV = tbN.TenNV
                                    });
                 return getListDoan.ToList<dynamic>();
+            }
+        }
+
+        public List<dynamic> GetDDetail(int DoanID)
+        {
+            using (tour = new TourENT())
+            {
+                var getDDetail = (from tbD in tour.DOANDLs
+                                          join tbT in tour.TOURDULICHes on tbD.MaTour equals tbT.MaTour
+                                          join tbN in tour.NHANVIENs on tbD.MaNV equals tbN.MaNV
+                                  where tbD.MaDOANDL == DoanID
+                                          select new
+                                          {
+                                              DoanID = tbD.MaDOANDL,
+                                              Ten = tbD.TenDoan,
+                                              NgayKH = tbD.NgayKhoiHanh,
+                                              KT = tbD.NgayKetThuc,
+                                              TenTour = tbT.TenTour,
+                                              HDV = tbN.TenNV
+                                          });
+
+                return getDDetail.ToList<dynamic>();
+
             }
         }
 

@@ -155,5 +155,28 @@ namespace Tour.UI.QLDoan
         {
             Del();
         }
+
+        private void frmDoan_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Detail()
+        {
+            foreach (DataGridViewRow r in dataGridView1.SelectedRows)
+            {
+                if (!String.Equals(r.Cells[0].Value.ToString(), "System.Windows.Forms.DataGridViewTextBoxColumn"))
+                {
+                    string DoanID = r.Cells[0].Value.ToString();
+                    frmEditDoan fED = new frmEditDoan(int.Parse(DoanID), this);
+                    fED.ShowDialog();
+                }
+            }
+        }
+
+        private void btnDetail_Click(object sender, EventArgs e)
+        {
+            Detail();
+        }
     }
 }

@@ -36,5 +36,9 @@ namespace Tour.BUS
         {
             return DD.Delete(DoanID);
         }
+        public List<dynamic> GetDetail( int DoanID)
+        {
+            return DD.GetDDetail(DoanID);
+        }
     }
 }
