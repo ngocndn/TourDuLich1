@@ -106,7 +106,7 @@ namespace Tour.UI.QLDoan
                     if(db.Edit(d,DoanID))
                     {
                         System.Diagnostics.Debug.WriteLine("Sửa doan thành công!");
-                        Main.Load();
+                        Main.LoadDoan();
                         MessageBox.Show("Sửa thành công!", "Thông báo");
 
                     }

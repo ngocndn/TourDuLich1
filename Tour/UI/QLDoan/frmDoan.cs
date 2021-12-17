@@ -20,12 +20,12 @@ namespace Tour.UI.QLDoan
         public frmDoan()
         {
             InitializeComponent();
-            Load();
+            LoadDoan();
             LoadHDV();
             LoadTour();
         }
 
-        public void Load()
+        public void LoadDoan()
         {
             dataGridView1.DataSource = db.GetListDoan();
         }
@@ -74,13 +74,15 @@ namespace Tour.UI.QLDoan
                 D.TenDoan = txtTenDoan.Text;
                 D.NgayKhoiHanh = DateTime.Parse(dateTimePickerKH.Value.Date.ToString("yyyy-MM-dd hh:mm:ss.ss"));
                 D.NgayKetThuc = DateTime.Parse(dateTimePickerKT.Value.Date.ToString("yyyy-MM-dd hh:mm:ss.ss"));
-                foreach (var item in listT)
+              
+
+                foreach(var item in listT)
                 {
-                    if (item.TenTour.Equals(cbbTour.Text))
+                    if(item.TenTour.Equals(cbbTour.Text))
                     {
                         D.MaTour = item.MaTour;
-                    }
-                }
+                    }    
+                }    
                 foreach (var item in listN)
                 {
                     if (item.TenNV.Equals(cbbHDV.Text))
@@ -96,7 +98,7 @@ namespace Tour.UI.QLDoan
                     if(db.Add(D))
                      {
                         System.Diagnostics.Debug.WriteLine("Success");
-                        Load();
+                        LoadDoan();
                     }
                 } catch(Exception e)
                 {
@@ -115,7 +117,7 @@ namespace Tour.UI.QLDoan
 
                     db.Delete(DoanID);
 
-                    Load();
+                    LoadDoan();
                     MessageBox.Show("Xóa thành công!", "Thông báo");
                 }
             }
@@ -177,6 +179,11 @@ namespace Tour.UI.QLDoan
         private void btnDetail_Click(object sender, EventArgs e)
         {
             Detail();
+        }
+
+        private void frmDoan_Load_2(object sender, EventArgs e)
+        {
+
         }
     }
 }

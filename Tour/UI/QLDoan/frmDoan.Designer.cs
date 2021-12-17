@@ -192,6 +192,7 @@ namespace Tour.UI.QLDoan
             this.Controls.Add(this.dataGridView1);
             this.Name = "frmDoan";
             this.Text = "Đoàn";
+            this.Load += new System.EventHandler(this.frmDoan_Load_2);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
