@@ -35,6 +35,20 @@ namespace Tour.DAO
 
         }
 
+        public List<dynamic> GetGiaTourByMaTour(int TourID)
+        {
+            using (tour = new TourENT())
+            {
+                var getList = (from tbTour in tour.TOURDULICHes
+                               join tbGia in tour.GIATOURs on tbTour.IDGiaTour equals tbGia.IDGIATOUR
+                               where tbTour.MaTour == TourID
+                               select new
+                               { MaTour = tbTour.MaTour, TenTour = tbTour.TenTour , GiaTour = tbGia.ThanhTien });
+                return getList.ToList <dynamic>();
+            }
+
+        }
+
         public bool ThemGiaTour(GIATOUR G)
         {
             using (tour = new TourENT())
@@ -50,10 +64,7 @@ namespace Tour.DAO
                     System.Diagnostics.Debug.WriteLine(ex);
                     return false;
                 }
-
-
             }
-
         }
 
         public bool XoaGiaTour(GIATOUR G, int TourID)
@@ -62,7 +73,7 @@ namespace Tour.DAO
             {
                 try
                 {
-                    G = tour.GIATOURs.Where(ddt => ddt.MaTour == TourID).SingleOrDefault();
+                    G = tour.GIATOURs.Where(t =>t.MaTour == TourID).SingleOrDefault();
                     tour.GIATOURs.Remove(G);
                     tour.SaveChanges();
                     return true;

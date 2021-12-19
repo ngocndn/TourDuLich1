@@ -26,7 +26,7 @@ public partial class GIA
 
     public Nullable<double> ThanhTien { get; set; }
 
-    public Nullable<int> MaTour { get; set; }
+    public int MaTour { get; set; }
 
 }
 

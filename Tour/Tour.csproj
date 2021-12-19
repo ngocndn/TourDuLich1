@@ -89,6 +89,9 @@
     <Compile Include="DAO\GIA.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAO\GIA1.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAO\GiaDAO.cs" />
     <Compile Include="DAO\GIATOUR.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -153,6 +156,12 @@
     </Compile>
     <Compile Include="UI\QLDoan\frmEditDoan.Designer.cs">
       <DependentUpon>frmEditDoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\QLGia\frmDetailGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\QLGia\frmDetailGia.Designer.cs">
+      <DependentUpon>frmDetailGia.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\QLKhachHang\frmEditKhachHang.cs">
       <SubType>Form</SubType>
@@ -327,7 +336,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="UI\QLChiPhi\" />
-    <Folder Include="UI\QLGia\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

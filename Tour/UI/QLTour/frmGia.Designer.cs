@@ -37,6 +37,8 @@ namespace Tour.UI.QLTour
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnDetail = new System.Windows.Forms.Button();
             this.txtMaTour = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,15 +47,15 @@ namespace Tour.UI.QLTour
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(11, 31);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 13);
+            this.label2.Size = new System.Drawing.Size(51, 13);
             this.label2.TabIndex = 57;
-            this.label2.Text = "Ma Tour";
+            this.label2.Text = "Tên Tour";
             // 
             // txtGia
             // 
-            this.txtGia.Location = new System.Drawing.Point(65, 71);
+            this.txtGia.Location = new System.Drawing.Point(84, 71);
             this.txtGia.Name = "txtGia";
-            this.txtGia.Size = new System.Drawing.Size(171, 20);
+            this.txtGia.Size = new System.Drawing.Size(187, 20);
             this.txtGia.TabIndex = 55;
             // 
             // label1
@@ -69,9 +71,9 @@ namespace Tour.UI.QLTour
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(242, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(277, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(546, 200);
+            this.dataGridView1.Size = new System.Drawing.Size(511, 200);
             this.dataGridView1.TabIndex = 50;
             // 
             // button1
@@ -87,7 +89,7 @@ namespace Tour.UI.QLTour
             // btnDelete
             // 
             this.btnDelete.Image = global::Tour.Properties.Resources.remove;
-            this.btnDelete.Location = new System.Drawing.Point(132, 125);
+            this.btnDelete.Location = new System.Drawing.Point(132, 145);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(42, 42);
             this.btnDelete.TabIndex = 53;
@@ -97,7 +99,7 @@ namespace Tour.UI.QLTour
             // btnDetail
             // 
             this.btnDetail.Image = global::Tour.Properties.Resources.edit__1_;
-            this.btnDetail.Location = new System.Drawing.Point(84, 125);
+            this.btnDetail.Location = new System.Drawing.Point(84, 145);
             this.btnDetail.Name = "btnDetail";
             this.btnDetail.Size = new System.Drawing.Size(42, 42);
             this.btnDetail.TabIndex = 52;
@@ -106,16 +108,35 @@ namespace Tour.UI.QLTour
             // 
             // txtMaTour
             // 
-            this.txtMaTour.Location = new System.Drawing.Point(65, 28);
+            this.txtMaTour.Location = new System.Drawing.Point(84, 28);
             this.txtMaTour.Name = "txtMaTour";
-            this.txtMaTour.Size = new System.Drawing.Size(171, 20);
+            this.txtMaTour.Size = new System.Drawing.Size(187, 20);
             this.txtMaTour.TabIndex = 59;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(4, 116);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(74, 13);
+            this.label3.TabIndex = 60;
+            this.label3.Text = "Ngày kết thúc";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(84, 110);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(187, 20);
+            this.dateTimePicker1.TabIndex = 61;
             // 
             // frmGia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 250);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.txtMaTour);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
@@ -143,5 +164,7 @@ namespace Tour.UI.QLTour
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtMaTour;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

@@ -144,6 +144,7 @@ namespace Tour.UI.QLTour
         public void Del()
         {
             GIATOUR g = new GIATOUR();
+            List<GIATOUR> lG = gb.GetGiaTour();
 
             if (dataGridView1.SelectedRows.Count > 0)
             {
@@ -151,9 +152,20 @@ namespace Tour.UI.QLTour
                 {
                     int T_ID = Convert.ToInt32(row.Cells[0].Value.ToString());
                     tb.DelTour(T_ID);
+                    foreach(var item in lG)
+                    {
+                        if(T_ID==item.MaTour)
+                        {
+                            if (gb.XoaGiaTour(g, item.MaTour))
+                            {
+                                System.Diagnostics.Debug.WriteLine("Xóa giá tour thành công!");
+                            }
+                        }
+                    }    
                     LoadTour();
                     MessageBox.Show("Deleted", "Notify");
                 }
+                
 
             }
             else

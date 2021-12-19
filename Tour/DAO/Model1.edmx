@@ -61,18 +61,27 @@
           <Property Name="TGBatDau" Type="datetime2" Precision="6" />
           <Property Name="TGKetThuc" Type="datetime2" Precision="6" />
           <Property Name="ThanhTien" Type="float" />
-          <Property Name="MaTour" Type="int" />
+          <Property Name="MaTour" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GIA1">
+          <Key>
+            <PropertyRef Name="IDGIATOUR" />
+          </Key>
+          <Property Name="IDGIATOUR" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TGBatDau" Type="datetime2" Precision="6" Nullable="false" />
+          <Property Name="TGKetThuc" Type="datetime2" Precision="6" Nullable="false" />
+          <Property Name="ThanhTien" Type="float" Nullable="false" />
+          <Property Name="MaTour" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="GIATOUR">
           <Key>
             <PropertyRef Name="IDGIATOUR" />
           </Key>
           <Property Name="IDGIATOUR" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TGBatDau" Type="datetime2" Precision="6" />
-          <Property Name="TGKetThuc" Type="datetime2" Precision="6" />
-          <Property Name="ThanhTien" Type="float" />
-          <Property Name="MaTour" Type="int" />
-          <Property Name="status" Type="int" />
+          <Property Name="TGBatDau" Type="datetime2" Precision="6" Nullable="false" />
+          <Property Name="TGKetThuc" Type="datetime2" Precision="6" Nullable="false" />
+          <Property Name="ThanhTien" Type="float" Nullable="false" />
+          <Property Name="MaTour" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="KHACHHANG">
           <Key>
@@ -124,6 +133,7 @@
           <EntitySet Name="DIADIEM" EntityType="Self.DIADIEM" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DOANDL" EntityType="Self.DOANDL" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GIA" EntityType="Self.GIA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GIA1" EntityType="Self.GIA1" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GIATOUR" EntityType="Self.GIATOUR" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LOAIHINHDULICH" EntityType="Self.LOAIHINHDULICH" Schema="dbo" store:Type="Tables" />
@@ -141,6 +151,7 @@
           <EntitySet Name="DIADIEMs" EntityType="QuanlyTour2Model.DIADIEM" />
           <EntitySet Name="DOANDLs" EntityType="QuanlyTour2Model.DOANDL" />
           <EntitySet Name="GIAs" EntityType="QuanlyTour2Model.GIA" />
+          <EntitySet Name="GIA1" EntityType="QuanlyTour2Model.GIA1" />
           <EntitySet Name="GIATOURs" EntityType="QuanlyTour2Model.GIATOUR" />
           <EntitySet Name="KHACHHANGs" EntityType="QuanlyTour2Model.KHACHHANG" />
           <EntitySet Name="LOAIHINHDULICHes" EntityType="QuanlyTour2Model.LOAIHINHDULICH" />
@@ -203,18 +214,27 @@
           <Property Name="TGBatDau" Type="DateTime" Precision="6" />
           <Property Name="TGKetThuc" Type="DateTime" Precision="6" />
           <Property Name="ThanhTien" Type="Double" />
-          <Property Name="MaTour" Type="Int32" />
+          <Property Name="MaTour" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GIA1">
+          <Key>
+            <PropertyRef Name="IDGIATOUR" />
+          </Key>
+          <Property Name="IDGIATOUR" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TGBatDau" Type="DateTime" Nullable="false" Precision="6" />
+          <Property Name="TGKetThuc" Type="DateTime" Nullable="false" Precision="6" />
+          <Property Name="ThanhTien" Type="Double" Nullable="false" />
+          <Property Name="MaTour" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="GIATOUR">
           <Key>
             <PropertyRef Name="IDGIATOUR" />
           </Key>
           <Property Name="IDGIATOUR" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TGBatDau" Type="DateTime" Precision="6" />
-          <Property Name="TGKetThuc" Type="DateTime" Precision="6" />
-          <Property Name="ThanhTien" Type="Double" />
-          <Property Name="MaTour" Type="Int32" />
-          <Property Name="status" Type="Int32" />
+          <Property Name="TGBatDau" Type="DateTime" Nullable="false" Precision="6" />
+          <Property Name="TGKetThuc" Type="DateTime" Nullable="false" Precision="6" />
+          <Property Name="ThanhTien" Type="Double" Nullable="false" />
+          <Property Name="MaTour" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="KHACHHANG">
           <Key>
@@ -329,10 +349,20 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="GIA1">
+            <EntityTypeMapping TypeName="QuanlyTour2Model.GIA1">
+              <MappingFragment StoreEntitySet="GIA1">
+                <ScalarProperty Name="MaTour" ColumnName="MaTour" />
+                <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
+                <ScalarProperty Name="TGKetThuc" ColumnName="TGKetThuc" />
+                <ScalarProperty Name="TGBatDau" ColumnName="TGBatDau" />
+                <ScalarProperty Name="IDGIATOUR" ColumnName="IDGIATOUR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="GIATOURs">
             <EntityTypeMapping TypeName="QuanlyTour2Model.GIATOUR">
               <MappingFragment StoreEntitySet="GIATOUR">
-                <ScalarProperty Name="status" ColumnName="status" />
                 <ScalarProperty Name="MaTour" ColumnName="MaTour" />
                 <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
                 <ScalarProperty Name="TGKetThuc" ColumnName="TGKetThuc" />

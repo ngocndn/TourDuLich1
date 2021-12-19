@@ -42,6 +42,7 @@ namespace Tour.UI.QLTour
 
             return true;
         }
+     
 
         public void ThemGiaTour()
         {
@@ -52,10 +53,12 @@ namespace Tour.UI.QLTour
                     GIATOUR G = new GIATOUR();
                     G.ThanhTien = Convert.ToDouble(txtGia.Text);
                     G.MaTour = T_ID;
+                    G.TGKetThuc = dateTimePicker1.Value;
+                    G.TGBatDau = DateTime.Now;
                     if(gb.ThemGiaTour(G))
                     {
                         Main.Show();
-                        ShowDetail();Clear();
+                        ShowDetail();
                         MessageBox.Show("Success", "Notify");
                     }
                     else
@@ -125,6 +128,11 @@ namespace Tour.UI.QLTour
         private void button1_Click(object sender, EventArgs e)
         {
             Apply();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

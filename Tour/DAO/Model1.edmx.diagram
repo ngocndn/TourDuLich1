@@ -11,11 +11,12 @@
         <EntityTypeShape EntityType="QuanlyTour2Model.DIADIEM" Width="1.5" PointX="2.75" PointY="3.75" />
         <EntityTypeShape EntityType="QuanlyTour2Model.DOANDL" Width="1.5" PointX="4.75" PointY="0.75" />
         <EntityTypeShape EntityType="QuanlyTour2Model.GIA" Width="1.5" PointX="4.75" PointY="4.75" />
-        <EntityTypeShape EntityType="QuanlyTour2Model.GIATOUR" Width="1.5" PointX="6.75" PointY="0.75" />
-        <EntityTypeShape EntityType="QuanlyTour2Model.KHACHHANG" Width="1.5" PointX="0.75" PointY="6.75" />
-        <EntityTypeShape EntityType="QuanlyTour2Model.LOAIHINHDULICH" Width="1.5" PointX="6.75" PointY="3.75" />
-        <EntityTypeShape EntityType="QuanlyTour2Model.NHANVIEN" Width="1.5" PointX="6.75" PointY="6.75" />
-        <EntityTypeShape EntityType="QuanlyTour2Model.TOURDULICH" Width="1.5" PointX="2.75" PointY="7.75" />
+        <EntityTypeShape EntityType="QuanlyTour2Model.GIA1" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="QuanlyTour2Model.GIATOUR" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="QuanlyTour2Model.KHACHHANG" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="QuanlyTour2Model.LOAIHINHDULICH" Width="1.5" PointX="2.75" PointY="7.75" />
+        <EntityTypeShape EntityType="QuanlyTour2Model.NHANVIEN" Width="1.5" PointX="4.75" PointY="7.75" />
+        <EntityTypeShape EntityType="QuanlyTour2Model.TOURDULICH" Width="1.5" PointX="6.75" PointY="7.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

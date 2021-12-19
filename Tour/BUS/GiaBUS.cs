@@ -16,7 +16,6 @@ namespace Tour.BUS
         {
             return gd.GetGiaTour();
         }
-
         public List<GIATOUR> GetGiaTourWithMaTour(int TourID)
         {
             return gd.GetGiaTourWithMaTour(TourID);

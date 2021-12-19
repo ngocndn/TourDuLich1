@@ -15,7 +15,7 @@ namespace Tour.DAO
 using System;
     using System.Collections.Generic;
     
-public partial class GIATOUR
+public partial class GIA1
 {
 
     public int IDGIATOUR { get; set; }
