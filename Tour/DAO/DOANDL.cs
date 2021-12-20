@@ -32,6 +32,10 @@ public partial class DOANDL
 
     public string TenDoan { get; set; }
 
+    public Nullable<int> Trans_ID { get; set; }
+
+    public Nullable<int> Accom_ID { get; set; }
+
 }
 
 }

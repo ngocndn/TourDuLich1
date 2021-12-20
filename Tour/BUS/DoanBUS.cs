@@ -14,6 +14,15 @@ namespace Tour.BUS
         {
             return DD.getall();
         }
+        public List<CHIPHI> getKS()
+        {
+            return DD.GetChiPhiKS();
+        }
+
+        public List<CHIPHI> getBUS()
+        {
+            return DD.GetChiPhiDC();
+        }
         public List<DOANDL> Get1(int DoanID)
         {
             return DD.GetOneDoan(DoanID);

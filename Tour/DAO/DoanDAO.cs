@@ -22,12 +22,29 @@ namespace Tour.DAO
                 return getAllTour.ToList<DOANDL>();
             }
         }
+
+        public List<CHIPHI> GetChiPhiKS()
+        {
+            {
+                var getList = tour.CHIPHIs.Where(t => t.LoaiCP_ID == 1);
+                return getList.ToList<CHIPHI>();
+            }
+        }
+        public List<CHIPHI> GetChiPhiDC()
+        {
+            {
+                var getList = tour.CHIPHIs.Where(t => t.LoaiCP_ID == 2);
+                return getList.ToList<CHIPHI>();
+            }
+        }
         public List<dynamic> getListDoan()
         {
             {
                 var getListDoan = (from tbD in tour.DOANDLs
                                    join tbT in tour.TOURDULICHes on tbD.MaTour equals tbT.MaTour
                                    join tbN in tour.NHANVIENs on tbD.MaNV equals tbN.MaNV
+                                   join tbL in tour.CHIPHIs on tbD.Accom_ID equals tbL.CHIPHI_ID
+
                                    select new
                                    {
                                    DoanID = tbD.MaDOANDL,
@@ -35,7 +52,8 @@ namespace Tour.DAO
                                    NgayKH = tbD.NgayKhoiHanh,
                                    KT=tbD.NgayKetThuc,
                                    TenTour = tbT.TenTour,
-                                   HDV = tbN.TenNV
+                                   HDV = tbN.TenNV,
+                                   //MCP1 = tbL.TenCP,MCP2 = tbL.TenCP
                                    });
                 return getListDoan.ToList<dynamic>();
             }

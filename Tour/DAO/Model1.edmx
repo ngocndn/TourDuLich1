@@ -53,6 +53,8 @@
           <Property Name="MaNV" Type="int" />
           <Property Name="MaTour" Type="int" />
           <Property Name="TenDoan" Type="nvarchar" MaxLength="50" />
+          <Property Name="Trans_ID" Type="int" />
+          <Property Name="Accom_ID" Type="int" />
         </EntityType>
         <EntityType Name="GIATOUR">
           <Key>
@@ -192,6 +194,8 @@
           <Property Name="MaNV" Type="Int32" />
           <Property Name="MaTour" Type="Int32" />
           <Property Name="TenDoan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Trans_ID" Type="Int32" />
+          <Property Name="Accom_ID" Type="Int32" />
         </EntityType>
         <EntityType Name="GIATOUR">
           <Key>
@@ -303,6 +307,8 @@
           <EntitySetMapping Name="DOANDLs">
             <EntityTypeMapping TypeName="QuanlyTour2Model.DOANDL">
               <MappingFragment StoreEntitySet="DOANDL">
+                <ScalarProperty Name="Accom_ID" ColumnName="Accom_ID" />
+                <ScalarProperty Name="Trans_ID" ColumnName="Trans_ID" />
                 <ScalarProperty Name="TenDoan" ColumnName="TenDoan" />
                 <ScalarProperty Name="MaTour" ColumnName="MaTour" />
                 <ScalarProperty Name="MaNV" ColumnName="MaNV" />

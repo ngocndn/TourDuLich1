@@ -154,17 +154,23 @@
     <Compile Include="UI\QLDiemDen\frmEditDD.Designer.cs">
       <DependentUpon>frmEditDD.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\QLDoan\frmDoan.cs">
+    <Compile Include="UI\QLDoan\frmAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\QLDoan\frmDoan.Designer.cs">
-      <DependentUpon>frmDoan.cs</DependentUpon>
+    <Compile Include="UI\QLDoan\frmAdd.Designer.cs">
+      <DependentUpon>frmAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\QLDoan\frmEditDoan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\QLDoan\frmEditDoan.Designer.cs">
       <DependentUpon>frmEditDoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\QLDoan\frmQLDoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\QLDoan\frmQLDoan.Designer.cs">
+      <DependentUpon>frmQLDoan.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\QLGia\frmDetailGia.cs">
       <SubType>Form</SubType>
@@ -249,11 +255,14 @@
     <EmbeddedResource Include="UI\QLDiemDen\frmEditDD.resx">
       <DependentUpon>frmEditDD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\QLDoan\frmDoan.resx">
-      <DependentUpon>frmDoan.cs</DependentUpon>
+    <EmbeddedResource Include="UI\QLDoan\frmAdd.resx">
+      <DependentUpon>frmAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\QLDoan\frmEditDoan.resx">
       <DependentUpon>frmEditDoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\QLDoan\frmQLDoan.resx">
+      <DependentUpon>frmQLDoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\QLKhachHang\frmEditKhachHang.resx">
       <DependentUpon>frmEditKhachHang.cs</DependentUpon>

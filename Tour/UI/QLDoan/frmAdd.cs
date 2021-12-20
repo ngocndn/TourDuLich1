@@ -10,24 +10,14 @@ using System.Windows.Forms;
 
 namespace Tour.UI.QLDoan
 {
-    public partial class frmEditDoan : Form
+    public partial class frmAdd : Form
     {
-        public frmEditDoan()
+        public frmAdd()
         {
             InitializeComponent();
         }
 
-        private void btnPricing_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
+        private void frmAdd_Load(object sender, EventArgs e)
         {
 
         }

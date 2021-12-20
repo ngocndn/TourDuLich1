@@ -56,39 +56,6 @@ namespace Tour.UI.QLTour
             }
             return true;
         }
-        public int GetMaxIDGiaTour(List<GIATOUR> list)
-        {
-            if (list.Count == 0)
-            {
-                return 1;
-            }
-            int maxID = 0;
-            foreach (GIATOUR type in list)
-            {
-                if (type.IDGIATOUR > maxID)
-                {
-                    maxID = type.IDGIATOUR;
-                }
-            }
-            return maxID;
-        }
-
-        public int GetMaxIDTour(List<TOURDULICH> list)
-        {
-            if (list.Count == 0)
-            {
-                return 0;
-            }
-            int maxID = 0;
-            foreach (TOURDULICH type in list)
-            {
-                if (type.MaTour > maxID)
-                {
-                    maxID = type.MaTour;
-                }
-            }
-            return maxID;
-        }
 
         public void Add()
         {

@@ -69,7 +69,7 @@ namespace Tour.UI
 
         private void button6_Click(object sender, EventArgs e)
         {
-            frmDoan fd = new frmDoan();
+            frmQLDoan fd = new frmQLDoan();
             fd.ShowDialog();
         }
     }
