@@ -18,11 +18,13 @@ using System;
 public partial class CHIPHI
 {
 
-    public int ChiPhi_ID { get; set; }
+    public int CHIPHI_ID { get; set; }
 
-    public Nullable<int> MaDOANDL { get; set; }
+    public int LoaiCP_ID { get; set; }
 
-    public string ChiPhi_TongCong { get; set; }
+    public string TenCP { get; set; }
+
+    public double ThanhTien { get; set; }
 
 }
 

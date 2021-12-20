@@ -86,12 +86,6 @@
     <Compile Include="DAO\DOANDL.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAO\GIA.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAO\GIA1.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="DAO\GiaDAO.cs" />
     <Compile Include="DAO\GIATOUR.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -100,6 +94,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DAO\KhachHangDAO.cs" />
+    <Compile Include="DAO\LOAICHIPHI.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAO\LoaiHinhDAO.cs" />
     <Compile Include="DAO\LOAIHINHDULICH.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -132,6 +129,18 @@
     </Compile>
     <Compile Include="UI\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\QLChiPhi\frmChiPhi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\QLChiPhi\frmChiPhi.Designer.cs">
+      <DependentUpon>frmChiPhi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\QLChiPhi\frmEditCP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\QLChiPhi\frmEditCP.Designer.cs">
+      <DependentUpon>frmEditCP.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\QLDiemDen\frmDD.cs">
       <SubType>Form</SubType>
@@ -228,6 +237,12 @@
     <EmbeddedResource Include="UI\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\QLChiPhi\frmChiPhi.resx">
+      <DependentUpon>frmChiPhi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\QLChiPhi\frmEditCP.resx">
+      <DependentUpon>frmEditCP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\QLDiemDen\frmDD.resx">
       <DependentUpon>frmDD.cs</DependentUpon>
     </EmbeddedResource>
@@ -321,8 +336,11 @@
     <None Include="Resources\6984777_preview.png" />
     <Content Include="Resources\a.png" />
     <None Include="Resources\download2.png" />
+    <None Include="Resources\download3.png" />
     <Content Include="Resources\FreeVector-Travel-Background.jpg" />
     <Content Include="Resources\images2.jpeg" />
+    <None Include="Resources\istockphoto-1226810736-170667a.jpg" />
+    <None Include="Resources\istockphoto-1226810736-170667a1.jpg" />
     <Content Include="Resources\istockphoto-1226810736-170667a2.jpg" />
     <Content Include="Resources\other_tours_icon.png" />
     <None Include="Resources\up-arrow1.png" />
@@ -334,9 +352,7 @@
     <None Include="Resources\diskette1.png" />
     <None Include="Resources\delete %282%291.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="UI\QLChiPhi\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

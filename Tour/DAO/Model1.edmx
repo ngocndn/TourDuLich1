@@ -18,11 +18,12 @@
         </EntityType>
         <EntityType Name="CHIPHI">
           <Key>
-            <PropertyRef Name="ChiPhi_ID" />
+            <PropertyRef Name="CHIPHI_ID" />
           </Key>
-          <Property Name="ChiPhi_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="MaDOANDL" Type="int" />
-          <Property Name="ChiPhi_TongCong" Type="nvarchar" MaxLength="50" />
+          <Property Name="CHIPHI_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LoaiCP_ID" Type="int" Nullable="false" />
+          <Property Name="TenCP" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ThanhTien" Type="float" Nullable="false" />
         </EntityType>
         <EntityType Name="CHITIET">
           <Key>
@@ -53,26 +54,6 @@
           <Property Name="MaTour" Type="int" />
           <Property Name="TenDoan" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <EntityType Name="GIA">
-          <Key>
-            <PropertyRef Name="IDGIATOUR" />
-          </Key>
-          <Property Name="IDGIATOUR" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TGBatDau" Type="datetime2" Precision="6" />
-          <Property Name="TGKetThuc" Type="datetime2" Precision="6" />
-          <Property Name="ThanhTien" Type="float" />
-          <Property Name="MaTour" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="GIA1">
-          <Key>
-            <PropertyRef Name="IDGIATOUR" />
-          </Key>
-          <Property Name="IDGIATOUR" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TGBatDau" Type="datetime2" Precision="6" Nullable="false" />
-          <Property Name="TGKetThuc" Type="datetime2" Precision="6" Nullable="false" />
-          <Property Name="ThanhTien" Type="float" Nullable="false" />
-          <Property Name="MaTour" Type="int" Nullable="false" />
-        </EntityType>
         <EntityType Name="GIATOUR">
           <Key>
             <PropertyRef Name="IDGIATOUR" />
@@ -95,6 +76,13 @@
           <Property Name="KH_GioiTinh" Type="nvarchar" MaxLength="50" />
           <Property Name="KH_email" Type="nvarchar" MaxLength="50" />
           <Property Name="KH_CMND" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="LOAICHIPHI">
+          <Key>
+            <PropertyRef Name="LoaiCP_ID" />
+          </Key>
+          <Property Name="LoaiCP_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenLoaiCP" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="LOAIHINHDULICH">
           <Key>
@@ -132,10 +120,9 @@
           <EntitySet Name="CHITIET" EntityType="Self.CHITIET" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DIADIEM" EntityType="Self.DIADIEM" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DOANDL" EntityType="Self.DOANDL" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="GIA" EntityType="Self.GIA" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="GIA1" EntityType="Self.GIA1" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GIATOUR" EntityType="Self.GIATOUR" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOAICHIPHI" EntityType="Self.LOAICHIPHI" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LOAIHINHDULICH" EntityType="Self.LOAIHINHDULICH" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NHANVIEN" EntityType="Self.NHANVIEN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TOURDULICH" EntityType="Self.TOURDULICH" Schema="dbo" store:Type="Tables" />
@@ -150,10 +137,9 @@
           <EntitySet Name="CHITIETs" EntityType="QuanlyTour2Model.CHITIET" />
           <EntitySet Name="DIADIEMs" EntityType="QuanlyTour2Model.DIADIEM" />
           <EntitySet Name="DOANDLs" EntityType="QuanlyTour2Model.DOANDL" />
-          <EntitySet Name="GIAs" EntityType="QuanlyTour2Model.GIA" />
-          <EntitySet Name="GIA1" EntityType="QuanlyTour2Model.GIA1" />
           <EntitySet Name="GIATOURs" EntityType="QuanlyTour2Model.GIATOUR" />
           <EntitySet Name="KHACHHANGs" EntityType="QuanlyTour2Model.KHACHHANG" />
+          <EntitySet Name="LOAICHIPHIs" EntityType="QuanlyTour2Model.LOAICHIPHI" />
           <EntitySet Name="LOAIHINHDULICHes" EntityType="QuanlyTour2Model.LOAIHINHDULICH" />
           <EntitySet Name="NHANVIENs" EntityType="QuanlyTour2Model.NHANVIEN" />
           <EntitySet Name="TOURDULICHes" EntityType="QuanlyTour2Model.TOURDULICH" />
@@ -171,11 +157,12 @@
         </EntityType>
         <EntityType Name="CHIPHI">
           <Key>
-            <PropertyRef Name="ChiPhi_ID" />
+            <PropertyRef Name="CHIPHI_ID" />
           </Key>
-          <Property Name="ChiPhi_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="MaDOANDL" Type="Int32" />
-          <Property Name="ChiPhi_TongCong" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CHIPHI_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LoaiCP_ID" Type="Int32" Nullable="false" />
+          <Property Name="TenCP" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ThanhTien" Type="Double" Nullable="false" />
         </EntityType>
         <EntityType Name="CHITIET">
           <Key>
@@ -206,26 +193,6 @@
           <Property Name="MaTour" Type="Int32" />
           <Property Name="TenDoan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="GIA">
-          <Key>
-            <PropertyRef Name="IDGIATOUR" />
-          </Key>
-          <Property Name="IDGIATOUR" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TGBatDau" Type="DateTime" Precision="6" />
-          <Property Name="TGKetThuc" Type="DateTime" Precision="6" />
-          <Property Name="ThanhTien" Type="Double" />
-          <Property Name="MaTour" Type="Int32" Nullable="false" />
-        </EntityType>
-        <EntityType Name="GIA1">
-          <Key>
-            <PropertyRef Name="IDGIATOUR" />
-          </Key>
-          <Property Name="IDGIATOUR" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TGBatDau" Type="DateTime" Nullable="false" Precision="6" />
-          <Property Name="TGKetThuc" Type="DateTime" Nullable="false" Precision="6" />
-          <Property Name="ThanhTien" Type="Double" Nullable="false" />
-          <Property Name="MaTour" Type="Int32" Nullable="false" />
-        </EntityType>
         <EntityType Name="GIATOUR">
           <Key>
             <PropertyRef Name="IDGIATOUR" />
@@ -248,6 +215,13 @@
           <Property Name="KH_GioiTinh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="KH_email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="KH_CMND" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LOAICHIPHI">
+          <Key>
+            <PropertyRef Name="LoaiCP_ID" />
+          </Key>
+          <Property Name="LoaiCP_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenLoaiCP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="LOAIHINHDULICH">
           <Key>
@@ -300,9 +274,10 @@
           <EntitySetMapping Name="CHIPHIs">
             <EntityTypeMapping TypeName="QuanlyTour2Model.CHIPHI">
               <MappingFragment StoreEntitySet="CHIPHI">
-                <ScalarProperty Name="ChiPhi_TongCong" ColumnName="ChiPhi_TongCong" />
-                <ScalarProperty Name="MaDOANDL" ColumnName="MaDOANDL" />
-                <ScalarProperty Name="ChiPhi_ID" ColumnName="ChiPhi_ID" />
+                <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
+                <ScalarProperty Name="TenCP" ColumnName="TenCP" />
+                <ScalarProperty Name="LoaiCP_ID" ColumnName="LoaiCP_ID" />
+                <ScalarProperty Name="CHIPHI_ID" ColumnName="CHIPHI_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -338,28 +313,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="GIAs">
-            <EntityTypeMapping TypeName="QuanlyTour2Model.GIA">
-              <MappingFragment StoreEntitySet="GIA">
-                <ScalarProperty Name="MaTour" ColumnName="MaTour" />
-                <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
-                <ScalarProperty Name="TGKetThuc" ColumnName="TGKetThuc" />
-                <ScalarProperty Name="TGBatDau" ColumnName="TGBatDau" />
-                <ScalarProperty Name="IDGIATOUR" ColumnName="IDGIATOUR" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="GIA1">
-            <EntityTypeMapping TypeName="QuanlyTour2Model.GIA1">
-              <MappingFragment StoreEntitySet="GIA1">
-                <ScalarProperty Name="MaTour" ColumnName="MaTour" />
-                <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
-                <ScalarProperty Name="TGKetThuc" ColumnName="TGKetThuc" />
-                <ScalarProperty Name="TGBatDau" ColumnName="TGBatDau" />
-                <ScalarProperty Name="IDGIATOUR" ColumnName="IDGIATOUR" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="GIATOURs">
             <EntityTypeMapping TypeName="QuanlyTour2Model.GIATOUR">
               <MappingFragment StoreEntitySet="GIATOUR">
@@ -382,6 +335,14 @@
                 <ScalarProperty Name="KH_NgaySinh" ColumnName="KH_NgaySinh" />
                 <ScalarProperty Name="TenKH" ColumnName="TenKH" />
                 <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOAICHIPHIs">
+            <EntityTypeMapping TypeName="QuanlyTour2Model.LOAICHIPHI">
+              <MappingFragment StoreEntitySet="LOAICHIPHI">
+                <ScalarProperty Name="TenLoaiCP" ColumnName="TenLoaiCP" />
+                <ScalarProperty Name="LoaiCP_ID" ColumnName="LoaiCP_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

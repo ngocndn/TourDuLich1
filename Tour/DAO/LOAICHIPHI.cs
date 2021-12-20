@@ -15,18 +15,12 @@ namespace Tour.DAO
 using System;
     using System.Collections.Generic;
     
-public partial class GIA1
+public partial class LOAICHIPHI
 {
 
-    public int IDGIATOUR { get; set; }
+    public int LoaiCP_ID { get; set; }
 
-    public System.DateTime TGBatDau { get; set; }
-
-    public System.DateTime TGKetThuc { get; set; }
-
-    public double ThanhTien { get; set; }
-
-    public int MaTour { get; set; }
+    public string TenLoaiCP { get; set; }
 
 }
 

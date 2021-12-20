@@ -111,7 +111,7 @@ namespace Tour.UI.QLTour
             // 
             // btnPricing
             // 
-            this.btnPricing.Image = global::Tour.Properties.Resources.download1;
+            this.btnPricing.Image = global::Tour.Properties.Resources.istockphoto_1226810736_170667a1;
             this.btnPricing.Location = new System.Drawing.Point(432, 79);
             this.btnPricing.Name = "btnPricing";
             this.btnPricing.Size = new System.Drawing.Size(42, 42);

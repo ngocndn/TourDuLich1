@@ -13,6 +13,7 @@ using Tour.UI.QLLoaiHinh;
 using Tour.UI.QLNhanVien;
 using Tour.UI.QLTour;
 using Tour.UI.QLDoan;
+using Tour.UI.QLChiPhi;
 
 
 namespace Tour.UI
@@ -44,7 +45,8 @@ namespace Tour.UI
 
         private void button3_Click(object sender, EventArgs e)
         {
-           
+            frmChiPhi fc = new frmChiPhi();
+            fc.ShowDialog();
         }
 
         private void button4_Click(object sender, EventArgs e)

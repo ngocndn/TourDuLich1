@@ -42,13 +42,11 @@ public partial class TourENT : DbContext
 
     public virtual DbSet<DOANDL> DOANDLs { get; set; }
 
-    public virtual DbSet<GIA> GIAs { get; set; }
-
-    public virtual DbSet<GIA1> GIA1 { get; set; }
-
     public virtual DbSet<GIATOUR> GIATOURs { get; set; }
 
     public virtual DbSet<KHACHHANG> KHACHHANGs { get; set; }
+
+    public virtual DbSet<LOAICHIPHI> LOAICHIPHIs { get; set; }
 
     public virtual DbSet<LOAIHINHDULICH> LOAIHINHDULICHes { get; set; }
 

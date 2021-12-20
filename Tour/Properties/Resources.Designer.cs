@@ -163,6 +163,16 @@ namespace Tour.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap download2 {
+            get {
+                object obj = ResourceManager.GetObject("download2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap edit__1_ {
             get {
                 object obj = ResourceManager.GetObject("edit (1)", resourceCulture);
@@ -186,6 +196,26 @@ namespace Tour.Properties {
         internal static System.Drawing.Bitmap images2 {
             get {
                 object obj = ResourceManager.GetObject("images2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap istockphoto_1226810736_170667a {
+            get {
+                object obj = ResourceManager.GetObject("istockphoto-1226810736-170667a", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap istockphoto_1226810736_170667a1 {
+            get {
+                object obj = ResourceManager.GetObject("istockphoto-1226810736-170667a1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
