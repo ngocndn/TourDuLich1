@@ -83,7 +83,6 @@ namespace Tour.DAO
                     System.Diagnostics.Debug.WriteLine(ex);
                     return false;
                 }
-
             }
         }
 

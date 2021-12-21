@@ -5,16 +5,16 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="96fcc5f61d3b43ecb9c8488957c58089" Name="Diagram1" ZoomLevel="83">
-        <EntityTypeShape EntityType="QuanlyTour2Model.Booking" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="QuanlyTour2Model.BOOKING" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="QuanlyTour2Model.CHIPHI" Width="1.5" PointX="2.75" PointY="0.75" />
         <EntityTypeShape EntityType="QuanlyTour2Model.CHITIET" Width="1.5" PointX="0.75" PointY="3.75" />
         <EntityTypeShape EntityType="QuanlyTour2Model.DIADIEM" Width="1.5" PointX="2.75" PointY="3.75" />
         <EntityTypeShape EntityType="QuanlyTour2Model.DOANDL" Width="1.5" PointX="4.75" PointY="0.75" />
-        <EntityTypeShape EntityType="QuanlyTour2Model.GIATOUR" Width="1.5" PointX="4.75" PointY="4.75" />
+        <EntityTypeShape EntityType="QuanlyTour2Model.GIATOUR" Width="1.5" PointX="4.75" PointY="3.75" />
         <EntityTypeShape EntityType="QuanlyTour2Model.KHACHHANG" Width="1.5" PointX="6.75" PointY="0.75" />
         <EntityTypeShape EntityType="QuanlyTour2Model.LOAICHIPHI" Width="1.5" PointX="0.75" PointY="6.75" />
-        <EntityTypeShape EntityType="QuanlyTour2Model.LOAIHINHDULICH" Width="1.5" PointX="6.75" PointY="4.75" />
-        <EntityTypeShape EntityType="QuanlyTour2Model.NHANVIEN" Width="1.5" PointX="2.75" PointY="7.75" />
+        <EntityTypeShape EntityType="QuanlyTour2Model.LOAIHINHDULICH" Width="1.5" PointX="2.75" PointY="6.75" />
+        <EntityTypeShape EntityType="QuanlyTour2Model.NHANVIEN" Width="1.5" PointX="6.75" PointY="4.75" />
         <EntityTypeShape EntityType="QuanlyTour2Model.TOURDULICH" Width="1.5" PointX="4.75" PointY="7.75" />
       </Diagram>
     </edmx:Diagrams>

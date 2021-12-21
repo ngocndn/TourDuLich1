@@ -27,7 +27,7 @@ namespace Tour.UI.QLDoan
         }
         public void LoadDanhSachDoan()
         {
-            dataGridView1.DataSource = db.GetListDoan();
+            dataGridView1.DataSource = db.getall();
             dataGridView1.AutoGenerateColumns = false;
         }
 
@@ -53,7 +53,24 @@ namespace Tour.UI.QLDoan
             }
             return true;
         }
+        public void Del()
+        {
+            if (dataGridView1.SelectedRows.Count>0)
+            {
+                foreach(DataGridViewRow r in dataGridView1.SelectedRows)
+                {
+                    int DoanID = Convert.ToInt32(r.Cells[0].Value.ToString());
+                    db.Delete(DoanID);
+                    LoadDanhSachDoan();
+                    MessageBox.Show("Xoa thanh cong");
+                }
 
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn đoàn muốn xóa!", "Thông báo");
+            }
+        }
         public void Add()
         {
             List<DOANDL> listD = db.getall();
@@ -91,6 +108,7 @@ namespace Tour.UI.QLDoan
                     if (db.Add(D))
                     {
                         System.Diagnostics.Debug.WriteLine("Success");
+                        MessageBox.Show("Them thanh cong","Thong bao");
                         LoadDanhSachDoan();
                     }
                 }
@@ -100,16 +118,40 @@ namespace Tour.UI.QLDoan
                     System.Diagnostics.Debug.WriteLine(e);
                 }
             }
+            else
+            {
+                MessageBox.Show("Kiem tra lai du lieu nhap","Thong bao");
+            }
         }
 
         private void frmQLDoan_Load(object sender, EventArgs e)
         {
 
         }
+        public void Detail()
+        {
+            foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+            {
+                String DoanID = row.Cells[0].Value.ToString();
 
+                frmEditDoan fE = new frmEditDoan(int.Parse(DoanID), this);
+                fE.ShowDialog();
+
+            }
+        }
         private void btnAdd_Click(object sender, EventArgs e)
         {
             Add();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            Del();
+        }
+
+        private void btnDetail_Click(object sender, EventArgs e)
+        {
+            Detail();
         }
     }
 }

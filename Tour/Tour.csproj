@@ -68,7 +68,7 @@
     <Compile Include="BUS\LoaiHinhBUS.cs" />
     <Compile Include="BUS\NhanVienBUS.cs" />
     <Compile Include="BUS\TourBUS.cs" />
-    <Compile Include="DAO\Booking.cs">
+    <Compile Include="DAO\BOOKING.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DAO\CHIPHI.cs">

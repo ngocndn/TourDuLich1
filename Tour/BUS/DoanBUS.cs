@@ -45,6 +45,10 @@ namespace Tour.BUS
         {
             return DD.Delete(DoanID);
         }
+        public bool DeletefromTour(DOANDL D,int TourID)
+        {
+            return DD.DeletefromTour(D,TourID);
+        }
         public List<dynamic> GetDetail( int DoanID)
         {
             return DD.GetDDetail(DoanID);

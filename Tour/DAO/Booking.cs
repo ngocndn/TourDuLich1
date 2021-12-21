@@ -15,20 +15,20 @@ namespace Tour.DAO
 using System;
     using System.Collections.Generic;
     
-public partial class Booking
+public partial class BOOKING
 {
 
     public int id { get; set; }
 
-    public Nullable<int> MaDOANDL { get; set; }
+    public int MaDOANDL { get; set; }
 
-    public Nullable<int> MaKH { get; set; }
+    public int MaKH { get; set; }
 
-    public Nullable<int> MaTour { get; set; }
+    public int MaTour { get; set; }
 
     public Nullable<int> Siso { get; set; }
 
-    public Nullable<int> GiaTour { get; set; }
+    public int GiaTour { get; set; }
 
 }
 

@@ -12,6 +12,7 @@ namespace Tour.UI.QLTour
         DiaDiemBUS db = new DiaDiemBUS();
         LoaiHinhBUS lb = new LoaiHinhBUS();
         GiaBUS gb = new GiaBUS();
+        DoanBUS ddb = new DoanBUS();
 
         public frmQLTOUR()
         {
@@ -111,7 +112,9 @@ namespace Tour.UI.QLTour
         public void Del()
         {
             GIATOUR g = new GIATOUR();
+            DOANDL d = new DOANDL();
             List<GIATOUR> lG = gb.GetGiaTour();
+            List<DOANDL> lD = ddb.getall();
 
             if (dataGridView1.SelectedRows.Count > 0)
             {
@@ -128,7 +131,17 @@ namespace Tour.UI.QLTour
                                 System.Diagnostics.Debug.WriteLine("Xóa giá tour thành công!");
                             }
                         }
-                    }    
+                    } 
+                    foreach(var item in lD)
+                    {
+                        if (T_ID == item.MaTour)
+                        {
+                           if(ddb.DeletefromTour(d,item.MaTour))
+                            {
+                                System.Diagnostics.Debug.WriteLine("Da xoa doan");
+                            }
+                        }
+                    }
                     LoadTour();
                     MessageBox.Show("Deleted", "Notify");
                 }

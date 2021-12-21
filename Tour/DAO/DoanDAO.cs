@@ -43,7 +43,6 @@ namespace Tour.DAO
                 var getListDoan = (from tbD in tour.DOANDLs
                                    join tbT in tour.TOURDULICHes on tbD.MaTour equals tbT.MaTour
                                    join tbN in tour.NHANVIENs on tbD.MaNV equals tbN.MaNV
-                                   join tbL in tour.CHIPHIs on tbD.Accom_ID equals tbL.CHIPHI_ID
 
                                    select new
                                    {
@@ -58,6 +57,7 @@ namespace Tour.DAO
                 return getListDoan.ToList<dynamic>();
             }
         }
+
 
         public List<dynamic> GetDDetail(int DoanID)
         {
@@ -134,6 +134,24 @@ namespace Tour.DAO
                 catch(Exception e)
                 {
                     System.Diagnostics.Debug.WriteLine(e);
+                    return false;
+                }
+            }
+        }
+        public bool DeletefromTour(DOANDL D,int TourID)
+        {
+            using (tour = new TourENT())
+            {
+                try
+                {
+                    D = tour.DOANDLs.Where(t => t.MaTour == TourID).SingleOrDefault();
+                    tour.DOANDLs.Remove(D);
+                    tour.SaveChanges();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex);
                     return false;
                 }
             }

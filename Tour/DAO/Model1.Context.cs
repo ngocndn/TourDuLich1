@@ -32,7 +32,7 @@ public partial class TourENT : DbContext
     }
 
 
-    public virtual DbSet<Booking> Bookings { get; set; }
+    public virtual DbSet<BOOKING> BOOKINGs { get; set; }
 
     public virtual DbSet<CHIPHI> CHIPHIs { get; set; }
 

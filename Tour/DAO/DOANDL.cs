@@ -20,21 +20,15 @@ public partial class DOANDL
 
     public int MaDOANDL { get; set; }
 
-    public Nullable<System.DateTime> NgayKhoiHanh { get; set; }
+    public System.DateTime NgayKhoiHanh { get; set; }
 
-    public Nullable<System.DateTime> NgayKetThuc { get; set; }
+    public System.DateTime NgayKetThuc { get; set; }
 
-    public Nullable<int> MaKH { get; set; }
+    public int MaNV { get; set; }
 
-    public Nullable<int> MaNV { get; set; }
-
-    public Nullable<int> MaTour { get; set; }
+    public int MaTour { get; set; }
 
     public string TenDoan { get; set; }
-
-    public Nullable<int> Trans_ID { get; set; }
-
-    public Nullable<int> Accom_ID { get; set; }
 
 }
 
