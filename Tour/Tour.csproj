@@ -71,6 +71,7 @@
     <Compile Include="DAO\BOOKING.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAO\BookingDAO.cs" />
     <Compile Include="DAO\CHIPHI.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
