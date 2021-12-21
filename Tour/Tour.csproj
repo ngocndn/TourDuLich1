@@ -264,6 +264,9 @@
     <EmbeddedResource Include="UI\QLDoan\frmQLDoan.resx">
       <DependentUpon>frmQLDoan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\QLGia\frmDetailGia.resx">
+      <DependentUpon>frmDetailGia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\QLKhachHang\frmEditKhachHang.resx">
       <DependentUpon>frmEditKhachHang.cs</DependentUpon>
     </EmbeddedResource>

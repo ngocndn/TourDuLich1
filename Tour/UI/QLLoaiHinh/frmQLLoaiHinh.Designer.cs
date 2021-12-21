@@ -126,6 +126,7 @@ namespace Tour.UI.QLLoaiHinh
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView_LoaiHinh);
             this.Name = "frmQLLoaiHinh";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Loai Hinh";
             this.Load += new System.EventHandler(this.frmQLLoaiHinh_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_LoaiHinh)).EndInit();

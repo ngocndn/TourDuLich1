@@ -121,6 +121,7 @@ namespace Tour.UI.QLNhanVien
             this.Controls.Add(this.txtTenNV);
             this.Controls.Add(this.label1);
             this.Name = "frmEditNV";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detail Nhân Viên";
             this.Load += new System.EventHandler(this.frmEditNV_Load);
             this.ResumeLayout(false);

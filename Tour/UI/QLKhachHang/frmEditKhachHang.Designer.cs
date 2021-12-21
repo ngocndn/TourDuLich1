@@ -201,6 +201,7 @@ namespace Tour.UI.QLKhachHang
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
             this.Name = "frmEditKhachHang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmEditKhachHang";
             this.Load += new System.EventHandler(this.frmEditKhachHang_Load);
             this.ResumeLayout(false);

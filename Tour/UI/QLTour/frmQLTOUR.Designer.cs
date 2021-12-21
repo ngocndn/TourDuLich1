@@ -124,7 +124,7 @@ namespace Tour.UI.QLTour
             // btnDelete
             // 
             this.btnDelete.Image = global::Tour.Properties.Resources.delete__2_;
-            this.btnDelete.Location = new System.Drawing.Point(315, 303);
+            this.btnDelete.Location = new System.Drawing.Point(315, 296);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(42, 42);
             this.btnDelete.TabIndex = 42;
@@ -134,7 +134,7 @@ namespace Tour.UI.QLTour
             // btnDetail
             // 
             this.btnDetail.Image = global::Tour.Properties.Resources.edit__1_;
-            this.btnDetail.Location = new System.Drawing.Point(267, 303);
+            this.btnDetail.Location = new System.Drawing.Point(267, 296);
             this.btnDetail.Name = "btnDetail";
             this.btnDetail.Size = new System.Drawing.Size(42, 42);
             this.btnDetail.TabIndex = 41;
@@ -144,7 +144,7 @@ namespace Tour.UI.QLTour
             // btnAdd
             // 
             this.btnAdd.Image = global::Tour.Properties.Resources.plus;
-            this.btnAdd.Location = new System.Drawing.Point(219, 303);
+            this.btnAdd.Location = new System.Drawing.Point(219, 296);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(42, 42);
             this.btnAdd.TabIndex = 40;
@@ -155,7 +155,7 @@ namespace Tour.UI.QLTour
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(566, 350);
+            this.ClientSize = new System.Drawing.Size(566, 345);
             this.Controls.Add(this.comboBox_DiaDiem);
             this.Controls.Add(this.comboBox_LoaiHinh);
             this.Controls.Add(this.txtDD);
@@ -169,6 +169,7 @@ namespace Tour.UI.QLTour
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dataGridView1);
             this.Name = "frmQLTOUR";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tour";
             this.Load += new System.EventHandler(this.frmQLTOUR_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

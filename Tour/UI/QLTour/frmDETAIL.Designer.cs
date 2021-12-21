@@ -156,6 +156,7 @@ namespace Tour.UI.QLTour
             this.Controls.Add(this.txtTenTour);
             this.Controls.Add(this.label1);
             this.Name = "frmDETAIL";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chi Tiet";
             this.Load += new System.EventHandler(this.frmDETAIL_Load);
             this.ResumeLayout(false);

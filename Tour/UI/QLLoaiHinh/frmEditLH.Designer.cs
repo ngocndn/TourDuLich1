@@ -102,6 +102,7 @@ namespace Tour.UI.QLLoaiHinh
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmEditLH";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit LH";
             this.Load += new System.EventHandler(this.frmEditLH_Load);
             this.ResumeLayout(false);

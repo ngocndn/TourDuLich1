@@ -122,6 +122,7 @@ namespace Tour.UI.QLChiPhi
             this.Controls.Add(this.cbbcp);
             this.Controls.Add(this.label1);
             this.Name = "frmEditCP";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin chi phí";
             this.Load += new System.EventHandler(this.frmEditCP_Load);
             this.ResumeLayout(false);

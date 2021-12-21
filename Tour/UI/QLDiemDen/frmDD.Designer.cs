@@ -126,6 +126,7 @@ namespace Tour.UI.QLDiemDen
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView_DiaDiem);
             this.Name = "frmDD";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Điểm Đến";
             this.Load += new System.EventHandler(this.frmDD_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_DiaDiem)).EndInit();

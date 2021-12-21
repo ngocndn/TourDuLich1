@@ -198,6 +198,7 @@ namespace Tour.UI.QLDoan
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
             this.Name = "frmEditDoan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chi tiết đoàn";
             this.Load += new System.EventHandler(this.frmEditDoan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

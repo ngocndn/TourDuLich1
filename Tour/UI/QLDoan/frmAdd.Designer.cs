@@ -70,6 +70,7 @@ namespace Tour.UI.QLDoan
             this.Controls.Add(this.btnPricing);
             this.Controls.Add(this.dataGridView1);
             this.Name = "frmAdd";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAdd";
             this.Load += new System.EventHandler(this.frmAdd_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

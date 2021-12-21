@@ -146,6 +146,7 @@ namespace Tour.UI.QLTour
             this.Controls.Add(this.btnDetail);
             this.Controls.Add(this.dataGridView1);
             this.Name = "frmGia";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhập Giá";
             this.Load += new System.EventHandler(this.frmGia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
