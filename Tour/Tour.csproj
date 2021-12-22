@@ -80,6 +80,9 @@
     <Compile Include="DAO\CHITIET.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAO\CHITIETCHIPHI.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAO\DIADIEM.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -167,6 +170,12 @@
     </Compile>
     <Compile Include="UI\QLDoan\frmEditDoan.Designer.cs">
       <DependentUpon>frmEditDoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\QLDoan\frmPricing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\QLDoan\frmPricing.Designer.cs">
+      <DependentUpon>frmPricing.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\QLDoan\frmQLDoan.cs">
       <SubType>Form</SubType>
@@ -262,6 +271,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\QLDoan\frmEditDoan.resx">
       <DependentUpon>frmEditDoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\QLDoan\frmPricing.resx">
+      <DependentUpon>frmPricing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\QLDoan\frmQLDoan.resx">
       <DependentUpon>frmQLDoan.cs</DependentUpon>

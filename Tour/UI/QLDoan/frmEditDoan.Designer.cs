@@ -48,6 +48,7 @@ namespace Tour.UI.QLDoan
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnPrice = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -228,11 +229,22 @@ namespace Tour.UI.QLDoan
             this.label1.TabIndex = 69;
             this.label1.Text = "Tên Đoàn";
             // 
+            // btnPrice
+            // 
+            this.btnPrice.Image = global::Tour.Properties.Resources.istockphoto_1226810736_170667a1;
+            this.btnPrice.Location = new System.Drawing.Point(713, 97);
+            this.btnPrice.Name = "btnPrice";
+            this.btnPrice.Size = new System.Drawing.Size(42, 42);
+            this.btnPrice.TabIndex = 79;
+            this.btnPrice.UseVisualStyleBackColor = true;
+            this.btnPrice.Click += new System.EventHandler(this.btnPrice_Click);
+            // 
             // frmEditDoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 372);
+            this.Controls.Add(this.btnPrice);
             this.Controls.Add(this.dpk2);
             this.Controls.Add(this.dpk1);
             this.Controls.Add(this.cbbhdv);
@@ -278,5 +290,6 @@ namespace Tour.UI.QLDoan
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.Button btnPrice;
     }
 }

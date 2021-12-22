@@ -21,7 +21,6 @@
             <PropertyRef Name="CHIPHI_ID" />
           </Key>
           <Property Name="CHIPHI_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="LoaiCP_ID" Type="int" Nullable="false" />
           <Property Name="TenCP" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="ThanhTien" Type="float" Nullable="false" />
         </EntityType>
@@ -33,6 +32,15 @@
           <Property Name="MaTour" Type="int" />
           <Property Name="MaDiaDiem" Type="int" />
           <Property Name="thutu" Type="int" />
+        </EntityType>
+        <EntityType Name="CHITIETCHIPHI">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="MaDOANDL" Type="int" Nullable="false" />
+          <Property Name="ChiPhi_ID" Type="int" Nullable="false" />
+          <Property Name="TongCong" Type="float" Nullable="false" />
         </EntityType>
         <EntityType Name="DIADIEM">
           <Key>
@@ -117,6 +125,7 @@
           <EntitySet Name="BOOKING" EntityType="Self.BOOKING" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CHIPHI" EntityType="Self.CHIPHI" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CHITIET" EntityType="Self.CHITIET" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CHITIETCHIPHI" EntityType="Self.CHITIETCHIPHI" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DIADIEM" EntityType="Self.DIADIEM" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DOANDL" EntityType="Self.DOANDL" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GIATOUR" EntityType="Self.GIATOUR" Schema="dbo" store:Type="Tables" />
@@ -134,6 +143,7 @@
           <EntitySet Name="BOOKINGs" EntityType="QuanlyTour2Model.BOOKING" />
           <EntitySet Name="CHIPHIs" EntityType="QuanlyTour2Model.CHIPHI" />
           <EntitySet Name="CHITIETs" EntityType="QuanlyTour2Model.CHITIET" />
+          <EntitySet Name="CHITIETCHIPHIs" EntityType="QuanlyTour2Model.CHITIETCHIPHI" />
           <EntitySet Name="DIADIEMs" EntityType="QuanlyTour2Model.DIADIEM" />
           <EntitySet Name="DOANDLs" EntityType="QuanlyTour2Model.DOANDL" />
           <EntitySet Name="GIATOURs" EntityType="QuanlyTour2Model.GIATOUR" />
@@ -159,7 +169,6 @@
             <PropertyRef Name="CHIPHI_ID" />
           </Key>
           <Property Name="CHIPHI_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="LoaiCP_ID" Type="Int32" Nullable="false" />
           <Property Name="TenCP" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ThanhTien" Type="Double" Nullable="false" />
         </EntityType>
@@ -171,6 +180,15 @@
           <Property Name="MaTour" Type="Int32" />
           <Property Name="MaDiaDiem" Type="Int32" />
           <Property Name="thutu" Type="Int32" />
+        </EntityType>
+        <EntityType Name="CHITIETCHIPHI">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="MaDOANDL" Type="Int32" Nullable="false" />
+          <Property Name="ChiPhi_ID" Type="Int32" Nullable="false" />
+          <Property Name="TongCong" Type="Double" Nullable="false" />
         </EntityType>
         <EntityType Name="DIADIEM">
           <Key>
@@ -274,7 +292,6 @@
               <MappingFragment StoreEntitySet="CHIPHI">
                 <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
                 <ScalarProperty Name="TenCP" ColumnName="TenCP" />
-                <ScalarProperty Name="LoaiCP_ID" ColumnName="LoaiCP_ID" />
                 <ScalarProperty Name="CHIPHI_ID" ColumnName="CHIPHI_ID" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -286,6 +303,16 @@
                 <ScalarProperty Name="MaDiaDiem" ColumnName="MaDiaDiem" />
                 <ScalarProperty Name="MaTour" ColumnName="MaTour" />
                 <ScalarProperty Name="IDCHITIET" ColumnName="IDCHITIET" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CHITIETCHIPHIs">
+            <EntityTypeMapping TypeName="QuanlyTour2Model.CHITIETCHIPHI">
+              <MappingFragment StoreEntitySet="CHITIETCHIPHI">
+                <ScalarProperty Name="TongCong" ColumnName="TongCong" />
+                <ScalarProperty Name="ChiPhi_ID" ColumnName="ChiPhi_ID" />
+                <ScalarProperty Name="MaDOANDL" ColumnName="MaDOANDL" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

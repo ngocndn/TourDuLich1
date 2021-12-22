@@ -16,18 +16,14 @@ namespace Tour.UI.QLChiPhi
         public frmChiPhi()
         {
             InitializeComponent();
-            Loadcbb();Loadcp();
+Loadcp();
         }
         public void Loadcp()
         {
             dataGridView1.DataSource = cb.GetAll();
             dataGridView1.AutoGenerateColumns = false;
         }
-        public void Loadcbb()
-        {
-            cbbcp.DataSource = cb.GetAllCP();
-            cbbcp.DisplayMember = "TenLoaiCP";
-        }
+
         private void Clear()
         {
             txtGia.Text = txtTencp.Text = " ";
@@ -59,13 +55,6 @@ namespace Tour.UI.QLChiPhi
                 CHIPHI c = new CHIPHI();
                 c.TenCP = txtTencp.Text;
                 c.ThanhTien = float.Parse(txtGia.Text);
-                foreach (var item in lcb)
-                {
-                    if (item.TenLoaiCP.Equals(cbbcp.Text))
-                    {
-                        c.LoaiCP_ID = item.LoaiCP_ID;
-                    }
-                }
                 try
                 {
                     if (cb.Add(c))

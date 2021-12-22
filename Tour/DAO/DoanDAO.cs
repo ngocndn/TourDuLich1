@@ -22,21 +22,6 @@ namespace Tour.DAO
                 return getAllTour.ToList<DOANDL>();
             }
         }
-
-        public List<CHIPHI> GetChiPhiKS()
-        {
-            {
-                var getList = tour.CHIPHIs.Where(t => t.LoaiCP_ID == 1);
-                return getList.ToList<CHIPHI>();
-            }
-        }
-        public List<CHIPHI> GetChiPhiDC()
-        {
-            {
-                var getList = tour.CHIPHIs.Where(t => t.LoaiCP_ID == 2);
-                return getList.ToList<CHIPHI>();
-            }
-        }
         public List<dynamic> getListDoan()
         {
             {

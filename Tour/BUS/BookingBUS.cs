@@ -22,6 +22,10 @@ namespace Tour.BUS
         {
             return bd.GetDetail(id);
         }
+        public List<dynamic> GetGiaByTour(int TourID)
+        {
+            return bd.GetGiaByTour(TourID);
+        }
         public bool Add(BOOKING B)
         {
             return bd.Book(B);

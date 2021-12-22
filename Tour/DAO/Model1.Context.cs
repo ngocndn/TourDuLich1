@@ -38,6 +38,8 @@ public partial class TourENT : DbContext
 
     public virtual DbSet<CHITIET> CHITIETs { get; set; }
 
+    public virtual DbSet<CHITIETCHIPHI> CHITIETCHIPHIs { get; set; }
+
     public virtual DbSet<DIADIEM> DIADIEMs { get; set; }
 
     public virtual DbSet<DOANDL> DOANDLs { get; set; }

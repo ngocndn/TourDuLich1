@@ -20,6 +20,10 @@ namespace Tour.BUS
         {
             return gd.GetGiaTourWithMaTour(TourID);
         }
+        public List<dynamic> GetGiaByMa(int TourID)
+        {
+            return gd.GetGiaTourByMaTour(TourID);
+        }
 
         public bool ThemGiaTour(GIATOUR G)
         {

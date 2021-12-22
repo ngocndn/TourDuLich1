@@ -32,10 +32,10 @@ namespace Tour.DAO
             using (tour = new TourENT())
             {
                 var getListNhanVien = (from tbChiPhi in tour.CHIPHIs
-                                       join tbLoai in tour.LOAICHIPHIs on tbChiPhi.LoaiCP_ID equals tbLoai.LoaiCP_ID
+                                       
                                        select new
                                        {
-                                           TenCP = tbChiPhi.TenCP , Loai = tbLoai.TenLoaiCP, TongTien = tbChiPhi.ThanhTien
+                                           TenCP = tbChiPhi.TenCP , TongTien = tbChiPhi.ThanhTien
                                           
                                        });
 
@@ -49,11 +49,10 @@ namespace Tour.DAO
         {
             using (tour = new TourENT())
             {
-                var getListNhanVien = (from tbcp in tour.CHIPHIs join tbLoai in tour.LOAICHIPHIs on tbcp.LoaiCP_ID equals tbLoai.LoaiCP_ID
+                var getListNhanVien = (from tbcp in tour.CHIPHIs 
                                        select new
                                        {
                                            TenCP = tbcp.TenCP,
-                                           Loai = tbLoai.TenLoaiCP,
                                            TongTien = tbcp.ThanhTien
                                        }).Where(t => t.TenCP.Contains(searchValue));
 
@@ -67,13 +66,12 @@ namespace Tour.DAO
         {
             using (tour = new TourENT())
             {
-                var getListDetailsNhanVien = (from tbChiPhi in tour.CHIPHIs join tbLoai in tour.LOAICHIPHIs on tbChiPhi.LoaiCP_ID equals tbLoai.LoaiCP_ID
+                var getListDetailsNhanVien = (from tbChiPhi in tour.CHIPHIs 
                                               where tbChiPhi.CHIPHI_ID == CP_ID
                                               select new
                                               {
                                                   MaCP = tbChiPhi.CHIPHI_ID,
                                                   TenCP = tbChiPhi.TenCP,
-                                                  Loai = tbLoai.TenLoaiCP,
                                                   TongTien = tbChiPhi.ThanhTien
                                               });
 
@@ -127,7 +125,6 @@ namespace Tour.DAO
                 {
                     CHIPHI CP = tour.CHIPHIs.Where(t => t.CHIPHI_ID == cp_id).SingleOrDefault();
                     CP.TenCP = cp.TenCP;
-                    CP.LoaiCP_ID = cp.LoaiCP_ID;
                     CP.ThanhTien = cp.ThanhTien;
 
                     tour.SaveChanges();

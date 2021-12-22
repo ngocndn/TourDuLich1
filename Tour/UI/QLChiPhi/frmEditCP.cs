@@ -70,13 +70,7 @@ namespace Tour.UI.QLChiPhi
                 CHIPHI cp = new CHIPHI();
                 cp.TenCP = txtTencp.Text;
                 cp.ThanhTien = float.Parse(txtGia.Text);
-                foreach (var item in lcb)
-                {
-                    if (item.TenLoaiCP.Equals(cbbcp.Text))
-                    {
-                        cp.LoaiCP_ID = item.LoaiCP_ID;
-                    }
-                }
+               
                 //Bắt đầu sửa các dữ liệu
                 try
                 {

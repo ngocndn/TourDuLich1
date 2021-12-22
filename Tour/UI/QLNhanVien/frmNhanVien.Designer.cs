@@ -38,11 +38,12 @@ namespace Tour.UI.QLNhanVien
             this.txtTenNV = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dp_NSNV = new System.Windows.Forms.DateTimePicker();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dp_NSNV = new System.Windows.Forms.DateTimePicker();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -129,19 +130,12 @@ namespace Tour.UI.QLNhanVien
             this.Column2,
             this.Column3,
             this.Column4});
-            this.dataGridView1.Location = new System.Drawing.Point(295, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(295, 38);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(488, 375);
+            this.dataGridView1.Size = new System.Drawing.Size(488, 349);
             this.dataGridView1.TabIndex = 19;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // dp_NSNV
-            // 
-            this.dp_NSNV.Location = new System.Drawing.Point(97, 110);
-            this.dp_NSNV.Name = "dp_NSNV";
-            this.dp_NSNV.Size = new System.Drawing.Size(192, 20);
-            this.dp_NSNV.TabIndex = 31;
             // 
             // Column1
             // 
@@ -167,11 +161,29 @@ namespace Tour.UI.QLNhanVien
             this.Column4.HeaderText = "Số Điện Thoại";
             this.Column4.Name = "Column4";
             // 
+            // dp_NSNV
+            // 
+            this.dp_NSNV.Location = new System.Drawing.Point(97, 110);
+            this.dp_NSNV.Name = "dp_NSNV";
+            this.dp_NSNV.Size = new System.Drawing.Size(192, 20);
+            this.dp_NSNV.TabIndex = 31;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(462, 9);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(182, 16);
+            this.label10.TabIndex = 70;
+            this.label10.Text = "DANH SÁCH NHÂN VIÊN";
+            // 
             // frmNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 396);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.dp_NSNV);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnDetail);
@@ -208,5 +220,6 @@ namespace Tour.UI.QLNhanVien
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.Label label10;
     }
 }

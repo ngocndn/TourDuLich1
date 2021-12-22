@@ -34,12 +34,13 @@ namespace Tour.UI.QLLoaiHinh
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView_LoaiHinh = new System.Windows.Forms.DataGridView();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnDetail = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnDetail = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_LoaiHinh)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,11 +87,35 @@ namespace Tour.UI.QLLoaiHinh
             this.Column1,
             this.Column2,
             this.Column3});
-            this.dataGridView_LoaiHinh.Location = new System.Drawing.Point(276, 12);
+            this.dataGridView_LoaiHinh.Location = new System.Drawing.Point(276, 32);
             this.dataGridView_LoaiHinh.Name = "dataGridView_LoaiHinh";
             this.dataGridView_LoaiHinh.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_LoaiHinh.Size = new System.Drawing.Size(519, 426);
+            this.dataGridView_LoaiHinh.Size = new System.Drawing.Size(519, 406);
             this.dataGridView_LoaiHinh.TabIndex = 8;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "MaLoaiHinh";
+            this.Column1.HeaderText = "Mã Loại Hình";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "TenLoaiHinh";
+            this.Column2.HeaderText = "Tên Loại Hình";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "LH_MoTa";
+            this.Column3.HeaderText = "Mô Tả";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // btnDelete
             // 
@@ -122,35 +147,22 @@ namespace Tour.UI.QLLoaiHinh
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // Column1
+            // label10
             // 
-            this.Column1.DataPropertyName = "MaLoaiHinh";
-            this.Column1.HeaderText = "Mã Loại Hình";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "TenLoaiHinh";
-            this.Column2.HeaderText = "Tên Loại Hình";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "LH_MoTa";
-            this.Column3.HeaderText = "Mô Tả";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(464, 9);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(174, 16);
+            this.label10.TabIndex = 70;
+            this.label10.Text = "DANH SÁCH LOẠI HÌNH";
             // 
             // frmQLLoaiHinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnDetail);
             this.Controls.Add(this.btnAdd);
@@ -182,5 +194,6 @@ namespace Tour.UI.QLLoaiHinh
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.Label label10;
     }
 }

@@ -79,10 +79,12 @@ namespace Tour.UI.QLDoan
             List<DOANDL> listD = db.getall();
             List<TOURDULICH> listT = tb.GetAllTour();
             List<NHANVIEN> listN = nvb.GetAll();
+            List<BOOKING> listB = bb.GetAll();
             if (Checked() == true)
             {
                 TOURDULICH T = new TOURDULICH();
                 DOANDL D = new DOANDL();
+                BOOKING B = new BOOKING();
                 D.TenDoan = txtTenDoan.Text;
                 D.NgayKhoiHanh = DateTime.Parse(dpk1.Value.Date.ToString("yyyy-MM-dd hh:mm:ss.ss"));
                 D.NgayKetThuc = DateTime.Parse(dpk2.Value.Date.ToString("yyyy-MM-dd hh:mm:ss.ss"));
@@ -95,6 +97,7 @@ namespace Tour.UI.QLDoan
                         D.MaTour = item.MaTour;
                     }
                 }
+
                 foreach (var item in listN)
                 {
                     if (item.TenNV.Equals(cbbhdv.Text))
@@ -160,6 +163,12 @@ namespace Tour.UI.QLDoan
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnPrice_Click(object sender, EventArgs e)
+        {
+            frmPricing fP = new frmPricing(Doanid, Tourid, this);
+            fP.ShowDialog();
         }
     }
 }

@@ -52,7 +52,20 @@ namespace Tour.DAO
                 return getlist.ToList<dynamic>();
             }
         }
-
+        public List<dynamic> GetGiaByTour(int TourID)
+        {
+            using (tour = new TourENT())
+            {
+                var getPrice = (from tbTour in tour.TOURDULICHes
+                                join tbGia in tour.GIATOURs on tbTour.IDGiaTour equals tbGia.IDGIATOUR
+                                where tbTour.MaTour == TourID
+                                select new
+                                {
+                                    MaTour = tbTour.MaTour,GiaTour = tbGia.ThanhTien
+                                });
+                return getPrice.ToList<dynamic>();
+            }
+        }
         public bool Book(BOOKING B)
         {
             using (tour = new TourENT())

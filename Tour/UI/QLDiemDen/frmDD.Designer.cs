@@ -40,6 +40,7 @@ namespace Tour.UI.QLDiemDen
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnDetail = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_DiaDiem)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,10 +87,10 @@ namespace Tour.UI.QLDiemDen
             this.Column1,
             this.Column2,
             this.Column3});
-            this.dataGridView_DiaDiem.Location = new System.Drawing.Point(276, 12);
+            this.dataGridView_DiaDiem.Location = new System.Drawing.Point(276, 30);
             this.dataGridView_DiaDiem.Name = "dataGridView_DiaDiem";
             this.dataGridView_DiaDiem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_DiaDiem.Size = new System.Drawing.Size(519, 426);
+            this.dataGridView_DiaDiem.Size = new System.Drawing.Size(519, 408);
             this.dataGridView_DiaDiem.TabIndex = 16;
             // 
             // Column1
@@ -146,11 +147,22 @@ namespace Tour.UI.QLDiemDen
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(464, 9);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(164, 16);
+            this.label10.TabIndex = 70;
+            this.label10.Text = "DANH SÁCH ĐỊA ĐIỂM";
+            // 
             // frmDD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnDetail);
             this.Controls.Add(this.btnAdd);
@@ -182,5 +194,6 @@ namespace Tour.UI.QLDiemDen
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.Label label10;
     }
 }

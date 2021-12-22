@@ -47,5 +47,6 @@ namespace Tour.BUS
         {
             return TD.SuaGiaTour(T, T_ID);
         }
+
     }
 }

@@ -15,14 +15,16 @@ namespace Tour.DAO
 using System;
     using System.Collections.Generic;
     
-public partial class CHIPHI
+public partial class CHITIETCHIPHI
 {
 
-    public int CHIPHI_ID { get; set; }
+    public int id { get; set; }
 
-    public string TenCP { get; set; }
+    public int MaDOANDL { get; set; }
 
-    public double ThanhTien { get; set; }
+    public int ChiPhi_ID { get; set; }
+
+    public double TongCong { get; set; }
 
 }
 
