@@ -42,41 +42,44 @@ namespace Tour.UI.QLNhanVien
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 52);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 50);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 13);
+            this.label1.Size = new System.Drawing.Size(101, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "Tên Nhân Viên";
             // 
             // txtTenNV
             // 
-            this.txtTenNV.Location = new System.Drawing.Point(102, 49);
+            this.txtTenNV.Location = new System.Drawing.Point(116, 49);
             this.txtTenNV.Name = "txtTenNV";
-            this.txtTenNV.Size = new System.Drawing.Size(200, 20);
+            this.txtTenNV.Size = new System.Drawing.Size(186, 20);
             this.txtTenNV.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 110);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 108);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 13);
+            this.label2.Size = new System.Drawing.Size(72, 15);
             this.label2.TabIndex = 3;
             this.label2.Text = "Ngày Sinh";
             // 
             // txtSDT
             // 
-            this.txtSDT.Location = new System.Drawing.Point(102, 170);
+            this.txtSDT.Location = new System.Drawing.Point(116, 170);
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(200, 20);
+            this.txtSDT.Size = new System.Drawing.Size(186, 20);
             this.txtSDT.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 173);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(12, 170);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 13);
+            this.label3.Size = new System.Drawing.Size(34, 15);
             this.label3.TabIndex = 5;
             this.label3.Text = "SĐT";
             // 
@@ -102,9 +105,9 @@ namespace Tour.UI.QLNhanVien
             // 
             // dp_NSNV
             // 
-            this.dp_NSNV.Location = new System.Drawing.Point(102, 104);
+            this.dp_NSNV.Location = new System.Drawing.Point(116, 104);
             this.dp_NSNV.Name = "dp_NSNV";
-            this.dp_NSNV.Size = new System.Drawing.Size(200, 20);
+            this.dp_NSNV.Size = new System.Drawing.Size(186, 20);
             this.dp_NSNV.TabIndex = 23;
             // 
             // frmEditNV

@@ -39,7 +39,7 @@ namespace Tour.UI.QLLoaiHinh
             // 
             // txtDD
             // 
-            this.txtDD.Location = new System.Drawing.Point(88, 67);
+            this.txtDD.Location = new System.Drawing.Point(107, 67);
             this.txtDD.Multiline = true;
             this.txtDD.Name = "txtDD";
             this.txtDD.Size = new System.Drawing.Size(184, 53);
@@ -47,7 +47,7 @@ namespace Tour.UI.QLLoaiHinh
             // 
             // txtTenLH
             // 
-            this.txtTenLH.Location = new System.Drawing.Point(88, 11);
+            this.txtTenLH.Location = new System.Drawing.Point(107, 9);
             this.txtTenLH.Name = "txtTenLH";
             this.txtTenLH.Size = new System.Drawing.Size(184, 20);
             this.txtTenLH.TabIndex = 17;
@@ -55,18 +55,20 @@ namespace Tour.UI.QLLoaiHinh
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(8, 70);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 13);
+            this.label2.Size = new System.Drawing.Size(70, 15);
             this.label2.TabIndex = 16;
             this.label2.Text = "Đặc Điểm";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(8, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 13);
+            this.label1.Size = new System.Drawing.Size(97, 15);
             this.label1.TabIndex = 15;
             this.label1.Text = "Tên Loại Hình";
             // 
@@ -94,7 +96,7 @@ namespace Tour.UI.QLLoaiHinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(289, 179);
+            this.ClientSize = new System.Drawing.Size(298, 179);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtDD);
@@ -103,7 +105,7 @@ namespace Tour.UI.QLLoaiHinh
             this.Controls.Add(this.label1);
             this.Name = "frmEditLH";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Edit LH";
+            this.Text = "Chi Tiết Loại Hình";
             this.Load += new System.EventHandler(this.frmEditLH_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

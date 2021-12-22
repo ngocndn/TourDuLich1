@@ -53,9 +53,9 @@ namespace Tour.UI.QLTour
             // comboBox_LoaiHinh
             // 
             this.comboBox_LoaiHinh.FormattingEnabled = true;
-            this.comboBox_LoaiHinh.Location = new System.Drawing.Point(84, 49);
+            this.comboBox_LoaiHinh.Location = new System.Drawing.Point(117, 49);
             this.comboBox_LoaiHinh.Name = "comboBox_LoaiHinh";
-            this.comboBox_LoaiHinh.Size = new System.Drawing.Size(167, 21);
+            this.comboBox_LoaiHinh.Size = new System.Drawing.Size(134, 21);
             this.comboBox_LoaiHinh.TabIndex = 59;
             // 
             // txtDD
@@ -69,27 +69,30 @@ namespace Tour.UI.QLTour
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(336, 14);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 13);
+            this.label5.Size = new System.Drawing.Size(70, 15);
             this.label5.TabIndex = 57;
             this.label5.Text = "Đặc Điểm";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(11, 94);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 13);
+            this.label3.Size = new System.Drawing.Size(71, 15);
             this.label3.TabIndex = 54;
             this.label3.Text = "Điểm Đến";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(11, 52);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 13);
+            this.label2.Size = new System.Drawing.Size(100, 15);
             this.label2.TabIndex = 53;
             this.label2.Text = "Loại hình Tour";
             // 
@@ -103,9 +106,10 @@ namespace Tour.UI.QLTour
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(11, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 13);
+            this.label1.Size = new System.Drawing.Size(64, 15);
             this.label1.TabIndex = 51;
             this.label1.Text = "Tên Tour";
             // 

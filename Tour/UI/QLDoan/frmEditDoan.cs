@@ -109,13 +109,20 @@ namespace Tour.UI.QLDoan
                         System.Diagnostics.Debug.WriteLine("Success");
                         frmMain.LoadDanhSachDoan();
                         MessageBox.Show("Success");
-                    }
+                    } else
+                    {
+                        MessageBox.Show("Failed");
+                    }    
                 }
                 catch (Exception e)
                 {
                     MessageBox.Show("Failed!");
                     System.Diagnostics.Debug.WriteLine(e);
                 }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng kiểm tra lại thông tin");
             }
         }
        
@@ -143,6 +150,16 @@ namespace Tour.UI.QLDoan
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
            
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -109,6 +109,7 @@ namespace Tour.DAO
                     d.MaTour = D.MaTour;
                     d.NgayKhoiHanh = D.NgayKhoiHanh;
                     d.NgayKetThuc = D.NgayKetThuc;
+                    d.MaNV = D.MaNV;
                     tour.SaveChanges();
                     return true;
 

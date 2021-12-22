@@ -39,31 +39,38 @@ namespace Tour.UI.QLTour
             this.txtMaTour = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(11, 31);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 13);
+            this.label2.Size = new System.Drawing.Size(60, 15);
             this.label2.TabIndex = 57;
-            this.label2.Text = "Tên Tour";
+            this.label2.Text = "Mã Tour";
             // 
             // txtGia
             // 
-            this.txtGia.Location = new System.Drawing.Point(84, 71);
+            this.txtGia.Location = new System.Drawing.Point(103, 71);
             this.txtGia.Name = "txtGia";
-            this.txtGia.Size = new System.Drawing.Size(187, 20);
+            this.txtGia.Size = new System.Drawing.Size(168, 20);
             this.txtGia.TabIndex = 55;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(11, 74);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(23, 13);
+            this.label1.Size = new System.Drawing.Size(29, 15);
             this.label1.TabIndex = 54;
             this.label1.Text = "Giá";
             // 
@@ -71,8 +78,15 @@ namespace Tour.UI.QLTour
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column5,
+            this.Column3,
+            this.Column4});
             this.dataGridView1.Location = new System.Drawing.Point(277, 12);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(511, 200);
             this.dataGridView1.TabIndex = 50;
             // 
@@ -108,27 +122,59 @@ namespace Tour.UI.QLTour
             // 
             // txtMaTour
             // 
-            this.txtMaTour.Location = new System.Drawing.Point(84, 28);
+            this.txtMaTour.Location = new System.Drawing.Point(103, 28);
             this.txtMaTour.Name = "txtMaTour";
-            this.txtMaTour.Size = new System.Drawing.Size(187, 20);
+            this.txtMaTour.ReadOnly = true;
+            this.txtMaTour.Size = new System.Drawing.Size(168, 20);
             this.txtMaTour.TabIndex = 59;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(4, 116);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(11, 116);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 13);
+            this.label3.Size = new System.Drawing.Size(93, 15);
             this.label3.TabIndex = 60;
             this.label3.Text = "Ngày kết thúc";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(84, 110);
+            this.dateTimePicker1.Location = new System.Drawing.Point(103, 116);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(187, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(168, 20);
             this.dateTimePicker1.TabIndex = 61;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "IDGIATOUR";
+            this.Column1.HeaderText = "Mã Giá";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "MaTour";
+            this.Column2.HeaderText = "Mã Tour";
+            this.Column2.Name = "Column2";
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "ThanhTien";
+            this.Column5.HeaderText = "Thành Tiền";
+            this.Column5.Name = "Column5";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "TGBatDau";
+            this.Column3.HeaderText = "Thời Gian Bắt Đầu";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "TGKetThuc";
+            this.Column4.HeaderText = "Thời Gian Kết Thúc";
+            this.Column4.Name = "Column4";
             // 
             // frmGia
             // 
@@ -167,5 +213,10 @@ namespace Tour.UI.QLTour
         private System.Windows.Forms.TextBox txtMaTour;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }
