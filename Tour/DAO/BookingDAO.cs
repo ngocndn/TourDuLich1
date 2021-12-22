@@ -41,7 +41,7 @@ namespace Tour.DAO
                               join tbKhachHang in tour.KHACHHANGs on tbBooking.MaKH equals tbKhachHang.MaKH
                               join tbTour in tour.TOURDULICHes on tbBooking.MaTour equals tbTour.MaTour
                               join tbDoan in tour.DOANDLs on tbBooking.MaDOANDL equals tbDoan.MaDOANDL
-                               where tbBooking.id == id
+                               where tbBooking.MaDOANDL == id
                                select new
                               {
                                   id = tbBooking.id,

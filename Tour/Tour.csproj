@@ -60,6 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\BookingBUS.cs" />
     <Compile Include="BUS\ChiPhiBUS.cs" />
     <Compile Include="BUS\DiaDiemBUS.cs" />
     <Compile Include="BUS\DoanBUS.cs" />

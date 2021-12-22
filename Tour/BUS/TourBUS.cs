@@ -14,6 +14,11 @@ namespace Tour.BUS
         {
             return TD.GetAllTour();
         }
+        public List<TOURDULICH> Get1Tour(int T_ID)
+        {
+            return TD.GetOneTour(T_ID);
+        }
+
 
         public List<dynamic> GetTourList()
         {

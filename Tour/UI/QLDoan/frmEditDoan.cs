@@ -13,21 +13,25 @@ namespace Tour.UI.QLDoan
 {
     public partial class frmEditDoan : Form
     {
+        BookingBUS bb = new BookingBUS();
         DoanBUS db = new DoanBUS();
         TourBUS tb = new TourBUS();
         ChiPhiBUS cb = new ChiPhiBUS();
         DoanDAO dd = new DoanDAO();
         NhanVienBUS nvb = new NhanVienBUS();
-        public frmEditDoan(int DoanID, frmQLDoan Q)
+        public frmEditDoan(int DoanID,int TourID, frmQLDoan Q)
         {
             InitializeComponent();
             this.Doanid = DoanID;
+            this.Tourid = TourID;
             frmMain = Q;
             LoadCBHDV();
             LoadCBTour();
             LoadDoan();
+            LoadDSKH();
         }
         private int Doanid { get; set; }
+        private int Tourid { get; set; }
         private frmQLDoan frmMain;
         public void LoadCBTour()
         {
@@ -38,6 +42,17 @@ namespace Tour.UI.QLDoan
         {
             cbbhdv.DataSource = nvb.GetAll();
             cbbhdv.DisplayMember = "TenNV";
+        }
+        public void LoadBooking()
+        {
+            dataGridView1.DataSource = bb.GetAll();
+            dataGridView1.AutoGenerateColumns = false;
+        }
+        public void LoadDSKH()
+        {
+            dataGridView1.DataSource = bb.GetDetail(Doanid);
+            dataGridView1.AutoGenerateColumns = false;
+
         }
         public void LoadDoan()
         {
@@ -103,9 +118,11 @@ namespace Tour.UI.QLDoan
                 }
             }
         }
+       
         private void btnPricing_Click(object sender, EventArgs e)
         {
-
+            frmAdd fA = new frmAdd(Doanid,Tourid, this);
+            fA.ShowDialog();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -119,6 +136,11 @@ namespace Tour.UI.QLDoan
         }
 
         private void frmEditDoan_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

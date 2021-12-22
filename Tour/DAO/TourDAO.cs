@@ -18,6 +18,14 @@ namespace Tour.DAO
                 return getAllTour.ToList<TOURDULICH>();
             }
         }
+        public List<TOURDULICH> GetOneTour(int TourID)
+        {
+            using (tour = new TourENT())
+            {
+                var getAllTour = tour.TOURDULICHes.Where(t => t.MaTour == TourID);
+                return getAllTour.ToList<TOURDULICH>();
+            }
+        }
 
         public List<dynamic> GetListTour()
         {

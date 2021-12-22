@@ -133,8 +133,9 @@ namespace Tour.UI.QLDoan
             foreach (DataGridViewRow row in dataGridView1.SelectedRows)
             {
                 String DoanID = row.Cells[0].Value.ToString();
+                String TourID = row.Cells[4].Value.ToString();
 
-                frmEditDoan fE = new frmEditDoan(int.Parse(DoanID), this);
+                frmEditDoan fE = new frmEditDoan(int.Parse(DoanID), int.Parse(TourID) , this);
                 fE.ShowDialog();
 
             }
