@@ -41,6 +41,7 @@ namespace Tour.UI.QLTour
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnDetail = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,7 +116,7 @@ namespace Tour.UI.QLTour
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(4, 119);
+            this.dataGridView1.Location = new System.Drawing.Point(4, 154);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(557, 165);
             this.dataGridView1.TabIndex = 39;
@@ -124,7 +125,7 @@ namespace Tour.UI.QLTour
             // btnDelete
             // 
             this.btnDelete.Image = global::Tour.Properties.Resources.delete__2_;
-            this.btnDelete.Location = new System.Drawing.Point(315, 296);
+            this.btnDelete.Location = new System.Drawing.Point(315, 331);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(42, 42);
             this.btnDelete.TabIndex = 42;
@@ -134,7 +135,7 @@ namespace Tour.UI.QLTour
             // btnDetail
             // 
             this.btnDetail.Image = global::Tour.Properties.Resources.edit__1_;
-            this.btnDetail.Location = new System.Drawing.Point(267, 296);
+            this.btnDetail.Location = new System.Drawing.Point(267, 331);
             this.btnDetail.Name = "btnDetail";
             this.btnDetail.Size = new System.Drawing.Size(42, 42);
             this.btnDetail.TabIndex = 41;
@@ -144,18 +145,29 @@ namespace Tour.UI.QLTour
             // btnAdd
             // 
             this.btnAdd.Image = global::Tour.Properties.Resources.plus;
-            this.btnAdd.Location = new System.Drawing.Point(219, 296);
+            this.btnAdd.Location = new System.Drawing.Point(219, 331);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(42, 42);
             this.btnAdd.TabIndex = 40;
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(216, 135);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(143, 16);
+            this.label10.TabIndex = 69;
+            this.label10.Text = "DANH SÁCH TOUR";
+            // 
             // frmQLTOUR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(566, 345);
+            this.ClientSize = new System.Drawing.Size(566, 380);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.comboBox_DiaDiem);
             this.Controls.Add(this.comboBox_LoaiHinh);
             this.Controls.Add(this.txtDD);
@@ -192,5 +204,6 @@ namespace Tour.UI.QLTour
         private System.Windows.Forms.Button btnDetail;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label10;
     }
 }
