@@ -52,5 +52,9 @@ namespace Tour.BUS
         {
             return DD.GetDDetail(DoanID);
         }
+        public bool AddKH(DOANDL D, int DoanID)
+        {
+          return  DD.AddKH(D, DoanID);
+        }
     }
 }

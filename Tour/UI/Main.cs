@@ -14,6 +14,7 @@ using Tour.UI.QLNhanVien;
 using Tour.UI.QLTour;
 using Tour.UI.QLDoan;
 using Tour.UI.QLChiPhi;
+using Tour.UI.ThongKe;
 
 
 namespace Tour.UI
@@ -71,6 +72,12 @@ namespace Tour.UI
         {
             frmQLDoan fd = new frmQLDoan();
             fd.ShowDialog();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            frmThongKe fT = new frmThongKe();
+            fT.ShowDialog();
         }
     }
 }

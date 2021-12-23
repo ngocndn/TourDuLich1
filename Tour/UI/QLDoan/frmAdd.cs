@@ -18,6 +18,7 @@ namespace Tour.UI.QLDoan
         TourBUS tb = new TourBUS();
         BookingBUS bb = new BookingBUS();
         GiaBUS gb = new GiaBUS();
+        DoanBUS db = new DoanBUS();
         public frmAdd(int DoanID,int TourID,frmEditDoan frmMain)
         {
             InitializeComponent();
@@ -62,12 +63,17 @@ namespace Tour.UI.QLDoan
                 B.GiaTour = 0;
                 if(bb.Add(B))
                 {
-                    fMain.Show();
-                    LoadHK();
-                    fMain.LoadDSKH();
-                    fMain.OnRowNumberChanged();
-                    MessageBox.Show("Success", "Notify");
-                }
+                    if (db.AddKH(D, did))
+                    {
+                        MessageBox.Show("Success");
+                    }
+                        fMain.Show();
+                        LoadHK();
+                        fMain.LoadDSKH();
+                        fMain.OnRowNumberChanged();
+                        MessageBox.Show("Success", "Notify");
+                    
+                    }
                 else
                 {
                     MessageBox.Show("Failed");

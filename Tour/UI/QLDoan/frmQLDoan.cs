@@ -87,7 +87,7 @@ namespace Tour.UI.QLDoan
                 D.TenDoan = txtTenDoan.Text;
                 D.NgayKhoiHanh = DateTime.Parse(dpk1.Value.Date.ToString("yyyy-MM-dd hh:mm:ss.ss"));
                 D.NgayKetThuc = DateTime.Parse(dpk2.Value.Date.ToString("yyyy-MM-dd hh:mm:ss.ss"));
-
+                D.Soluong = 0;
 
                 foreach (var item in listT)
                 {
