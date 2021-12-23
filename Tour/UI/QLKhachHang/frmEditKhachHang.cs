@@ -41,6 +41,10 @@ namespace Tour.UI.QLKhachHang
             txtEmail.Text = dataTableDetailsKhachHang.Rows[0][6].ToString();
             txtCMND.Text = dataTableDetailsKhachHang.Rows[0][7].ToString();
         }
+        public void Clear()
+        {
+            txtTenKH.Text = txtSDT.Text = txtEmail.Text = txtDiaChi.Text = txtCMND.Text = "";
+        }
         private bool Checked()
         {
             if (String.IsNullOrEmpty(txtTenKH.Text))
@@ -101,6 +105,7 @@ namespace Tour.UI.QLKhachHang
                     if (khb.SuaKhachHang(KH, KH_ID))
                     {
                         Main.LoadKH();
+                        Clear();
                         MessageBox.Show("Success", "Notify");
 
                     }

@@ -41,7 +41,10 @@ namespace Tour.UI.QLDoan
             cbbhdv.DataSource = nvb.GetAll();
             cbbhdv.DisplayMember = "TenNV";
         }
-
+        public void Clear()
+        {
+            txtTenDoan.Text = "";
+        }
 
         private bool Checked()
         {
@@ -107,7 +110,9 @@ namespace Tour.UI.QLDoan
                 {
                     if (db.Add(D))
                     {
+
                         System.Diagnostics.Debug.WriteLine("Success");
+                        Clear();
                         MessageBox.Show("Them thanh cong","Thong bao");
                         LoadDanhSachDoan();
                     }

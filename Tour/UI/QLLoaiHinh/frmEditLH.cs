@@ -77,6 +77,7 @@ namespace Tour.UI.QLLoaiHinh
                     {
                         System.Diagnostics.Debug.WriteLine("Success");
                         Main.LoadLH();
+                        Clear();
                         MessageBox.Show("Success");
                     }
 
@@ -88,7 +89,10 @@ namespace Tour.UI.QLLoaiHinh
                 }
             }
         }
-
+        public void Clear()
+        {
+            txtTenLH.Text = txtDD.Text = "";
+        }
         private void frmEditLH_Load(object sender, EventArgs e)
         {
 

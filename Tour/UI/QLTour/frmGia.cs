@@ -59,6 +59,7 @@ namespace Tour.UI.QLTour
                     {
                         Main.Show();
                         ShowDetail();
+                        Clear();
                         MessageBox.Show("Success", "Notify");
                     }
                     else

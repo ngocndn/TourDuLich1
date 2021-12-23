@@ -29,6 +29,7 @@ namespace Tour.UI.QLDoan
             LoadCBTour();
             LoadDoan();
             LoadDSKH();
+            OnRowNumberChanged();
         }
         private int Doanid { get; set; }
         private int Tourid { get; set; }
@@ -64,6 +65,10 @@ namespace Tour.UI.QLDoan
             dpk1.Text = dataTableDetailsDoan.Rows[0][2].ToString();
             dpk2.Text = dataTableDetailsDoan.Rows[0][3].ToString();
         }
+        public void OnRowNumberChanged()
+        {
+            txtTotal.Text = dataGridView1.Rows.Count.ToString();
+        }
         public bool Checked()
         {
             if (String.IsNullOrEmpty(txtTenDoan.Text))
@@ -73,6 +78,10 @@ namespace Tour.UI.QLDoan
                 return false;
             }
             return true;
+        }
+        public void Clear()
+        {
+            txtTenDoan.Text = "";
         }
         private void Edit()
         {
@@ -111,6 +120,7 @@ namespace Tour.UI.QLDoan
                     {
                         System.Diagnostics.Debug.WriteLine("Success");
                         frmMain.LoadDanhSachDoan();
+                        Clear();
                         MessageBox.Show("Success");
                     } else
                     {

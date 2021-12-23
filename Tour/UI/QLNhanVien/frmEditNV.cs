@@ -65,6 +65,10 @@ namespace Tour.UI.QLNhanVien
 
             return true;
         }
+        public void Clear()
+        {
+            txtTenNV.Text = txtSDT.Text = "";
+        }
 
         public void SuaNhanVien()
         {
@@ -84,7 +88,7 @@ namespace Tour.UI.QLNhanVien
                     if (nvb.SuaNhanVien(NV, NV_ID))
                     {
                         System.Diagnostics.Debug.WriteLine("Sửa nhân viên thành công!");
-
+                        Clear();
                         Main.LoadNV();
                         MessageBox.Show("Sửa nhân viên thành công!", "Thông báo");
                     }

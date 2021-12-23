@@ -62,6 +62,7 @@ namespace Tour.UI.QLDoan
                     fMain.Show();
                     LoadHK();
                     fMain.LoadDSKH();
+                    fMain.OnRowNumberChanged();
                     MessageBox.Show("Success", "Notify");
                 }
                 else
@@ -85,6 +86,7 @@ namespace Tour.UI.QLDoan
                     bb.Delete(bid);
                     LoadHK();
                     fMain.LoadDSKH();
+                    fMain.OnRowNumberChanged();
                     MessageBox.Show("Success");
                 }
                 else

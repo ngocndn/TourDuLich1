@@ -64,7 +64,10 @@ namespace Tour.UI.QLTour
             }
             return true;
         }
-
+        public void Clear()
+        {
+            txtTenTour.Text = txtDD.Text = "";
+        }
         private void Edit()
         {
             List<DIADIEM> listDD = db.GetListDD();
@@ -95,6 +98,7 @@ namespace Tour.UI.QLTour
                     {
                         System.Diagnostics.Debug.WriteLine("Sửa tour thành công!");
                         Main.LoadTour();
+                        Clear();
                         MessageBox.Show("Success!", "Notify");
 
                     }
