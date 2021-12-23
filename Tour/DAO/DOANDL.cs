@@ -30,6 +30,8 @@ public partial class DOANDL
 
     public string TenDoan { get; set; }
 
+    public Nullable<int> Soluong { get; set; }
+
 }
 
 }

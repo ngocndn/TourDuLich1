@@ -46,8 +46,11 @@ namespace Tour.UI.QLDoan
             try
             {
                 BOOKING B = new BOOKING();
+                DOANDL D  = new DOANDL();
                 B.MaDOANDL = did;
                 B.MaTour = tid;
+                B.Siso = 1;
+                D.Soluong = 1;
                 foreach (DataGridViewRow r in dataGridView1.SelectedRows)
                 {
                     if (!String.Equals(r.Cells[0].Value.ToString(), "System.Windows.Forms.DataGridViewTextBoxColumn"))

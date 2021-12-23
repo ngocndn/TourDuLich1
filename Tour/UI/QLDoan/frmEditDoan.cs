@@ -119,9 +119,11 @@ namespace Tour.UI.QLDoan
                     if (db.Edit(D, Doanid))
                     {
                         System.Diagnostics.Debug.WriteLine("Success");
-                        frmMain.LoadDanhSachDoan();
+                        
                         Clear();
+                        
                         MessageBox.Show("Success");
+                        frmMain.LoadDanhSachDoan();
                     } else
                     {
                         MessageBox.Show("Failed");

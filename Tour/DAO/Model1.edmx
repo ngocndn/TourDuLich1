@@ -62,6 +62,7 @@
           <Property Name="MaNV" Type="int" Nullable="false" />
           <Property Name="MaTour" Type="int" Nullable="false" />
           <Property Name="TenDoan" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Soluong" Type="int" />
         </EntityType>
         <EntityType Name="GIATOUR">
           <Key>
@@ -111,11 +112,6 @@
           <Property Name="NV_SoDienThoai" Type="nvarchar" MaxLength="50" />
           <Property Name="NV_NhiemVu" Type="nvarchar" MaxLength="150" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'QuanlyTour2.dbo.s' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="s">
-          <Property Name="sss" Type="nchar" MaxLength="10" />
-        </EntityType>-->
         <EntityType Name="TOURDULICH">
           <Key>
             <PropertyRef Name="MaTour" />
@@ -217,6 +213,7 @@ warning 6013: The table/view 'QuanlyTour2.dbo.s' does not have a primary key def
           <Property Name="MaNV" Type="Int32" Nullable="false" />
           <Property Name="MaTour" Type="Int32" Nullable="false" />
           <Property Name="TenDoan" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Soluong" Type="Int32" />
         </EntityType>
         <EntityType Name="GIATOUR">
           <Key>
@@ -339,6 +336,7 @@ warning 6013: The table/view 'QuanlyTour2.dbo.s' does not have a primary key def
           <EntitySetMapping Name="DOANDLs">
             <EntityTypeMapping TypeName="QuanlyTour2Model.DOANDL">
               <MappingFragment StoreEntitySet="DOANDL">
+                <ScalarProperty Name="Soluong" ColumnName="Soluong" />
                 <ScalarProperty Name="TenDoan" ColumnName="TenDoan" />
                 <ScalarProperty Name="MaTour" ColumnName="MaTour" />
                 <ScalarProperty Name="MaNV" ColumnName="MaNV" />
