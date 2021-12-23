@@ -115,6 +115,20 @@ namespace Tour.UI.QLDiemDen
                 }
             }
         }
+        public void Search()
+        {
+            if (!String.IsNullOrWhiteSpace(txtsearch.Text))
+            {
+                string searchValue = txtsearch.Text;
+
+                dataGridView_DiaDiem.DataSource = DDB.Search(searchValue);
+
+            }
+            else
+            {
+                LoadDiaDiem();
+            }
+        }
 
         private void frmDD_Load(object sender, EventArgs e)
         {
@@ -134,6 +148,16 @@ namespace Tour.UI.QLDiemDen
         private void btnDetail_Click(object sender, EventArgs e)
         {
             Detail();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            Search();
         }
     }
 }

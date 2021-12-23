@@ -18,6 +18,14 @@ namespace Tour.DAO
                 return getList.ToList<DIADIEM>();
             }
         }
+        public List<DIADIEM> Search(string searchValue)
+        {
+            using (tour = new TourENT())
+            {
+                var getList = tour.DIADIEMs.Where(t=>t.TenDiaDiem.Contains(searchValue));
+                return getList.ToList<DIADIEM>();
+            }
+        }
 
         public List<dynamic> GetDiaDiemDetail(int ID)
         {

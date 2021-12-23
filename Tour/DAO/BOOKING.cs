@@ -15,20 +15,20 @@ namespace Tour.DAO
 using System;
     using System.Collections.Generic;
     
-public partial class CHITIETCHIPHI
+public partial class BOOKING
 {
 
     public int id { get; set; }
 
     public int MaDOANDL { get; set; }
 
-    public int ChiPhi_ID { get; set; }
+    public int MaKH { get; set; }
 
-    public double ThanhTien { get; set; }
+    public int MaTour { get; set; }
 
-    public string TenCP { get; set; }
+    public Nullable<int> Siso { get; set; }
 
-    public double TongCong { get; set; }
+    public int GiaTour { get; set; }
 
 }
 

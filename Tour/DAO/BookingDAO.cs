@@ -66,6 +66,22 @@ namespace Tour.DAO
                 return getPrice.ToList<dynamic>();
             }
         }
+        public List<dynamic> GetChiPhi(int DoanID)
+        {
+            using (tour = new TourENT())
+            {
+                var getPrice = (from tbDoan in tour.DOANDLs
+                                join tbChiPhi in tour.CHITIETCHIPHIs on tbDoan.MaDOANDL equals tbChiPhi.MaDOANDL
+                                where tbDoan.MaDOANDL == DoanID
+                                select new
+                                {
+                                    MaDoan = tbDoan.MaDOANDL,
+                                    ChiPhiID = tbChiPhi.id,
+                                    TongTien = tbChiPhi.TongCong
+                                });
+                return getPrice.ToList<dynamic>();
+            }
+        }
         public bool Book(BOOKING B)
         {
             using (tour = new TourENT())

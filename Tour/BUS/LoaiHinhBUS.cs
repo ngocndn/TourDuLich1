@@ -14,6 +14,10 @@ namespace Tour.BUS
         {
             return LHD.GetListLoaiHinh();
         }
+        public List<LOAIHINHDULICH> Search(string searchValue)
+        {
+            return LHD.Search(searchValue);
+        }
         public List<dynamic> GetDetailList(int LoaiHinhID)
         {
             return LHD.GetDetailList(LoaiHinhID);

@@ -121,11 +121,24 @@ namespace Tour.UI.QLNhanVien
             }
         }
 
+        public void Search()
+        {
+            if (!String.IsNullOrWhiteSpace(txtsearch.Text))
+            {
+                string searchValue = txtsearch.Text;
 
+                dataGridView1.DataSource = nvb.Search(searchValue);
+
+            }
+            else
+            {
+                LoadNV();
+            }
+        }
 
         private void frmNhanVien_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -146,6 +159,16 @@ namespace Tour.UI.QLNhanVien
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtsearch_TextChanged(object sender, EventArgs e)
+        {
+            Search();
         }
     }
 }

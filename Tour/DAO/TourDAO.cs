@@ -48,6 +48,25 @@ namespace Tour.DAO
             }
 
         }
+        public List<dynamic> SearchTour(string searchValue)
+        {
+            using(tour = new TourENT())
+            {
+                var getListTour = (from tbTour in tour.TOURDULICHes
+                                   join tbDiaDiemDen in tour.DIADIEMs on tbTour.MaDiaDiem equals tbDiaDiemDen.MaDiaDiem
+                                   join tbLoaiHinhDuLich in tour.LOAIHINHDULICHes on tbTour.MaLoaiHinh equals tbLoaiHinhDuLich.MaLoaiHinh
+                                   select new
+                                   {
+                                       MaTour = tbTour.MaTour,
+                                       TenTour = tbTour.TenTour,
+                                       tenLoaiHinhDuLich = tbLoaiHinhDuLich.TenLoaiHinh,
+                                       tenDiaDiem = tbDiaDiemDen.TenDiaDiem,
+                                       DacDiem = tbTour.DacDiem
+                                   }).Where(t => t.TenTour.Contains(searchValue));
+
+                return getListTour.ToList<dynamic>();
+            }
+        }
         public List<dynamic> GetListDetailsTour(int T_ID)
         {
             using (tour = new TourENT())

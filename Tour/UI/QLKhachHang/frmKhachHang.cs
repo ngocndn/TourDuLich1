@@ -139,7 +139,20 @@ namespace Tour.UI.QLKhachHang
                 }
             }
         }
+        public void Search()
+        {
+            if (!String.IsNullOrWhiteSpace(txtsearch.Text))
+            {
+                string searchValue = txtsearch.Text;
 
+                dataGridView1.DataSource = khb.Searching(searchValue);
+
+            }
+            else
+            {
+                LoadKH();
+            }
+        }
         private void frmKhachHang_Load(object sender, EventArgs e)
         {
 
@@ -158,6 +171,11 @@ namespace Tour.UI.QLKhachHang
         private void btnDetail_Click(object sender, EventArgs e)
         {
             XemChiTiet();
+        }
+
+        private void txtsearch_TextChanged(object sender, EventArgs e)
+        {
+            Search();
         }
     }
 }

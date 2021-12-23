@@ -14,6 +14,10 @@ namespace Tour.BUS
         {
             return DDD.GetListDiaDiem();
         }
+        public List<DIADIEM> Search(string searchValue)
+        {
+            return DDD.Search(searchValue);
+        }
         public List<dynamic> GetDiaDiemDetailList(int ID)
         {
             return DDD.GetDiaDiemDetail(ID);

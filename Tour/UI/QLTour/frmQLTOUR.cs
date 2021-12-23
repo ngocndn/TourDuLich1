@@ -154,7 +154,18 @@ namespace Tour.UI.QLTour
             }
         }
 
-
+        public void Search()
+        {
+            if(!String.IsNullOrEmpty(txtsearch.Text))
+            {
+                string searchValue = txtsearch.Text;
+                dataGridView1.DataSource = tb.SearchTour(searchValue);
+            }
+            else
+            {
+                LoadTour();
+            }
+        }
         private void frmQLTOUR_Load(object sender, EventArgs e)
         {
 
@@ -210,6 +221,11 @@ namespace Tour.UI.QLTour
         private void label5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtsearch_TextChanged(object sender, EventArgs e)
+        {
+            Search();
         }
     }
 }

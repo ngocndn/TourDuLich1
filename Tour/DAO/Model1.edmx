@@ -37,9 +37,11 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="MaDOANDL" Type="int" Nullable="false" />
           <Property Name="ChiPhi_ID" Type="int" Nullable="false" />
+          <Property Name="ThanhTien" Type="float" Nullable="false" />
+          <Property Name="TenCP" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="TongCong" Type="float" Nullable="false" />
         </EntityType>
         <EntityType Name="DIADIEM">
@@ -109,6 +111,11 @@
           <Property Name="NV_SoDienThoai" Type="nvarchar" MaxLength="50" />
           <Property Name="NV_NhiemVu" Type="nvarchar" MaxLength="150" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'QuanlyTour2.dbo.s' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="s">
+          <Property Name="sss" Type="nchar" MaxLength="10" />
+        </EntityType>-->
         <EntityType Name="TOURDULICH">
           <Key>
             <PropertyRef Name="MaTour" />
@@ -185,9 +192,11 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="MaDOANDL" Type="Int32" Nullable="false" />
           <Property Name="ChiPhi_ID" Type="Int32" Nullable="false" />
+          <Property Name="ThanhTien" Type="Double" Nullable="false" />
+          <Property Name="TenCP" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="TongCong" Type="Double" Nullable="false" />
         </EntityType>
         <EntityType Name="DIADIEM">
@@ -310,6 +319,8 @@
             <EntityTypeMapping TypeName="QuanlyTour2Model.CHITIETCHIPHI">
               <MappingFragment StoreEntitySet="CHITIETCHIPHI">
                 <ScalarProperty Name="TongCong" ColumnName="TongCong" />
+                <ScalarProperty Name="TenCP" ColumnName="TenCP" />
+                <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
                 <ScalarProperty Name="ChiPhi_ID" ColumnName="ChiPhi_ID" />
                 <ScalarProperty Name="MaDOANDL" ColumnName="MaDOANDL" />
                 <ScalarProperty Name="id" ColumnName="id" />

@@ -44,6 +44,8 @@ namespace Tour.UI.QLNhanVien
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dp_NSNV = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
+            this.txtsearch = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,10 +132,10 @@ namespace Tour.UI.QLNhanVien
             this.Column2,
             this.Column3,
             this.Column4});
-            this.dataGridView1.Location = new System.Drawing.Point(295, 38);
+            this.dataGridView1.Location = new System.Drawing.Point(295, 49);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(488, 349);
+            this.dataGridView1.Size = new System.Drawing.Size(495, 338);
             this.dataGridView1.TabIndex = 19;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -178,11 +180,32 @@ namespace Tour.UI.QLNhanVien
             this.label10.TabIndex = 70;
             this.label10.Text = "DANH SÁCH NHÂN VIÊN";
             // 
+            // txtsearch
+            // 
+            this.txtsearch.Location = new System.Drawing.Point(618, 28);
+            this.txtsearch.Name = "txtsearch";
+            this.txtsearch.Size = new System.Drawing.Size(172, 20);
+            this.txtsearch.TabIndex = 72;
+            this.txtsearch.TextChanged += new System.EventHandler(this.txtsearch_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(544, 29);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(68, 15);
+            this.label4.TabIndex = 71;
+            this.label4.Text = "Tìm Kiếm";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
             // frmNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 396);
+            this.ClientSize = new System.Drawing.Size(802, 396);
+            this.Controls.Add(this.txtsearch);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.dp_NSNV);
             this.Controls.Add(this.btnDelete);
@@ -221,5 +244,7 @@ namespace Tour.UI.QLNhanVien
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtsearch;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -29,7 +29,20 @@ namespace Tour.UI.QLDoan
             this.tid = TourID;
             this.fM = fMain;
             LoadDetail();
+            LoadCP();
+            LoadCBB();
             ShowGiaTour();
+        }
+        public void LoadCP()
+        {
+            dataGridView1.DataSource = cb.GetListDoanID(Doanid);
+            dataGridView1.AutoGenerateColumns = false;
+
+        }
+        public void LoadCBB()
+        {
+            cbbcp.DataSource = cb.GetAll();
+            cbbcp.DisplayMember = "TenCP";
         }
         public void LoadDetail()
         {
@@ -43,6 +56,52 @@ namespace Tour.UI.QLDoan
             var json = JsonConvert.SerializeObject(listT);
             DataTable dataTableDetailsDoan = (DataTable)JsonConvert.DeserializeObject(json, (typeof(DataTable)));
             txtgiatour.Text = dataTableDetailsDoan.Rows[0][2].ToString();
+        }
+        public bool Checked()
+        {
+            if (String.IsNullOrEmpty(txtprice.Text))
+            {
+                MessageBox.Show("Gia is required", "Caution!!!");
+                txtprice.Focus();
+                return false;
+            }
+            return true;
+        }
+        public void Add()
+        {
+            List<LOAICHIPHI> ll = cb.GetAllCP();
+            if(Checked() == true)
+            {
+                try
+                {
+                    CHITIETCHIPHI c = new CHITIETCHIPHI();
+                    c.TenCP = cbbcp.Text;
+                    c.MaDOANDL = this.Doanid;
+                    foreach (var item in ll)
+                    {
+                        if (item.TenLoaiCP.Equals(cbbcp.Text))
+                        {
+                            c.ChiPhi_ID = item.LoaiCP_ID;
+                        }
+                    }
+                    c.TongCong = Convert.ToDouble(txtprice.Text);
+                    if (cb.Addct(c))
+                    {
+                        LoadCP();
+                        fM.LoadDoan();
+                        MessageBox.Show("Thêm chi phí thành công!", "Thông báo");
+                    }
+                }
+                catch (FormatException ex)
+                {
+                    MessageBox.Show("Tổng chi phí chỉ được nhập số!", "Thông báo");
+                    System.Diagnostics.Debug.WriteLine(ex);
+                }
+            }
+            else
+            {
+                MessageBox.Show("KiemTra");
+            }
         }
         private void label3_Click(object sender, EventArgs e)
         {
@@ -79,5 +138,14 @@ namespace Tour.UI.QLDoan
 
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            Add();
+        }
     }
 }

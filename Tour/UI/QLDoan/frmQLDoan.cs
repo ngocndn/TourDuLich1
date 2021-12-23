@@ -140,6 +140,20 @@ namespace Tour.UI.QLDoan
 
             }
         }
+        public void Search()
+        {
+            if (!String.IsNullOrWhiteSpace(txtsearch.Text))
+            {
+                string searchValue = txtsearch.Text;
+
+                dataGridView1.DataSource = db.Searching(searchValue);
+
+            }
+            else
+            {
+                LoadDanhSachDoan();
+            }
+        }
         private void btnAdd_Click(object sender, EventArgs e)
         {
             Add();
@@ -163,6 +177,11 @@ namespace Tour.UI.QLDoan
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtsearch_TextChanged(object sender, EventArgs e)
+        {
+            Search();
         }
     }
 }

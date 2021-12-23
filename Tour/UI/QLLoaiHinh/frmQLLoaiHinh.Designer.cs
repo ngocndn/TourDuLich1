@@ -41,6 +41,8 @@ namespace Tour.UI.QLLoaiHinh
             this.btnDetail = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
+            this.txtsearch = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_LoaiHinh)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,10 +89,10 @@ namespace Tour.UI.QLLoaiHinh
             this.Column1,
             this.Column2,
             this.Column3});
-            this.dataGridView_LoaiHinh.Location = new System.Drawing.Point(276, 32);
+            this.dataGridView_LoaiHinh.Location = new System.Drawing.Point(276, 45);
             this.dataGridView_LoaiHinh.Name = "dataGridView_LoaiHinh";
             this.dataGridView_LoaiHinh.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_LoaiHinh.Size = new System.Drawing.Size(519, 406);
+            this.dataGridView_LoaiHinh.Size = new System.Drawing.Size(519, 393);
             this.dataGridView_LoaiHinh.TabIndex = 8;
             // 
             // Column1
@@ -157,11 +159,31 @@ namespace Tour.UI.QLLoaiHinh
             this.label10.TabIndex = 70;
             this.label10.Text = "DANH SÁCH LOẠI HÌNH";
             // 
+            // txtsearch
+            // 
+            this.txtsearch.Location = new System.Drawing.Point(634, 24);
+            this.txtsearch.Name = "txtsearch";
+            this.txtsearch.Size = new System.Drawing.Size(161, 20);
+            this.txtsearch.TabIndex = 72;
+            this.txtsearch.TextChanged += new System.EventHandler(this.txtsearch_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(560, 29);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(68, 15);
+            this.label3.TabIndex = 71;
+            this.label3.Text = "Tìm Kiếm";
+            // 
             // frmQLLoaiHinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtsearch);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnDetail);
@@ -195,5 +217,7 @@ namespace Tour.UI.QLLoaiHinh
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtsearch;
+        private System.Windows.Forms.Label label3;
     }
 }

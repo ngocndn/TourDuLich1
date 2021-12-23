@@ -23,6 +23,10 @@ namespace Tour.BUS
         {
             return cpd.GetList();
         }
+        public List<dynamic> GetListDoanID(int DoanID)
+        {
+            return cpd.GetChiTietCPByMaDoan(DoanID);
+        }
         public List<dynamic> GetDetail(int CP_ID)
         {
             return cpd.GetListDetailsNhanVien(CP_ID);
@@ -31,6 +35,10 @@ namespace Tour.BUS
         public bool Add(CHIPHI cp)
         {
             return cpd.ThemChiPhi(cp);
+        }
+        public bool Addct(CHITIETCHIPHI ctcp)
+        {
+            return cpd.ThemChitietCP(ctcp);
         }
 
         public bool Sua(CHIPHI cp, int cp_id)

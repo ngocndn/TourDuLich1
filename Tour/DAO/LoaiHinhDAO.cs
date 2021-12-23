@@ -17,6 +17,14 @@ namespace Tour.DAO
                 return getListLH.ToList<LOAIHINHDULICH>();
             }
         }
+        public List<LOAIHINHDULICH> Search(string searchValue)
+        {
+            using (tour = new TourENT())
+            {
+                var getListLH = tour.LOAIHINHDULICHes.Where(t=>t.TenLoaiHinh.Contains(searchValue));
+                return getListLH.ToList<LOAIHINHDULICH>();
+            }
+        }
 
         public List<dynamic> GetDetailList (int LoaiHinhID)
         {
@@ -34,6 +42,7 @@ namespace Tour.DAO
                 return getListDetail.ToList<dynamic>();
             }
         }
+        
 
         public bool Add(LOAIHINHDULICH LH)
         {

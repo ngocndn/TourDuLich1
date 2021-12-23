@@ -17,6 +17,23 @@ namespace Tour.DAO
                 return getAll.ToList<NHANVIEN>();
             }
         }
+        public List<dynamic> Search(string searchValue)
+        {
+            using (tour = new TourENT())
+            {
+                var getListNhanVien = (from tbNhanVien in tour.NHANVIENs
+                                       select new
+                                       {
+                                           MaNhanVien = tbNhanVien.MaNV,
+                                           TenNhanVien = tbNhanVien.TenNV,
+                                           NgaySinh = tbNhanVien.NV_NgaySinh,
+                                           SDT = tbNhanVien.NV_SoDienThoai
+                                       }).Where(t=>t.TenNhanVien.Contains(searchValue));
+
+                return getListNhanVien.ToList<dynamic>();
+
+            }
+        }
         public List<dynamic> GetListNhanVien()
         {
             using (tour = new TourENT())

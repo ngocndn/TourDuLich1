@@ -14,6 +14,10 @@ namespace Tour.BUS
         {
             return nvd.GetAllNhanVien();
         }
+        public List<dynamic> Search(string searchValue)
+        {
+            return nvd.Search(searchValue);
+        }
 
         public List<dynamic> GetListNV()
         {

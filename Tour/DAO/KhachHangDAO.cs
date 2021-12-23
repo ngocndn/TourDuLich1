@@ -17,6 +17,14 @@ namespace Tour.DAO
                 return getall.ToList<KHACHHANG>();
             }
         }
+        public List<KHACHHANG> SearchKH(string searchValue)
+        {
+            using (tour = new TourENT())
+            {
+                var getall = tour.KHACHHANGs.Where(t=>t.TenKH.Contains(searchValue));
+                return getall.ToList<KHACHHANG>();
+            }
+        }
 
         public List<dynamic> GetListKH()
         {

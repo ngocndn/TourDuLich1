@@ -14,6 +14,10 @@ namespace Tour.BUS
         {
             return khd.GetAllKhachHang();
         }
+        public List<KHACHHANG> Searching(string searchValue)
+        {
+            return khd.SearchKH(searchValue);
+        }
         public List<dynamic> GetListDetailsKhachHang(int KH_ID)
         {
             return khd.GetDetailList(KH_ID);

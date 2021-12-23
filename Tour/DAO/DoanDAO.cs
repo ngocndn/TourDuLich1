@@ -15,6 +15,12 @@ namespace Tour.DAO
             return getD.ToList<DOANDL>();
 
         }
+        public List<DOANDL> Searching(string searchValue)
+        {
+            var getD = tour.DOANDLs.Where(t=>t.TenDoan.Contains(searchValue));
+            return getD.ToList<DOANDL>();
+
+        }
         public List<DOANDL> GetOneDoan(int DoanID)
         {
             {
@@ -39,6 +45,26 @@ namespace Tour.DAO
                                    HDV = tbN.TenNV,
                                    //MCP1 = tbL.TenCP,MCP2 = tbL.TenCP
                                    });
+                return getListDoan.ToList<dynamic>();
+            }
+        }
+        public List<dynamic> Search(string searchValue)
+        {
+            {
+                var getListDoan = (from tbD in tour.DOANDLs
+                                   join tbT in tour.TOURDULICHes on tbD.MaTour equals tbT.MaTour
+                                   join tbN in tour.NHANVIENs on tbD.MaNV equals tbN.MaNV
+
+                                   select new
+                                   {
+                                       DoanID = tbD.MaDOANDL,
+                                       Ten = tbD.TenDoan,
+                                       NgayKH = tbD.NgayKhoiHanh,
+                                       KT = tbD.NgayKetThuc,
+                                       TenTour = tbT.TenTour,
+                                       HDV = tbN.TenNV,
+                                       //MCP1 = tbL.TenCP,MCP2 = tbL.TenCP
+                                   }).Where(t=>t.Ten.Contains(searchValue));
                 return getListDoan.ToList<dynamic>();
             }
         }

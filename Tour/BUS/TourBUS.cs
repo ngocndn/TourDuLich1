@@ -29,7 +29,10 @@ namespace Tour.BUS
         {
             return TD.GetListDetailsTour(T_ID);
         }
-
+        public List<dynamic> SearchTour(string searchValue)
+        {
+            return TD.SearchTour(searchValue);
+        }
         public bool AddTour(TOURDULICH T)
         {
             return TD.ThemTour(T);

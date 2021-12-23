@@ -28,7 +28,20 @@ namespace Tour.UI.QLLoaiHinh
             txtTenLH.Text = "";
             txtDD.Text = "";
         }
+        public void Search()
+        {
+            if (!String.IsNullOrWhiteSpace(txtsearch.Text))
+            {
+                string searchValue = txtsearch.Text;
 
+                dataGridView_LoaiHinh.DataSource = LHB.Search(searchValue);
+
+            }
+            else
+            {
+                LoadLH();
+            }
+        }
         public bool Checked()
         {
             if(String.IsNullOrEmpty(txtTenLH.Text))
@@ -123,6 +136,11 @@ namespace Tour.UI.QLLoaiHinh
         {
             Del();
             LoadLH();
+        }
+
+        private void txtsearch_TextChanged(object sender, EventArgs e)
+        {
+            Search();
         }
     }
 }

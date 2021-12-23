@@ -78,7 +78,19 @@ namespace Tour.DAO
                 return getListDetailsNhanVien.ToList<dynamic>();
             }
         }
-
+        public List<dynamic> GetChiTietCPByMaDoan(int DoanID)
+        {
+            using (tour = new TourENT())
+            {
+                var Getlist = (from tbC in tour.CHITIETCHIPHIs
+                               where tbC.MaDOANDL == DoanID
+                               select new
+                               { 
+                                    MaCTCP = tbC.id,TenCP = tbC.TenCP,ThanhTien = tbC.TongCong
+                               });
+                return Getlist.ToList<dynamic>();
+            }
+        }
         public bool ThemChiPhi(CHIPHI cp)
         {
             using (tour = new TourENT())
@@ -90,6 +102,23 @@ namespace Tour.DAO
                     return true;
                 }
                 catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex);
+                    return false;
+                }
+            }
+        }
+        public bool ThemChitietCP(CHITIETCHIPHI ctcp)
+        {
+            using (tour = new TourENT())
+            {
+                try
+                {
+                    tour.CHITIETCHIPHIs.Add(ctcp);
+                    tour.SaveChanges();
+                    return true;
+                } 
+                catch(Exception ex)
                 {
                     System.Diagnostics.Debug.WriteLine(ex);
                     return false;
