@@ -17,6 +17,16 @@ namespace Tour.DAO
                 return getListLH.ToList<LOAIHINHDULICH>();
             }
         }
+        public List<dynamic> GetList()
+        {
+            using (tour = new TourENT())
+            {
+                var getListLH = (from tbLH in tour.LOAIHINHDULICHes
+                                 select new
+                                 { MaLoaiHinh = tbLH.MaLoaiHinh, TenLoaiHinh = tbLH.TenLoaiHinh, LH_MoTa = tbLH.LH_MoTa });
+                return getListLH.ToList<dynamic>();
+            }
+        }
         public List<LOAIHINHDULICH> Search(string searchValue)
         {
             using (tour = new TourENT())

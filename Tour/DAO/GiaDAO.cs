@@ -21,6 +21,19 @@ namespace Tour.DAO
             }
 
         }
+        public List<dynamic> GetGia()
+        {
+            using (tour = new TourENT())
+            {
+                var getListDetailsTour = (from tbGiaTour in tour.GIATOURs join tbTour in tour.TOURDULICHes on tbGiaTour.IDGIATOUR equals tbTour.IDGiaTour select new
+                {
+                    TenTour = tbTour.TenTour,GiaTour = tbGiaTour.ThanhTien
+                });
+
+                return getListDetailsTour.ToList<dynamic>();
+
+            }
+        }
 
 
         //Get giá tour qua mã số tour

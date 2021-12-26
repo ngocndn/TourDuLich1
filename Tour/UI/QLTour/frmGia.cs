@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms; using Tour.DAO;using Tour.BUS;
+using System.Windows.Forms; using Tour.DAO;using Tour.BUS;using Tour.UI.QLGia;
 
 namespace Tour.UI.QLTour
 {

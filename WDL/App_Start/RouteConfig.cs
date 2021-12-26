@@ -14,10 +14,10 @@ namespace WDL
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Tour", action = "Index", id = UrlParameter.Optional }
-            );
+                 name: "Default",
+                 url: "{controller}/{action}/{id}",
+                 defaults: new { controller = "ThongKe", action = "Index", id = UrlParameter.Optional }
+             );
         }
     }
 }

@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.32002.261
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tour", "Tour\Tour.csproj", "{354F449A-92E4-4763-A206-EA6719C99A7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WDL", "WDL\WDL.csproj", "{3083E1E2-14A9-427E-BC84-D4BF6B8EDDDF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TourDuLichSite", "TourDuLichSite\TourDuLichSite.csproj", "{24423295-BF53-41BC-8201-2DC13B16206B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{354F449A-92E4-4763-A206-EA6719C99A7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{354F449A-92E4-4763-A206-EA6719C99A7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{354F449A-92E4-4763-A206-EA6719C99A7C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3083E1E2-14A9-427E-BC84-D4BF6B8EDDDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3083E1E2-14A9-427E-BC84-D4BF6B8EDDDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3083E1E2-14A9-427E-BC84-D4BF6B8EDDDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3083E1E2-14A9-427E-BC84-D4BF6B8EDDDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24423295-BF53-41BC-8201-2DC13B16206B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24423295-BF53-41BC-8201-2DC13B16206B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24423295-BF53-41BC-8201-2DC13B16206B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24423295-BF53-41BC-8201-2DC13B16206B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

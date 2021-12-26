@@ -18,6 +18,16 @@ namespace Tour.DAO
                 return getList.ToList<DIADIEM>();
             }
         }
+        public List<dynamic> GetLDD()
+        {
+            using(tour = new TourENT())
+            {
+                var getList = (from tbDD in tour.DIADIEMs
+                               select new
+                               { MaDD = tbDD.MaDiaDiem,TenDD = tbDD.TenDiaDiem, MoTa = tbDD.DD_MoTa });
+                return getList.ToList<dynamic>();
+            }
+        }
         public List<DIADIEM> Search(string searchValue)
         {
             using (tour = new TourENT())

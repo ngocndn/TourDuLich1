@@ -111,6 +111,23 @@ namespace Tour.DAO
                 }
             }
         }
+        public bool Del(DOANDL D, int DoanID)
+        {
+            {
+                try
+                {
+                    DOANDL d = tour.DOANDLs.Where(t => t.MaDOANDL == DoanID).SingleOrDefault();
+                    d.Soluong -= D.Soluong;
+                    tour.SaveChanges();
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    System.Diagnostics.Debug.WriteLine(e);
+                    return false;
+                }
+            }
+        }
 
         public bool Add(DOANDL D)
         {

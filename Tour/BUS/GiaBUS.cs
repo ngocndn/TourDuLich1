@@ -34,6 +34,10 @@ namespace Tour.BUS
         {
             return gd.XoaGiaTour(G, TourID);
         }
+        public List<dynamic> GetGia()
+        {
+            return gd.GetGia();
+        }
 
     }
 }

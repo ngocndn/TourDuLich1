@@ -1,0 +1,310 @@
+﻿
+@{
+    ViewBag.Title = "Tour";
+    List<TourView> listTour = ViewBag.listTemp;
+}
+
+<div class="app-wrapper">
+
+    <div class="app-content pt-3 p-md-3 p-lg-4">
+        <div class="container-xl">
+
+            <div class="row g-3 mb-4 align-items-center justify-content-between">
+                <div class="col-auto">
+                    <h1 class="app-page-title mb-0">Quản lý tour</h1>
+                </div>
+                <div class="col-auto">
+                    <div class="page-utilities">
+                        <div class="row g-2 justify-content-start justify-content-md-end align-items-center">
+                            <div class="col-auto">
+                                <form class="table-search-form row gx-1 align-items-center">
+                                    <div class="col-auto">
+                                        <input type="text" id="search-orders" name="searchorders" class="form-control search-orders" placeholder="Search">
+                                    </div>
+                                    <div class="col-auto">
+                                        <button type="submit" class="btn app-btn-secondary">Search</button>
+                                    </div>
+                                </form>
+
+                            </div><!--//col-->
+                            <div class="col-auto">
+
+                                <select class="form-select w-auto">
+                                    <option selected value="option-1">All</option>
+                                    <option value="option-2">This week</option>
+                                    <option value="option-3">This month</option>
+                                    <option value="option-4">Last 3 months</option>
+
+                                </select>
+                            </div>
+                            <div class="col-auto">
+                                <a class="btn btn-success" style="color: white;" data-bs-toggle="modal" data-bs-target="#AddModal" onclick="LoadInfoModalAdd()"><i class="fas fa-plus"></i> Thêm mới</a>
+
+                            </div>
+                        </div><!--//row-->
+                    </div><!--//table-utilities-->
+                </div><!--//col-auto-->
+            </div><!--//row-->
+
+
+
+            <div class="tab-content" id="orders-table-tab-content">
+                <div class="tab-pane fade show active" id="orders-all" role="tabpanel" aria-labelledby="orders-all-tab">
+                    <div class="app-card app-card-orders-table shadow-sm mb-5">
+                        <div class="app-card-body">
+                            <div class="table-responsive">
+                                <table class="table app-table-hover mb-0 text-left">
+                                    <thead>
+                                        <tr>
+                                            <th class="cell">Mã số tour</th>
+                                            <th class="cell">Tên gọi tour</th>
+                                            <th class="cell">Tên loại hình du lịch</th>
+                                            <th class="cell">Tên địa điểm đến</th>
+                                            <th class="cell">Đặc Điểm</th>
+                                            <th class="cell"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in listTour)
+                                        {
+                            <tr>
+                                <td class="cell">@item.MaTour</td>
+                                <td class="cell"><span class="truncate">@item.TenTour</span></td>
+                                <td class="cell">@item.tenLoaiHinhDuLich</td>
+                                <td class="cell">@item.TenDiaDiem</td>
+                                <td class="cell"><span>@item.DacDiem</span></td>
+                                <td class="cell">
+                                    <a class="btn btn-warning" style="color: white;" data-bs-toggle="modal" data-bs-target="#EditModal" onclick="GetIDUpdate(@item.MaTour)" id="editButton"><i class="fas fa-pencil-alt"></i> Sửa</a>
+                                    <a class="btn btn-danger" style="color: white;" data-bs-toggle="modal" data-bs-target="#DeleteModal" id="deleteButton" onclick="GetIDDelete(@item.MaTour)"><i class="fas fa-trash-alt"></i> Xóa</a>
+                                    <a class="btn btn-info" style="color: white; margin-top: 5px;" data-bs-toggle="modal" data-bs-target="#BangGiaModal" id="bangGiaButton" onclick="GetIDTourBangGia(@item.MaTour)"><i class="fas fa-tags"></i> Xem bảng giá</a>
+                                </td>
+                            </tr>}
+
+                                    </tbody>
+                                </table>
+                            </div><!--//table-responsive-->
+
+                        </div><!--//app-card-body-->
+                    </div><!--//app-card-->
+                    <nav class="app-pagination">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav><!--//app-pagination-->
+
+                </div><!--//tab-pane-->
+
+
+            </div><!--//tab-content-->
+
+
+
+        </div><!--//container-fluid-->
+    </div><!--//app-content-->
+    <!-- Modal Add -->
+    <div class="modal fade" id="AddModal" tabindex="-1" role="dialog" aria-labelledby="AddModal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-plus"></i> Thêm tour</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="app-card app-card-settings shadow-sm p-4">
+                    <div class="app-card-body">
+                        <div class="settings-form">
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label class="form-label">Tên gọi tour</label>
+                                    <input type="text" class="form-control" style="border-color: #6e6e6f;" id="inputTenGoiTour" placeholder="Nhập tên gọi tour..." required />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Đặc điểm</label>
+                                    <textarea rows="3" class="form-control" style="border-color: #6e6e6f;" id="inputDacDiemTour" placeholder="Nhập đặc điểm tour..." required></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <select class="form-select" aria-label="Default select example" id="dropdownLoaiHinhDuLich" style="border-color: #6e6e6f;">
+                                        <option value="0" selected>-- Chọn loại hình du lịch --</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <input class="form-control" type="datetime-local" id="inputThoiGianBatDau" name="inputThoiGianBatDau" style="border-color: #6e6e6f;" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input class="form-control" type="datetime-local" id="inputThoiGianKetThuc" name="inputThoiGianKetThuc" style="border-color: #6e6e6f;" required>
+                                </div>
+                                <div class="mb-3">
+                                    <select class="form-select" aria-label="Default select example" id="dropdownDiaDiemDen" style="border-color: #6e6e6f;">
+                                        <option value="0" selected>--Chọn địa điểm đến --</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3" style="border: 1px solid #6e6e6f; padding: 5px; border-radius: 5px;" id="listDiaDiemThamQuan">
+
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <input type="button" id="btnAdd" class="btn app-btn-primary" onclick="return Add()" value="Thêm" style="color: white;float:left;" />
+                                <button class="btn btn-secondary" data-bs-dismiss="modal" style="color: white;">Đóng</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Update -->
+    <div class="modal fade" id="EditModal" tabindex="-1" role="dialog" aria-labelledby="EditModal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-pencil-alt"></i> Sửa tour</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="app-card app-card-settings shadow-sm p-4">
+                    <div class="app-card-body">
+                        <div class="settings-form">
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label class="form-label">Mã số tour</label>
+                                    <input type="text" class="form-control" style="border-color: #6e6e6f;" id="inputMaSoTour_Edit" placeholder="Nhập mã số tour..." required readonly />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Tên gọi tour</label>
+                                    <input type="text" class="form-control" style="border-color: #6e6e6f;" id="inputTenGoiTour_Edit" placeholder="Nhập tên gọi tour..." required />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Đặc điểm</label>
+                                    <textarea rows="3" class="form-control" style="border-color: #6e6e6f;" id="inputDacDiemTour_Edit" placeholder="Nhập đặc điểm tour..." required></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <select class="form-select" aria-label="Default select example" id="dropdownLoaiHinhDuLich_Edit" style="border-color: #6e6e6f;">
+                                        <option value="0" selected>-- Chọn loại hình du lịch --</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <input class="form-control" type="datetime-local" id="inputThoiGianBatDau_Edit" name="inputThoiGianBatDau_Edit" style="border-color: #6e6e6f;" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input class="form-control" type="datetime-local" id="inputThoiGianKetThuc_Edit" name="inputThoiGianKetThuc_Edit" style="border-color: #6e6e6f;" required>
+                                </div>
+                                <div class="mb-3">
+                                    <select class="form-select" aria-label="Default select example" id="dropdownDiaDiemDen_Edit" style="border-color: #6e6e6f;">
+                                        <option value="0" selected>--Chọn địa điểm đến --</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3" style="border: 1px solid #6e6e6f; padding: 5px; border-radius: 5px;" id="listDiaDiemThamQuan_Edit">
+
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <input type="button" id="btnUpdate" class="btn btn-warning" onclick="return Update()" value="Sửa" style="color: white;float:left;" />
+                                <button class="btn btn-secondary" data-bs-dismiss="modal" style="color: white;">Đóng</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Delete -->
+    <div class="modal fade" id="DeleteModal" tabindex="-1" aria-labelledby="DeleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Xác nhận xóa</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <span>Bạn có chắc muốn xóa tour mã <span id="maSoTourDeleteModal" style="font-weight: 500;"></span> không?</span>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" id="btnDelete" onclick="Delete()" style="color: white;">Xóa</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal BangGia -->
+    <div class="modal fade" id="BangGiaModal" tabindex="-1" aria-labelledby="BangGiaModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-tags"></i>Bảng giá tour</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="app-card app-card-settings shadow-sm p-4">
+                    <div class="app-card-body">
+                        <div class="settings-form">
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label class="form-label">Mã số tour</label>
+                                    <input type="text" class="form-control" style="border-color: #6e6e6f;" id="inputMaSoTour_ModalBangGia" placeholder="Nhập mã số tour..." required readonly />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Giá</label>
+                                    <input type="text" class="form-control" style="border-color: #6e6e6f;" id="inputGiaTour_ModalBangGia" placeholder="Nhập giá tour" required />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Nội dung giá</label>
+                                    <input type="text" class="form-control" style="border-color: #6e6e6f;" id="inputNoiDungGia_ModalBangGia" placeholder="Nhập nội dung giá..." required />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Ngày thêm</label>
+                                    <input type="datetime-local" class="form-control" style="border-color: #6e6e6f;" id="inputNgayThem_ModalBangGia" required />
+                                </div>
+                                <div class="input-group">
+                                    <button class="btn btn-success" style="color: white;" onclick="ThemGiaMoi()">Thêm</button>
+                                </div>
+                                <div style="background-color: #000000; height: 1px; width: 100%;margin-top: 20px;"></div>
+                                <div class="mb-3">
+                                    <h6 style="text-align: center; margin-top: 10px;">Danh sách giá của tour</h6>
+                                    <table class="table table-hover" id="tableBangGia">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col"></th>
+                                                <th scope="col">Mã giá</th>
+                                                <th scope="col">Giá</th>
+                                                <th scope="col">Nội dung giá</th>
+                                                <th scope="col">Ngày</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>
+                                                <td>Mark</td>
+                                                <td>Otto</td>
+                                                <td>mdo</td>
+                                                <td>mdo</td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                    <div style="margin-top: 10px;">
+                                        <button class="btn btn-primary" style="color: white; float: left; background: #e38148;" onclick="ApDungGia()">Áp dụng giá</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+

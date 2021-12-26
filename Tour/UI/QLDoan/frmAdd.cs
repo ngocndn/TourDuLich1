@@ -87,10 +87,11 @@ namespace Tour.UI.QLDoan
         }
         public void XoaHK()
         {
+            DOANDL D = new DOANDL();
             foreach (DataGridViewRow r in dataGridView2.SelectedRows)
             {
                 if (!String.Equals(r.Cells[0].Value.ToString(), "System.Windows.Forms.DataGridViewTextBoxColumn"))
-                {
+                {     
                     int bid = Convert.ToInt32(r.Cells[0].Value.ToString());
                     bb.Delete(bid);
                     LoadHK();
