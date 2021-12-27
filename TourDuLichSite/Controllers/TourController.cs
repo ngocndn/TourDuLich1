@@ -23,6 +23,13 @@ namespace TourDuLichSite.Controllers
 
             return View();
         }
+        [HttpGet]
+        [Route("GetAllTour")]
+        public JsonResult GetAllTour()
+        {
+            var getTour = td.GetAllTour();
+            return Json(getTour, JsonRequestBehavior.AllowGet);
+        }
         [HttpPost]
         [Route("Create")]
         public JsonResult Create(TOURDULICH T)
@@ -34,24 +41,46 @@ namespace TourDuLichSite.Controllers
 
         [HttpPost]
         [Route("Update")]
-        public JsonResult Update(TOURDULICH T, int ID)
+        public JsonResult Update(TOURDULICH T, int MaTour)
         {
-            return Json(td.SuaTour(T, ID), JsonRequestBehavior.AllowGet);
+            return Json(td.SuaTour(T, MaTour), JsonRequestBehavior.AllowGet);
 
         }
 
         [HttpPost]
         [Route("Delete")]
-        public JsonResult Delete(int ID)
+        public JsonResult Delete(int MaTour)
         {
-            return Json(td.XoaTour(ID), JsonRequestBehavior.AllowGet);
+            return Json(td.XoaTour(MaTour), JsonRequestBehavior.AllowGet);
 
         }
         [HttpGet]
         [Route("GetOneTour")]
-        public JsonResult GetOneTour(int ID)
+        public JsonResult GetOneTour(int MaTour)
         {
-            var getTour = td.GetOneTour(ID);
+            var getTour = td.GetOneTour(MaTour);
+            return Json(getTour, JsonRequestBehavior.AllowGet);
+        }
+        [HttpGet]
+        [Route("GetBangGiaTour")]
+        public JsonResult GetBangGiaTour(int MaTour)
+        {
+            var getGiaTour = gd.GetGiaTourWithMaTour(MaTour);
+            return Json(getGiaTour, JsonRequestBehavior.AllowGet);
+        }
+        [HttpPost]
+        [Route("CreateGiaTour")]
+        public JsonResult CreateGiaTour(GIATOUR G)
+        {
+            var getGiaTour = gd.ThemGiaTour(G);
+            return Json(getGiaTour, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        [Route("UpdateGiaTour")]
+        public JsonResult UpdateGiaTour(TOURDULICH T, int MaTour)
+        {
+            var getTour = td.SuaGiaTour(T, MaTour);
             return Json(getTour, JsonRequestBehavior.AllowGet);
         }
     }

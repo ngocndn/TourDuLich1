@@ -143,6 +143,7 @@
     </Compile>
     <Compile Include="Models\DiaDiemView.cs" />
     <Compile Include="Models\DoanView.cs" />
+    <Compile Include="Models\GiaView.cs" />
     <Compile Include="Models\KhachHangView.cs" />
     <Compile Include="Models\LoaiHinhView.cs" />
     <Compile Include="Models\NhanVienView.cs" />

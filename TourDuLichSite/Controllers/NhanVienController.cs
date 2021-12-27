@@ -27,6 +27,13 @@ namespace TourDuLichSite.Controllers
             var getNhanVien = nvd.GetListDetailsNhanVienW(MaNV);
             return Json(getNhanVien, JsonRequestBehavior.AllowGet);
         }
+        [HttpGet]
+        [Route("GetAllNV")]
+        public JsonResult GetAllNV()
+        {
+            var getTour = nvd.GetAllNhanVien();
+            return Json(getTour, JsonRequestBehavior.AllowGet);
+        }
         [HttpPost]
         [Route("Create")]
         public JsonResult Create(NHANVIEN NV)

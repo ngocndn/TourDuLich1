@@ -55,13 +55,15 @@ namespace Tour.DAO
                 var getListTour = (from tbTour in tour.TOURDULICHes
                                    join tbDiaDiemDen in tour.DIADIEMs on tbTour.MaDiaDiem equals tbDiaDiemDen.MaDiaDiem
                                    join tbLoaiHinhDuLich in tour.LOAIHINHDULICHes on tbTour.MaLoaiHinh equals tbLoaiHinhDuLich.MaLoaiHinh
+                                   join tbGia in tour.GIATOURs on tbTour.IDGiaTour equals tbGia.IDGIATOUR
                                    select new
                                    {
                                        MaTour = tbTour.MaTour,
                                        TenTour = tbTour.TenTour,
                                        TenLoaiHinh = tbLoaiHinhDuLich.TenLoaiHinh,
                                        TenDiaDiem = tbDiaDiemDen.TenDiaDiem,
-                                       DacDiem = tbTour.DacDiem
+                                       DacDiem = tbTour.DacDiem,
+                                       ThanhTien = tbGia.ThanhTien
                                    });
 
                 return getListTour.ToList<dynamic>();

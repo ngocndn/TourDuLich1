@@ -22,6 +22,7 @@ namespace TourDuLichSite
         public Nullable<int> MaDiaDiem { get; set; }
         public string TenLoaiHinh { get; set; }
         public string TenDiaDiem { get; set; }
+        public float ThanhTien { get; set; }
 
     }
 }
