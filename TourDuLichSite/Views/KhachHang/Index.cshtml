@@ -70,20 +70,21 @@
                                     <tbody>
                                         @foreach (var item in listResults)
                                         {
-                                        <tr>
-                                            <td class="cell">@item.MaKH</td>
-                                            <td class="cell"><span class="truncate">@item.TenKH</span></td>
-                                            <td class="cell">@item.NgaySinh</td>
-                                            <td class="cell">@item.DiaChi</td>
-                                            <td class="cell">@item.Gioitinh</td>
-                                            <td class="cell">@item.CMND</td>
-                                            <td class="cell">@item.Email</td>
-                                            <td class="cell">@item.SDT</td>
-                                            <td class="cell">
-                                                <a class="btn btn-warning" style="color: white;" data-bs-toggle="modal" data-bs-target="#EditModal" onclick="GetIDUpdate(@item.MaKH)"><i class="fas fa-pencil-alt"></i> Sửa</a>
-                                                <a class="btn btn-danger" style="color: white;" data-bs-toggle="modal" data-bs-target="#DeleteModal" id="deleteButton" onclick="GetIDDelete(@item.MaKH)"><i class="fas fa-trash-alt"></i> Xóa</a>
-                                            </td>
-                                        </tr>}
+                                            <tr>
+                                                <td class="cell">@item.MaKH</td>
+                                                <td class="cell"><span class="truncate">@item.TenKH</span></td>
+                                                <td class="cell">@item.KH_NgaySinh</td>
+                                                <td class="cell">@item.KH_DiaChi</td>
+                                                <td class="cell">@item.KH_GioiTinh</td>
+                                                <td class="cell">@item.KH_CMND</td>
+                                                <td class="cell">@item.KH_email</td>
+                                                <td class="cell">@item.KH_SoDienThoai</td>
+                                                <td class="cell">
+                                                    <a class="btn btn-warning" style="color: white;" data-bs-toggle="modal" data-bs-target="#EditModal" onclick="GetIDUpdate(@item.MaKH)"><i class="fas fa-pencil-alt"></i> Sửa</a>
+                                                    <a class="btn btn-danger" style="color: white;" data-bs-toggle="modal" data-bs-target="#DeleteModal" id="deleteButton" onclick="GetIDDelete(@item.MaKH)"><i class="fas fa-trash-alt"></i> Xóa</a>
+                                                </td>
+                                            </tr>
+}
 
                                     </tbody>
                                 </table>
@@ -158,8 +159,8 @@
                                     <input type="text" class="form-control" style="border-color: #6e6e6f;" id="inputSDT" placeholder="Nhập số điện thoại..." required />
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label">Quốc tịch</label>
-                                    <input type="text" class="form-control" style="border-color: #6e6e6f;" id="inputQuocTich" placeholder="Nhập quốc tịch..." required />
+                                    <label class="form-label">Email</label>
+                                    <input type="text" class="form-control" style="border-color: #6e6e6f;" id="inputEmail" placeholder="Nhập email..." required />
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -221,8 +222,8 @@
                                     <input type="text" class="form-control" style="border-color: #6e6e6f;" id="inputSDTEdit" required />
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label">Quốc tịch</label>
-                                    <input type="text" class="form-control" style="border-color: #6e6e6f;" id="inputQuocTichEdit" required />
+                                    <label class="form-label">Email</label>
+                                    <input type="text" class="form-control" style="border-color: #6e6e6f;" id="inputemailEdit" required />
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -254,5 +255,163 @@
             </div>
         </div>
     </div>
-    </div>
+    <script>
+
+        function Add() {
+            var _tenKhachHang = $('#inputHoTen').val();
+            var _soCMND = $('#inputCMND').val();
+            var _diaChi = $('#inputDiaChi').val();
+            var _gioiTinh = $("input[name='inputRadioGioiTinh']:checked").val();
+            var _SDT = $('#inputSDT').val();
+            var _quocTich = $('#inputQuocTich').val();
+
+            if (_tenKhachHang == '' || _soCMND == '' || _diaChi == '' || _SDT == '' || _quocTich == '') {
+                swal({
+                    title: "Không được để trống!",
+                    text: "Vui lòng nhập đầy đủ thông tin!",
+                    icon: "warning",
+                    button: "Đóng",
+                });
+            } else {
+                var objKhachHang = {
+                    TenKH: _tenKhachHang,
+                    KH_CMND: _soCMND,
+                    KH_DiaChi: _diaChi,
+                    KH_GioiTinh: _gioiTinh,
+                    KH_SoDienThoai: _SDT,
+                    KH_email: _quocTich,
+                };
+                console.log(objKhachHang); //test
+                $.ajax({
+                    url: "/KhachHang/Create",
+                    data: JSON.stringify(objKhachHang),
+                    type: "POST",
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+                        $('#AddModal').modal('hide');
+                        swal({
+                            title: "Thêm thành công!",
+                            icon: "success",
+                            timer: 2000
+                        })
+                        window.setTimeout(function () { location.reload() }, 2000)
+                    },
+                    error: function (errorMessage) {
+                        alert(errorMessage.responseText);
+                    }
+                });
+            }
+        }
+
+        function Update() {
+            var _maKhachHang = $('#inputMaKhachHangEdit').val();
+            var _tenKhachHang = $('#inputHoTenEdit').val();
+            var _soCMND = $('#inputCMNDEdit').val();
+            var _diaChi = $('#inputDiaChiEdit').val();
+            var _gioiTinh = $('input[name="inputRadioGioiTinhEdit"]:checked').val();
+            var _SDT = $('#inputSDTEdit').val();
+            var _quocTich = $('#inputemailEdit').val();
+
+            if (_tenKhachHang == '' || _soCMND == '' || _diaChi == '' || _SDT == '' || _quocTich == '') {
+                swal({
+                    title: "Không được để trống!",
+                    text: "Vui lòng nhập đầy đủ thông tin!",
+                    icon: "warning",
+                    button: "Đóng",
+                });
+            } else {
+                var objKhachHang = {
+                    TenKH: _tenKhachHang,
+                    KH_CMND: _soCMND,
+                    KH_DiaChi: _diaChi,
+                    KH_GioiTinh: _gioiTinh,
+                    KH_SoDienThoai: _SDT,
+                    KH_email: _quocTich,
+                };
+                $.ajax({
+                    url: "/KhachHang/Update",
+                    data: JSON.stringify(objKhachHang),
+                    type: "POST",
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+                        $('#EditModal').modal('hide');
+                        swal({
+                            title: "Sửa thành công khách hàng mã " + _maKhachHang + "!",
+                            icon: "success",
+                            timer: 2500
+                        })
+                        window.setTimeout(function () { location.reload() }, 2500)
+                    },
+                    error: function (errorMessage) {
+                        alert(errorMessage.responseText);
+                    }
+                });
+            }
+        }
+
+        //Truyền data id vào modal
+        function GetIDUpdate(MaKH) {
+            $('#inputMaKhachHangEdit').val(MaKH);
+            var _maKhachHang = MaKH;
+
+            $.ajax({
+                url: "/KhachHang/GetOneKhachHang?MaKH=" + _maKhachHang,
+                type: "GET",
+                contentType: "application/json; charset=UTF-8",
+                dataType: "json",
+                success: function (result) {
+                    $('#inputHoTenEdit').val(result[0].TenKH);
+                    $('#inputDiaChiEdit').val(result[2].KH_DiaChi);
+                    $('#inputSDTEdit').val(result[3].KH_SoDienThoai);
+                    $('input[name="inputRadioGioiTinhEdit"]').filter('[value=' + result[0].gioiTinh + ']').prop('checked', true);
+                    $('#inputemailEdit').val(result[5].KH_email);
+                    $('#inputCMNDEdit').val(result[6].KH_CMND); 
+                },
+                error: function (errorMessage) {
+                    alert(errorMessage.responseText);
+                }
+            });
+        }
+
+        function GetIDDelete(MaKH) {
+            $('#maKhachHangDeleteModal').html(MaKH);
+        }
+
+        function Delete() {
+            var _maKhachHang = $('#maKhachHangDeleteModal').html();
+
+            console.log(_maKhachHang); //test
+
+            var postData = {
+                MaKH: _maKhachHang
+            };
+
+            $.ajax({
+                url: "/KhachHang/Delete",
+                data: JSON.stringify(postData),
+                type: "POST",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    $('#DeleteModal').modal('hide');
+                    swal({
+                        title: "Xóa thành công khách hàng mã " + _maKhachHang + "!",
+                        icon: "success",
+                        timer: 2500
+                    })
+                    window.setTimeout(function () { location.reload() }, 2500)
+                },
+                error: function (errorMessage) {
+                    alert(errorMessage.responseText);
+                }
+            });
+
+        }
+
+
+    </script>
+
+</div>
 

@@ -8,13 +8,20 @@ namespace TourDuLichSite
     public class KhachHangView
     {
         public int MaKH { get; set; }
+
         public string TenKH { get; set; }
-        public DateTime NgaySinh { get; set; }
-        public string DiaChi { get; set; }
-        public string SDT { get; set; }
-        public string Gioitinh { get; set; }
-        public string Email { get; set; }
-        public string CMND { get; set; }
+
+        public Nullable<System.DateTime> KH_NgaySinh { get; set; }
+
+        public string KH_DiaChi { get; set; }
+
+        public string KH_SoDienThoai { get; set; }
+
+        public string KH_GioiTinh { get; set; }
+
+        public string KH_email { get; set; }
+
+        public string KH_CMND { get; set; }
 
     }
 }

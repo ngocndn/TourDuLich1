@@ -7,11 +7,21 @@ namespace TourDuLichSite
 {
     public class DoanView
     {
-        public int DoanID { get; set; }
-        public string Ten { get; set; }
-        public DateTime NgayKH { get; set; }
-        public DateTime KT { get; set; }
+        public int MaDOANDL { get; set; }
+
+        public System.DateTime NgayKhoiHanh { get; set; }
+
+        public System.DateTime NgayKetThuc { get; set; }
+
+        public int MaNV { get; set; }
+
+        public int MaTour { get; set; }
+
+        public string TenDoan { get; set; }
+
+        public Nullable<int> Soluong { get; set; }
+        public string TenNV { get; set; }
         public string TenTour { get; set; }
-        public string HDV { get; set; }
+    
     }
 }

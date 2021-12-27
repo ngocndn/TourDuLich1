@@ -67,18 +67,19 @@
                                     <tbody>
                                         @foreach (var item in listTour)
                                         {
-                            <tr>
-                                <td class="cell">@item.MaTour</td>
-                                <td class="cell"><span class="truncate">@item.TenTour</span></td>
-                                <td class="cell">@item.tenLoaiHinhDuLich</td>
-                                <td class="cell">@item.TenDiaDiem</td>
-                                <td class="cell"><span>@item.DacDiem</span></td>
-                                <td class="cell">
-                                    <a class="btn btn-warning" style="color: white;" data-bs-toggle="modal" data-bs-target="#EditModal" onclick="GetIDUpdate(@item.MaTour)" id="editButton"><i class="fas fa-pencil-alt"></i> Sửa</a>
-                                    <a class="btn btn-danger" style="color: white;" data-bs-toggle="modal" data-bs-target="#DeleteModal" id="deleteButton" onclick="GetIDDelete(@item.MaTour)"><i class="fas fa-trash-alt"></i> Xóa</a>
-                                    <a class="btn btn-info" style="color: white; margin-top: 5px;" data-bs-toggle="modal" data-bs-target="#BangGiaModal" id="bangGiaButton" onclick="GetIDTourBangGia(@item.MaTour)"><i class="fas fa-tags"></i> Xem bảng giá</a>
-                                </td>
-                            </tr>}
+                                            <tr>
+                                                <td class="cell">@item.MaTour</td>
+                                                <td class="cell"><span class="truncate">@item.TenTour</span></td>
+                                                <td class="cell">@item.TenLoaiHinh</td>
+                                                <td class="cell">@item.TenDiaDiem</td>
+                                                <td class="cell"><span>@item.DacDiem</span></td>
+                                                <td class="cell">
+                                                    <a class="btn btn-warning" style="color: white;" data-bs-toggle="modal" data-bs-target="#EditModal" onclick="GetIDUpdate(@item.MaTour)" id="editButton"><i class="fas fa-pencil-alt"></i> Sửa</a>
+                                                    <a class="btn btn-danger" style="color: white;" data-bs-toggle="modal" data-bs-target="#DeleteModal" id="deleteButton" onclick="GetIDDelete(@item.MaTour)"><i class="fas fa-trash-alt"></i> Xóa</a>
+                                                    <a class="btn btn-info" style="color: white; margin-top: 5px;" data-bs-toggle="modal" data-bs-target="#BangGiaModal" id="bangGiaButton" onclick="GetIDTourBangGia(@item.MaTour)"><i class="fas fa-tags"></i> Xem bảng giá</a>
+                                                </td>
+                                            </tr>
+}
 
                                     </tbody>
                                 </table>
@@ -306,5 +307,609 @@
             </div>
         </div>
     </div>
-    </div>
+    <script>
+
+        $(document).ready(function () {
+            LoadDiaDiemThamQuan();
+            LoadDiaDiemThamQuan_UpdateModalOnChange();
+        });
+
+        function LoadInfoModalAdd() {
+
+            //Load loại hình du lịch
+            document.getElementById('dropdownLoaiHinhDuLich').options.length = 0; //clear dropdown
+
+            $('#dropdownLoaiHinhDuLich').append($('<option>', {
+                value: 0,
+                text: "-- Chọn loại hình du lịch --"
+            }));
+
+            $.ajax({
+                url: "/LoaiHinh/GetAllLoaiHinhDuLich",
+                type: "GET",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    $.each(result, function (index) {
+                        $('#dropdownLoaiHinhDuLich').append($('<option>', {
+                            value: result[index].MaLoaiHinh,
+                            text: result[index].TenLoaiHinh
+                        }));
+                    })
+                },
+                error: function (errorMessage) {
+                    alert(errorMessage.responseText);
+                }
+            });
+
+            //Load địa điểm
+            document.getElementById('dropdownDiaDiemDen').options.length = 0; //clear dropdown
+
+            $('#dropdownDiaDiemDen').append($('<option>', {
+                value: 0,
+                text: "-- Chọn địa điểm đến --"
+            }));
+
+            $.ajax({
+                url: "/DiaDiem/GetAllDiaDiemDen",
+                type: "GET",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    $.each(result, function (index) {
+                        $('#dropdownDiaDiemDen').append($('<option>', {
+                            value: result[index].maDiaDiemDen,
+                            text: result[index].tenDiaDiemDen
+                        }));
+                    })
+                },
+                error: function (errorMessage) {
+                    alert(errorMessage.responseText);
+                }
+            });
+
+        }
+
+        function LoadInfoModalUpdate() {
+
+            //Load loại hình du lịch
+            document.getElementById('dropdownLoaiHinhDuLich_Edit').options.length = 0; //clear dropdown
+
+            $('#dropdownLoaiHinhDuLich_Edit').append($('<option>', {
+                value: 0,
+                text: "-- Chọn loại hình du lịch --"
+            }));
+
+            $.ajax({
+                url: "/LoaiHinhDuLich/GetAllLoaiHinhDuLich",
+                type: "GET",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    $.each(result, function (index) {
+                        $('#dropdownLoaiHinhDuLich_Edit').append($('<option>', {
+                            value: result[index].maLoaiHinhDuLich,
+                            text: result[index].tenLoaiHinhDuLich
+                        }));
+                    })
+                },
+                error: function (errorMessage) {
+                    alert(errorMessage.responseText);
+                }
+            });
+
+            //Load địa điểm
+            document.getElementById('dropdownDiaDiemDen_Edit').options.length = 0; //clear dropdown
+
+            $('#dropdownDiaDiemDen_Edit').append($('<option>', {
+                value: 0,
+                text: "-- Chọn địa điểm đến --"
+            }));
+
+            $.ajax({
+                url: "/DiaDiem/GetAllDiaDiemDen",
+                type: "GET",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    $.each(result, function (index) {
+                        $('#dropdownDiaDiemDen_Edit').append($('<option>', {
+                            value: result[index].maDiaDiemDen,
+                            text: result[index].tenDiaDiemDen
+                        }));
+                    })
+                },
+                error: function (errorMessage) {
+                    alert(errorMessage.responseText);
+                }
+            });
+
+        }
+
+        //Load địa điểm tham quan theo địa điểm đến
+        function LoadDiaDiemThamQuan() {
+
+            //Khi dropdown địa điểm đến thay đổi => load danh sach dia diem tham quan trong dia diem den nay
+            $('#dropdownDiaDiemDen').on('change', function () {
+                var _maDiaDiemDen = $('#dropdownDiaDiemDen').val();
+
+                //clear truoc khi load
+                $('#listDiaDiemThamQuan input').remove();
+                $('#listDiaDiemThamQuan label').remove();
+                $('#listDiaDiemThamQuan br').remove();
+
+                $.ajax({
+                    url: "/DiaDiem/GetDetailsDDTQ",
+                    data: { maDiaDiemDen: _maDiaDiemDen },
+                    type: "GET",
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+                        $.each(result, function (index) {
+                            $('#listDiaDiemThamQuan').append($('<input type="checkbox" id="' + result[index].maDiaDiem + '" name="listCheckedDDTQ" value="' + result[index].maDiaDiem + '" />'));
+                            $('#listDiaDiemThamQuan').append($('<label class="form-label" for="' + result[index].maDiaDiem + '"> ' + result[index].tenDiaDiem + '</label><br>'));
+
+                        })
+                    },
+                    error: function (errorMessage) {
+                        alert(errorMessage.responseText);
+                    }
+                });
+
+            });
+
+
+        }
+
+        function LoadDiaDiemThamQuan_UpdateModalOnChange() {
+
+            //Khi dropdown địa điểm đến thay đổi => load danh sach dia diem tham quan trong dia diem den nay
+            $('#dropdownDiaDiemDen_Edit').on('change', function () {
+                var _maDiaDiemDen = $('#dropdownDiaDiemDen_Edit').val();
+                //clear truoc khi load
+                $('#listDiaDiemThamQuan_Edit input').remove();
+                $('#listDiaDiemThamQuan_Edit label').remove();
+                $('#listDiaDiemThamQuan_Edit br').remove();
+
+                $.ajax({
+                    url: "/DiaDiem/GetDetailsDDTQ",
+                    data: { maDiaDiemDen: _maDiaDiemDen },
+                    type: "GET",
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+                        $.each(result, function (index) {
+                            $('#listDiaDiemThamQuan_Edit').append($('<input type="checkbox" id="' + result[index].maDiaDiem + '" name="listCheckedDDTQ_Edit" value="' + result[index].maDiaDiem + '" />'));
+                            $('#listDiaDiemThamQuan_Edit').append($('<label class="form-label" for="' + result[index].maDiaDiem + '"> ' + result[index].tenDiaDiem + '</label><br>'));
+
+                        })
+                    },
+                    error: function (errorMessage) {
+                        alert(errorMessage.responseText);
+                    }
+                });
+            });
+        }
+
+        function LoadDiaDiemThamQuan_UpdateModalOnClick(maDiaDiemDen) {
+
+            //Khi dropdown địa điểm đến thay đổi => load danh sach dia diem tham quan trong dia diem den nay
+
+            //clear truoc khi load
+            $('#listDiaDiemThamQuan_Edit input').remove();
+            $('#listDiaDiemThamQuan_Edit label').remove();
+            $('#listDiaDiemThamQuan_Edit br').remove();
+
+            $.ajax({
+                url: "/DiaDiem/GetDetailsDDTQ?maDiaDiemDen=" + maDiaDiemDen,
+                type: "GET",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    $.each(result, function (index) {
+                        $('#listDiaDiemThamQuan_Edit').append($('<input type="checkbox" id="' + result[index].maDiaDiem + '" name="listCheckedDDTQ_Edit" value="' + result[index].maDiaDiem + '" />'));
+                        $('#listDiaDiemThamQuan_Edit').append($('<label class="form-label" for="' + result[index].maDiaDiem + '"> ' + result[index].tenDiaDiem + '</label><br>'));
+
+                    })
+                },
+                error: function (errorMessage) {
+                    alert(errorMessage.responseText);
+                }
+            });
+
+
+        }
+
+
+        function Add() {
+            var _tenGoiTour = $('#inputTenGoiTour').val();
+            var _dacDiemTour = $('#inputDacDiemTour').val();
+            var _thoiGianBatDau = $('#inputThoiGianBatDau').val();
+            var _thoiGianKetThuc = $('#inputThoiGianKetThuc').val();
+            var _dropdownLoaiHinhDuLich = $('#dropdownLoaiHinhDuLich').val(); //nếu =0 thì chưa chọn
+            var _dropdownDiaDiemDen = $('#dropdownDiaDiemDen').val();//nếu =0 thì chưa chọn
+            var _listCheckedDDTQ = $('input[name=listCheckedDDTQ]:checked');
+
+            _listCheckedDDTQ.each(function () {
+                console.log((this.checked ? $(this).text() : ""));
+            });
+
+            if (_tenGoiTour == '' || _dacDiemTour == '' ||
+                _thoiGianBatDau == '' || _thoiGianKetThuc == '' ||
+                _dropdownLoaiHinhDuLich == 0 || _dropdownDiaDiemDen == 0 || _listCheckedDDTQ.length == 0) {
+                swal({
+                    title: "Không được để trống!",
+                    text: "Vui lòng nhập đầy đủ thông tin!",
+                    icon: "warning",
+                    button: "Đóng",
+                });
+            } else {
+                if (_thoiGianBatDau > _thoiGianKetThuc) {
+                    swal({
+                        title: "Thời gian bắt đầu phải NHỎ HƠN thời gian kết thúc!",
+                        text: "Vui lòng nhập đúng thông tin!",
+                        icon: "warning",
+                        button: "Đóng",
+                    });
+                } else {
+                    //Thêm list địa điểm tham quan vào tour
+                    //get mã tour mới nhất + 1, sau đó loop để thêm diadiemtour
+                    $.ajax({
+                        url: "/Tour/GetTourLatest",
+                        type: "GET",
+                        contentType: "application/json;charset=utf-8",
+                        dataType: "json",
+                        success: function (result) {
+                            var _maSoTourNew = result.maSoTour + 1;
+
+                            _listCheckedDDTQ.each(function () {
+
+                                var objDiaDiemTour = {
+                                    maTour: _maSoTourNew,
+                                    tenDiaDiemThamQuan: (this.checked ? $(this).next('label').text() : "")
+                                };
+
+                                $.ajax({
+                                    url: "/DiaDiem/CreateDiaDiemTour",
+                                    data: JSON.stringify(objDiaDiemTour),
+                                    type: "POST",
+                                    contentType: "application/json;charset=utf-8",
+                                    dataType: "json",
+                                    success: function (result) {
+                                        console.log("Thêm địa điểm tour thành công!");
+                                    },
+                                    error: function (errorMessage) {
+                                        alert(errorMessage.responseText);
+                                    }
+                                });
+
+                            });
+
+                        },
+                        error: function (errorMessage) {
+                            alert(errorMessage.responseText);
+                        }
+                    });
+
+                    //Thêm tour
+                    var objTour = {
+                        tenGoiTour: _tenGoiTour,
+                        dacDiem: _dacDiemTour,
+                        maLoaiHinhDuLich: _dropdownLoaiHinhDuLich,
+                        thoiGianBatDau: _thoiGianBatDau,
+                        thoiGianKetThuc: _thoiGianKetThuc,
+                        maDiaDiemDen: _dropdownDiaDiemDen,
+                        idGiaTour: null,
+                        trangThai: 1
+                    };
+
+                    $.ajax({
+                        url: "/Tour/Create",
+                        data: JSON.stringify(objTour),
+                        type: "POST",
+                        contentType: "application/json;charset=utf-8",
+                        dataType: "json",
+                        success: function (result) {
+                            $('#AddModal').modal('hide');
+                            swal({
+                                title: "Thêm thành công!",
+                                icon: "success",
+                                timer: 2000
+                            })
+                            window.setTimeout(function () { location.reload() }, 2000)
+                        },
+                        error: function (errorMessage) {
+                            alert(errorMessage.responseText);
+                        }
+                    });
+                }
+
+            }
+        }
+
+        //(đang lỗi)
+        function Update() {
+            var _maDiaDiemDen = $('#inputMaDiaDiemDenEdit').val();
+
+            var _tenDiaDiemDen = $('#inputTenDiaDiemDenEdit').val();
+
+
+            if (_tenDiaDiemDen == '') {
+                swal({
+                    title: "Không được để trống!",
+                    text: "Vui lòng nhập đầy đủ thông tin!",
+                    icon: "warning",
+                    button: "Đóng",
+                });
+            } else {
+                var objDiaDiemDen = {
+                    maDiaDiemDen: _maDiaDiemDen,
+                    tenDiaDiemDen: _tenDiaDiemDen,
+                    trangThai: 1
+                };
+                $.ajax({
+                    url: "/DiaDiem/Update",
+                    data: JSON.stringify(objDiaDiemDen),
+                    type: "POST",
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+                        $('#EditModal').modal('hide');
+                        swal({
+                            title: "Sửa thành công địa điểm mã " + _maDiaDiemDen + "!",
+                            icon: "success",
+                            timer: 2500
+                        })
+                        window.setTimeout(function () { location.reload() }, 2500)
+                    },
+                    error: function (errorMessage) {
+                        alert(errorMessage.responseText);
+                    }
+                });
+            }
+        }
+
+        //Truyền data id vào modal (đang lỗi convert date + các địa điểm tham quan)
+        function GetIDUpdate(maSoTour) {
+
+            LoadInfoModalUpdate();
+
+            $('#inputMaSoTour_Edit').val(maSoTour);
+            var _maSoTour = maSoTour;
+
+            $.ajax({
+                url: "/Tour/GetOneTour?maSoTour=" + _maSoTour,
+                type: "GET",
+                contentType: "application/json; charset=UTF-8",
+                dataType: "json",
+                success: function (result) {
+                    $('#inputTenGoiTour_Edit').val(result[0].tenGoiTour);
+                    $('#inputDacDiemTour_Edit').val(result[0].dacDiem);
+                    $('#dropdownLoaiHinhDuLich_Edit').val(result[0].maLoaiHinhDuLich);
+                    $('#dropdownDiaDiemDen_Edit').val(result[0].maDiaDiemDen);
+                    LoadDiaDiemThamQuan_UpdateModalOnClick(result[0].maDiaDiemDen);
+                    //console.log(moment(new Date(1639074900000)).format('yyyy-MM-ddThh:mm'));
+                    //$('#inputThoiGianBatDau_Edit').val(moment(new Date(1639074900000)).format('yyyy-MM-ddThh:mm'));
+                    //$('#inputThoiGianKetThuc_Edit').val(result[0].thoiGianKetThuc);
+                },
+                error: function (errorMessage) {
+                    alert(errorMessage.responseText);
+                }
+            });
+
+        }
+
+        function GetIDDelete(maSoTour) {
+            $('#maSoTourDeleteModal').html(maSoTour);
+        }
+
+        function Delete() {
+            var _maSoTour = $('#maSoTourDeleteModal').html();
+
+            var postData = {
+                maSoTour: _maSoTour
+            };
+
+            $.ajax({
+                url: "/Tour/Delete",
+                data: JSON.stringify(postData),
+                type: "POST",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    $('#DeleteModal').modal('hide');
+                    swal({
+                        title: "Xóa thành công tour mã " + _maSoTour + "!",
+                        icon: "success",
+                        timer: 2500
+                    })
+                    window.setTimeout(function () { location.reload() }, 2500)
+                },
+                error: function (errorMessage) {
+                    alert(errorMessage.responseText);
+                }
+            });
+
+        }
+
+        //gia tour
+        function GetIDTourBangGia(maSoTour) {
+            $('#inputMaSoTour_ModalBangGia').val(maSoTour);
+
+            var _maSoTour = maSoTour;
+
+            LoadBangDanhSachGia(_maSoTour);
+            //get id gia tour selected checkbox
+            $.ajax({
+                url: "/Tour/GetOneTour?maSoTour=" + _maSoTour,
+                type: "GET",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    var _idGiaTour = result[0].idGiaTour;
+                    console.log(_idGiaTour);
+
+                    $('#tableBangGia tbody tr td input[name="checkBoxGia"][value="' + _idGiaTour + '"]').prop("checked", true);
+
+                },
+                error: function (errorMessage) {
+                    alert(errorMessage.responseText);
+                }
+            });
+
+
+        }
+
+        function LoadBangDanhSachGia(maSoTour) {
+            $('#tableBangGia tbody tr').remove();
+
+            $.ajax({
+                url: "/Tour/GetBangGiaTour?maSoTour=" + maSoTour,
+                type: "GET",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    $.each(result, function (index) {
+                        $('#tableBangGia tbody').append($('<tr><td><input class="form-check-input" type="radio" name="checkBoxGia" value="' + result[index].id + '" id="flexCheckDefault"></td><td>' + result[index].id + '</td><td>' + String(result[index].gia).replace(/(.)(?=(\d{3})+$)/g, '$1,') + '</td><td>' + result[index].dieuKien + '</td><td>' + FormatDate(result[index].ngayThem) + '</td></tr>'));
+
+                    })
+                },
+                error: function (errorMessage) {
+                    alert(errorMessage.responseText);
+                }
+            });
+        }
+
+        function ThemGiaMoi() {
+            var _maTour = $('#inputMaSoTour_ModalBangGia').val();
+            var _giaTour = $('#inputGiaTour_ModalBangGia').val();
+            var _noiDungGia = $('#inputNoiDungGia_ModalBangGia').val();
+            var _ngayThem = $('#inputNgayThem_ModalBangGia').val();
+
+            if (_maTour == '' || _giaTour == '' ||
+                _noiDungGia == '' || _ngayThem == '') {
+                swal({
+                    title: "Không được để trống!",
+                    text: "Vui lòng nhập đầy đủ thông tin!",
+                    icon: "warning",
+                    button: "Đóng",
+                });
+            } else {
+                if (!CheckNumberGia(_giaTour)) {
+                    swal({
+                        title: "Giá phải là số!",
+                        text: "Vui lòng nhập số vào ô giá!",
+                        icon: "warning",
+                        button: "Đóng",
+                    });
+                } else {
+                    var objGiaTour = {
+                        maGiaTour: _maTour,
+                        gia: _giaTour,
+                        dieuKien: _noiDungGia,
+                        ngayThem: _ngayThem
+                    };
+
+                    $.ajax({
+                        url: "/Tour/CreateGiaTour",
+                        data: JSON.stringify(objGiaTour),
+                        type: "POST",
+                        contentType: "application/json;charset=utf-8",
+                        dataType: "json",
+                        success: function (result) {
+                            swal({
+                                title: "Thêm thành công!",
+                                icon: "success",
+                                timer: 2000
+                            })
+                            //clear field
+                            $('#inputGiaTour_ModalBangGia').val('');
+                            $('#inputNoiDungGia_ModalBangGia').val('');
+                            $('#inputNgayThem_ModalBangGia').val('');
+
+                            LoadBangDanhSachGia(_maTour);
+                        },
+                        error: function (errorMessage) {
+                            alert(errorMessage.responseText);
+                        }
+                    });
+                }
+
+
+            }
+
+
+        }
+
+        function CheckNumberGia(strCheck) {
+            var numberRegex = /^[+-]?\d+(\.\d+)?([eE][+-]?\d+)?$/;
+            if (numberRegex.test(strCheck)) {
+                return true;
+            }
+            return false;
+        }
+
+        function ApDungGia() {
+            var _maGiaChecked = $('#tableBangGia tbody tr td input:checked').val();
+            var _maTour = $('#inputMaSoTour_ModalBangGia').val();
+
+            if (_maGiaChecked == null) {
+                swal({
+                    title: "Vui lòng chọn giá muốn áp dụng!",
+                    text: "Chọn giá để áp dụng!",
+                    icon: "warning",
+                    button: "Đóng",
+                });
+            } else {
+
+                var objTour = {
+                    maSoTour: _maTour,
+                    idGiaTour: _maGiaChecked
+                };
+
+                $.ajax({
+                    url: "/Tour/UpdateGiaTour",
+                    data: JSON.stringify(objTour),
+                    type: "POST",
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+                        swal({
+                            title: "Áp dụng thành công giá tour mã " + _maGiaChecked + "!",
+                            icon: "success",
+                            timer: 2000
+                        })
+
+                    },
+                    error: function (errorMessage) {
+                        alert(errorMessage.responseText);
+                    }
+                });
+
+            }
+
+
+        }
+
+
+        //Hàm convert date bang gia
+        function FormatDate(inputDate) {
+            var str, year, month, day, d, finalDate;
+
+            str = inputDate.replace(/\D/g, "");
+            d = new Date(parseInt(str));
+
+            year = d.getFullYear();
+            month = d.getMonth();
+            day = d.getDate();
+
+            finalDate = day + "-" + month + "-" + year;
+
+            return finalDate;
+        }
+
+
+
+    </script>
+</div>
 

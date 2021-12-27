@@ -52,6 +52,24 @@ namespace Tour.DAO
             }
 
         }
+        public List<dynamic> GetListNhanVienW()
+        {
+            using (tour = new TourENT())
+            {
+                var getListNhanVien = (from tbNhanVien in tour.NHANVIENs
+                                       select new
+                                       {
+                                           MaNV = tbNhanVien.MaNV,
+                                           TenNV = tbNhanVien.TenNV,
+                                           NV_NgaySinh = tbNhanVien.NV_NgaySinh,
+                                           NV_SoDienThoai = tbNhanVien.NV_SoDienThoai
+                                       });
+
+                return getListNhanVien.ToList<dynamic>();
+
+            }
+
+        }
 
         public List<dynamic> TimKiemTenNhanVien(string searchValue)
         {

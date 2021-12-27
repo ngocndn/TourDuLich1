@@ -32,27 +32,26 @@ namespace TourDuLichSite.Controllers
         [Route("Create")]
         public JsonResult Create(LOAIHINHDULICH lhd)
         {
-
             return Json(LHD.Add(lhd), JsonRequestBehavior.AllowGet);
         }
         [HttpPost]
         [Route("Update")]
-        public JsonResult Update(LOAIHINHDULICH lhd, int ID)
+        public JsonResult Update(LOAIHINHDULICH lhd, int MaLoaiHinh)
         {
-            return Json(LHD.Edit(lhd, ID), JsonRequestBehavior.AllowGet);
+            return Json(LHD.Edit(lhd, MaLoaiHinh), JsonRequestBehavior.AllowGet);
         }
         [HttpPost]
         [Route("Delete")]
-        public JsonResult Delete(LOAIHINHDULICH lhd,int ID)
+        public JsonResult Delete(LOAIHINHDULICH lhd,int MaLoaiHinh)
         {
-            return Json(LHD.Del(lhd,ID), JsonRequestBehavior.AllowGet);
+            return Json(LHD.Del(lhd, MaLoaiHinh), JsonRequestBehavior.AllowGet);
 
         }
         [HttpGet]
         [Route("GetOneLoaiHinhDuLich")]
-        public JsonResult GetOneLoaiHinhDuLich(int ID)
+        public JsonResult GetOneLoaiHinhDuLich(int MaLoaiHinh)
         {
-            var getKH = LHD.GetDetailList(ID);
+            var getKH = LHD.GetOneLoaiHinhDL(MaLoaiHinh);
             return Json(getKH, JsonRequestBehavior.AllowGet);
         }
     }

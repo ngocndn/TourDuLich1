@@ -117,6 +117,8 @@
                                 <div class="mb-3">
                                     <label class="form-label">Tên loại hình du lịch</label>
                                     <input type="text" class="form-control" style="border-color: #6e6e6f;" id="inputTenLHDL" placeholder="Nhập tên loại hình du lịch..." required />
+                                    <label class="form-label">Đặc Điểm</label>
+                                    <input type="text" class="form-control" style="border-color: #6e6e6f;" id="inputDD" placeholder="Đặc điểm loại hình du lịch..." required />
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -150,6 +152,10 @@
                                     <label class="form-label">Tên loại hình du lịch</label>
                                     <input type="text" class="form-control" style="border-color: #6e6e6f;" id="inputTenLHDLEdit" required />
                                 </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Mô Tả</label>
+                                    <input type="text" class="form-control" style="border-color: #6e6e6f;" id="inputMoTaEdit" required />
+                                </div>
                             </div>
                             <div class="modal-footer">
                                 <input type="button" id="btnAdd" class="btn btn-warning" onclick="return Update()" value="Sửa" style="color: white;float:left;" />
@@ -180,5 +186,142 @@
             </div>
         </div>
     </div>
+    <script>
+
+        function Add() {
+            var _tenLHDL = $('#inputTenLHDL').val();
+            var _DD = $('#inputDD').val();
+
+            if (_tenLHDL == '') {
+                swal({
+                    title: "Không được để trống!",
+                    text: "Vui lòng nhập đầy đủ thông tin!",
+                    icon: "warning",
+                    button: "Đóng",
+                });
+            } else {
+                var objLHDL = {
+                    TenLoaiHinh: _tenLHDL,LH_MoTa : _DD
+                };
+
+                $.ajax({
+                    url: "/LoaiHinh/Create",
+                    data: JSON.stringify(objLHDL),
+                    type: "POST",
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+                        $('#AddModal').modal('hide');
+                        swal({
+                            title: "Thêm thành công!",
+                            icon: "success",
+                            timer: 2000
+                        })
+                        window.setTimeout(function () { location.reload() }, 2000)
+                    },
+                    error: function (errorMessage) {
+                        alert(errorMessage.responseText);
+                    }
+                });
+            }
+        }
+
+        function Update() {
+            var _maLHDL = $('#inputMaLHDLEdit').val();
+
+            var _tenLHDL = $('#inputTenLHDLEdit').val();
+
+            var _MoTa = $('#inputMoTaEdit').val();
+
+            if (_tenLHDL == '') {
+                swal({
+                    title: "Không được để trống!",
+                    text: "Vui lòng nhập đầy đủ thông tin!",
+                    icon: "warning",
+                    button: "Đóng",
+                });
+            } else {
+                var objLHDL = {
+                    MaLoaiHinh: _maLHDL,
+                    TenLoaiHinh: _tenLHDL,
+                    LH_MoTa: _MoTa  
+                };
+                $.ajax({
+                    url: "/LoaiHinh/Update",
+                    data: JSON.stringify(objLHDL),
+                    type: "POST",
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+                        $('#EditModal').modal('hide');
+                        swal({
+                            title: "Sửa thành công loại hình du lịch mã " + _maLHDL + "!",
+                            icon: "success",
+                            timer: 2500
+                        })
+                        window.setTimeout(function () { location.reload() }, 2500)
+                    },
+                    error: function (errorMessage) {
+                        alert(errorMessage.responseText);
+                    }
+                });
+            }
+        }
+
+        //Truyền data id vào modal
+        function GetIDUpdate(MaLoaiHinh) {
+            $('#inputMaLHDLEdit').val(MaLoaiHinh);
+            var _maLHDL = MaLoaiHinh;
+
+            $.ajax({
+                url: "/LoaiHinh/GetOneLoaiHinhDuLich?MaLoaiHinh=" + _maLHDL,
+                type: "GET",
+                contentType: "application/json; charset=UTF-8",
+                dataType: "json",
+                success: function (result) {
+                    $('#inputTenLHDLEdit').val(result[0].TenLoaiHinh);
+                    $('#inputTenMoTaEdit').val(result[2].LH_MoTa);
+                },
+                error: function (errorMessage) {
+                    alert(errorMessage.responseText);
+                }
+            });
+        }
+
+        function GetIDDelete(MaLoaiHinh) {
+            $('#maLHDLDeleteModal').html(MaLoaiHinh);
+        }
+
+        function Delete() {
+            var _maLHDL = $('#maLHDLDeleteModal').html();
+
+            var postData = {
+                MaLoaiHinh: _maLHDL
+            };
+
+            $.ajax({
+                url: "/LoaiHinh/Delete",
+                data: JSON.stringify(postData),
+                type: "POST",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    $('#DeleteModal').modal('hide');
+                    swal({
+                        title: "Xóa thành công loại hình du lịch mã " + _maLHDL + "!",
+                        icon: "success",
+                        timer: 2500
+                    })
+                    window.setTimeout(function () { location.reload() }, 2500)
+                },
+                error: function (errorMessage) {
+                    alert(errorMessage.responseText);
+                }
+            });
+
+        }
+
+
+    </script>
     </div>
 

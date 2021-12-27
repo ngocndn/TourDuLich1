@@ -20,5 +20,40 @@ namespace TourDuLichSite.Controllers
             ViewBag.listTemp = obj;
             return View();
         }
+        [HttpGet]
+        [Route("GetAllDiaDiemDen")]
+        public JsonResult GetAllDiaDiemDen()
+        {
+            var getDDD = ddd.GetListDiaDiem();
+            return Json(getDDD, JsonRequestBehavior.AllowGet);
+        }
+        [HttpGet]
+        [Route("GetOneDiaDiemDen")]
+        public JsonResult GetOneDiaDiemDen(int MaDiaDiem)
+        {
+            var getDDD = ddd.GetDiaDiem(MaDiaDiem);
+            return Json(getDDD, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        [Route("Create")]
+        public JsonResult Create(DIADIEM D)
+        {
+            return Json(ddd.AddDiaDiem(D), JsonRequestBehavior.AllowGet);
+        }
+        [HttpPost]
+        [Route("Update")]
+        public JsonResult Update(DIADIEM D, int MaDiaDiem)
+        {
+            return Json(ddd.Edit(D, MaDiaDiem), JsonRequestBehavior.AllowGet);
+
+        }
+        [HttpPost]
+        [Route("Delete")]
+        public JsonResult Delete(DIADIEM D, int MaDiaDiem)
+        {
+            return Json(ddd.Delete(D, MaDiaDiem), JsonRequestBehavior.AllowGet);
+
+        }
     }
 }

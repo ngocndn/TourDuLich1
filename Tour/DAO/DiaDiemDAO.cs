@@ -24,7 +24,7 @@ namespace Tour.DAO
             {
                 var getList = (from tbDD in tour.DIADIEMs
                                select new
-                               { MaDD = tbDD.MaDiaDiem,TenDD = tbDD.TenDiaDiem, MoTa = tbDD.DD_MoTa });
+                               { MaDiaDiem = tbDD.MaDiaDiem,TenDiaDiem = tbDD.TenDiaDiem, DD_MoTa = tbDD.DD_MoTa });
                 return getList.ToList<dynamic>();
             }
         }
@@ -34,6 +34,14 @@ namespace Tour.DAO
             {
                 var getList = tour.DIADIEMs.Where(t=>t.TenDiaDiem.Contains(searchValue));
                 return getList.ToList<DIADIEM>();
+            }
+        }
+        public List<DIADIEM> GetDiaDiem(int ID)
+        {
+            using (tour =new TourENT())
+            {
+                var getlist = tour.DIADIEMs.Where(x => x.MaDiaDiem == ID);
+                return getlist.ToList<DIADIEM>();
             }
         }
 

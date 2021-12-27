@@ -14,7 +14,7 @@ namespace TourDuLichSite.Controllers
         // GET: NhanVien
         public ActionResult Index()
         {
-            List<dynamic> listResults = nvd.GetListNhanVien();
+            List<dynamic> listResults = nvd.GetListNhanVienW();
             //convert List<dynamic> sang json
             var objOld = JsonConvert.SerializeObject(listResults);
             //convert json sang List<NhanVienView>

@@ -48,6 +48,26 @@ namespace Tour.DAO
                 return getListDoan.ToList<dynamic>();
             }
         }
+        public List<dynamic> getListDoanW()
+        {
+            {
+                var getListDoan = (from tbD in tour.DOANDLs
+                                   join tbT in tour.TOURDULICHes on tbD.MaTour equals tbT.MaTour
+                                   join tbN in tour.NHANVIENs on tbD.MaNV equals tbN.MaNV
+
+                                   select new
+                                   {
+                                       MaDOANDL = tbD.MaDOANDL,
+                                       TenDoan = tbD.TenDoan,
+                                       NgayKhoiHanh = tbD.NgayKhoiHanh,
+                                       NgayKetThuc = tbD.NgayKetThuc,
+                                       TenTour = tbT.TenTour,
+                                       TenNV = tbN.TenNV,
+                                       //MCP1 = tbL.TenCP,MCP2 = tbL.TenCP
+                                   });
+                return getListDoan.ToList<dynamic>();
+            }
+        }
         public List<dynamic> Search(string searchValue)
         {
             {

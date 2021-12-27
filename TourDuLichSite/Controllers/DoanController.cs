@@ -14,7 +14,7 @@ namespace TourDuLichSite.Controllers
         // GET: Doan
         public ActionResult Index()
         {
-            List<dynamic> listResults = dd.getListDoan();
+            List<dynamic> listResults = dd.getListDoanW();
             var objOld = JsonConvert.SerializeObject(listResults);
             var obj = JsonConvert.DeserializeObject<List<DoanView>>(objOld);
             ViewBag.listTemp = obj;

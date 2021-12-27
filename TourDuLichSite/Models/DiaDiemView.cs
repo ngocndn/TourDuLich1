@@ -8,8 +8,10 @@ namespace TourDuLichSite
 {
     public class DiaDiemView
     {
-        public int MaDD { get; set; }
-        public string TenDD { get; set; }
-        public string MoTa { get; set; }
+        public int MaDiaDiem { get; set; }
+
+        public string TenDiaDiem { get; set; }
+
+        public string DD_MoTa { get; set; }
     }
 }

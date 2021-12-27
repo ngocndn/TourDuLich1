@@ -64,15 +64,16 @@
                                     <tbody>
                                         @foreach (var item in listResults)
                                         {
-                            <tr>
-                                <td class="cell">@item.MaDD</td>
-                                <td class="cell"><span class="truncate">@item.TenDD</span></td>
-                                <td class="cell">
-                                    <a class="btn btn-warning" style="color: white;" data-bs-toggle="modal" data-bs-target="#EditModal" onclick="GetIDUpdate(@item.MaDD)"><i class="fas fa-pencil-alt"></i> Sửa</a>
-                                    @*<a class="btn btn-danger" style="color: white;" data-bs-toggle="modal" data-bs-target="#DeleteModal" id="deleteButton" onclick="GetIDDelete(@item.MaDD)"><i class="fas fa-trash-alt"></i> Xóa</a>*@
-                                </td>
-                            </tr>}
-
+                                        <tr>
+                                            <td class="cell">@item.MaDiaDiem</td>
+                                            <td class="cell"><span class="truncate">@item.TenDiaDiem</span></td>
+                                            <td class="cell"><span class="truncate">@item.DD_MoTa</span></td>
+                                            <td class="cell">
+                                                <a class="btn btn-warning" style="color: white;" data-bs-toggle="modal" data-bs-target="#EditModal" onclick="GetIDUpdate(@item.MaDiaDiem)"><i class="fas fa-pencil-alt"></i> Sửa</a>
+                                                <a class="btn btn-danger" style="color: white;" data-bs-toggle="modal" data-bs-target="#DeleteModal" id="deleteButton" onclick="GetIDDelete(@item.MaDiaDiem)"><i class="fas fa-trash-alt"></i> Xóa</a>
+                                            </td>
+                                        </tr>
+                                        }
                                     </tbody>
                                 </table>
                             </div><!--//table-responsive-->
@@ -118,6 +119,10 @@
                                     <label class="form-label">Tên địa điểm đến</label>
                                     <input type="text" class="form-control" style="border-color: #6e6e6f;" id="inputTenDiaDiemDen" placeholder="Nhập tên địa điểm..." required />
                                 </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Mô Tả</label>
+                                    <input type="text" class="form-control" style="border-color: #6e6e6f;" id="inputMoTa" required />
+                                </div>
                             </div>
                             <div class="modal-footer">
                                 <input type="button" id="btnAdd" class="btn app-btn-primary" onclick="return Add()" value="Thêm" style="color: white;float:left;" />
@@ -143,12 +148,16 @@
                         <div class="settings-form">
                             <div class="modal-body">
                                 <div class="mb-3">
-                                    <label class="form-label">Mã địa điểm đến</label>
+                                    <label class="form-label">Mã địa điểm</label>
                                     <input type="text" class="form-control" style="border-color: #6e6e6f;" id="inputMaDiaDiemDenEdit" required readonly />
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label">Tên địa điểm đến</label>
+                                    <label class="form-label">Tên địa điểm</label>
                                     <input type="text" class="form-control" style="border-color: #6e6e6f;" id="inputTenDiaDiemDenEdit" required />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Mô Tả</label>
+                                    <input type="text" class="form-control" style="border-color: #6e6e6f;" id="inputMoTaEdit" required />
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -180,55 +189,142 @@
             </div>
         </div>
     </div>
+    <script>
 
-    <!-- Modal DiaDiemThamQuan -->
-    <div class="modal fade" id="DiaDiemThamQuanModal" tabindex="-1" aria-labelledby="DiaDiemThamQuanModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Địa điểm tham quan</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="app-card app-card-settings shadow-sm p-4">
-                    <div class="app-card-body">
-                        <div class="settings-form">
-                            <div class="modal-body">
-                                <div class="mb-3">
-                                    <label class="form-label">Mã địa điểm đến</label>
-                                    <input type="text" class="form-control" style="border-color: #6e6e6f;" id="inputMaDiaDiemDen_ModalDDTQ" required readonly />
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Tên địa điểm đến</label>
-                                    <input type="text" class="form-control" style="border-color: #6e6e6f;" id="inputTenDiaDiemDen_ModalDDTQ" required readonly />
-                                </div>
-                                <hr />
-                                <div class="mb-3">
-                                    <label class="form-label">Tên địa điểm tham quan</label>
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" style="border-color: #6e6e6f;" id="inputTenDDTQ_ModalDDTQ" />
-                                        <button class="btn btn-success" style="color: white;" onclick="AddToListDDTQ()">Thêm</button>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <select class="form-select" multiple aria-label="select example" id="listDiaDiemThamQuan">
-                                    </select>
-                                    @*<div style="margin-top: 10px;">
-                                            <button class="btn btn-danger" style="color: white;float: left;">Xóa</button>
-                                            <button class="btn btn-danger" style="color: white;float: right;">Xóa tất cả</button>
-                                        </div>*@
-                                </div>
+        function Add() {
+            var _tenDiaDiemDen = $('#inputTenDiaDiemDen').val();
+            var _MoTa = $('#inputMoTa').val();
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    @*<button class="btn btn-warning" id="btnDelete" onclick="Delete()" style="color: white;">Cập nhật</button>*@
-                    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
+            if (_tenDiaDiemDen == '') {
+                swal({
+                    title: "Không được để trống!",
+                    text: "Vui lòng nhập đầy đủ thông tin!",
+                    icon: "warning",
+                    button: "Đóng",
+                });
+            } else {
+                var objDiaDiemDen = {
+                    TenDiaDiem: _tenDiaDiemDen,
+                    DD_MoTa: _MoTa
+                };
+
+                $.ajax({
+                    url: "/DiaDiem/Create",
+                    data: JSON.stringify(objDiaDiemDen),
+                    type: "POST",
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+                        $('#AddModal').modal('hide');
+                        swal({
+                            title: "Thêm thành công!",
+                            icon: "success",
+                            timer: 2000
+                        })
+                        window.setTimeout(function () { location.reload() }, 2000)
+                    },
+                    error: function (errorMessage) {
+                        alert(errorMessage.responseText);
+                    }
+                });
+            }
+        }
+
+        function Update() {
+            var _maDiaDiemDen = $('#inputMaDiaDiemDenEdit').val();
+            var _tenDiaDiemDen = $('#inputTenDiaDiemDenEdit').val();
+            var _MoTa = $('#inputMoTaEdit').val();
+            if (_tenDiaDiemDen == '') {
+                swal({
+                    title: "Không được để trống!",
+                    text: "Vui lòng nhập đầy đủ thông tin!",
+                    icon: "warning",
+                    button: "Đóng",
+                });
+            } else {
+                var objDiaDiemDen = {
+                    MaDiaDiem: _maDiaDiemDen,
+                    TenDiaDiem: _tenDiaDiemDen,
+                    DD_MoTa: _MoTa,
+                };
+                $.ajax({
+                    url: "/DiaDiem/Update",
+                    data: JSON.stringify(objDiaDiemDen),
+                    type: "POST",
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+                        $('#EditModal').modal('hide');
+                        swal({
+                            title: "Sửa thành công địa điểm mã " + _maDiaDiemDen + "!",
+                            icon: "success",
+                            timer: 2500
+                        })
+                        window.setTimeout(function () { location.reload() }, 2500)
+                    },
+                    error: function (errorMessage) {
+                        alert(errorMessage.responseText);
+                    }
+                });
+            }
+        }
+
+        //Truyền data id vào modal
+        function GetIDUpdate(MaDiaDiem) {
+            $('#inputMaDiaDiemDenEdit').val(MaDiaDiem);
+            var _maDiaDiemDen = MaDiaDiem;
+
+            $.ajax({
+                url: "/DiaDiem/GetOneDiaDiemDen?MaDiaDiem=" + _maDiaDiemDen,
+                type: "GET",
+                contentType: "application/json; charset=UTF-8",
+                dataType: "json",
+                success: function (result) {
+                    $('#inputTenDiaDiemDenEdit').val(result[0].TenDiaDiem);
+                    $('#inputMoTaEdit').val(result[3].DD_MoTa);
+
+                },
+                error: function (errorMessage) {
+                    alert(errorMessage.responseText);
+                }
+            });
+        }
+
+        function GetIDDelete(MaDD) {
+            $('#maDiaDiemDenDeleteModal').html(MaDD);
+        }
+
+        function Delete() {
+            var _maLHDL = $('#maDiaDiemDenDeleteModal').html();
+
+            var postData = {
+                MaDD: _maLHDL
+            };
+
+            $.ajax({
+                url: "/DiaDiem/Delete",
+                data: JSON.stringify(postData),
+                type: "POST",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    $('#DeleteModal').modal('hide');
+                    swal({
+                        title: "Xóa thành công mã " + _maLHDL + "!",
+                        icon: "success",
+                        timer: 2500
+                    })
+                    window.setTimeout(function () { location.reload() }, 2500)
+                },
+                error: function (errorMessage) {
+                    alert(errorMessage.responseText);
+                }
+            });
+
+        }
+
+
+    </script>
+</div>
 
 

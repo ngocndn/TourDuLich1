@@ -39,6 +39,26 @@ namespace Tour.DAO
                 return getlist.ToList<dynamic>();
             }
         }
+        public List<dynamic> GetListKHW()
+        {
+            using (tour = new TourENT())
+            {
+                var getlist = (from KH in tour.KHACHHANGs
+                               select new
+                               {
+                                   MaKH = KH.MaKH,
+                                   TenKH = KH.TenKH,
+                                   KH_NgaySinh = KH.KH_NgaySinh,
+                                   KH_DiaChi = KH.KH_DiaChi,
+                                   KH_SoDienThoai = KH.KH_SoDienThoai,
+                                   KH_GioiTinh = KH.KH_GioiTinh,
+                                   KH_email = KH.KH_email,
+                                   KH_CMND = KH.KH_CMND
+                               });
+                return getlist.ToList<dynamic>();
+            }
+        }
+
 
         public List<dynamic> GetDetailList(int KH_ID)
         {
@@ -56,6 +76,26 @@ namespace Tour.DAO
                                    Email = KH.KH_email,
                                    CMND = KH.KH_CMND
                                });
+                return getdetail.ToList<dynamic>();
+            }
+        }
+        public List<dynamic> GetDetailListW(int KH_ID)
+        {
+            using (tour = new TourENT())
+            {
+                var getdetail = (from KH in tour.KHACHHANGs
+                                 where KH.MaKH == KH_ID
+                                 select new
+                                 {
+                                     MaKH = KH.MaKH,
+                                     TenKH = KH.TenKH,
+                                     KH_NgaySinh = KH.KH_NgaySinh,
+                                     KH_DiaChi = KH.KH_DiaChi,
+                                     KH_SoDienThoai = KH.KH_SoDienThoai,
+                                     KH_Gioitinh = KH.KH_GioiTinh,
+                                     KH_email = KH.KH_email,
+                                     KH_CMND = KH.KH_CMND
+                                 });
                 return getdetail.ToList<dynamic>();
             }
         }

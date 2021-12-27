@@ -15,11 +15,8 @@ namespace TourDuLichSite.Controllers
         // GET: Tour
         public ActionResult Index()
         {
-            List<dynamic> listResults = td.GetListTour();
-
-            //convert List<dynamic> sang json
+            List<dynamic> listResults = td.GetListTourW();
             var objOld = JsonConvert.SerializeObject(listResults);
-            //convert json sang List<NhanVienView>
             var obj = JsonConvert.DeserializeObject<List<TourView>>(objOld);
 
             ViewBag.listTemp = obj;
