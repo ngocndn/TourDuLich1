@@ -15,12 +15,42 @@ namespace TourDuLichSite.Controllers
         public ActionResult Index()
         {
             List<dynamic> listResults = nvd.GetListNhanVienW();
-            //convert List<dynamic> sang json
             var objOld = JsonConvert.SerializeObject(listResults);
-            //convert json sang List<NhanVienView>
             var obj = JsonConvert.DeserializeObject<List<NhanVienView>>(objOld);
             ViewBag.listTemp = obj;
             return View();
         }
+        [HttpGet]
+        [Route("GetOneNhanVien")]
+        public JsonResult GetOneNhanVien(int MaNV)
+        {
+            var getNhanVien = nvd.GetListDetailsNhanVienW(MaNV);
+            return Json(getNhanVien, JsonRequestBehavior.AllowGet);
+        }
+        [HttpPost]
+        [Route("Create")]
+        public JsonResult Create(NHANVIEN NV)
+        {
+
+            return Json(nvd.ThemNhanVien(NV), JsonRequestBehavior.AllowGet);
+
+        }
+
+        [HttpPost]
+        [Route("Update")]
+        public JsonResult Update(NHANVIEN NV, int MaNV)
+        {
+            return Json(nvd.SuaNhanVien(NV, MaNV), JsonRequestBehavior.AllowGet);
+
+        }
+
+        [HttpPost]
+        [Route("Delete")]
+        public JsonResult Delete(int MaNV)
+        {
+            return Json(nvd.XoaNhanVien(MaNV), JsonRequestBehavior.AllowGet);
+
+        }
+
     }
 }

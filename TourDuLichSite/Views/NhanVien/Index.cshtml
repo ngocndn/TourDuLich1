@@ -65,17 +65,18 @@
                                     <tbody>
                                         @foreach (var item in listResults)
                                         {
-                                        <tr>
-                                            <td class="cell">@item.MaNV</td>
-                                            <td class="cell"><span class="truncate">@item.TenNV</span></td>
-                                            <td class="cell">@item.NV_NgaySinh</td>
-                                            <td class="cell">@item.NV_SoDienThoai</td>
-                                            <td class="cell">
-                                                <!--<a class="btn btn-secondary" href="#"><i class="fas fa-eye"></i> Xem</a>*-->
-                                                <a class="btn btn-warning" style="color: white;" data-bs-toggle="modal" data-bs-target="#EditModal" onclick="GetIDUpdate(@item.MaNV)"><i class="fas fa-pencil-alt"></i> Sửa</a>
-                                                <a class="btn btn-danger" style="color: white;" data-bs-toggle="modal" data-bs-target="#DeleteModal" id="deleteButton" onclick="GetIDDelete(@item.MaNV)"><i class="fas fa-trash-alt"></i> Xóa</a>
-                                            </td>
-                                        </tr>}
+                                            <tr>
+                                                <td class="cell">@item.MaNV</td>
+                                                <td class="cell"><span class="truncate">@item.TenNV</span></td>
+                                                <td class="cell">@item.NV_NgaySinh</td>
+                                                <td class="cell">@item.NV_SoDienThoai</td>
+                                                <td class="cell">
+                                                    <!--<a class="btn btn-secondary" href="#"><i class="fas fa-eye"></i> Xem</a>*-->
+                                                    <a class="btn btn-warning" style="color: white;" data-bs-toggle="modal" data-bs-target="#EditModal" onclick="GetIDUpdate(@item.MaNV)"><i class="fas fa-pencil-alt"></i> Sửa</a>
+                                                    <a class="btn btn-danger" style="color: white;" data-bs-toggle="modal" data-bs-target="#DeleteModal" id="deleteButton" onclick="GetIDDelete(@item.MaNV)"><i class="fas fa-trash-alt"></i> Xóa</a>
+                                                </td>
+                                            </tr>
+}
 
                                     </tbody>
                                 </table>
@@ -118,8 +119,12 @@
                                     <input type="text" class="form-control" style="border-color: #6e6e6f;" id="inputTenNhanVien" placeholder="Nhập tên nhân viên..." required />
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label">Nhiệm vụ</label>
-                                    <input type="text" class="form-control" style="border-color: #6e6e6f;" id="inputNhiemVu" placeholder="Nhập nhiệm vụ..." required />
+                                    <label class="form-label">Ngày sinh</label>
+                                    <input class="form-control" type="datetime-local" id="intputNgaySinh" name="intputNgaySinh" style="border-color: #6e6e6f;" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Số Điện Thoại</label>
+                                    <input type="text" class="form-control" style="border-color: #6e6e6f;" id="inputsdt" placeholder="Nhập sdt..." required />
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -154,8 +159,12 @@
                                     <input type="text" class="form-control" style="border-color: #6e6e6f;" id="inputTenNhanVienEdit" required />
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label">Nhiệm vụ</label>
-                                    <input type="text" class="form-control" style="border-color: #6e6e6f;" id="inputNhiemVuEdit" required />
+                                    <label class="form-label">Ngày sinh</label>
+                                    <input class="form-control" type="datetime-local" id="intputNgaySinh_Edit" name="intputNgaySinh_Edit" style="border-color: #6e6e6f;" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Số Điện Thoại</label>
+                                    <input type="text" class="form-control" style="border-color: #6e6e6f;" id="inputsdtEdit" required />
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -187,5 +196,145 @@
             </div>
         </div>
     </div>
-    </div>
+    <script>
+
+        function Add() {
+            var tenNhanVien = $('#inputTenNhanVien').val();
+            var ngaysinh = $('#intputNgaySinh').val();
+            var sdt = $('#inputsdt').val();
+
+            if (tenNhanVien == '' || sdt == '') {
+                swal({
+                    title: "Không được để trống!",
+                    text: "Vui lòng nhập đầy đủ thông tin!",
+                    icon: "warning",
+                    button: "Đóng",
+                });
+            } else {
+                var objNhanVien = {
+                    TenNV: tenNhanVien,
+                    NV_NgaySinh: ngaysinh,
+                    NV_SoDienThoai: sdt,
+                };
+                $.ajax({
+                    url: "/NhanVien/Create",
+                    data: JSON.stringify(objNhanVien),
+                    type: "POST",
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+                        $('#AddModal').modal('hide');
+                        swal({
+                            title: "Thêm thành công!",
+                            icon: "success",
+                            timer: 2000
+                        })
+                        window.setTimeout(function () { location.reload() }, 2000)
+                    },
+                    error: function (errorMessage) {
+                        alert(errorMessage.responseText);
+                    }
+                });
+            }
+        }
+
+        function Update() {
+            var _maNhanVien = $('#inputMaNhanVienEdit').val();
+            var tenNhanVien = $('#inputTenNhanVienEdit').val();
+            var ngaysinh = $('#intputNgaySinh_Edit').val();
+            var sdt = $('#inputsdtEdit').val();
+
+            if (tenNhanVien == '') {
+                swal({
+                    title: "Không được để trống!",
+                    text: "Vui lòng nhập đầy đủ thông tin!",
+                    icon: "warning",
+                    button: "Đóng",
+                });
+            } else {
+                var objNhanVien = {
+                    MaNV: _maNhanVien, TenNV: tenNhanVien, NV_NgaySinh: ngaysinh, NV_SoDienThoai: sdt,
+                };
+                $.ajax({
+                    url: "/NhanVien/Update",
+                    data: JSON.stringify(objNhanVien),
+                    type: "POST",
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+                        $('#EditModal').modal('hide');
+                        swal({
+                            title: "Sửa thành công nhân viên mã " + _maNhanVien + "!",
+                            icon: "success",
+                            timer: 2500
+                        })
+                        window.setTimeout(function () { location.reload() }, 2500)
+                    },
+                    error: function (errorMessage) {
+                        alert(errorMessage.responseText);
+                    }
+                });
+            }
+        }
+
+        //Truyền data id vào modal
+        function GetIDUpdate(MaNV) {
+            $('#inputMaNhanVienEdit').val(MaNV);
+            var _maNhanVien = MaNV;
+
+            $.ajax({
+                url: "/NhanVien/GetOneNhanVien?MaNV=" + _maNhanVien,
+                type: "GET",
+                contentType: "application/json; charset=UTF-8",
+                dataType: "json",
+                success: function (result) {
+                    $('#inputTenNhanVienEdit').val(result[0].TenNV);
+                    $('#intputNgaySinh_Edit').val(result[0].NV_NgaySinh);
+                    $('#inputsdtEdit').val(result[0].NV_SoDienThoai);
+                },
+                error: function (errorMessage) {
+                    alert(errorMessage.responseText);
+                }
+            });
+        }
+
+        function GetIDDelete(MaNV) {
+            $('#maNhanVienDeleteModal').html(MaNV);
+        }
+
+        function Delete() {
+            var _maNhanVien = $('#maNhanVienDeleteModal').html();
+
+            console.log(MaNV);
+
+            var postData = {
+                maNhanVien: _maNhanVien
+            };
+
+            $.ajax({
+                url: "/NhanVien/Delete",
+                data: JSON.stringify(postData),
+                type: "POST",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    $('#DeleteModal').modal('hide');
+                    swal({
+                        title: "Xóa thành công nhân viên mã " + _maNhanVien + "!",
+                        icon: "success",
+                        timer: 2500
+                    })
+                    window.setTimeout(function () { location.reload() }, 2500)
+                },
+                error: function (errorMessage) {
+                    alert(errorMessage.responseText);
+                }
+            });
+
+        }
+
+
+    </script>
+
+</div>
 

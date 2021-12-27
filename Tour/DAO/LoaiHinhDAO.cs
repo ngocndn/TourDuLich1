@@ -57,9 +57,22 @@ namespace Tour.DAO
             using (tour = new TourENT())
             {
                 var getListTenLHDL = tour.LOAIHINHDULICHes.Where(t => t.MaLoaiHinh == LoaiHinhID);
-
                 return getListTenLHDL.ToList<LOAIHINHDULICH>();
+            }
 
+        }
+
+        public List<dynamic> GetOneLoaiHinhDLW(int LoaiHinhID)
+        {
+            using (tour = new TourENT())
+            {
+                var getListTenLHDL = (from tbL in tour.LOAIHINHDULICHes
+                                      where tbL.MaLoaiHinh == LoaiHinhID
+                                      select new
+                                      { 
+                                        MaLoaiHinh = tbL.MaLoaiHinh, TenLoaiHinh = tbL.TenLoaiHinh, LH_MoTa = tbL.LH_MoTa
+                                      });
+                return getListTenLHDL.ToList<dynamic>();
             }
 
         }

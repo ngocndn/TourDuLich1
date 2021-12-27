@@ -132,6 +132,10 @@
                                     <input type="text" class="form-control" style="border-color: #6e6e6f;" id="inputHoTen" placeholder="Nhập họ tên khách hàng..." required />
                                 </div>
                                 <div class="mb-3">
+                                    <label class="form-label">Ngày sinh</label>
+                                    <input class="form-control" type="datetime-local" id="intputNgaySinh" name="intputNgaySinh" style="border-color: #6e6e6f;" required>
+                                </div>
+                                <div class="mb-3">
                                     <label class="form-label">Số chứng minh nhân dân</label>
                                     <input type="text" class="form-control" style="border-color: #6e6e6f;" id="inputCMND" placeholder="Nhập chứng minh nhân dân..." required />
                                 </div>
@@ -193,6 +197,10 @@
                                 <div class="mb-3">
                                     <label class="form-label">Họ tên khách hàng</label>
                                     <input type="text" class="form-control" style="border-color: #6e6e6f;" id="inputHoTenEdit" required />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Ngày sinh</label>
+                                    <input class="form-control" type="datetime-local" id="intputNgaySinh_Edit" name="intputNgaySinh_Edit" style="border-color: #6e6e6f;" required>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Số chứng minh nhân dân</label>
@@ -263,7 +271,8 @@
             var _diaChi = $('#inputDiaChi').val();
             var _gioiTinh = $("input[name='inputRadioGioiTinh']:checked").val();
             var _SDT = $('#inputSDT').val();
-            var _quocTich = $('#inputQuocTich').val();
+            var _quocTich = $('#inputEmail').val();
+            var _ngaysinh = $('#intputNgaySinh').val();
 
             if (_tenKhachHang == '' || _soCMND == '' || _diaChi == '' || _SDT == '' || _quocTich == '') {
                 swal({
@@ -280,6 +289,7 @@
                     KH_GioiTinh: _gioiTinh,
                     KH_SoDienThoai: _SDT,
                     KH_email: _quocTich,
+                    KH_NgaySinh: _ngaysinh
                 };
                 console.log(objKhachHang); //test
                 $.ajax({
@@ -312,6 +322,7 @@
             var _gioiTinh = $('input[name="inputRadioGioiTinhEdit"]:checked').val();
             var _SDT = $('#inputSDTEdit').val();
             var _quocTich = $('#inputemailEdit').val();
+            var _ngaysinh = $('#intputNgaySinh_Edit').val();
 
             if (_tenKhachHang == '' || _soCMND == '' || _diaChi == '' || _SDT == '' || _quocTich == '') {
                 swal({
@@ -322,12 +333,13 @@
                 });
             } else {
                 var objKhachHang = {
+                    MaKH: _maKhachHang,
                     TenKH: _tenKhachHang,
                     KH_CMND: _soCMND,
                     KH_DiaChi: _diaChi,
                     KH_GioiTinh: _gioiTinh,
                     KH_SoDienThoai: _SDT,
-                    KH_email: _quocTich,
+                    KH_email: _quocTich, KH_NgaySinh: _ngaysinh
                 };
                 $.ajax({
                     url: "/KhachHang/Update",
@@ -363,11 +375,13 @@
                 dataType: "json",
                 success: function (result) {
                     $('#inputHoTenEdit').val(result[0].TenKH);
-                    $('#inputDiaChiEdit').val(result[2].KH_DiaChi);
-                    $('#inputSDTEdit').val(result[3].KH_SoDienThoai);
-                    $('input[name="inputRadioGioiTinhEdit"]').filter('[value=' + result[0].gioiTinh + ']').prop('checked', true);
-                    $('#inputemailEdit').val(result[5].KH_email);
-                    $('#inputCMNDEdit').val(result[6].KH_CMND); 
+                    $('#inputDiaChiEdit').val(result[0].KH_DiaChi);
+                    $('#inputSDTEdit').val(result[0].KH_SoDienThoai);
+                    $('input[name="inputRadioGioiTinhEdit"]').filter('[value=' + result[0].KH_GioiTinh + ']').prop('checked', true);
+                    $('#inputemailEdit').val(result[0].KH_email);
+                    $('#inputCMNDEdit').val(result[0].KH_CMND);
+                    $('#intputNgaySinh_Edit').val(result[0].KH_NgaySinh);
+
                 },
                 error: function (errorMessage) {
                     alert(errorMessage.responseText);

@@ -70,6 +70,24 @@ namespace Tour.DAO
             }
 
         }
+        public List<dynamic> GetListNVW()
+        {
+            using (tour = new TourENT())
+            {
+                var getListNhanVien = (from tbNhanVien in tour.NHANVIENs
+                                       select new
+                                       {
+                                           MaNV = tbNhanVien.MaNV,
+                                           TenNV = tbNhanVien.TenNV,
+                                           NV_NgaySinh = tbNhanVien.NV_NgaySinh,
+                                           NV_SoDienThoai = tbNhanVien.NV_SoDienThoai
+                                       });
+
+                return getListNhanVien.ToList<dynamic>();
+
+            }
+
+        }
 
         public List<dynamic> TimKiemTenNhanVien(string searchValue)
         {
@@ -102,6 +120,23 @@ namespace Tour.DAO
                                                   TenNhanVien = tbNhanVien.TenNV,
                                                   NgaySinh = tbNhanVien.NV_NgaySinh,
                                                   SDT = tbNhanVien.NV_SoDienThoai
+                                              });
+
+                return getListDetailsNhanVien.ToList<dynamic>();
+            }
+        }
+        public List<dynamic> GetListDetailsNhanVienW(int NV_ID)
+        {
+            using (tour = new TourENT())
+            {
+                var getListDetailsNhanVien = (from tbNhanVien in tour.NHANVIENs
+                                              where tbNhanVien.MaNV == NV_ID
+                                              select new
+                                              {
+                                                  MaNV = tbNhanVien.MaNV,
+                                                  TenNV = tbNhanVien.TenNV,
+                                                  NV_NgaySinh = tbNhanVien.NV_NgaySinh,
+                                                  NV_SoDienThoai = tbNhanVien.NV_SoDienThoai
                                               });
 
                 return getListDetailsNhanVien.ToList<dynamic>();

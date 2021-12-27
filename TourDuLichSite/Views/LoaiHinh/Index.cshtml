@@ -280,7 +280,7 @@
                 dataType: "json",
                 success: function (result) {
                     $('#inputTenLHDLEdit').val(result[0].TenLoaiHinh);
-                    $('#inputTenMoTaEdit').val(result[2].LH_MoTa);
+                    $('#inputTenMoTaEdit').val(result[0].LH_MoTa);
                 },
                 error: function (errorMessage) {
                     alert(errorMessage.responseText);
