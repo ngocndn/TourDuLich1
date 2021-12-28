@@ -51,6 +51,12 @@ namespace Tour.UI.QLDoan
             this.btnPrice = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
+            this.txtGiaTour = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtTongCong = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtPrice = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,7 +69,7 @@ namespace Tour.UI.QLDoan
             this.Column2,
             this.Column3,
             this.Column4});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 169);
+            this.dataGridView1.Location = new System.Drawing.Point(18, 233);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(776, 190);
@@ -106,7 +112,7 @@ namespace Tour.UI.QLDoan
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(305, 150);
+            this.label10.Location = new System.Drawing.Point(311, 214);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(198, 16);
             this.label10.TabIndex = 68;
@@ -115,7 +121,7 @@ namespace Tour.UI.QLDoan
             // btnSave
             // 
             this.btnSave.Image = global::Tour.Properties.Resources.diskette;
-            this.btnSave.Location = new System.Drawing.Point(617, 97);
+            this.btnSave.Location = new System.Drawing.Point(623, 185);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(42, 42);
             this.btnSave.TabIndex = 64;
@@ -125,7 +131,7 @@ namespace Tour.UI.QLDoan
             // btnClose
             // 
             this.btnClose.Image = global::Tour.Properties.Resources.remove;
-            this.btnClose.Location = new System.Drawing.Point(665, 97);
+            this.btnClose.Location = new System.Drawing.Point(671, 185);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(42, 42);
             this.btnClose.TabIndex = 65;
@@ -135,7 +141,7 @@ namespace Tour.UI.QLDoan
             // btnPricing
             // 
             this.btnPricing.Image = global::Tour.Properties.Resources.plus;
-            this.btnPricing.Location = new System.Drawing.Point(569, 97);
+            this.btnPricing.Location = new System.Drawing.Point(575, 185);
             this.btnPricing.Name = "btnPricing";
             this.btnPricing.Size = new System.Drawing.Size(42, 42);
             this.btnPricing.TabIndex = 66;
@@ -144,14 +150,14 @@ namespace Tour.UI.QLDoan
             // 
             // dpk2
             // 
-            this.dpk2.Location = new System.Drawing.Point(578, 57);
+            this.dpk2.Location = new System.Drawing.Point(127, 136);
             this.dpk2.Name = "dpk2";
             this.dpk2.Size = new System.Drawing.Size(200, 20);
             this.dpk2.TabIndex = 78;
             // 
             // dpk1
             // 
-            this.dpk1.Location = new System.Drawing.Point(578, 17);
+            this.dpk1.Location = new System.Drawing.Point(127, 98);
             this.dpk1.Name = "dpk1";
             this.dpk1.Size = new System.Drawing.Size(200, 20);
             this.dpk1.TabIndex = 77;
@@ -159,7 +165,7 @@ namespace Tour.UI.QLDoan
             // cbbhdv
             // 
             this.cbbhdv.FormattingEnabled = true;
-            this.cbbhdv.Location = new System.Drawing.Point(127, 97);
+            this.cbbhdv.Location = new System.Drawing.Point(578, 20);
             this.cbbhdv.Name = "cbbhdv";
             this.cbbhdv.Size = new System.Drawing.Size(200, 21);
             this.cbbhdv.TabIndex = 76;
@@ -174,7 +180,7 @@ namespace Tour.UI.QLDoan
             // 
             // txtTenDoan
             // 
-            this.txtTenDoan.Location = new System.Drawing.Point(127, 17);
+            this.txtTenDoan.Location = new System.Drawing.Point(127, 22);
             this.txtTenDoan.Name = "txtTenDoan";
             this.txtTenDoan.Size = new System.Drawing.Size(200, 20);
             this.txtTenDoan.TabIndex = 74;
@@ -183,7 +189,7 @@ namespace Tour.UI.QLDoan
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(29, 100);
+            this.label5.Location = new System.Drawing.Point(480, 23);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(104, 15);
             this.label5.TabIndex = 73;
@@ -193,7 +199,7 @@ namespace Tour.UI.QLDoan
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(466, 61);
+            this.label3.Location = new System.Drawing.Point(15, 140);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(93, 15);
             this.label3.TabIndex = 72;
@@ -204,7 +210,7 @@ namespace Tour.UI.QLDoan
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(466, 21);
+            this.label4.Location = new System.Drawing.Point(15, 102);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 15);
             this.label4.TabIndex = 71;
@@ -215,7 +221,7 @@ namespace Tour.UI.QLDoan
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(29, 59);
+            this.label2.Location = new System.Drawing.Point(15, 57);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 15);
             this.label2.TabIndex = 70;
@@ -225,7 +231,7 @@ namespace Tour.UI.QLDoan
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(29, 20);
+            this.label1.Location = new System.Drawing.Point(15, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 15);
             this.label1.TabIndex = 69;
@@ -234,7 +240,7 @@ namespace Tour.UI.QLDoan
             // btnPrice
             // 
             this.btnPrice.Image = global::Tour.Properties.Resources.istockphoto_1226810736_170667a1;
-            this.btnPrice.Location = new System.Drawing.Point(713, 97);
+            this.btnPrice.Location = new System.Drawing.Point(719, 185);
             this.btnPrice.Name = "btnPrice";
             this.btnPrice.Size = new System.Drawing.Size(42, 42);
             this.btnPrice.TabIndex = 79;
@@ -245,7 +251,7 @@ namespace Tour.UI.QLDoan
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(606, 366);
+            this.label6.Location = new System.Drawing.Point(612, 430);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(76, 15);
             this.label6.TabIndex = 80;
@@ -253,17 +259,80 @@ namespace Tour.UI.QLDoan
             // 
             // txtTotal
             // 
-            this.txtTotal.Location = new System.Drawing.Point(688, 365);
+            this.txtTotal.Location = new System.Drawing.Point(694, 429);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(100, 20);
             this.txtTotal.TabIndex = 81;
             // 
+            // txtGiaTour
+            // 
+            this.txtGiaTour.Location = new System.Drawing.Point(578, 59);
+            this.txtGiaTour.Name = "txtGiaTour";
+            this.txtGiaTour.ReadOnly = true;
+            this.txtGiaTour.Size = new System.Drawing.Size(200, 20);
+            this.txtGiaTour.TabIndex = 83;
+            this.txtGiaTour.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(480, 62);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(62, 15);
+            this.label7.TabIndex = 82;
+            this.label7.Text = "Giá Tour";
+            // 
+            // txtTongCong
+            // 
+            this.txtTongCong.Location = new System.Drawing.Point(578, 95);
+            this.txtTongCong.Name = "txtTongCong";
+            this.txtTongCong.ReadOnly = true;
+            this.txtTongCong.Size = new System.Drawing.Size(200, 20);
+            this.txtTongCong.TabIndex = 85;
+            this.txtTongCong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(480, 98);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(82, 15);
+            this.label8.TabIndex = 84;
+            this.label8.Text = "Giá Dịch Vụ";
+            // 
+            // txtPrice
+            // 
+            this.txtPrice.Location = new System.Drawing.Point(578, 136);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.ReadOnly = true;
+            this.txtPrice.Size = new System.Drawing.Size(200, 20);
+            this.txtPrice.TabIndex = 87;
+            this.txtPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(480, 139);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(76, 15);
+            this.label9.TabIndex = 86;
+            this.label9.Text = "Tổng Cộng";
+            // 
             // frmEditDoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 392);
+            this.ClientSize = new System.Drawing.Size(800, 460);
+            this.Controls.Add(this.txtPrice);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.txtTongCong);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.txtGiaTour);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnPrice);
@@ -315,5 +384,11 @@ namespace Tour.UI.QLDoan
         private System.Windows.Forms.Button btnPrice;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtTotal;
+        private System.Windows.Forms.TextBox txtGiaTour;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtTongCong;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.Label label9;
     }
 }

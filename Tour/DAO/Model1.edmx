@@ -40,7 +40,7 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="MaDOANDL" Type="int" Nullable="false" />
           <Property Name="ChiPhi_ID" Type="int" Nullable="false" />
-          <Property Name="ThanhTien" Type="float" Nullable="false" />
+          <Property Name="ThanhTien" Type="float" />
           <Property Name="TenCP" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="TongCong" Type="float" Nullable="false" />
         </EntityType>
@@ -63,6 +63,8 @@
           <Property Name="MaTour" Type="int" Nullable="false" />
           <Property Name="TenDoan" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Soluong" Type="int" />
+          <Property Name="ChiPhi" Type="float" />
+          <Property Name="TongTien" Type="float" />
         </EntityType>
         <EntityType Name="GIATOUR">
           <Key>
@@ -191,7 +193,7 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="MaDOANDL" Type="Int32" Nullable="false" />
           <Property Name="ChiPhi_ID" Type="Int32" Nullable="false" />
-          <Property Name="ThanhTien" Type="Double" Nullable="false" />
+          <Property Name="ThanhTien" Type="Double" />
           <Property Name="TenCP" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="TongCong" Type="Double" Nullable="false" />
         </EntityType>
@@ -214,6 +216,8 @@
           <Property Name="MaTour" Type="Int32" Nullable="false" />
           <Property Name="TenDoan" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Soluong" Type="Int32" />
+          <Property Name="ChiPhi" Type="Double" />
+          <Property Name="TongTien" Type="Double" />
         </EntityType>
         <EntityType Name="GIATOUR">
           <Key>
@@ -336,6 +340,8 @@
           <EntitySetMapping Name="DOANDLs">
             <EntityTypeMapping TypeName="QuanlyTour2Model.DOANDL">
               <MappingFragment StoreEntitySet="DOANDL">
+                <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+                <ScalarProperty Name="ChiPhi" ColumnName="ChiPhi" />
                 <ScalarProperty Name="Soluong" ColumnName="Soluong" />
                 <ScalarProperty Name="TenDoan" ColumnName="TenDoan" />
                 <ScalarProperty Name="MaTour" ColumnName="MaTour" />

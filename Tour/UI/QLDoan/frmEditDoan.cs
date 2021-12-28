@@ -57,6 +57,10 @@ namespace Tour.UI.QLDoan
         }
         public void LoadDoan()
         {
+            List<CHITIETCHIPHI> cp = cb.GetAlls();
+            double TongCong = 0;
+            double GiaTour = 0;
+            
             var json = JsonConvert.SerializeObject(dd.GetDDetail(Doanid));
             DataTable dataTableDetailsDoan = (DataTable)JsonConvert.DeserializeObject(json, (typeof(DataTable)));
             txtTenDoan.Text = dataTableDetailsDoan.Rows[0][1].ToString();
@@ -64,6 +68,19 @@ namespace Tour.UI.QLDoan
             cbbhdv.SelectedIndex = cbbhdv.FindString(dataTableDetailsDoan.Rows[0][5].ToString());
             dpk1.Text = dataTableDetailsDoan.Rows[0][2].ToString();
             dpk2.Text = dataTableDetailsDoan.Rows[0][3].ToString();
+            GiaTour += Convert.ToDouble(dataTableDetailsDoan.Rows[0][7]);
+            txtGiaTour.Text = GiaTour.ToString();
+            
+            foreach (var item in cp)
+            {
+                if (item.MaDOANDL == Doanid)
+                {
+                    TongCong += item.TongCong;
+                }
+            }
+            txtTongCong.Text = TongCong.ToString();
+            txtPrice.Text = (Convert.ToInt32(txtGiaTour.Text) + Convert.ToInt32(txtTongCong.Text)).ToString();
+
         }
         public void OnRowNumberChanged()
         {
@@ -97,8 +114,8 @@ namespace Tour.UI.QLDoan
                 D.TenDoan = txtTenDoan.Text;
                 D.NgayKhoiHanh = DateTime.Parse(dpk1.Value.Date.ToString("yyyy-MM-dd hh:mm:ss.ss"));
                 D.NgayKetThuc = DateTime.Parse(dpk2.Value.Date.ToString("yyyy-MM-dd hh:mm:ss.ss"));
-
-
+                D.ChiPhi = Convert.ToDouble(txtTongCong.Text);
+                D.TongTien = Convert.ToDouble(txtPrice.Text);
                 foreach (var item in listT)
                 {
                     if (item.TenTour.Equals(cbbtour.Text))

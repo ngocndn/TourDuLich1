@@ -35,6 +35,7 @@ namespace Tour.UI.QLDoan
         {
             cbbtour.DataSource = tb.GetAllTour();
             cbbtour.DisplayMember = "TenTour";
+            cbbtour.ValueMember = "MaTour";
         }
         public void LoadCBHDV()
         {
@@ -88,14 +89,14 @@ namespace Tour.UI.QLDoan
                 D.NgayKhoiHanh = DateTime.Parse(dpk1.Value.Date.ToString("yyyy-MM-dd hh:mm:ss.ss"));
                 D.NgayKetThuc = DateTime.Parse(dpk2.Value.Date.ToString("yyyy-MM-dd hh:mm:ss.ss"));
                 D.Soluong = 0;
-
-                foreach (var item in listT)
-                {
-                    if (item.TenTour.Equals(cbbtour.Text))
-                    {
-                        D.MaTour = item.MaTour;
-                    }
-                }
+                D.MaTour = (int)cbbtour.SelectedValue;
+                //foreach (var item in listT)
+                //{
+                    //if (item.TenTour.Equals(cbbtour.Text))
+                    //{
+                      //  D.MaTour = item.MaTour;
+                   // }
+               // }
                 foreach (var item in listN)
                 {
                     if (item.TenNV.Equals(cbbhdv.Text))

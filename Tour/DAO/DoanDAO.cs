@@ -97,7 +97,8 @@ namespace Tour.DAO
                 var getDDetail = (from tbD in tour.DOANDLs
                                           join tbT in tour.TOURDULICHes on tbD.MaTour equals tbT.MaTour
                                           join D in tour.DIADIEMs on tbT.MaDiaDiem equals D.MaDiaDiem
-                                          join tbN in tour.NHANVIENs on tbD.MaNV equals tbN.MaNV
+                                          join tbN in tour.NHANVIENs on tbD.MaNV equals tbN.MaNV 
+                                          join tbG in tour.GIATOURs on tbT.IDGiaTour equals tbG.IDGIATOUR
                                           where tbD.MaDOANDL == DoanID
                                           select new
                                           {
@@ -108,6 +109,7 @@ namespace Tour.DAO
                                               TenTour = tbT.TenTour,
                                               HDV = tbN.TenNV,
                                               DiemDen = D.TenDiaDiem,
+                                              GiaTour = tbG.ThanhTien,
                                           });
 
                 return getDDetail.ToList<dynamic>();
@@ -201,6 +203,8 @@ namespace Tour.DAO
                     d.NgayKhoiHanh = D.NgayKhoiHanh;
                     d.NgayKetThuc = D.NgayKetThuc;
                     d.MaNV = D.MaNV;
+                    d.ChiPhi = D.ChiPhi;
+                    d.TongTien = D.TongTien;
                     tour.SaveChanges();
                     return true;
 

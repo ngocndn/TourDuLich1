@@ -32,6 +32,10 @@ public partial class DOANDL
 
     public Nullable<int> Soluong { get; set; }
 
+    public Nullable<double> ChiPhi { get; set; }
+
+    public Nullable<double> TongTien { get; set; }
+
 }
 
 }

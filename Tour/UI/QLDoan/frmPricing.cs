@@ -31,7 +31,6 @@ namespace Tour.UI.QLDoan
             LoadDetail();
             LoadCP();
             LoadCBB();
-            ShowGiaTour();
         }
         public void LoadCP()
         {
@@ -48,14 +47,6 @@ namespace Tour.UI.QLDoan
         {
             txtmadoan.Text = Doanid.ToString();
             txtmatour.Text = tid.ToString();
-        }
-
-        public void ShowGiaTour()
-        {
-            List<dynamic> listT = gb.GetGiaByMa(tid);
-            var json = JsonConvert.SerializeObject(listT);
-            DataTable dataTableDetailsDoan = (DataTable)JsonConvert.DeserializeObject(json, (typeof(DataTable)));
-            txtgiatour.Text = dataTableDetailsDoan.Rows[0][2].ToString();
         }
         public bool Checked()
         {
@@ -77,6 +68,7 @@ namespace Tour.UI.QLDoan
                     CHITIETCHIPHI c = new CHITIETCHIPHI();
                     c.TenCP = cbbcp.Text;
                     c.MaDOANDL = this.Doanid;
+                    c.TongCong = Convert.ToDouble(txtprice.Text);
                     foreach (var item in ll)
                     {
                         if (item.TenLoaiCP.Equals(cbbcp.Text))
@@ -84,7 +76,6 @@ namespace Tour.UI.QLDoan
                             c.ChiPhi_ID = item.LoaiCP_ID;
                         }
                     }
-                    c.TongCong = Convert.ToDouble(txtprice.Text);
                     if (cb.Addct(c))
                     {
                         LoadCP();

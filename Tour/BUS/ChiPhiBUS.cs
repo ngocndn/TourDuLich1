@@ -13,6 +13,10 @@ namespace Tour.BUS
         {
             return cpd.GetAll();
         }
+        public List<CHITIETCHIPHI> GetAlls()
+        {
+            return cpd.GetAllCT();
+        }
 
         public List<LOAICHIPHI> GetAllCP()
         {

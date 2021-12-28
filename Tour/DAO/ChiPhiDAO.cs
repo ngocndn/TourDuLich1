@@ -26,6 +26,14 @@ namespace Tour.DAO
                 return getAll.ToList<LOAICHIPHI>();
             }
         }
+        public List<CHITIETCHIPHI> GetAllCT()
+        {
+            using(tour = new TourENT())
+            {
+                var GetAll = tour.CHITIETCHIPHIs;
+                return GetAll.ToList<CHITIETCHIPHI>();
+            }
+        }
 
         public List<dynamic> GetList()
         {

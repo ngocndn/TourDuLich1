@@ -24,7 +24,7 @@ public partial class CHITIETCHIPHI
 
     public int ChiPhi_ID { get; set; }
 
-    public double ThanhTien { get; set; }
+    public Nullable<double> ThanhTien { get; set; }
 
     public string TenCP { get; set; }
 
