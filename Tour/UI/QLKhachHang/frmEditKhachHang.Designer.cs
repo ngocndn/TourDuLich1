@@ -36,7 +36,6 @@ namespace Tour.UI.QLKhachHang
             this.label5 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtGioiTinh = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtSDT = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -45,6 +44,7 @@ namespace Tour.UI.QLKhachHang
             this.label2 = new System.Windows.Forms.Label();
             this.txtTenKH = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.cbbGioiTinh = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnClose
@@ -107,13 +107,6 @@ namespace Tour.UI.QLKhachHang
             this.label6.Size = new System.Drawing.Size(44, 15);
             this.label6.TabIndex = 59;
             this.label6.Text = "Email";
-            // 
-            // txtGioiTinh
-            // 
-            this.txtGioiTinh.Location = new System.Drawing.Point(547, 22);
-            this.txtGioiTinh.Name = "txtGioiTinh";
-            this.txtGioiTinh.Size = new System.Drawing.Size(211, 20);
-            this.txtGioiTinh.TabIndex = 58;
             // 
             // label7
             // 
@@ -186,17 +179,26 @@ namespace Tour.UI.QLKhachHang
             this.label1.TabIndex = 50;
             this.label1.Text = "Tên Khách Hàng";
             // 
+            // cbbGioiTinh
+            // 
+            this.cbbGioiTinh.FormattingEnabled = true;
+            this.cbbGioiTinh.Location = new System.Drawing.Point(547, 19);
+            this.cbbGioiTinh.Name = "cbbGioiTinh";
+            this.cbbGioiTinh.Size = new System.Drawing.Size(121, 21);
+            this.cbbGioiTinh.TabIndex = 64;
+            this.cbbGioiTinh.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // frmEditKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 222);
+            this.Controls.Add(this.cbbGioiTinh);
             this.Controls.Add(this.dp_NSKH);
             this.Controls.Add(this.txtCMND);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtGioiTinh);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtSDT);
             this.Controls.Add(this.label4);
@@ -224,7 +226,6 @@ namespace Tour.UI.QLKhachHang
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtGioiTinh;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtSDT;
         private System.Windows.Forms.Label label4;
@@ -233,5 +234,6 @@ namespace Tour.UI.QLKhachHang
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtTenKH;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbbGioiTinh;
     }
 }

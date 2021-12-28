@@ -16,6 +16,7 @@ namespace Tour.UI.QLKhachHang
         public frmKhachHang()
         {
             InitializeComponent();
+            LoadCBBGIoiTinh();
             LoadKH();
         }
         public void LoadKH()
@@ -23,10 +24,15 @@ namespace Tour.UI.QLKhachHang
             dataGridView1.DataSource = khb.GetKhachHang();
             dataGridView1.AutoGenerateColumns = false;
         }
-
+        public void LoadCBBGIoiTinh()
+        {
+            cbbGioiTinh.Items.Add("Nam");
+            cbbGioiTinh.Items.Add("Nữ");
+            cbbGioiTinh.SelectedItem = "Nam";
+        }
         public void Clear()
         {
-            txtTenKH.Text = txtSDT.Text = txtGioiTinh.Text = txtEmail.Text = txtDiaChi.Text = txtCMND.Text = dp_NSKH.Text = "";
+            txtTenKH.Text = txtSDT.Text = txtEmail.Text = txtDiaChi.Text = txtCMND.Text = dp_NSKH.Text = "";
 
         }
 
@@ -45,10 +51,10 @@ namespace Tour.UI.QLKhachHang
                 return false;
             }
 
-            if (String.IsNullOrEmpty(txtGioiTinh.Text))
+            if (String.IsNullOrEmpty(cbbGioiTinh.Text))
             {
                 MessageBox.Show("GT is required", "Caution!!!");
-                txtGioiTinh.Focus();
+                cbbGioiTinh.Focus();
                 return false;
             }
 
@@ -83,7 +89,7 @@ namespace Tour.UI.QLKhachHang
                     KH.TenKH = txtTenKH.Text;
                     KH.KH_CMND = txtCMND.Text;
                     KH.KH_DiaChi = txtDiaChi.Text;
-                    KH.KH_GioiTinh = txtGioiTinh.Text;
+                    KH.KH_GioiTinh = cbbGioiTinh.Text;
                     KH.KH_email = txtEmail.Text;
                     KH.KH_SoDienThoai = txtSDT.Text;
                     KH.KH_NgaySinh = dp_NSKH.Value;

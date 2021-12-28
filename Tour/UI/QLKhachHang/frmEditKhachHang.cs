@@ -18,12 +18,17 @@ namespace Tour.UI.QLKhachHang
         {
             InitializeComponent();
             Main = fK;
+            LoadCBBGT();
             this.KH_ID = KH_ID;
             ShowKH();
         }
         private frmKhachHang Main;
         public int KH_ID { get; set; }
-
+        public void LoadCBBGT()
+        {
+            cbbGioiTinh.Items.Add("Nam");
+            cbbGioiTinh.Items.Add("Nữ");
+        }
         public void ShowKH()
         {
             List<dynamic> listDetailsKhachhang = khb.GetListDetailsKhachHang(KH_ID);
@@ -37,7 +42,7 @@ namespace Tour.UI.QLKhachHang
             dp_NSKH.Value = Convert.ToDateTime(dataTableDetailsKhachHang.Rows[0][2]);
             txtDiaChi.Text = dataTableDetailsKhachHang.Rows[0][3].ToString();
             txtSDT.Text = dataTableDetailsKhachHang.Rows[0][4].ToString();
-            txtGioiTinh.Text = dataTableDetailsKhachHang.Rows[0][5].ToString();
+            cbbGioiTinh.SelectedIndex = cbbGioiTinh.FindStringExact(dataTableDetailsKhachHang.Rows[0][5].ToString());
             txtEmail.Text = dataTableDetailsKhachHang.Rows[0][6].ToString();
             txtCMND.Text = dataTableDetailsKhachHang.Rows[0][7].ToString();
         }
@@ -60,10 +65,10 @@ namespace Tour.UI.QLKhachHang
                 return false;
             }
 
-            if (String.IsNullOrEmpty(txtGioiTinh.Text))
+            if (String.IsNullOrEmpty(cbbGioiTinh.Text))
             {
                 MessageBox.Show("GT is required", "Caution!!!");
-                txtGioiTinh.Focus();
+                cbbGioiTinh.Focus();
                 return false;
             }
 
@@ -98,7 +103,7 @@ namespace Tour.UI.QLKhachHang
                     KH.KH_NgaySinh = dp_NSKH.Value;
                     KH.KH_DiaChi = txtDiaChi.Text;
                     KH.KH_SoDienThoai = txtSDT.Text;
-                    KH.KH_GioiTinh = txtGioiTinh.Text;
+                    KH.KH_GioiTinh = cbbGioiTinh.Text;
                     KH.KH_email = txtEmail.Text;
                     KH.KH_CMND = txtCMND.Text;
                    
@@ -131,6 +136,11 @@ namespace Tour.UI.QLKhachHang
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
