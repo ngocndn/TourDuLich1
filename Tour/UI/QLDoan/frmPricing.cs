@@ -36,6 +36,7 @@ namespace Tour.UI.QLDoan
         {
             dataGridView1.DataSource = cb.GetListDoanID(Doanid);
             dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.Columns["Column3"].DefaultCellStyle.Format = "#,##0";
 
         }
         public void LoadCBB()

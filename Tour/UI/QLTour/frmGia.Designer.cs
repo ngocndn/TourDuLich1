@@ -41,9 +41,9 @@ namespace Tour.UI.QLTour
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,9 +81,9 @@ namespace Tour.UI.QLTour
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
-            this.Column5,
             this.Column3,
-            this.Column4});
+            this.Column4,
+            this.Column5});
             this.dataGridView1.Location = new System.Drawing.Point(277, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -158,12 +158,6 @@ namespace Tour.UI.QLTour
             this.Column2.HeaderText = "Mã Tour";
             this.Column2.Name = "Column2";
             // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "ThanhTien";
-            this.Column5.HeaderText = "Thành Tiền";
-            this.Column5.Name = "Column5";
-            // 
             // Column3
             // 
             this.Column3.DataPropertyName = "TGBatDau";
@@ -175,6 +169,12 @@ namespace Tour.UI.QLTour
             this.Column4.DataPropertyName = "TGKetThuc";
             this.Column4.HeaderText = "Thời Gian Kết Thúc";
             this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "ThanhTien";
+            this.Column5.HeaderText = "Thành Tiền";
+            this.Column5.Name = "Column5";
             // 
             // frmGia
             // 
@@ -215,8 +215,8 @@ namespace Tour.UI.QLTour
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }

@@ -29,6 +29,7 @@ namespace Tour.UI.QLTour
         {
             txtMaTour.Text = T_ID.ToString();
             dataGridView1.DataSource = gb.GetGiaTourWithMaTour(T_ID);
+            dataGridView1.Columns["Column5"].DefaultCellStyle.Format = "#,##0";
         }
 
         private bool Checked()

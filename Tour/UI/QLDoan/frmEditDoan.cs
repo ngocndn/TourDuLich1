@@ -34,6 +34,12 @@ namespace Tour.UI.QLDoan
         private int Doanid { get; set; }
         private int Tourid { get; set; }
         private frmQLDoan frmMain;
+        public void Formate()
+        {
+            txtPrice.Text = string.Format("{0:#,##0}",txtPrice.Text.ToString());
+            txtGiaTour.Text = string.Format("{0:#,##0}", txtGiaTour.Text.ToString());
+            txtTongCong.Text = string.Format("{0:#,##0}", txtTongCong.Text.ToString());
+        }
         public void LoadCBTour()
         {
             cbbtour.DataSource = tb.GetAllTour();
@@ -69,8 +75,8 @@ namespace Tour.UI.QLDoan
             dpk1.Text = dataTableDetailsDoan.Rows[0][2].ToString();
             dpk2.Text = dataTableDetailsDoan.Rows[0][3].ToString();
             GiaTour += Convert.ToDouble(dataTableDetailsDoan.Rows[0][7]);
-            txtGiaTour.Text = GiaTour.ToString();
-            
+            //txtGiaTour.Text = GiaTour.ToString();
+            txtGiaTour.Text = String.Format("{0:n0}", GiaTour);
             foreach (var item in cp)
             {
                 if (item.MaDOANDL == Doanid)
@@ -78,8 +84,9 @@ namespace Tour.UI.QLDoan
                     TongCong += item.TongCong;
                 }
             }
-            txtTongCong.Text = TongCong.ToString();
-            txtPrice.Text = (Convert.ToInt32(txtGiaTour.Text) + Convert.ToInt32(txtTongCong.Text)).ToString();
+            txtTongCong.Text = String.Format("{0:n0}", TongCong);
+            int A = (Convert.ToInt32(GiaTour) + Convert.ToInt32(TongCong));
+            txtPrice.Text = String.Format("{0:n0}", A);
 
         }
         public void OnRowNumberChanged()
@@ -198,6 +205,11 @@ namespace Tour.UI.QLDoan
         {
             frmPricing fP = new frmPricing(Doanid, Tourid, this);
             fP.ShowDialog();
+        }
+
+        private void txtPrice_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

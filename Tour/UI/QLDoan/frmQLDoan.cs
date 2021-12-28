@@ -29,6 +29,8 @@ namespace Tour.UI.QLDoan
         {
             dataGridView1.DataSource = db.getall();
             dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.Columns["Column8"].DefaultCellStyle.Format = "#,##0";
+            dataGridView1.Columns["Column9"].DefaultCellStyle.Format = "#,##0";
         }
 
         public void LoadCBTour()
