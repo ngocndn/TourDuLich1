@@ -11,6 +11,7 @@ namespace TourDuLichSite.Controllers
     public class DoanController : Controller
     {
         DoanDAO dd = new DoanDAO();
+        BookingDAO bd = new BookingDAO();
         // GET: Doan
         public ActionResult Index()
         {
@@ -33,6 +34,13 @@ namespace TourDuLichSite.Controllers
         {
             var getDoan = dd.getall();
             return Json(getDoan, JsonRequestBehavior.AllowGet);
+        }
+        [HttpGet]
+        [Route("GetListKH")]
+        public JsonResult GetListKH(int MaDOANDL)
+        {
+            var getKH = bd.GetDetailW(MaDOANDL);
+            return Json(getKH, JsonRequestBehavior.AllowGet);
         }
         [HttpPost]
         [Route("Create")]
@@ -58,5 +66,23 @@ namespace TourDuLichSite.Controllers
             return Json(dd.Delete(MaDOANDL), JsonRequestBehavior.AllowGet);
 
         }
+        public ActionResult Detail(int MaDOANDL)
+        {
+            List<dynamic> listResults = dd.GetDDetailW(MaDOANDL);
+            var objOld = JsonConvert.SerializeObject(listResults);
+            var obj = JsonConvert.DeserializeObject<List<DoanView>>(objOld);
+            ViewBag.listTemp = obj;
+            var GetDoan = dd.GetOneDoan(MaDOANDL);
+            ViewBag.listOneDoan = GetDoan;
+
+            var getListKHDK = bd.GetDetailW(MaDOANDL);
+            //convert List<dynamic> sang json
+            var getListKHDKobjOld = JsonConvert.SerializeObject(getListKHDK);
+            //convert json sang List<View>
+            var getListKHDKobj = JsonConvert.DeserializeObject<List<BookingView>>(getListKHDKobjOld);
+            ViewBag.listKHDK = getListKHDKobj;
+            return View();
+        }
+        
     }
 }

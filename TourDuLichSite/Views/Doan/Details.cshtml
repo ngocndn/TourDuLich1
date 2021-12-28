@@ -1,0 +1,134 @@
+﻿@{
+    ViewBag.Title = "Doan";
+    List<DoanView> listResults = ViewBag.listTemp;
+    List<BookingView> listKHDK = ViewBag.listKHDK;
+}
+<div class="app-wrapper">
+
+    <div class="app-content pt-3 p-md-3 p-lg-4">
+        <div class="container-xl">
+
+            <div class="row g-3 mb-4 align-items-center justify-content-between">
+                <div class="col-auto">
+                    <h1 class="app-page-title mb-0">Chi tiết đoàn du lịch mã: #@Request["MaDOANDL"].ToString() </h1>
+                </div>
+                <div class="col-auto">
+                    <div class="page-utilities">
+                        <div class="row g-2 justify-content-start justify-content-md-end align-items-center">
+
+                            <div class="col-auto">
+
+                            </div>
+                        </div><!--//row-->
+                    </div><!--//table-utilities-->
+                </div><!--//col-auto-->
+            </div><!--//row-->
+
+
+            <div class="container p-3 my-4 bg-white text-black shadow-sm mb-5 rounded">
+                <div class="row" style="margin-top: 10px;">
+                    <div class="col text-body"><span style="font-weight: bold; color: black;">Mã số đoàn:</span> @listResults[0].MaDOANDL</div>
+                    <div class="col text-body"><span style="font-weight: bold; color: black;">Tên đoàn:</span> @listResults[0].TenDoan</div>
+                    <div class="col text-body"><span style="font-weight: bold; color: black;">Tên tour:</span> @listResults[0].TenTour</div>
+                </div>
+                <div class="row" style="margin-top: 10px;">
+                    <div class="col text-body"><span style="font-weight: bold; color: black;">Tên HDV:</span> @listResults[0].TenNV</div>
+                    <div class="col text-body"><span style="font-weight: bold; color: black;">Thời gian bắt đầu:</span><span id="numberThoiGianKhoiHanh">@listResults[0].NgayKhoiHanh.ToShortDateString()</span> </div>
+                    <div class="col text-body"><span style="font-weight: bold; color: black;">Thời gian kết thúc:</span><span id="numberThoiGianKetThuc">@listResults[0].NgayKetThuc.ToShortDateString() </span></div>
+                </div>
+                <hr />
+                <div class="row">
+                    <!-- table khách hàng đăng ký -->
+                    <div class="col" style="border-right: 1px dashed #333;">
+
+                        <div class="d-flex bd-highlight mb-3">
+                            <h5>Danh sách khách hàng</h5>
+                            <a class="btn btn-success ms-auto p-2 bd-highlight" style="color: white;" data-bs-toggle="modal" data-bs-target="#DangKyKhachHangModal" onclick="LoadDropdownKhachHang()"><i class="fas fa-plus"></i> Thêm mới</a>
+
+                        </div>
+                        <div class="app-card app-card-orders-table shadow-sm mb-5">
+                            <div class="app-card-body">
+                                <div class="table-responsive border">
+                                    <table class="table table-light table-hover table-striped mb-0 text-left">
+                                        <thead>
+                                            <tr>
+                                                <th class="cell">Mã đăng ký</th>
+                                                <th class="cell">Tên khách hàng</th>
+                                                <th class="cell">Giá đăng ký</th>
+                                                <th class="cell"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var item in listKHDK)
+                                            {
+                                <tr>
+                                    <td class="cell">@item.id</td>
+                                    <td class="cell"><span class="truncate">@item.TenKH</span></td>
+                                    <td class="cell">
+                                    </td>
+                                    <td class="cell"><button class="btn btn-danger" style="color: white;" data-bs-toggle="modal" data-bs-target="#XoaDangKyKHModal" onclick="GetIDDangKyKH(@item.id)"><i class="fa fa-trash"></i></button></td>
+                                </tr>}
+                                        </tbody>
+                                    </table>
+                                </div><!--//table-responsive-->
+
+                            </div><!--//app-card-body-->
+                        </div><!--//app-card-->
+
+                    </div>
+                </div>
+            </div>
+        </div><!--//container-fluid-->
+    </div><!--//app-content-->
+
+    <!-- Modal DangKyKhachHang -->
+    <div class="modal fade" id="DangKyKhachHangModal" tabindex="-1" aria-labelledby="DangKyKhachHangModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-plus"></i> Đăng ký khách hàng</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label" style=" color: black; font-weight: 500;">Khách hàng</label>
+                        <div class="d-flex bd-highlight mb-3">
+                            <select class="form-select" aria-label="Default select example" id="dropdownKhachHang" style="border-color: #6e6e6f;">
+                                <option value="0" selected>-- Chọn khách hàng --</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" style="color: black; font-weight: 500;">Ngày đăng ký</label>
+                        <input class="form-control" type="date" id="inputNgayDangKy" name="inputNgayDangKy" style="border-color: #6e6e6f;" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" id="btnDangKyKhachHang" onclick="DangKyKhachHang()" style="color: white;">Thêm</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal XoaDangKyKhachHang -->
+    <div class="modal fade" id="XoaDangKyKHModal" tabindex="-1" aria-labelledby="XoaDangKyKHModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Xác nhận xóa</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <span>Bạn có chắc muốn xóa đăng ký khách mã <span id="maDangKyKHDeleteModal" style="font-weight: 500;"></span> không?</span>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" id="btnDelete" onclick="XoaDangKyKhachHang()" style="color: white;">Xóa</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+

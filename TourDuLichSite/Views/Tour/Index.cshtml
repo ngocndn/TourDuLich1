@@ -533,7 +533,8 @@
             });
 
         }
-        function LoadBangDanhSachGia(MaTour) {
+        function LoadBangDanhSachGia(MaTour)
+        {
             $('#tableBangGia tbody tr').remove();
 
             $.ajax({
@@ -553,9 +554,7 @@
         }
         function GetIDTourBangGia(MaTour) {
             $('#inputMaSoTour_ModalBangGia').val(MaTour);
-
             var _maSoTour = MaTour;
-
             LoadBangDanhSachGia(MaTour);
             //get id gia tour selected checkbox
             $.ajax({
@@ -566,7 +565,6 @@
                 success: function (result) {
                     var _idGiaTour = result[0].IDGIATOUR;
                     console.log(_idGiaTour);
-
                     $('#tableBangGia tbody tr td input[name="checkBoxGia"][value="' + _idGiaTour + '"]').prop("checked", true);
 
                 },

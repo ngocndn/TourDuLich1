@@ -18,9 +18,7 @@ namespace TourDuLichSite.Controllers
             List<dynamic> listResults = td.GetListTourW();
             var objOld = JsonConvert.SerializeObject(listResults);
             var obj = JsonConvert.DeserializeObject<List<TourView>>(objOld);
-
             ViewBag.listTemp = obj;
-
             return View();
         }
         [HttpGet]

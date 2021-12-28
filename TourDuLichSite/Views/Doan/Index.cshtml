@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Doan";
     List<DoanView> listResults = ViewBag.listTemp;
 }
@@ -61,7 +60,7 @@
                                             <th class="cell">Tên HDV</th>
                                             <th class="cell">Thời gian bắt đầu</th>
                                             <th class="cell">Thời gian kết thúc</th>
-                                            <th class="cell"></th>
+                                            <th class="cell">Function</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -75,13 +74,12 @@
                                                 <td class="cell"><span>@item.NgayKhoiHanh</span></td>
                                                 <td class="cell"><span>@item.NgayKetThuc</span></td>
                                                 <td class="cell">
-                                                    <a class="btn btn-info" style="color: white;" id="xemChiTietButton" onclick="GetIDDoanChiTiet(@item.MaDOANDL)"><i class="fas fa-eye"></i> Xem chi tiết</a>
                                                     <a class="btn btn-warning" style="color: white;" data-bs-toggle="modal" data-bs-target="#EditModal" onclick="GetIDUpdate(@item.MaDOANDL)"><i class="fas fa-pencil-alt"></i></a>
                                                     <a class="btn btn-danger" style="color: white;" data-bs-toggle="modal" data-bs-target="#DeleteModal" id="deleteButton" onclick="GetIDDelete(@item.MaDOANDL)"><i class="fas fa-trash-alt"></i></a>
-
+                                                    <a class="btn btn-secondary" style="color: white; margin-top: 5px;" data-bs-toggle="modal" data-bs-target="#InfoModal" id="xemChiTietButton"  onclick="GetIDInfo(@item.MaDOANDL)"><i class="fas fa-eye"></i> Xem chi tiết</a>
                                                 </td>
                                             </tr>
-}
+                                        }
 
                                     </tbody>
                                 </table>
@@ -142,7 +140,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Thời gian bắt đầu</label>
-                                    <input class="form-control" type="date" id="inputThoiGianBatDau" name="inputThoiGianBatDau" style="border-color: #6e6e6f;" required >
+                                    <input class="form-control" type="date" id="inputThoiGianBatDau" name="inputThoiGianBatDau" style="border-color: #6e6e6f;" required>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Thời gian kết thúc</label>
@@ -161,7 +159,65 @@
         </div>
     </div>
 
-    <!-- Modal Update -->
+    <!-- Modal Info -->
+    <div class="modal fade" id="InfoModal" tabindex="-1" role="dialog" aria-labelledby="InfoModal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-pencil-alt"></i> Thông tin Đoàn</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="app-card app-card-settings shadow-sm p-4">
+                    <div class="app-card-body">
+                        <div class="settings-form">
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label class="form-label">Mã số đoàn</label>
+                                    <input type="text" class="form-control" style="border-color: #6e6e6f;" id="txtMaDoan_Info" placeholder="Nhập mã số đoàn..." required readonly />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Tên gọi đoàn</label>
+                                    <input type="text" class="form-control" style="border-color: #6e6e6f;" id="txtTenDoan_Info" placeholder="Nhập tên gọi đoàn..." required readonly />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Tour</label>
+                                    <select class="form-select" aria-label="Default select example" id="cbbTour_Info" style="border-color: #6e6e6f;" required disabled>
+                                        <option value="0" selected>-- Chọn tour --</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">HDV</label>
+                                    <select class="form-select" aria-label="Default select example" id="cbbHDV_Info" style="border-color: #6e6e6f;" required disabled>
+                                        <option value="0" selected>-- Chọn HDV --</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <h6 style="text-align: center; margin-top: 10px;">Danh sách Hành Khách</h6>
+                                    <table class="table table-hover" id="tableBooking">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Mã Booking</th>
+                                                <th scope="col">Mã Tour</th>
+                                                <th scope="col">Tên Khách Hàng</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                    <div style="margin-top: 10px;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-secondary" data-bs-dismiss="modal" style="color: white;">Đóng</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal Update -->
     <div class="modal fade" id="EditModal" tabindex="-1" role="dialog" aria-labelledby="EditModal" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -234,8 +290,7 @@
     </div>
 
     <script>
-        function LoadInfoModalAdd()
-        {
+        function LoadInfoModalAdd() {
             //load tour
             document.getElementById('cbbTour').options.length = 0; //clear dropdown
             $('#cbbTour').append($('<option>', {
@@ -288,7 +343,6 @@
             });
 
         }
-
         function LoadInfoModalUpdate() {
 
             //Load loại hình du lịch
@@ -344,7 +398,61 @@
             });
 
         }
+        function LoadInfoModal() {
 
+            //Load loại hình du lịch
+            document.getElementById('cbbTour_Info').options.length = 0; //clear dropdown
+
+            $('#cbbTour_Info').append($('<option>', {
+                value: 0,
+                text: "-- Chọn Tour --"
+            }));
+
+            $.ajax({
+                url: "/Tour/GetAllTour",
+                type: "GET",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    $.each(result, function (index) {
+                        $('#cbbTour_Info').append($('<option>', {
+                            value: result[index].MaTour,
+                            text: result[index].TenTour
+                        }));
+                    })
+                },
+                error: function (errorMessage) {
+                    alert(errorMessage.responseText);
+                }
+            });
+
+            //Load địa điểm
+            document.getElementById('cbbHDV_Info').options.length = 0; //clear dropdown
+
+            $('#cbbHDV_Info').append($('<option>', {
+                value: 0,
+                text: "-- Chọn HDV --"
+            }));
+
+            $.ajax({
+                url: "/NhanVien/GetAllNV",
+                type: "GET",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    $.each(result, function (index) {
+                        $('#cbbHDV_Info').append($('<option>', {
+                            value: result[index].MaNV,
+                            text: result[index].TenNV
+                        }));
+                    })
+                },
+                error: function (errorMessage) {
+                    alert(errorMessage.responseText);
+                }
+            });
+
+        }
         function Add() {
             var TenDoan = $('#txtTenDoan').val();
             var MaTour = $('#cbbTour').val();
@@ -352,8 +460,7 @@
             var NgayKhoiHanh = $('#inputThoiGianBatDau').val();
             var NgayKetThuc = $('#inputThoiGianKetThuc').val();
 
-            if (TenDoan == '')
-            {
+            if (TenDoan == '') {
                 swal({
                     title: "Không được để trống!",
                     text: "Vui lòng nhập đầy đủ thông tin!",
@@ -393,8 +500,6 @@
             }
 
         }
-
-
         function Update() {
             var MaDOANDL = $('#txtMaDoan_Edit').val();
             var TenDoan = $('#txtTenDoan_Edit').val();
@@ -409,7 +514,7 @@
                     icon: "warning",
                     button: "Đóng",
                 });
-            }  else {
+            } else {
 
                 //Sửa tour
                 var objDoan = {
@@ -441,8 +546,6 @@
                 });
             }
         }
-
-
         function GetIDUpdate(MaDOANDL) {
             LoadInfoModalUpdate();
             $('#txtMaDoan_Edit').val(MaDOANDL);
@@ -457,9 +560,51 @@
                     $('#txtTenDoan_Edit').val(result[0].TenDoan);
                     $('#cbbTour_Edit').val(result[0].MaTour);
                     $('#cbbHDV_Edit').val(result[0].MaNV);
-                    $('#inputThoiGianBatDau_Edit').val(result[0].NgayKhoiHanh);
-                    $('#inputThoiGianKetThuc_Edit').val(result[0].NgayKetThuc);
+                    $('#inputThoiGianBatDau_Edit').val(Day(result[0].NgayKhoiHanh));
+                    $('#inputThoiGianKetThuc_Edit').val(Day(result[0].NgayKetThuc));
 
+                },
+                error: function (errorMessage) {
+                    alert(errorMessage.responseText);
+                }
+            });
+
+        }
+
+        function LoadKH(MaDOANDL)
+        {
+            $('#txtMaDoan_Info').val(MaDOANDL);
+            $('#tableBooking tbody tr').remove();
+            var _maSoTour = MaDOANDL;
+            $.ajax({
+                url: "/Doan/GetListKH?MaDOANDL=" + _maSoTour,
+                type: "GET",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    $.each(result, function (index) {
+                        $('#tableBooking tbody').append($('<tr><td>' + result[index].id + '</td><td>' + result[index].MaTour + '</td><td>' + result[index].MaKH + '</td></tr>'));
+                    })
+                },
+                error: function (errorMessage) {
+                    alert(errorMessage.responseText);
+                }
+            });
+        }
+        function GetIDInfo(MaDOANDL) {
+            LoadInfoModal();
+            $('#txtMaDoan_Info').val(MaDOANDL);
+            var _maSoTour = MaDOANDL;
+            LoadKH(MaDOANDL);
+            $.ajax({
+                url: "/Doan/GetOneDoan?MaDOANDL=" + _maSoTour,
+                type: "GET",
+                contentType: "application/json; charset=UTF-8",
+                dataType: "json",
+                success: function (result) {
+                    $('#txtTenDoan_Info').val(result[0].TenDoan);
+                    $('#cbbTour_Info').val(result[0].MaTour);
+                    $('#cbbHDV_Info').val(result[0].MaNV);
                 },
                 error: function (errorMessage) {
                     alert(errorMessage.responseText);
@@ -500,7 +645,26 @@
             });
 
         }
+        function Day(inputDate) {
+            var str, year, month, day, d, finalDate;
 
+            str = inputDate.replace(/\D/g, "");
+            d = new Date(parseInt(str));
+
+            year = d.getFullYear();
+            month = d.getMonth() + 1;
+            day = d.getDate();
+            if (day < 10) {
+                day = "0" + day;
+            }
+            if (month < 10) {
+                month = "0" + month;
+            }
+
+            finalDate = year + "-" + month + "-" + day;
+
+            return finalDate;
+        }
 
     </script>
 

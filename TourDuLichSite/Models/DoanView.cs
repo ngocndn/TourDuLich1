@@ -22,6 +22,7 @@ namespace TourDuLichSite
         public Nullable<int> Soluong { get; set; }
         public string TenNV { get; set; }
         public string TenTour { get; set; }
+        public int id { get; set; }
     
     }
 }

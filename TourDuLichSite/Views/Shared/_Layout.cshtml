@@ -46,7 +46,7 @@
                 <div class="sidepanel-inner d-flex flex-column">
                     <a href="#" id="sidepanel-close" class="sidepanel-close d-xl-none">&times;</a>
                     <div class="app-branding">
-                        <a class="app-logo" href="index.html"><img class="logo-icon me-2" src="~/Content/images/app-logo.svg" alt="logo"><span class="logo-text">QUẢN LÝ TOUR</span></a>
+                        <a><span class="logo-text">QUẢN LÝ TOUR</span></a>
 
                     </div><!--//app-branding-->
 
@@ -54,63 +54,42 @@
                         <ul class="app-menu list-unstyled accordion" id="menu-accordion">
                             <li class="nav-item">
                                 <a class="nav-link @{if (ViewBag.Title.Equals("Tổng quan")) {@Html.Encode("active"); }}" href="@Url.Action("Index", "ThongKe")">
-                                    <span class="nav-icon">
-                                        <img src="~/Content/images/icons/country-house.png" />
-                                    </span>
                                     <span class="nav-link-text">Tổng quan</span>
                                 </a><!--//nav-link-->
                             </li><!--//nav-item-->
 
                             <li class="nav-item">
                                 <a class="nav-link @{if (ViewBag.Title.Equals("Tour")) {@Html.Encode("active"); }}" href="@Url.Action("Index","Tour")">
-                                    <span class="nav-icon">
-                                        <img src="~/Content/images/icons/tourniquet.png" />
-                                    </span>
                                     <span class="nav-link-text">Tour</span>
                                 </a><!--//nav-link-->
                             </li><!--//nav-item-->
 
                             <li class="nav-item">
                                 <a class="nav-link @{if (ViewBag.Title.Equals("Đoàn du lịch")) {@Html.Encode("active"); }}" href="@Url.Action("Index","Doan")">
-                                    <span class="nav-icon">
-                                        <img src="~/Content/images/icons/tour-bus.png" />
-                                    </span>
                                     <span class="nav-link-text">Đoàn du lịch</span>
                                 </a><!--//nav-link-->
                             </li><!--//nav-item-->
 
                             <li class="nav-item">
                                 <a class="nav-link @{if (ViewBag.Title.Equals("Nhân viên")) {@Html.Encode("active"); }}" href="@Url.Action("Index","NhanVien")">
-                                    <span class="nav-icon">
-                                        <img src="~/Content/images/icons/conference-background-selected.png" />
-                                    </span>
                                     <span class="nav-link-text">Nhân viên</span>
                                 </a><!--//nav-link-->
                             </li><!--//nav-item-->
 
                             <li class="nav-item">
                                 <a class="nav-link @{if (ViewBag.Title.Equals("Khách hàng")) {@Html.Encode("active"); }}" href="@Url.Action("Index","KhachHang")">
-                                    <span class="nav-icon">
-                                        <img src="~/Content/images/icons/customer-insight--v1.png" />
-                                    </span>
                                     <span class="nav-link-text">Khách hàng</span>
                                 </a><!--//nav-link-->
                             </li><!--//nav-item-->
 
                             <li class="nav-item">
                                 <a class="nav-link @{if (ViewBag.Title.Equals("LoaiHinh")) {@Html.Encode("active"); }}" href="@Url.Action("Index","LoaiHinh")">
-                                    <span class="nav-icon">
-                                        <img src="~/Content/images/icons/signpost.png" />
-                                    </span>
                                     <span class="nav-link-text">Loại hình du lịch</span>
                                 </a><!--//nav-link-->
                             </li><!--//nav-item-->
 
                             <li class="nav-item">
                                 <a class="nav-link @{if (ViewBag.Title.Equals("Địa điểm")) {@Html.Encode("active"); }}" href="@Url.Action("Index","DiaDiem")">
-                                    <span class="nav-icon">
-                                        <img src="~/Content/images/icons/city-guide.png" />
-                                    </span>
                                     <span class="nav-link-text">Địa điểm</span>
                                 </a><!--//nav-link-->
                             </li><!--//nav-item-->

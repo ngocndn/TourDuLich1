@@ -98,7 +98,7 @@ namespace Tour.DAO
                                           join tbT in tour.TOURDULICHes on tbD.MaTour equals tbT.MaTour
                                           join D in tour.DIADIEMs on tbT.MaDiaDiem equals D.MaDiaDiem
                                           join tbN in tour.NHANVIENs on tbD.MaNV equals tbN.MaNV
-                                  where tbD.MaDOANDL == DoanID
+                                          where tbD.MaDOANDL == DoanID
                                           select new
                                           {
                                               DoanID = tbD.MaDOANDL,
@@ -109,6 +109,30 @@ namespace Tour.DAO
                                               HDV = tbN.TenNV,
                                               DiemDen = D.TenDiaDiem,
                                           });
+
+                return getDDetail.ToList<dynamic>();
+
+            }
+        }
+        public List<dynamic> GetDDetailW(int DoanID)
+        {
+            using (tour = new TourENT())
+            {
+                var getDDetail = (from tbD in tour.DOANDLs
+                                  join tbT in tour.TOURDULICHes on tbD.MaTour equals tbT.MaTour
+                                  join D in tour.DIADIEMs on tbT.MaDiaDiem equals D.MaDiaDiem
+                                  join tbN in tour.NHANVIENs on tbD.MaNV equals tbN.MaNV
+                                  where tbD.MaDOANDL == DoanID
+                                  select new
+                                  {
+                                      MaDOANDL = tbD.MaDOANDL,
+                                      TenDoan = tbD.TenDoan,
+                                      NgayKhoiHanh = tbD.NgayKhoiHanh,
+                                      NgayKetThuc = tbD.NgayKetThuc,
+                                      TenTour = tbT.TenTour,
+                                      TenNV = tbN.TenNV,
+                                      TenDiaDiem = D.TenDiaDiem,
+                                  });
 
                 return getDDetail.ToList<dynamic>();
 

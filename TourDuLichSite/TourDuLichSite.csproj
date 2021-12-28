@@ -130,6 +130,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BookingController.cs" />
     <Compile Include="Controllers\DiaDiemController.cs" />
     <Compile Include="Controllers\DoanController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -141,6 +142,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\BookingView.cs" />
     <Compile Include="Models\DiaDiemView.cs" />
     <Compile Include="Models\DoanView.cs" />
     <Compile Include="Models\GiaView.cs" />
@@ -2063,9 +2065,11 @@
     <Content Include="Views\NhanVien\Index.cshtml" />
     <Content Include="Views\ThongKe\Index.cshtml" />
     <Content Include="Views\DiaDiem\Index.cshtml" />
+    <Content Include="Views\Doan\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Booking\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
