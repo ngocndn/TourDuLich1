@@ -29,7 +29,7 @@ namespace Tour.UI.QLDoan
             LoadCBTour();
             LoadDoan();
             LoadDSKH();
-            OnRowNumberChanged();
+            //OnRowNumberChanged();
         }
         private int Doanid { get; set; }
         private int Tourid { get; set; }
@@ -57,16 +57,26 @@ namespace Tour.UI.QLDoan
         }
         public void LoadDSKH()
         {
+            List<BOOKING> B = bb.GetAll();
             dataGridView1.DataSource = bb.GetDetail(Doanid);
             dataGridView1.AutoGenerateColumns = false;
-
+            int Soluong = 0;
+            foreach (var item in B)
+            {
+                if (item.MaDOANDL == Doanid)
+                {
+                    Soluong += item.Siso;
+                }
+            }
+            txtTotal.Text = Soluong.ToString();
         }
         public void LoadDoan()
         {
             List<CHITIETCHIPHI> cp = cb.GetAlls();
+           // List<BOOKING> B = bb.GetAll();
             double TongCong = 0;
             double GiaTour = 0;
-            
+            //int Soluong = 0;
             var json = JsonConvert.SerializeObject(dd.GetDDetail(Doanid));
             DataTable dataTableDetailsDoan = (DataTable)JsonConvert.DeserializeObject(json, (typeof(DataTable)));
             txtTenDoan.Text = dataTableDetailsDoan.Rows[0][1].ToString();
@@ -85,6 +95,7 @@ namespace Tour.UI.QLDoan
                 }
             }
             txtTongCong.Text = String.Format("{0:n0}", TongCong);
+            
             int A = (Convert.ToInt32(GiaTour) + Convert.ToInt32(TongCong));
             txtPrice.Text = String.Format("{0:n0}", A);
 
@@ -123,6 +134,7 @@ namespace Tour.UI.QLDoan
                 D.NgayKetThuc = DateTime.Parse(dpk2.Value.Date.ToString("yyyy-MM-dd hh:mm:ss.ss"));
                 D.ChiPhi = Convert.ToDouble(txtTongCong.Text);
                 D.TongTien = Convert.ToDouble(txtPrice.Text);
+                D.Soluong = Convert.ToInt32(txtTotal.Text);
                 foreach (var item in listT)
                 {
                     if (item.TenTour.Equals(cbbtour.Text))
@@ -142,12 +154,11 @@ namespace Tour.UI.QLDoan
                 {
                     if (db.Edit(D, Doanid))
                     {
-                        System.Diagnostics.Debug.WriteLine("Success");
-                        
-                        Clear();
-                        
-                        MessageBox.Show("Success");
                         frmMain.LoadDanhSachDoan();
+                        System.Diagnostics.Debug.WriteLine("Success");
+                        Clear();
+                        MessageBox.Show("Success");
+
                     } else
                     {
                         MessageBox.Show("Failed");
@@ -164,7 +175,35 @@ namespace Tour.UI.QLDoan
                 MessageBox.Show("Vui lòng kiểm tra lại thông tin");
             }
         }
-       
+        public void SoluongOnChange()
+        {
+            List<TOURDULICH> listT = tb.GetAllTour();
+            List<NHANVIEN> listN = nvb.GetAll();
+            DOANDL D = new DOANDL();
+            D.Soluong = Convert.ToInt32(txtTotal.Text);   
+               try
+                {
+                    if (db.SoLuong(D, Doanid))
+                    {
+                        frmMain.LoadDanhSachDoan();
+                        System.Diagnostics.Debug.WriteLine("Success");
+                        Clear();
+                        MessageBox.Show("Success");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed");
+                    }
+                }
+               catch (Exception e)
+                {
+                    MessageBox.Show("Failed!");
+                    System.Diagnostics.Debug.WriteLine(e);
+                }
+            
+            
+        }
+
         private void btnPricing_Click(object sender, EventArgs e)
         {
             frmAdd fA = new frmAdd(Doanid,Tourid, this);

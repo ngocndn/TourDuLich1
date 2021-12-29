@@ -39,6 +39,10 @@ namespace Tour.BUS
         {
             return DD.Edit(D, DoanID);
         }
+        public bool SoLuong(DOANDL D, int DoanID)
+        {
+            return DD.SoLuongChange(D, DoanID);
+        }
 
         public bool Delete(int DoanID)
         {

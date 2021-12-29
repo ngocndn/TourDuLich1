@@ -33,17 +33,17 @@ namespace Tour.UI.QLTour
             this.txtGia = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnDetail = new System.Windows.Forms.Button();
             this.txtMaTour = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,6 +89,36 @@ namespace Tour.UI.QLTour
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(511, 200);
             this.dataGridView1.TabIndex = 50;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "IDGIATOUR";
+            this.Column1.HeaderText = "Mã Giá";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "MaTour";
+            this.Column2.HeaderText = "Mã Tour";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "TGBatDau";
+            this.Column3.HeaderText = "Thời Gian Bắt Đầu";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "TGKetThuc";
+            this.Column4.HeaderText = "Thời Gian Kết Thúc";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "ThanhTien";
+            this.Column5.HeaderText = "Thành Tiền";
+            this.Column5.Name = "Column5";
             // 
             // button1
             // 
@@ -146,36 +176,6 @@ namespace Tour.UI.QLTour
             this.dateTimePicker1.Size = new System.Drawing.Size(168, 20);
             this.dateTimePicker1.TabIndex = 61;
             // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "IDGIATOUR";
-            this.Column1.HeaderText = "Mã Giá";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "MaTour";
-            this.Column2.HeaderText = "Mã Tour";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "TGBatDau";
-            this.Column3.HeaderText = "Thời Gian Bắt Đầu";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "TGKetThuc";
-            this.Column4.HeaderText = "Thời Gian Kết Thúc";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "ThanhTien";
-            this.Column5.HeaderText = "Thành Tiền";
-            this.Column5.Name = "Column5";
-            // 
             // frmGia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -191,6 +191,8 @@ namespace Tour.UI.QLTour
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnDetail);
             this.Controls.Add(this.dataGridView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MinimizeBox = false;
             this.Name = "frmGia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhập Giá";

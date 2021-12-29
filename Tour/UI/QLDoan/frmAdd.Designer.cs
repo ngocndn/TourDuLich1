@@ -30,14 +30,6 @@ namespace Tour.UI.QLDoan
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnPricing = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,10 +38,18 @@ namespace Tour.UI.QLDoan
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnPricing = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -72,6 +72,54 @@ namespace Tour.UI.QLDoan
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(776, 147);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "MaKH";
+            this.Column1.HeaderText = "Mã Khách Hàng";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "TenKH";
+            this.Column2.HeaderText = "Tên Khách Hàng";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "KH_NgaySinh";
+            this.Column3.HeaderText = "Ngày Sinh";
+            this.Column3.Name = "Column3";
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "KH_GioiTinh";
+            this.Column7.HeaderText = "Giới Tính";
+            this.Column7.Name = "Column7";
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "KH_DiaChi";
+            this.Column4.HeaderText = "Địa Chỉ";
+            this.Column4.Name = "Column4";
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "KH_CMND";
+            this.Column6.HeaderText = "CMND/CCCD";
+            this.Column6.Name = "Column6";
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "KH_SoDienThoai";
+            this.Column5.HeaderText = "Số Điện Thoại";
+            this.Column5.Name = "Column5";
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "KH_email";
+            this.Column8.HeaderText = "Email";
+            this.Column8.Name = "Column8";
             // 
             // btnPricing
             // 
@@ -129,6 +177,30 @@ namespace Tour.UI.QLDoan
             this.dataGridView2.Size = new System.Drawing.Size(776, 147);
             this.dataGridView2.TabIndex = 71;
             // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "id";
+            this.Column9.HeaderText = "Mã Booking";
+            this.Column9.Name = "Column9";
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "TenKH";
+            this.Column10.HeaderText = "Tên Khách Hàng";
+            this.Column10.Name = "Column10";
+            // 
+            // Column11
+            // 
+            this.Column11.DataPropertyName = "TenDoan";
+            this.Column11.HeaderText = "Tên Đoàn";
+            this.Column11.Name = "Column11";
+            // 
+            // Column12
+            // 
+            this.Column12.DataPropertyName = "TenTour";
+            this.Column12.HeaderText = "Tên Tour";
+            this.Column12.Name = "Column12";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -161,78 +233,6 @@ namespace Tour.UI.QLDoan
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "MaKH";
-            this.Column1.HeaderText = "Mã Khách Hàng";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "TenKH";
-            this.Column2.HeaderText = "Tên Khách Hàng";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "KH_NgaySinh";
-            this.Column3.HeaderText = "Ngày Sinh";
-            this.Column3.Name = "Column3";
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "KH_GioiTinh";
-            this.Column7.HeaderText = "Giới Tính";
-            this.Column7.Name = "Column7";
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "KH_DiaChi";
-            this.Column4.HeaderText = "Địa Chỉ";
-            this.Column4.Name = "Column4";
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "KH_CMND";
-            this.Column6.HeaderText = "CMND/CCCD";
-            this.Column6.Name = "Column6";
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "KH_SoDienThoai";
-            this.Column5.HeaderText = "Số Điện Thoại";
-            this.Column5.Name = "Column5";
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "KH_email";
-            this.Column8.HeaderText = "Email";
-            this.Column8.Name = "Column8";
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "id";
-            this.Column9.HeaderText = "Mã Booking";
-            this.Column9.Name = "Column9";
-            // 
-            // Column10
-            // 
-            this.Column10.DataPropertyName = "TenKH";
-            this.Column10.HeaderText = "Tên Khách Hàng";
-            this.Column10.Name = "Column10";
-            // 
-            // Column11
-            // 
-            this.Column11.DataPropertyName = "TenDoan";
-            this.Column11.HeaderText = "Tên Đoàn";
-            this.Column11.Name = "Column11";
-            // 
-            // Column12
-            // 
-            this.Column12.DataPropertyName = "TenTour";
-            this.Column12.HeaderText = "Tên Tour";
-            this.Column12.Name = "Column12";
-            // 
             // frmAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -247,6 +247,8 @@ namespace Tour.UI.QLDoan
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnPricing);
             this.Controls.Add(this.dataGridView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MinimizeBox = false;
             this.Name = "frmAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm hành khách";

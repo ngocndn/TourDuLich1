@@ -37,14 +37,14 @@ namespace Tour.UI.QLDoan
             this.txtmadoan = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cbbcp = new System.Windows.Forms.ComboBox();
             this.txtprice = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,6 +76,7 @@ namespace Tour.UI.QLDoan
             this.btnDelete.Size = new System.Drawing.Size(56, 48);
             this.btnDelete.TabIndex = 45;
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnDetail
             // 
@@ -132,6 +133,24 @@ namespace Tour.UI.QLDoan
             this.dataGridView1.TabIndex = 52;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "MaCTCP";
+            this.Column1.HeaderText = "Mã Chi Phí";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "TenCP";
+            this.Column2.HeaderText = "Tên Chi Phí";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "ThanhTien";
+            this.Column3.HeaderText = "Thành Tiền";
+            this.Column3.Name = "Column3";
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -177,24 +196,6 @@ namespace Tour.UI.QLDoan
             this.label8.TabIndex = 56;
             this.label8.Text = "Giá ";
             // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "MaCTCP";
-            this.Column1.HeaderText = "Mã Chi Phí";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "TenCP";
-            this.Column2.HeaderText = "Tên Chi Phí";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "ThanhTien";
-            this.Column3.HeaderText = "Thành Tiền";
-            this.Column3.Name = "Column3";
-            // 
             // frmPricing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -213,6 +214,8 @@ namespace Tour.UI.QLDoan
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtmatour);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MinimizeBox = false;
             this.Name = "frmPricing";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Giá Tour";

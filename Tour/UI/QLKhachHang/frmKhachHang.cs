@@ -13,6 +13,7 @@ namespace Tour.UI.QLKhachHang
     public partial class frmKhachHang : Form
     {
         KhachHangBUS khb = new KhachHangBUS();
+        BookingBUS bb = new BookingBUS();
         public frmKhachHang()
         {
             InitializeComponent();
@@ -113,13 +114,23 @@ namespace Tour.UI.QLKhachHang
 
         public void Del()
         {
-
+            List<BOOKING> lB = bb.GetAll();
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 foreach (DataGridViewRow row in dataGridView1.SelectedRows)
                 {
                     int KH_ID = Convert.ToInt32(row.Cells[0].Value.ToString());
                     khb.XoaKhachHang(KH_ID);
+                    foreach (var item in lB)
+                    {
+                        if (KH_ID == item.MaKH)
+                        {
+                            if (bb.Delete(item.MaKH))
+                            {
+                                System.Diagnostics.Debug.WriteLine("Xóa giá tour thành công!");
+                            }
+                        }
+                    }
                     LoadKH();
                     MessageBox.Show("Deleted", "Notify");
 

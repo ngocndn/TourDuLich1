@@ -51,7 +51,7 @@ namespace Tour.UI.QLDoan
                 B.MaDOANDL = did;
                 B.MaTour = tid;
                 B.Siso = 1;
-                D.Soluong = 1;
+                //D.Soluong = 1;
                 foreach (DataGridViewRow r in dataGridView1.SelectedRows)
                 {
                     if (!String.Equals(r.Cells[0].Value.ToString(), "System.Windows.Forms.DataGridViewTextBoxColumn"))
@@ -63,14 +63,15 @@ namespace Tour.UI.QLDoan
                 B.GiaTour = 0;
                 if(bb.Add(B))
                 {
-                    if (db.AddKH(D, did))
-                    {
-                        MessageBox.Show("Success");
-                    }
+                    //if (db.AddKH(D, did))
+                   // {
+                       // MessageBox.Show("Success");
+                   // }
                         fMain.Show();
                         LoadHK();
                         fMain.LoadDSKH();
-                        fMain.OnRowNumberChanged();
+                        fMain.SoluongOnChange();
+                        //fMain.OnRowNumberChanged();
                         MessageBox.Show("Success", "Notify");
                     
                     }
@@ -96,7 +97,8 @@ namespace Tour.UI.QLDoan
                     bb.Delete(bid);
                     LoadHK();
                     fMain.LoadDSKH();
-                    fMain.OnRowNumberChanged();
+                    fMain.SoluongOnChange();
+                    //fMain.OnRowNumberChanged();
                     MessageBox.Show("Success");
                 }
                 else

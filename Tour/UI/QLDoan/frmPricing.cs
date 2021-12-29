@@ -95,6 +95,29 @@ namespace Tour.UI.QLDoan
                 MessageBox.Show("KiemTra");
             }
         }
+        public void Del()
+        {
+            if(dataGridView1.SelectedRows.Count!=-1)
+            {
+                foreach(DataGridViewRow r in dataGridView1.SelectedRows)
+                {
+                    if(!String.Equals(r.Cells[0].Value.ToString(), "System.Windows.Forms.DataGridViewTextBoxColumn"))
+                    {
+                        int id = Convert.ToInt32(r.Cells[0].Value.ToString());
+                            if(cb.XoaCTCP(id))
+                        {
+                            LoadCP();
+                            fM.LoadDoan();
+                            MessageBox.Show("Xóa chi phí thành công!", "Thông báo");
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Chọn giá");
+            }
+        }
         private void label3_Click(object sender, EventArgs e)
         {
 
@@ -138,6 +161,11 @@ namespace Tour.UI.QLDoan
         private void btnAdd_Click(object sender, EventArgs e)
         {
             Add();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            Del();
         }
     }
 }

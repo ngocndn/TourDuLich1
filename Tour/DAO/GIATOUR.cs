@@ -28,6 +28,8 @@ public partial class GIATOUR
 
     public int MaTour { get; set; }
 
+    public int STT { get; set; }
+
 }
 
 }

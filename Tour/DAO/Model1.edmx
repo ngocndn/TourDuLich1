@@ -13,7 +13,7 @@
           <Property Name="MaDOANDL" Type="int" Nullable="false" />
           <Property Name="MaKH" Type="int" Nullable="false" />
           <Property Name="MaTour" Type="int" Nullable="false" />
-          <Property Name="Siso" Type="int" />
+          <Property Name="Siso" Type="int" Nullable="false" />
           <Property Name="GiaTour" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="CHIPHI">
@@ -75,6 +75,7 @@
           <Property Name="TGKetThuc" Type="datetime2" Precision="6" Nullable="false" />
           <Property Name="ThanhTien" Type="float" Nullable="false" />
           <Property Name="MaTour" Type="int" Nullable="false" />
+          <Property Name="STT" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="KHACHHANG">
           <Key>
@@ -166,7 +167,7 @@
           <Property Name="MaDOANDL" Type="Int32" Nullable="false" />
           <Property Name="MaKH" Type="Int32" Nullable="false" />
           <Property Name="MaTour" Type="Int32" Nullable="false" />
-          <Property Name="Siso" Type="Int32" />
+          <Property Name="Siso" Type="Int32" Nullable="false" />
           <Property Name="GiaTour" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="CHIPHI">
@@ -228,6 +229,7 @@
           <Property Name="TGKetThuc" Type="DateTime" Nullable="false" Precision="6" />
           <Property Name="ThanhTien" Type="Double" Nullable="false" />
           <Property Name="MaTour" Type="Int32" Nullable="false" />
+          <Property Name="STT" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="KHACHHANG">
           <Key>
@@ -355,6 +357,7 @@
           <EntitySetMapping Name="GIATOURs">
             <EntityTypeMapping TypeName="QuanlyTour2Model.GIATOUR">
               <MappingFragment StoreEntitySet="GIATOUR">
+                <ScalarProperty Name="STT" ColumnName="STT" />
                 <ScalarProperty Name="MaTour" ColumnName="MaTour" />
                 <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
                 <ScalarProperty Name="TGKetThuc" ColumnName="TGKetThuc" />

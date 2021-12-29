@@ -133,6 +133,25 @@ namespace Tour.DAO
                 }
             }
         }
+        public bool XoaCTCP(int id)
+        {
+            using (tour = new TourENT())
+            {
+                try
+                {
+                    CHITIETCHIPHI cp = tour.CHITIETCHIPHIs.Where(t => t.id == id).SingleOrDefault();
+                    tour.CHITIETCHIPHIs.Remove(cp);
+                    tour.SaveChanges();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex);
+                    return false;
+                }
+
+            }
+        }
 
         public bool XoaCP(int cp_id)
         {

@@ -103,6 +103,8 @@ namespace Tour.UI.QLDiemDen
             this.Controls.Add(this.txtTenDD);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MinimizeBox = false;
             this.Name = "frmEditDD";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Điểm Đến";

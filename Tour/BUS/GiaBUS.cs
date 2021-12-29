@@ -16,6 +16,10 @@ namespace Tour.BUS
         {
             return gd.GetGiaTour();
         }
+        public List<GIATOUR> GetAll()
+        {
+            return gd.GetAll();
+        }
         public List<GIATOUR> GetGiaTourWithMaTour(int TourID)
         {
             return gd.GetGiaTourWithMaTour(TourID);
@@ -33,6 +37,10 @@ namespace Tour.BUS
         public bool XoaGiaTour(GIATOUR G, int TourID)
         {
             return gd.XoaGiaTour(G, TourID);
+        }
+        public bool UpdateGia(GIATOUR G, int ID)
+        {
+            return gd.Update(G, ID);
         }
         public List<dynamic> GetGia()
         {

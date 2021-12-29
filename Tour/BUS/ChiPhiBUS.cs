@@ -44,6 +44,10 @@ namespace Tour.BUS
         {
             return cpd.ThemChitietCP(ctcp);
         }
+        public bool XoaCTCP(int id)
+        {
+            return cpd.XoaCTCP(id);
+        }
 
         public bool Sua(CHIPHI cp, int cp_id)
         {

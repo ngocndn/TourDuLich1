@@ -56,6 +56,7 @@ namespace Tour.UI.QLTour
                     G.MaTour = T_ID;
                     G.TGKetThuc = dateTimePicker1.Value;
                     G.TGBatDau = DateTime.Now;
+                    G.STT = 1;
                     if(gb.ThemGiaTour(G))
                     {
                         Main.Show();

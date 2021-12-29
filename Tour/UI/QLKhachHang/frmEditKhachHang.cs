@@ -44,7 +44,7 @@ namespace Tour.UI.QLKhachHang
             txtSDT.Text = dataTableDetailsKhachHang.Rows[0][4].ToString();
             cbbGioiTinh.SelectedIndex = cbbGioiTinh.FindStringExact(dataTableDetailsKhachHang.Rows[0][5].ToString());
             txtEmail.Text = dataTableDetailsKhachHang.Rows[0][6].ToString();
-            txtCMND.Text = dataTableDetailsKhachHang.Rows[0][8].ToString();
+            txtCMND.Text = dataTableDetailsKhachHang.Rows[0][7].ToString();
         }
         public void Clear()
         {

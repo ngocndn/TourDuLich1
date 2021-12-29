@@ -103,6 +103,8 @@ namespace Tour.UI.QLLoaiHinh
             this.Controls.Add(this.txtTenLH);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MinimizeBox = false;
             this.Name = "frmEditLH";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chi Tiết Loại Hình";

@@ -156,7 +156,7 @@ namespace Tour.DAO
                 try
                 {
                     DOANDL d = tour.DOANDLs.Where(t => t.MaDOANDL == DoanID).SingleOrDefault();
-                    d.Soluong += D.Soluong;
+                    //d.Soluong += D.Soluong;
                     tour.SaveChanges();
                     return true;
                 }
@@ -173,7 +173,7 @@ namespace Tour.DAO
                 try
                 {
                     DOANDL d = tour.DOANDLs.Where(t => t.MaDOANDL == DoanID).SingleOrDefault();
-                    d.Soluong -= D.Soluong;
+                    //d.Soluong -= D.Soluong;
                     tour.SaveChanges();
                     return true;
                 }
@@ -215,6 +215,7 @@ namespace Tour.DAO
                     d.MaNV = D.MaNV;
                     d.ChiPhi = D.ChiPhi;
                     d.TongTien = D.TongTien;
+                    d.Soluong = D.Soluong;
                     tour.SaveChanges();
                     return true;
 
@@ -226,7 +227,23 @@ namespace Tour.DAO
                 }
             }
         }
-
+        public bool SoLuongChange(DOANDL D, int DoanID)
+        {
+            {
+                try
+                {
+                    DOANDL d = tour.DOANDLs.Where(t => t.MaDOANDL == DoanID).SingleOrDefault();
+                    d.Soluong = D.Soluong;
+                    tour.SaveChanges();
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    System.Diagnostics.Debug.WriteLine(e);
+                    return false;
+                }
+            }
+        }
         public bool Delete(int DoanID)
         {
             {

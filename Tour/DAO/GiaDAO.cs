@@ -21,6 +21,14 @@ namespace Tour.DAO
             }
 
         }
+        public List<GIATOUR> GetAll()
+        {
+            using (tour = new TourENT())
+            {
+                var GetList = tour.GIATOURs;
+                return GetList.ToList<GIATOUR>();
+            }
+        }
         public List<dynamic> GetGia()
         {
             using (tour = new TourENT())
@@ -41,7 +49,7 @@ namespace Tour.DAO
         {
             using (tour = new TourENT())
             {
-                var getList = tour.GIATOURs.Where(t => t.MaTour == TourID);
+                var getList = tour.GIATOURs.Where(t => t.MaTour == TourID).Where(t=>t.STT == 1);
 
                 return getList.ToList<GIATOUR>();
             }
@@ -88,6 +96,24 @@ namespace Tour.DAO
                 {
                     G = tour.GIATOURs.Where(t =>t.MaTour == TourID).SingleOrDefault();
                     tour.GIATOURs.Remove(G);
+                    tour.SaveChanges();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex);
+                    return false;
+                }
+            }
+        }
+        public bool Update(GIATOUR G, int ID)
+        {
+            using (tour = new TourENT())
+            {
+                try
+                {
+                    GIATOUR g = tour.GIATOURs.Where(t=>t.IDGIATOUR==ID).SingleOrDefault();
+                    g.STT = G.STT;
                     tour.SaveChanges();
                     return true;
                 }
