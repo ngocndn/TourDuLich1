@@ -125,7 +125,7 @@ namespace Tour.UI.QLKhachHang
                     {
                         if (KH_ID == item.MaKH)
                         {
-                            if (bb.Delete(item.MaKH))
+                            if (bb.DeleteKH(item.MaKH))
                             {
                                 System.Diagnostics.Debug.WriteLine("Xóa giá tour thành công!");
                             }

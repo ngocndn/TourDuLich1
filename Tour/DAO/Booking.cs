@@ -26,7 +26,7 @@ public partial class BOOKING
 
     public int MaTour { get; set; }
 
-    public Nullable<int> Siso { get; set; }
+    public int Siso { get; set; }
 
     public int GiaTour { get; set; }
 

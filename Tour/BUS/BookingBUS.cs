@@ -34,5 +34,9 @@ namespace Tour.BUS
         {
             return bd.Delete(id);
         }
+        public bool DeleteKH(int id)
+        {
+            return bd.DeleteKH(id);
+        }
     }
 }

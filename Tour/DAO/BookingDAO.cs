@@ -146,5 +146,23 @@ namespace Tour.DAO
                 }
             }
         }
+        public bool DeleteKH(int id)
+        {
+            using (tour = new TourENT())
+            {
+                try
+                {
+                    BOOKING B = tour.BOOKINGs.Where(t => t.MaKH == id).SingleOrDefault();
+                    tour.BOOKINGs.Remove(B);
+                    tour.SaveChanges();
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    System.Diagnostics.Debug.WriteLine(e);
+                    return false;
+                }
+            }
+        }
     }
 }
