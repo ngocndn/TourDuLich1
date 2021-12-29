@@ -40,6 +40,7 @@ namespace Tour.UI.QLTour
             this.btnPricing = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // comboBox_DiaDiem
@@ -69,6 +70,7 @@ namespace Tour.UI.QLTour
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Beige;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(336, 14);
             this.label5.Name = "label5";
@@ -79,6 +81,7 @@ namespace Tour.UI.QLTour
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Beige;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(11, 94);
             this.label3.Name = "label3";
@@ -89,6 +92,7 @@ namespace Tour.UI.QLTour
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Beige;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(11, 52);
             this.label2.Name = "label2";
@@ -106,6 +110,7 @@ namespace Tour.UI.QLTour
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Beige;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(11, 15);
             this.label1.Name = "label1";
@@ -143,6 +148,14 @@ namespace Tour.UI.QLTour
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Beige;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(581, 136);
+            this.panel1.TabIndex = 64;
+            // 
             // frmDETAIL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -159,11 +172,12 @@ namespace Tour.UI.QLTour
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtTenTour);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmDETAIL";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chi Tiet";
+            this.Text = "Cập nhật Tour";
             this.Load += new System.EventHandler(this.frmDETAIL_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -183,5 +197,6 @@ namespace Tour.UI.QLTour
         private System.Windows.Forms.TextBox txtTenTour;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnPricing;
+        private System.Windows.Forms.Panel panel1;
     }
 }

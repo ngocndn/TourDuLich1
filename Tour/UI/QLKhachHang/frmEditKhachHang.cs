@@ -54,39 +54,39 @@ namespace Tour.UI.QLKhachHang
         {
             if (String.IsNullOrEmpty(txtTenKH.Text))
             {
-                MessageBox.Show("Ten is required", "Caution!!!");
+                MessageBox.Show("Nhập tên khách hàng!!", "Lưu ý!!!");
                 txtTenKH.Focus();
                 return false;
             }
             if (String.IsNullOrEmpty(txtSDT.Text))
             {
-                MessageBox.Show("SDT is required", "Caution!!!");
+                MessageBox.Show("Nhập số điện thoại khách hàng!!", "Lưu ý!!!");
                 txtSDT.Focus();
                 return false;
             }
 
             if (String.IsNullOrEmpty(cbbGioiTinh.Text))
             {
-                MessageBox.Show("GT is required", "Caution!!!");
+                MessageBox.Show("Nhập giới tính!!", "Lưu ý!!!");
                 cbbGioiTinh.Focus();
                 return false;
             }
 
             if (String.IsNullOrEmpty(txtEmail.Text))
             {
-                MessageBox.Show("Email is required", "Caution!!!");
+                MessageBox.Show("Nhập email khách hàng!!", "Lưu ý!!!");
                 txtEmail.Focus();
                 return false;
             }
             if (String.IsNullOrEmpty(txtDiaChi.Text))
             {
-                MessageBox.Show("DiaChi is required", "Caution!!!");
+                MessageBox.Show("Nhập địa chỉ khách hàng!!", "Lưu ý!!!");
                 txtDiaChi.Focus();
                 return false;
             }
             if (String.IsNullOrEmpty(txtCMND.Text))
             {
-                MessageBox.Show("CMND is required", "Caution!!!");
+                MessageBox.Show("Nhập CMND/CCCD khách hàng!!", "Lưu ý!!!");
                 txtCMND.Focus();
                 return false;
             }
@@ -111,13 +111,13 @@ namespace Tour.UI.QLKhachHang
                     {
                         Main.LoadKH();
                         Clear();
-                        MessageBox.Show("Success", "Notify");
+                        MessageBox.Show("Cập nhật thành công");
 
                     }
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show("Failed", "Caution!!!");
+                    MessageBox.Show("Cập nhật thất bại! Kiểm tra dữ liệu nhập", "Lưu ý!!!");
                     System.Diagnostics.Debug.WriteLine(e);
                 }
             }

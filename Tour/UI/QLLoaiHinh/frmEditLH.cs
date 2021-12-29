@@ -37,29 +37,29 @@ namespace Tour.UI.QLLoaiHinh
         {
             if (String.IsNullOrEmpty(txtTenLH.Text))
             {
-                MessageBox.Show("Nhap Loai Hinh!", "Thông báo");
+                MessageBox.Show("Nhập tên loại hình!", "Lưu ý!!!");
                 txtTenLH.Focus();
                 return false;
             }
             Regex regex = new Regex(@"[""!#$%&'*+,-./:;<=>?@[\\\]^_`{|}]");
             if (regex.IsMatch(txtTenLH.Text))
             {
-                MessageBox.Show("!", "Thông báo");
+                MessageBox.Show("Không được chứa ký tự đặc biệt!", "Lưu ý!!!");
                 txtTenLH.Focus();
                 return false;
             }
 
             if (String.IsNullOrEmpty(txtDD.Text))
             {
-                MessageBox.Show("Nhap Loai Hinh!", "Thông báo");
-                txtTenLH.Focus();
+                MessageBox.Show("Nhập đặc điểm!", "Lưu ý!!!");
+                txtDD.Focus();
                 return false;
             }
             
             if (regex.IsMatch(txtDD.Text))
             {
-                MessageBox.Show("!", "Thông báo");
-                txtTenLH.Focus();
+                MessageBox.Show("Không được chứa ký tự đặc biệt!", "Lưu ý!!!");
+                txtDD.Focus();
                 return false;
             }
             return true;
@@ -78,13 +78,13 @@ namespace Tour.UI.QLLoaiHinh
                         System.Diagnostics.Debug.WriteLine("Success");
                         Main.LoadLH();
                         Clear();
-                        MessageBox.Show("Success");
+                        MessageBox.Show("Cập nhật thành công");
                     }
 
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show("Failed!");
+                    MessageBox.Show("Cập nhật thất bại!","Lưu ý!!!");
                     System.Diagnostics.Debug.WriteLine(e);
                 }
             }

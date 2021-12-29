@@ -72,17 +72,17 @@ namespace Tour.UI.QLDoan
                         fMain.LoadDSKH();
                         fMain.SoluongOnChange();
                         //fMain.OnRowNumberChanged();
-                        MessageBox.Show("Success", "Notify");
+                        MessageBox.Show("Thêm thành công");
                     
                     }
                 else
                 {
-                    MessageBox.Show("Failed");
+                    MessageBox.Show("Thêm thất bại");
                 }
             }
             catch(Exception e)
             {
-                MessageBox.Show("Failed", "Thông báo");
+                MessageBox.Show("Thất bại", "Thông báo");
                 System.Diagnostics.Debug.WriteLine(e);
             }
         }
@@ -99,11 +99,11 @@ namespace Tour.UI.QLDoan
                     fMain.LoadDSKH();
                     fMain.SoluongOnChange();
                     //fMain.OnRowNumberChanged();
-                    MessageBox.Show("Success");
+                    MessageBox.Show("Xóa khách hàng thành công!!");
                 }
                 else
                 {
-                    MessageBox.Show("Chon HK muon xoa");
+                    MessageBox.Show("Chọn hành khách muốn xóa!!!");
                 }
             }
         }

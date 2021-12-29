@@ -45,12 +45,14 @@ namespace Tour.UI.QLDoan
             this.cbbcp = new System.Windows.Forms.ComboBox();
             this.txtprice = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Beige;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(22, 74);
             this.label1.Name = "label1";
@@ -110,6 +112,7 @@ namespace Tour.UI.QLDoan
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Beige;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(22, 37);
             this.label5.Name = "label5";
@@ -154,6 +157,7 @@ namespace Tour.UI.QLDoan
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Beige;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(109, 172);
             this.label4.Name = "label4";
@@ -164,6 +168,7 @@ namespace Tour.UI.QLDoan
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Beige;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(22, 112);
             this.label6.Name = "label6";
@@ -189,12 +194,21 @@ namespace Tour.UI.QLDoan
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Beige;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(22, 152);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(30, 13);
             this.label8.TabIndex = 56;
             this.label8.Text = "Giá ";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Beige;
+            this.panel1.Location = new System.Drawing.Point(-2, -8);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(318, 425);
+            this.panel1.TabIndex = 58;
             // 
             // frmPricing
             // 
@@ -214,6 +228,7 @@ namespace Tour.UI.QLDoan
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtmatour);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MinimizeBox = false;
             this.Name = "frmPricing";
@@ -244,5 +259,6 @@ namespace Tour.UI.QLDoan
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.Panel panel1;
     }
 }

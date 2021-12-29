@@ -42,13 +42,13 @@ namespace Tour.UI.QLNhanVien
         {
             if (String.IsNullOrEmpty(txtTenNV.Text))
             {
-                MessageBox.Show("Vui lòng nhập tên nhân viên!", "Thông báo");
+                MessageBox.Show("Vui lòng nhập tên nhân viên!", "Lưu ý!!!");
                 txtTenNV.Focus();
                 return false;
             }
             if (String.IsNullOrEmpty(txtSDT.Text))
             {
-                MessageBox.Show("Vui lòng nhập nhiệm vụ!", "Thông báo");
+                MessageBox.Show("Vui lòng nhập nhiệm vụ!", "Lưu ý!!!");
                 txtSDT.Focus();
                 return false;
             }
@@ -57,7 +57,7 @@ namespace Tour.UI.QLNhanVien
             Regex regex = new Regex(@"[""!#$%&'()*+,-./:;<=>?@[\\\]^_`{|}~0-9]");
             if (regex.IsMatch(txtTenNV.Text))
             {
-                MessageBox.Show("Tên nhân viên không được có số và kí tự đặc biệt!", "Thông báo");
+                MessageBox.Show("Tên nhân viên không được có số và kí tự đặc biệt!", "Lưu ý!!!");
                 txtTenNV.Focus();
                 return false;
             }
@@ -90,12 +90,12 @@ namespace Tour.UI.QLNhanVien
                         System.Diagnostics.Debug.WriteLine("Sửa nhân viên thành công!");
                         Clear();
                         Main.LoadNV();
-                        MessageBox.Show("Sửa nhân viên thành công!", "Thông báo");
+                        MessageBox.Show("Sửa nhân viên thành công!");
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Sửa không thành công!", "Thông báo");
+                    MessageBox.Show("Sửa không thành công!", "Lưu ý!!!");
                     System.Diagnostics.Debug.WriteLine(ex);
                 }
             }

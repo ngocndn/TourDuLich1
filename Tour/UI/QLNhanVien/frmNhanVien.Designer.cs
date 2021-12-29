@@ -46,13 +46,17 @@ namespace Tour.UI.QLNhanVien
             this.label10 = new System.Windows.Forms.Label();
             this.txtsearch = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnDelete
             // 
             this.btnDelete.Image = global::Tour.Properties.Resources.delete__2_;
-            this.btnDelete.Location = new System.Drawing.Point(176, 230);
+            this.btnDelete.Location = new System.Drawing.Point(663, 113);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(42, 42);
             this.btnDelete.TabIndex = 30;
@@ -62,7 +66,7 @@ namespace Tour.UI.QLNhanVien
             // btnDetail
             // 
             this.btnDetail.Image = global::Tour.Properties.Resources.edit__1_;
-            this.btnDetail.Location = new System.Drawing.Point(128, 230);
+            this.btnDetail.Location = new System.Drawing.Point(615, 113);
             this.btnDetail.Name = "btnDetail";
             this.btnDetail.Size = new System.Drawing.Size(42, 42);
             this.btnDetail.TabIndex = 29;
@@ -72,7 +76,7 @@ namespace Tour.UI.QLNhanVien
             // btnAdd
             // 
             this.btnAdd.Image = global::Tour.Properties.Resources.plus;
-            this.btnAdd.Location = new System.Drawing.Point(80, 230);
+            this.btnAdd.Location = new System.Drawing.Point(567, 113);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(42, 42);
             this.btnAdd.TabIndex = 28;
@@ -81,16 +85,17 @@ namespace Tour.UI.QLNhanVien
             // 
             // txtSDT
             // 
-            this.txtSDT.Location = new System.Drawing.Point(97, 170);
+            this.txtSDT.Location = new System.Drawing.Point(127, 125);
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(192, 20);
+            this.txtSDT.Size = new System.Drawing.Size(165, 20);
             this.txtSDT.TabIndex = 25;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Beige;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(17, 173);
+            this.label3.Location = new System.Drawing.Point(47, 128);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(34, 15);
             this.label3.TabIndex = 24;
@@ -99,8 +104,9 @@ namespace Tour.UI.QLNhanVien
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Beige;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(17, 110);
+            this.label2.Location = new System.Drawing.Point(476, 70);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 15);
             this.label2.TabIndex = 22;
@@ -108,7 +114,7 @@ namespace Tour.UI.QLNhanVien
             // 
             // txtTenNV
             // 
-            this.txtTenNV.Location = new System.Drawing.Point(124, 49);
+            this.txtTenNV.Location = new System.Drawing.Point(127, 70);
             this.txtTenNV.Name = "txtTenNV";
             this.txtTenNV.Size = new System.Drawing.Size(165, 20);
             this.txtTenNV.TabIndex = 21;
@@ -116,8 +122,9 @@ namespace Tour.UI.QLNhanVien
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Beige;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(17, 52);
+            this.label1.Location = new System.Drawing.Point(20, 73);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(101, 15);
             this.label1.TabIndex = 20;
@@ -132,10 +139,10 @@ namespace Tour.UI.QLNhanVien
             this.Column2,
             this.Column3,
             this.Column4});
-            this.dataGridView1.Location = new System.Drawing.Point(295, 49);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 218);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(495, 338);
+            this.dataGridView1.Size = new System.Drawing.Size(736, 327);
             this.dataGridView1.TabIndex = 19;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -165,7 +172,7 @@ namespace Tour.UI.QLNhanVien
             // 
             // dp_NSNV
             // 
-            this.dp_NSNV.Location = new System.Drawing.Point(97, 110);
+            this.dp_NSNV.Location = new System.Drawing.Point(556, 70);
             this.dp_NSNV.Name = "dp_NSNV";
             this.dp_NSNV.Size = new System.Drawing.Size(192, 20);
             this.dp_NSNV.TabIndex = 31;
@@ -173,8 +180,9 @@ namespace Tour.UI.QLNhanVien
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Beige;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(462, 9);
+            this.label10.Location = new System.Drawing.Point(309, 172);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(182, 16);
             this.label10.TabIndex = 70;
@@ -182,28 +190,58 @@ namespace Tour.UI.QLNhanVien
             // 
             // txtsearch
             // 
-            this.txtsearch.Location = new System.Drawing.Point(618, 28);
+            this.txtsearch.Location = new System.Drawing.Point(586, 192);
             this.txtsearch.Name = "txtsearch";
-            this.txtsearch.Size = new System.Drawing.Size(172, 20);
+            this.txtsearch.Size = new System.Drawing.Size(162, 20);
             this.txtsearch.TabIndex = 72;
             this.txtsearch.TextChanged += new System.EventHandler(this.txtsearch_TextChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Beige;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(544, 29);
+            this.label4.Location = new System.Drawing.Point(512, 193);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(68, 15);
             this.label4.TabIndex = 71;
             this.label4.Text = "Tìm Kiếm";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.Control;
+            this.label6.Location = new System.Drawing.Point(289, 11);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(215, 37);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Quản lý Tour";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Location = new System.Drawing.Point(0, -2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(758, 53);
+            this.panel1.TabIndex = 73;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Beige;
+            this.panel2.Location = new System.Drawing.Point(0, 57);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(766, 516);
+            this.panel2.TabIndex = 74;
+            // 
             // frmNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(802, 396);
+            this.ClientSize = new System.Drawing.Size(759, 557);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtsearch);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label10);
@@ -217,6 +255,7 @@ namespace Tour.UI.QLNhanVien
             this.Controls.Add(this.txtTenNV);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MinimizeBox = false;
             this.Name = "frmNhanVien";
@@ -224,6 +263,8 @@ namespace Tour.UI.QLNhanVien
             this.Text = "Nhân Viên";
             this.Load += new System.EventHandler(this.frmNhanVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,5 +289,8 @@ namespace Tour.UI.QLNhanVien
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtsearch;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

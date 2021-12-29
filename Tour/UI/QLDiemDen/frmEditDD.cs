@@ -38,26 +38,26 @@ namespace Tour.UI.QLDiemDen
         {
             if (String.IsNullOrEmpty(txtTenDD.Text))
             {
-                MessageBox.Show("TenDD is required!", "Caution!!!");
+                MessageBox.Show("Nhập tên địa điểm!", "Lưu ý!!!");
                 txtTenDD.Focus();
                 return false;
             }
             if (String.IsNullOrEmpty(txtDD.Text))
             {
-                MessageBox.Show("DD is required!", "Caution!!!");
+                MessageBox.Show("Nhập đặc điểm !", "Lưu ý!!!");
                 txtDD.Focus();
                 return false;
             }
             Regex regex = new Regex(@"[""!#$%&'*+,-./:;<=>?@[\\\]^_`{|}]");
             if (regex.IsMatch(txtTenDD.Text))
             {
-                MessageBox.Show("No Special Char!", "Caution!!!");
+                MessageBox.Show("Không được có ký tự đặc biệt!", "Lưu ý!!!");
                 txtTenDD.Focus();
                 return false;
             }
             if (regex.IsMatch(txtDD.Text))
             {
-                MessageBox.Show("No Special Char!", "Caution!!!");
+                MessageBox.Show("Không được có ký tự đặc biệt!", "Lưu ý!!!");
                 txtDD.Focus();
                 return false;
             }
@@ -76,12 +76,12 @@ namespace Tour.UI.QLDiemDen
                     {
                         System.Diagnostics.Debug.Write("Success");
                         Main.LoadDiaDiem();
-                        MessageBox.Show("Success", "Notify");
+                        MessageBox.Show("Sửa thông tin thành công");
                     }
                 }
                 catch(Exception e)
                 {
-                    MessageBox.Show("Failed!!!");
+                    MessageBox.Show("Sửa thông tin thất bại! Kiểm tra dữ liệu nhập","Lưu ý!!!");
                     System.Diagnostics.Debug.WriteLine(e);
                 }
             }

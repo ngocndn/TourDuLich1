@@ -37,13 +37,13 @@ namespace Tour.UI.QLNhanVien
         {
             if (String.IsNullOrEmpty(txtTenNV.Text))
             {
-                MessageBox.Show("Name is required!", "Caution!!!");
+                MessageBox.Show("Nhập tên nhân viên!!", "Lưu ý!!!");
                 txtTenNV.Focus();
                 return false;
             }
             if (String.IsNullOrEmpty(txtSDT.Text))
             {
-                MessageBox.Show("SDT is required!", "Caution!!!");
+                MessageBox.Show("Nhập số điện thoại nhân viên!", "Lưu ý!!!");
                 txtSDT.Focus();
                 return false;
             }
@@ -53,7 +53,7 @@ namespace Tour.UI.QLNhanVien
 
             if (regex.IsMatch(txtTenNV.Text))
             {
-                MessageBox.Show("No Special Character!", "Caution!!!");
+                MessageBox.Show("Không được chứa ký tự đặc biệt!", "Lưu ý!!!");
                 txtTenNV.Focus();
                 return false;
             }
@@ -76,12 +76,12 @@ namespace Tour.UI.QLNhanVien
                     {
                         Clear();
                         LoadNV();
-                        MessageBox.Show("Success", "Notify");
+                        MessageBox.Show("Thêm thành công");
                     }
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show("FAILED", "CAUTION!!!");
+                    MessageBox.Show("Thêm thất bại!!", "Lưu ý!!!");
                     System.Diagnostics.Debug.WriteLine(e);
                 }
             }
@@ -97,12 +97,12 @@ namespace Tour.UI.QLNhanVien
                     int NV_ID = Convert.ToInt32(row.Cells[0].Value.ToString());
                     nvb.XoaNhanVien(NV_ID);
                     LoadNV();
-                    MessageBox.Show("Success", "Notify");
+                    MessageBox.Show("Xóa thành công");
                 }
             }
             else
             {
-                MessageBox.Show("Select tour!", "Caution");
+                MessageBox.Show("Chọn nhân viên để xóa!", "Lưu ý!!!");
             }
         }
         public void XemChiTiet()

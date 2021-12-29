@@ -53,7 +53,7 @@ namespace Tour.UI.QLDoan
         {
             if (String.IsNullOrEmpty(txtprice.Text))
             {
-                MessageBox.Show("Gia is required", "Caution!!!");
+                MessageBox.Show("Nhập giá!!!!", "Lưu ý!!!");
                 txtprice.Focus();
                 return false;
             }

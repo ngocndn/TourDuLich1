@@ -36,7 +36,7 @@ namespace Tour.UI.QLTour
         {
             if (String.IsNullOrEmpty(txtGia.Text))
             {
-                MessageBox.Show("Ten is required", "Caution!!!");
+                MessageBox.Show("Nhập giá", "Lưu ý!!!");
                 txtGia.Focus();
                 return false;
             }
@@ -62,16 +62,16 @@ namespace Tour.UI.QLTour
                         Main.Show();
                         ShowDetail();
                         Clear();
-                        MessageBox.Show("Success", "Notify");
+                        MessageBox.Show("Thêm giá thành công");
                     }
                     else
                     {
-                        MessageBox.Show("Failed", "Caution");
+                        MessageBox.Show("Thêm giá thất bại", "Lưu ý!!!");
                     }
                 }
                 catch(Exception e)
                 {
-                    MessageBox.Show("Giá tour phải là số!", "Thông báo");
+                    //MessageBox.Show("Giá tour phải là số!", "Thông báo");
                     System.Diagnostics.Debug.WriteLine(e);
                 }
             }
@@ -115,7 +115,7 @@ namespace Tour.UI.QLTour
                         }
                         else
                         {
-                            MessageBox.Show("Áp dụng giá KHÔNG thành công!", "Thông báo");
+                            MessageBox.Show("Áp dụng giá KHÔNG thành công!", "Lưu ý!!!");
                         }
 
                     }

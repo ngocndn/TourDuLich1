@@ -50,6 +50,7 @@ namespace Tour.UI.QLDoan
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -144,6 +145,7 @@ namespace Tour.UI.QLDoan
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Beige;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 25);
             this.label1.Name = "label1";
@@ -204,6 +206,7 @@ namespace Tour.UI.QLDoan
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Beige;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(283, 265);
             this.label2.Name = "label2";
@@ -215,6 +218,7 @@ namespace Tour.UI.QLDoan
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Beige;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(328, 71);
             this.label3.Name = "label3";
@@ -233,6 +237,14 @@ namespace Tour.UI.QLDoan
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Beige;
+            this.panel1.Location = new System.Drawing.Point(-5, -12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(812, 520);
+            this.panel1.TabIndex = 75;
+            // 
             // frmAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -247,6 +259,7 @@ namespace Tour.UI.QLDoan
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnPricing);
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MinimizeBox = false;
             this.Name = "frmAdd";
@@ -283,5 +296,6 @@ namespace Tour.UI.QLDoan
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
+        private System.Windows.Forms.Panel panel1;
     }
 }

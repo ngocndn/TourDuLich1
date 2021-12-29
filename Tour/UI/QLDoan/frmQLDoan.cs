@@ -53,7 +53,7 @@ namespace Tour.UI.QLDoan
         {
             if (String.IsNullOrEmpty(txtTenDoan.Text))
             {
-                MessageBox.Show("Ten is required", "Caution!!!");
+                MessageBox.Show("Nhập tên đoàn!!!", "Lưu ý!!!");
                 txtTenDoan.Focus();
                 return false;
             }
@@ -68,13 +68,13 @@ namespace Tour.UI.QLDoan
                     int DoanID = Convert.ToInt32(r.Cells[0].Value.ToString());
                     db.Delete(DoanID);
                     LoadDanhSachDoan();
-                    MessageBox.Show("Xoa thanh cong");
+                    MessageBox.Show("Xóa thành công!!");
                 }
 
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn đoàn muốn xóa!", "Thông báo");
+                MessageBox.Show("Vui lòng chọn đoàn muốn xóa!", "Lưu ý!!!");
             }
         }
         public void Add()
@@ -116,19 +116,19 @@ namespace Tour.UI.QLDoan
 
                         System.Diagnostics.Debug.WriteLine("Success");
                         Clear();
-                        MessageBox.Show("Them thanh cong","Thong bao");
+                        MessageBox.Show("Thêm đoàn thành công");
                         LoadDanhSachDoan();
                     }
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show("Thêm không thành công!", "Thông báo");
+                    MessageBox.Show("Thêm không thành công!", "Lưu ý!!!");
                     System.Diagnostics.Debug.WriteLine(e);
                 }
             }
             else
             {
-                MessageBox.Show("Kiem tra lai du lieu nhap","Thong bao");
+                MessageBox.Show("Thêm không thành công!! Kiểm tra lại dữ liệu nhập!!!", "Lưu ý!!!");
             }
         }
 

@@ -45,6 +45,7 @@ namespace Tour.UI.QLKhachHang
             this.txtTenKH = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cbbGioiTinh = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // btnClose
@@ -84,6 +85,7 @@ namespace Tour.UI.QLKhachHang
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Beige;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(462, 130);
             this.label5.Name = "label5";
@@ -101,6 +103,7 @@ namespace Tour.UI.QLKhachHang
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Beige;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(462, 76);
             this.label6.Name = "label6";
@@ -111,6 +114,7 @@ namespace Tour.UI.QLKhachHang
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Beige;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(462, 25);
             this.label7.Name = "label7";
@@ -128,6 +132,7 @@ namespace Tour.UI.QLKhachHang
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Beige;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(43, 184);
             this.label4.Name = "label4";
@@ -145,6 +150,7 @@ namespace Tour.UI.QLKhachHang
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Beige;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(43, 130);
             this.label3.Name = "label3";
@@ -155,6 +161,7 @@ namespace Tour.UI.QLKhachHang
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Beige;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(43, 76);
             this.label2.Name = "label2";
@@ -172,6 +179,7 @@ namespace Tour.UI.QLKhachHang
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Beige;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(43, 25);
             this.label1.Name = "label1";
@@ -187,6 +195,14 @@ namespace Tour.UI.QLKhachHang
             this.cbbGioiTinh.Size = new System.Drawing.Size(121, 21);
             this.cbbGioiTinh.TabIndex = 64;
             this.cbbGioiTinh.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Beige;
+            this.panel1.Location = new System.Drawing.Point(-2, -2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(808, 232);
+            this.panel1.TabIndex = 65;
             // 
             // frmEditKhachHang
             // 
@@ -209,6 +225,7 @@ namespace Tour.UI.QLKhachHang
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MinimizeBox = false;
             this.Name = "frmEditKhachHang";
@@ -237,5 +254,6 @@ namespace Tour.UI.QLKhachHang
         private System.Windows.Forms.TextBox txtTenKH;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbbGioiTinh;
+        private System.Windows.Forms.Panel panel1;
     }
 }

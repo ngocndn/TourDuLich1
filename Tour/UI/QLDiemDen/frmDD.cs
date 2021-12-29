@@ -34,27 +34,27 @@ namespace Tour.UI.QLDiemDen
         {
             if(String.IsNullOrEmpty(txtTenDD.Text))
             {
-                MessageBox.Show("TenDD is required","Caution!!!");
+                MessageBox.Show("Nhập tên địa điểm","Lưu ý!!!");
                 txtTenDD.Focus();
                 return false;
             }
             if(String.IsNullOrEmpty(txtDD.Text))
             {
-                MessageBox.Show("DD is required", "Caution!!!");
+                MessageBox.Show("Nhập đặc điểm", "Lưu ý!!!");
                 txtDD.Focus();
                 return false;
             }
 
             if (Regex.IsMatch(txtTenDD.Text, @"[""!#$%&'()*+,-./:;<=>?@[\\\]^_`{|}~0-9]"))
             {
-                MessageBox.Show("No Special Character", "Caution!!!");
+                MessageBox.Show("Không được nhập ký tự đặc biệt", "Lưu ý!!!");
                 txtTenDD.Focus();
                 return false;
             }
 
             if (Regex.IsMatch(txtDD.Text, @"[""!#$%&'()*+,-./:;<=>?@[\\\]^_`{|}~0-9]"))
             {
-                MessageBox.Show("No Special Character", "Caution!!!");
+                MessageBox.Show("Không được nhập ký tự đặc biệt", "Lưu ý!!!");
                 txtDD.Focus();
                 return false;
             }
@@ -74,14 +74,14 @@ namespace Tour.UI.QLDiemDen
                     DD.DD_MoTa = txtDD.Text;
                     if(DDB.AddDiaDiem(DD))
                     {
-                        MessageBox.Show("Success", "Notify");
+                        MessageBox.Show("Thêm thành công");
                         LoadDiaDiem();
                         Clear();
                     }
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show("Failed", "Caution!!!");
+                    MessageBox.Show("Thêm thất bại", "Lưu ý!!!");
                     System.Diagnostics.Debug.WriteLine(e);
                 }
             }
@@ -97,7 +97,7 @@ namespace Tour.UI.QLDiemDen
                     int ID = Convert.ToInt32(r.Cells[0].Value.ToString());
                     DDB.DelDiaDiem(DD, ID);
                     LoadDiaDiem();
-                    MessageBox.Show("Deleted", "Notify");
+                    MessageBox.Show("Đã xóa");
                     Clear();
                 }
             }

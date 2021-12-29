@@ -88,17 +88,6 @@ namespace Tour.DAO
                 return getListDoan.ToList<dynamic>();
             }
         }
-        public List<dynamic> ThongKe()
-        {
-            {
-                var getTK = (from tbD in tour.DOANDLs
-                             select new
-                             {
-                                 TenDoan = tbD.TenDoan,SoLuong = tbD.Soluong , TongTien = tbD.TongTien
-                             });
-                return getTK.ToList<dynamic>();
-            }    
-        }
 
         public List<dynamic> GetDDetail(int DoanID)
         {

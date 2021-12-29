@@ -30,15 +30,25 @@ namespace Tour.UI.QLGia
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnDetail = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDetail = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowDrop = true;
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -49,6 +59,18 @@ namespace Tour.UI.QLGia
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(527, 308);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "TenTour";
+            this.Column1.HeaderText = "Tên Tour";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "GiaTour";
+            this.Column2.HeaderText = "Thành Tiền";
+            this.Column2.Name = "Column2";
             // 
             // btnDetail
             // 
@@ -68,31 +90,51 @@ namespace Tour.UI.QLGia
             this.btnClose.TabIndex = 50;
             this.btnClose.UseVisualStyleBackColor = true;
             // 
-            // Column1
+            // panel1
             // 
-            this.Column1.DataPropertyName = "TenTour";
-            this.Column1.HeaderText = "Tên Tour";
-            this.Column1.Name = "Column1";
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(546, 53);
+            this.panel1.TabIndex = 51;
             // 
-            // Column2
+            // label1
             // 
-            this.Column2.DataPropertyName = "GiaTour";
-            this.Column2.HeaderText = "Thành Tiền";
-            this.Column2.Name = "Column2";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(203, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(168, 39);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Bảng Giá";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Beige;
+            this.panel2.Location = new System.Drawing.Point(0, 59);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(546, 403);
+            this.panel2.TabIndex = 52;
             // 
             // frmDetailGia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(536, 450);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnDetail);
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.panel2);
             this.Name = "frmDetailGia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmDetailGia";
+            this.Text = "Bảng Giá";
             this.Load += new System.EventHandler(this.frmDetailGia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -104,5 +146,8 @@ namespace Tour.UI.QLGia
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

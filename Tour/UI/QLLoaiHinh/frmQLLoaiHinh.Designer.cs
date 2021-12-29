@@ -43,12 +43,16 @@ namespace Tour.UI.QLLoaiHinh
             this.label10 = new System.Windows.Forms.Label();
             this.txtsearch = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_LoaiHinh)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtDD
             // 
-            this.txtDD.Location = new System.Drawing.Point(109, 101);
+            this.txtDD.Location = new System.Drawing.Point(113, 138);
             this.txtDD.Multiline = true;
             this.txtDD.Name = "txtDD";
             this.txtDD.Size = new System.Drawing.Size(161, 53);
@@ -56,7 +60,7 @@ namespace Tour.UI.QLLoaiHinh
             // 
             // txtTenLH
             // 
-            this.txtTenLH.Location = new System.Drawing.Point(109, 45);
+            this.txtTenLH.Location = new System.Drawing.Point(113, 82);
             this.txtTenLH.Name = "txtTenLH";
             this.txtTenLH.Size = new System.Drawing.Size(161, 20);
             this.txtTenLH.TabIndex = 11;
@@ -64,8 +68,9 @@ namespace Tour.UI.QLLoaiHinh
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Beige;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 104);
+            this.label2.Location = new System.Drawing.Point(10, 141);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 15);
             this.label2.TabIndex = 10;
@@ -74,8 +79,9 @@ namespace Tour.UI.QLLoaiHinh
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Beige;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 48);
+            this.label1.Location = new System.Drawing.Point(10, 85);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 15);
             this.label1.TabIndex = 9;
@@ -89,10 +95,10 @@ namespace Tour.UI.QLLoaiHinh
             this.Column1,
             this.Column2,
             this.Column3});
-            this.dataGridView_LoaiHinh.Location = new System.Drawing.Point(276, 45);
+            this.dataGridView_LoaiHinh.Location = new System.Drawing.Point(-1, 258);
             this.dataGridView_LoaiHinh.Name = "dataGridView_LoaiHinh";
             this.dataGridView_LoaiHinh.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_LoaiHinh.Size = new System.Drawing.Size(519, 393);
+            this.dataGridView_LoaiHinh.Size = new System.Drawing.Size(758, 302);
             this.dataGridView_LoaiHinh.TabIndex = 8;
             // 
             // Column1
@@ -122,7 +128,7 @@ namespace Tour.UI.QLLoaiHinh
             // btnDelete
             // 
             this.btnDelete.Image = global::Tour.Properties.Resources.delete__2_;
-            this.btnDelete.Location = new System.Drawing.Point(169, 210);
+            this.btnDelete.Location = new System.Drawing.Point(669, 126);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(42, 42);
             this.btnDelete.TabIndex = 15;
@@ -132,7 +138,7 @@ namespace Tour.UI.QLLoaiHinh
             // btnDetail
             // 
             this.btnDetail.Image = global::Tour.Properties.Resources.edit__1_;
-            this.btnDetail.Location = new System.Drawing.Point(121, 210);
+            this.btnDetail.Location = new System.Drawing.Point(621, 126);
             this.btnDetail.Name = "btnDetail";
             this.btnDetail.Size = new System.Drawing.Size(42, 42);
             this.btnDetail.TabIndex = 14;
@@ -142,7 +148,7 @@ namespace Tour.UI.QLLoaiHinh
             // btnAdd
             // 
             this.btnAdd.Image = global::Tour.Properties.Resources.plus;
-            this.btnAdd.Location = new System.Drawing.Point(73, 210);
+            this.btnAdd.Location = new System.Drawing.Point(573, 126);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(42, 42);
             this.btnAdd.TabIndex = 13;
@@ -152,8 +158,9 @@ namespace Tour.UI.QLLoaiHinh
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Beige;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(464, 9);
+            this.label10.Location = new System.Drawing.Point(306, 209);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(174, 16);
             this.label10.TabIndex = 70;
@@ -161,7 +168,7 @@ namespace Tour.UI.QLLoaiHinh
             // 
             // txtsearch
             // 
-            this.txtsearch.Location = new System.Drawing.Point(634, 24);
+            this.txtsearch.Location = new System.Drawing.Point(582, 232);
             this.txtsearch.Name = "txtsearch";
             this.txtsearch.Size = new System.Drawing.Size(161, 20);
             this.txtsearch.TabIndex = 72;
@@ -170,18 +177,48 @@ namespace Tour.UI.QLLoaiHinh
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Beige;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(560, 29);
+            this.label3.Location = new System.Drawing.Point(508, 233);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 15);
             this.label3.TabIndex = 71;
             this.label3.Text = "Tìm Kiếm";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.Control;
+            this.label6.Location = new System.Drawing.Point(248, 11);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(289, 37);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Quản lý Loại Hình";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Location = new System.Drawing.Point(-1, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(758, 48);
+            this.panel1.TabIndex = 73;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Beige;
+            this.panel2.Location = new System.Drawing.Point(-1, 56);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(758, 504);
+            this.panel2.TabIndex = 74;
+            // 
             // frmQLLoaiHinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(755, 549);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtsearch);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label10);
@@ -193,13 +230,16 @@ namespace Tour.UI.QLLoaiHinh
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView_LoaiHinh);
+            this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MinimizeBox = false;
             this.Name = "frmQLLoaiHinh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Loai Hinh";
+            this.Text = "Loại Hình";
             this.Load += new System.EventHandler(this.frmQLLoaiHinh_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_LoaiHinh)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,5 +261,8 @@ namespace Tour.UI.QLLoaiHinh
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtsearch;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

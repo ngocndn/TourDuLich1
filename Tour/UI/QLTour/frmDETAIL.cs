@@ -52,13 +52,13 @@ namespace Tour.UI.QLTour
         {
             if (String.IsNullOrEmpty(txtTenTour.Text))
             {
-                MessageBox.Show("Ten is required", "Caution!!!");
+                MessageBox.Show("Nhập tên Tour", "Lưu ý!!!");
                 txtTenTour.Focus();
                 return false;
             }
             if (String.IsNullOrEmpty(txtDD.Text))
             {
-                MessageBox.Show("DD is required", "Caution!!!");
+                MessageBox.Show("Nhập đặc điểm", "Lưu ý!!!");
                 txtDD.Focus();
                 return false;
             }
@@ -99,13 +99,13 @@ namespace Tour.UI.QLTour
                         System.Diagnostics.Debug.WriteLine("Sửa tour thành công!");
                         Main.LoadTour();
                         Clear();
-                        MessageBox.Show("Success!", "Notify");
+                        MessageBox.Show("Sửa Tour thành công!");
 
                     }
                 }
                 catch(Exception e)
                 {
-                    MessageBox.Show("FAILED!", "CAUTION!!!");
+                    MessageBox.Show("Sửa thất bại!", "Lưu ý!!!");
                     System.Diagnostics.Debug.WriteLine(e);
                 }
             }

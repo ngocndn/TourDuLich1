@@ -108,7 +108,7 @@ namespace Tour.UI.QLDoan
         {
             if (String.IsNullOrEmpty(txtTenDoan.Text))
             {
-                MessageBox.Show("Ten is required", "Caution!!!");
+                MessageBox.Show("Bắt buộc phải nhập tên!!!", "Caution!!!");
                 txtTenDoan.Focus();
                 return false;
             }
@@ -157,16 +157,16 @@ namespace Tour.UI.QLDoan
                         frmMain.LoadDanhSachDoan();
                         System.Diagnostics.Debug.WriteLine("Success");
                         Clear();
-                        MessageBox.Show("Success");
+                        MessageBox.Show("Sửa thông tin thành công!");
 
                     } else
                     {
-                        MessageBox.Show("Failed");
+                        MessageBox.Show("Sửa thông tin thất bại ! Vui lòng kiểm tra lại thông tin!");
                     }    
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show("Failed!");
+                    MessageBox.Show("Sửa thông tin thất bại ! Vui lòng kiểm tra lại thông tin!");
                     System.Diagnostics.Debug.WriteLine(e);
                 }
             }
@@ -187,8 +187,7 @@ namespace Tour.UI.QLDoan
                     {
                         frmMain.LoadDanhSachDoan();
                         System.Diagnostics.Debug.WriteLine("Success");
-                        Clear();
-                        MessageBox.Show("Success");
+                        MessageBox.Show("Cập nhật số lượng thành công");
                     }
                     else
                     {

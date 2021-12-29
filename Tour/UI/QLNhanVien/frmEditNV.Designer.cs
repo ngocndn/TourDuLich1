@@ -37,11 +37,13 @@ namespace Tour.UI.QLNhanVien
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.dp_NSNV = new System.Windows.Forms.DateTimePicker();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Beige;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 50);
             this.label1.Name = "label1";
@@ -59,6 +61,7 @@ namespace Tour.UI.QLNhanVien
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Beige;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(12, 108);
             this.label2.Name = "label2";
@@ -76,6 +79,7 @@ namespace Tour.UI.QLNhanVien
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Beige;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(12, 170);
             this.label3.Name = "label3";
@@ -110,6 +114,14 @@ namespace Tour.UI.QLNhanVien
             this.dp_NSNV.Size = new System.Drawing.Size(186, 20);
             this.dp_NSNV.TabIndex = 23;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Beige;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(339, 292);
+            this.panel1.TabIndex = 24;
+            // 
             // frmEditNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -123,6 +135,7 @@ namespace Tour.UI.QLNhanVien
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtTenNV);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MinimizeBox = false;
             this.Name = "frmEditNV";
@@ -143,5 +156,6 @@ namespace Tour.UI.QLNhanVien
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.DateTimePicker dp_NSNV;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -46,14 +46,14 @@ namespace Tour.UI.QLLoaiHinh
         {
             if(String.IsNullOrEmpty(txtTenLH.Text))
             {
-                MessageBox.Show("Name is required!", "Caution");
+                MessageBox.Show("Nhập tên!", "Lưu ý!!!");
                 txtTenLH.Focus();
                 return false;
             }
 
             if(String.IsNullOrEmpty(txtDD.Text))
             {
-                MessageBox.Show("Dac Diem is required!", "Caution");
+                MessageBox.Show("Nhập đặc điểm!", "Lưu ý!!!");
                 txtDD.Focus();
                 return false;
             }
@@ -71,14 +71,14 @@ namespace Tour.UI.QLLoaiHinh
                     LH.LH_MoTa = txtDD.Text;
                     if(LHB.Add(LH))
                     {
-                        MessageBox.Show("Success", "Notify");
+                        MessageBox.Show("Thêm thành công");
                         LoadLH();
                         Clear();
                     }
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show("Failed", "Caution");
+                    MessageBox.Show("Thêm thất bại!", "Lưu ý!!!");
                     System.Diagnostics.Debug.WriteLine(e);
                 }
             }

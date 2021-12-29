@@ -22,6 +22,7 @@ namespace Tour.UI.QLGia
         {
             dataGridView1.DataSource = gb.GetGia();
             dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.Columns["Column2"].DefaultCellStyle.Format = "#,##0";
         }
 
         private void frmDetailGia_Load(object sender, EventArgs e)

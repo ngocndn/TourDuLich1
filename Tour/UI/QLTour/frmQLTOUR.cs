@@ -45,13 +45,13 @@ namespace Tour.UI.QLTour
         {
             if (String.IsNullOrEmpty(txtTenTour.Text))
             {
-                MessageBox.Show("Ten is required", "Caution!!!");
+                MessageBox.Show("Nhập tên Tour", "Lưu ý!!!");
                 txtTenTour.Focus();
                 return false;
             }
             if (String.IsNullOrEmpty(txtDD.Text))
             {
-                MessageBox.Show("DD is required", "Caution!!!");
+                MessageBox.Show("Nhập đặc điểm Tour", "Lưu ý!!!");
                 txtDD.Focus();
                 return false;
             }
@@ -87,7 +87,7 @@ namespace Tour.UI.QLTour
                 {
                     if (tb.AddTour(T))
                     {
-                        MessageBox.Show("Success", "Notify");
+                        MessageBox.Show("Thêm thành công!");
                         LoadTour();
                     }
 
@@ -95,14 +95,13 @@ namespace Tour.UI.QLTour
                     {
                         LoadTour();
                         System.Diagnostics.Debug.WriteLine("Thêm giá tour thành công!");
-                        MessageBox.Show("Thêm tour thành công!", "Thông báo");
                         ClearFields();
                     }
 
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show("FAILED", "Caution!!!");
+                    MessageBox.Show("Thêm thất bại", "Lưu ý!!!");
                     System.Diagnostics.Debug.WriteLine(e);
                 }
             }
@@ -143,14 +142,14 @@ namespace Tour.UI.QLTour
                         }
                     }
                     LoadTour();
-                    MessageBox.Show("Deleted", "Notify");
+                    MessageBox.Show("Xóa thành công");
                 }
                 
 
             }
             else
             {
-                MessageBox.Show("Choose someone to delete", "Caution!!!");
+                MessageBox.Show("Chọn Tour để xóa", "Lưu ý!!!");
             }
         }
 
@@ -226,6 +225,11 @@ namespace Tour.UI.QLTour
         private void txtsearch_TextChanged(object sender, EventArgs e)
         {
             Search();
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

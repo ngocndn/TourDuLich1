@@ -91,6 +91,7 @@
     <Compile Include="BUS\KhachHangBUS.cs" />
     <Compile Include="BUS\LoaiHinhBUS.cs" />
     <Compile Include="BUS\NhanVienBUS.cs" />
+    <Compile Include="BUS\ThongKeBUS.cs" />
     <Compile Include="BUS\TourBUS.cs" />
     <Compile Include="DAO\BOOKING.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -148,6 +149,7 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DAO\NhanVienDAO.cs" />
+    <Compile Include="DAO\ThongKeDAO.cs" />
     <Compile Include="DAO\TourDAO.cs" />
     <Compile Include="DAO\TOURDULICH.cs">
       <DependentUpon>Model1.tt</DependentUpon>
