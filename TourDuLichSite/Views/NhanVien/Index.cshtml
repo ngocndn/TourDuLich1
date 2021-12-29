@@ -14,7 +14,13 @@
                 </div>
 
                 <div class="col-auto">
-                    
+                    <div class="page-utilities">
+                        <div class="row g-2 justify-content-start justify-content-md-end align-items-center">
+                            <div class="col-auto">
+                                <a class="btn btn-success" style="color: white;" data-bs-toggle="modal" data-bs-target="#AddModal"><i class="fas fa-plus"></i> Thêm mới</a>
+                            </div>
+                        </div><!--//row-->
+                    </div><!--//table-utilities-->
                 </div><!--//col-auto-->
             </div><!--//row-->
 
@@ -93,7 +99,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Ngày sinh</label>
-                                    <input class="form-control" type="datetime-local" id="intputNgaySinh" name="intputNgaySinh" style="border-color: #6e6e6f;" required>
+                                    <input class="form-control" type="date" id="intputNgaySinh" name="intputNgaySinh" style="border-color: #6e6e6f;" required>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Số Điện Thoại</label>
@@ -133,7 +139,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Ngày sinh</label>
-                                    <input class="form-control" type="datetime-local" id="intputNgaySinh_Edit" name="intputNgaySinh_Edit" style="border-color: #6e6e6f;" required>
+                                    <input class="form-control" type="date" id="intputNgaySinh_Edit" name="intputNgaySinh_Edit" style="border-color: #6e6e6f;" required>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Số Điện Thoại</label>
@@ -277,11 +283,8 @@
 
         function Delete() {
             var _maNhanVien = $('#maNhanVienDeleteModal').html();
-
-            console.log(MaNV);
-
             var postData = {
-                maNhanVien: _maNhanVien
+                MaNV: _maNhanVien
             };
 
             $.ajax({

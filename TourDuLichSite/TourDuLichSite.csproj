@@ -171,9 +171,11 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\css\portal.css" />
     <Content Include="Content\css\preloader.css" />
+    <Content Include="Content\images\420-4207383_icon-of-signs-representing-campus-tour-take-a.png" />
     <Content Include="Content\images\app-logo.svg" />
     <Content Include="Content\images\favicon.ico" />
     <Content Include="Content\images\icons8-github.gif" />
+    <Content Include="Content\images\icons\420-4207383_icon-of-signs-representing-campus-tour-take-a.png" />
     <Content Include="Content\images\icons\city-guide.png" />
     <Content Include="Content\images\icons\conference-background-selected.png" />
     <Content Include="Content\images\icons\country-house.png" />
