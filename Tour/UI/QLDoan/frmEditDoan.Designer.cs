@@ -35,9 +35,6 @@ namespace Tour.UI.QLDoan
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label10 = new System.Windows.Forms.Label();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.btnPricing = new System.Windows.Forms.Button();
             this.dpk2 = new System.Windows.Forms.DateTimePicker();
             this.dpk1 = new System.Windows.Forms.DateTimePicker();
             this.cbbhdv = new System.Windows.Forms.ComboBox();
@@ -48,7 +45,6 @@ namespace Tour.UI.QLDoan
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnPrice = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.txtGiaTour = new System.Windows.Forms.TextBox();
@@ -61,6 +57,10 @@ namespace Tour.UI.QLDoan
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnPrice = new System.Windows.Forms.Button();
+            this.btnPricing = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -122,36 +122,6 @@ namespace Tour.UI.QLDoan
             this.label10.Size = new System.Drawing.Size(198, 16);
             this.label10.TabIndex = 68;
             this.label10.Text = "DANH SÁCH HÀNH KHÁCH";
-            // 
-            // btnSave
-            // 
-            this.btnSave.Image = global::Tour.Properties.Resources.diskette;
-            this.btnSave.Location = new System.Drawing.Point(318, 169);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(42, 42);
-            this.btnSave.TabIndex = 64;
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.Image = global::Tour.Properties.Resources.remove;
-            this.btnClose.Location = new System.Drawing.Point(415, 169);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(42, 42);
-            this.btnClose.TabIndex = 65;
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnPricing
-            // 
-            this.btnPricing.Image = global::Tour.Properties.Resources.plus;
-            this.btnPricing.Location = new System.Drawing.Point(270, 169);
-            this.btnPricing.Name = "btnPricing";
-            this.btnPricing.Size = new System.Drawing.Size(42, 42);
-            this.btnPricing.TabIndex = 66;
-            this.btnPricing.UseVisualStyleBackColor = true;
-            this.btnPricing.Click += new System.EventHandler(this.btnPricing_Click);
             // 
             // dpk2
             // 
@@ -246,16 +216,6 @@ namespace Tour.UI.QLDoan
             this.label1.Size = new System.Drawing.Size(69, 15);
             this.label1.TabIndex = 69;
             this.label1.Text = "Tên Đoàn";
-            // 
-            // btnPrice
-            // 
-            this.btnPrice.Image = global::Tour.Properties.Resources.istockphoto_1226810736_170667a1;
-            this.btnPrice.Location = new System.Drawing.Point(366, 169);
-            this.btnPrice.Name = "btnPrice";
-            this.btnPrice.Size = new System.Drawing.Size(42, 42);
-            this.btnPrice.TabIndex = 79;
-            this.btnPrice.UseVisualStyleBackColor = true;
-            this.btnPrice.Click += new System.EventHandler(this.btnPrice_Click);
             // 
             // label6
             // 
@@ -380,6 +340,47 @@ namespace Tour.UI.QLDoan
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(790, 479);
             this.panel1.TabIndex = 91;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // btnPrice
+            // 
+            this.btnPrice.Image = global::Tour.Properties.Resources.istockphoto_1226810736_170667a1;
+            this.btnPrice.Location = new System.Drawing.Point(366, 169);
+            this.btnPrice.Name = "btnPrice";
+            this.btnPrice.Size = new System.Drawing.Size(42, 42);
+            this.btnPrice.TabIndex = 79;
+            this.btnPrice.UseVisualStyleBackColor = true;
+            this.btnPrice.Click += new System.EventHandler(this.btnPrice_Click);
+            // 
+            // btnPricing
+            // 
+            this.btnPricing.Image = global::Tour.Properties.Resources._475_4750728_add_user_group_woman_man_icon_add_user;
+            this.btnPricing.Location = new System.Drawing.Point(270, 169);
+            this.btnPricing.Name = "btnPricing";
+            this.btnPricing.Size = new System.Drawing.Size(42, 42);
+            this.btnPricing.TabIndex = 66;
+            this.btnPricing.UseVisualStyleBackColor = true;
+            this.btnPricing.Click += new System.EventHandler(this.btnPricing_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Image = global::Tour.Properties.Resources.remove;
+            this.btnClose.Location = new System.Drawing.Point(415, 169);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(42, 42);
+            this.btnClose.TabIndex = 65;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Image = global::Tour.Properties.Resources.diskette;
+            this.btnSave.Location = new System.Drawing.Point(318, 169);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(42, 42);
+            this.btnSave.TabIndex = 64;
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // frmEditDoan
             // 

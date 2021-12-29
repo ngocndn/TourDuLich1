@@ -93,6 +93,16 @@ namespace Tour.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _475_4750728_add_user_group_woman_man_icon_add_user {
+            get {
+                object obj = ResourceManager.GetObject("475-4750728_add-user-group-woman-man-icon-add-user", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _6984777_preview {
             get {
                 object obj = ResourceManager.GetObject("6984777_preview", resourceCulture);
