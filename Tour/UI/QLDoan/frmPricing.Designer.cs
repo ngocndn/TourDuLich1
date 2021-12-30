@@ -209,6 +209,7 @@ namespace Tour.UI.QLDoan
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(318, 425);
             this.panel1.TabIndex = 58;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // frmPricing
             // 

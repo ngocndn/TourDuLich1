@@ -202,6 +202,32 @@ namespace Tour.UI.QLDoan
             
             
         }
+        public void GiaOnChange()
+        {
+            DOANDL D = new DOANDL();
+            D.ChiPhi = Convert.ToDouble(txtTongCong.Text);
+            D.TongTien = Convert.ToDouble(txtPrice.Text);
+            try
+            {
+                if (db.GiaOnChange(D, Doanid))
+                {
+                    frmMain.LoadDanhSachDoan();
+                    System.Diagnostics.Debug.WriteLine("Success");
+                    MessageBox.Show("Cập nhật số lượng thành công");
+                }
+                else
+                {
+                    MessageBox.Show("Failed");
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Failed!");
+                System.Diagnostics.Debug.WriteLine(e);
+            }
+
+
+        }
 
         private void btnPricing_Click(object sender, EventArgs e)
         {

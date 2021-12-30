@@ -100,7 +100,6 @@ namespace Tour.UI.QLTour
                         Main.LoadTour();
                         Clear();
                         MessageBox.Show("Sửa Tour thành công!");
-
                     }
                 }
                 catch(Exception e)
@@ -130,6 +129,11 @@ namespace Tour.UI.QLTour
         {
             frmGia fG = new frmGia(ID, this);
             fG.ShowDialog();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -29,6 +29,7 @@ namespace Tour.UI.ThongKe
             dataGridView2.DataSource = tb.GetDoanhThu();
             dataGridView2.AutoGenerateColumns = false;
             dataGridView2.Columns["Column2"].DefaultCellStyle.Format = "#,##0";
+            dataGridView2.Columns["Column7"].DefaultCellStyle.Format = "#,##0";
         }
         public void LoadChart()
         {

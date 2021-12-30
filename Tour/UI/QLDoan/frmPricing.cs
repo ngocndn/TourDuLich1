@@ -81,6 +81,7 @@ namespace Tour.UI.QLDoan
                     {
                         LoadCP();
                         fM.LoadDoan();
+                        fM.GiaOnChange();
                         MessageBox.Show("Thêm chi phí thành công!", "Thông báo");
                     }
                 }
@@ -108,6 +109,7 @@ namespace Tour.UI.QLDoan
                         {
                             LoadCP();
                             fM.LoadDoan();
+                            fM.GiaOnChange();
                             MessageBox.Show("Xóa chi phí thành công!", "Thông báo");
                         }
                     }
@@ -166,6 +168,11 @@ namespace Tour.UI.QLDoan
         private void btnDelete_Click(object sender, EventArgs e)
         {
             Del();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

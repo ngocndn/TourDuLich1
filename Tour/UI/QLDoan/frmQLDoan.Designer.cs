@@ -329,6 +329,7 @@ namespace Tour.UI.QLDoan
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(775, 394);
             this.panel2.TabIndex = 76;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // frmQLDoan
             // 

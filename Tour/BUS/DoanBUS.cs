@@ -43,6 +43,10 @@ namespace Tour.BUS
         {
             return DD.SoLuongChange(D, DoanID);
         }
+        public bool GiaOnChange(DOANDL D, int DoanID)
+        {
+            return DD.GiaOnChange(D, DoanID);
+        }
 
         public bool Delete(int DoanID)
         {

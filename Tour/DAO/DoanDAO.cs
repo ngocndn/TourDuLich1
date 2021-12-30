@@ -233,6 +233,24 @@ namespace Tour.DAO
                 }
             }
         }
+        public bool GiaOnChange(DOANDL D, int DoanID)
+        {
+            {
+                try
+                {
+                    DOANDL d = tour.DOANDLs.Where(t => t.MaDOANDL == DoanID).SingleOrDefault();
+                    d.ChiPhi = D.ChiPhi;
+                    d.TongTien = D.TongTien;
+                    tour.SaveChanges();
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    System.Diagnostics.Debug.WriteLine(e);
+                    return false;
+                }
+            }
+        }
         public bool Delete(int DoanID)
         {
             {

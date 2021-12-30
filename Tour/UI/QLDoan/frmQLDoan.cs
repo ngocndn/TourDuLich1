@@ -191,5 +191,10 @@ namespace Tour.UI.QLDoan
         {
             Search();
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

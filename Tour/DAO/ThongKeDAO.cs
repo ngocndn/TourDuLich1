@@ -16,7 +16,7 @@ namespace Tour.DAO
                 var getall = (from tbD in tour.DOANDLs
                               select new
                               {
-                              TenDoan = tbD.TenDoan, 
+                              TenDoan = tbD.TenDoan, SLKH = tbD.Soluong, TongTien = tbD.TongTien,
                               DoanhThu = tbD.Soluong*tbD.TongTien
                               }).OrderByDescending(t=>t.DoanhThu);
                 return getall.ToList<dynamic>();
