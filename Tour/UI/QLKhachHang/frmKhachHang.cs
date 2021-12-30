@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms; using Tour.DAO; using Tour.BUS;
+using System.Text.RegularExpressions;
 
 namespace Tour.UI.QLKhachHang
 {
@@ -74,6 +75,19 @@ namespace Tour.UI.QLKhachHang
             if (String.IsNullOrEmpty(txtCMND.Text))
             {
                 MessageBox.Show("Nhập CMND khách hàng!", "Lưu ý!!!");
+                txtCMND.Focus();
+                return false;
+            }
+            if (!Regex.IsMatch(txtSDT.Text, @"^(0+[0-9]{9})$"))
+            {
+                MessageBox.Show("Số điện thoại gồm 10 chữ số và bắt đầu bằng 0", "Lưu ý!!!");
+                txtSDT.Focus();
+                return false;
+            }
+            if (!Regex.IsMatch(txtCMND.Text, @"^([0-9]{9})$"))
+            {
+
+                MessageBox.Show("Số CMND gồm 9 chữ số", "Lưu ý!!!");
                 txtCMND.Focus();
                 return false;
             }
@@ -182,7 +196,11 @@ namespace Tour.UI.QLKhachHang
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            Del();
+            var Delete = MessageBox.Show("Dữ liệu sẽ bị xóa vĩnh viễn!", "Lưu ý!!!", MessageBoxButtons.YesNo);
+            if (Delete == DialogResult.Yes)
+            {
+                Del();
+            }
         }
 
         private void btnDetail_Click(object sender, EventArgs e)
@@ -193,6 +211,11 @@ namespace Tour.UI.QLKhachHang
         private void txtsearch_TextChanged(object sender, EventArgs e)
         {
             Search();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

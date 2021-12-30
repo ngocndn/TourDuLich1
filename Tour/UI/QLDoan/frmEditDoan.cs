@@ -55,6 +55,26 @@ namespace Tour.UI.QLDoan
             dataGridView1.DataSource = bb.GetAll();
             dataGridView1.AutoGenerateColumns = false;
         }
+        public void Caution()
+        {
+            if (txtGiaTour.Text == "0")
+            {
+                label14.Show();
+            }
+            else
+            {
+                label14.Hide();
+            }
+
+            if (txtTongCong.Text == "0")
+            {
+                label15.Show();
+            }
+            else
+            {
+                label15.Hide();
+            }    
+        }
         public void LoadDSKH()
         {
             List<BOOKING> B = bb.GetAll();
@@ -98,7 +118,7 @@ namespace Tour.UI.QLDoan
             
             int A = (Convert.ToInt32(GiaTour) + Convert.ToInt32(TongCong));
             txtPrice.Text = String.Format("{0:n0}", A);
-
+            Caution();
         }
         public void OnRowNumberChanged()
         {
@@ -213,7 +233,7 @@ namespace Tour.UI.QLDoan
                 {
                     frmMain.LoadDanhSachDoan();
                     System.Diagnostics.Debug.WriteLine("Success");
-                    MessageBox.Show("Cập nhật số lượng thành công");
+                    MessageBox.Show("Cập nhật chi phí thành công");
                 }
                 else
                 {

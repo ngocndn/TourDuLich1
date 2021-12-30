@@ -390,15 +390,19 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\rotate-image-icon-26.jpg" />
     <None Include="Resources\2534679.png" />
     <None Include="Resources\19bc3c3421befb53742a54dcb5931d1f.png" />
     <Content Include="Resources\360-Virtual-Panoramic-Tour-icon-1-300x3002.png" />
     <None Include="Resources\6984777_preview.png" />
     <None Include="Resources\475-4750728_add-user-group-woman-man-icon-add-user.png" />
+    <None Include="Resources\61444.png" />
+    <None Include="Resources\61444 %281%29.png" />
     <Content Include="Resources\a.png" />
     <None Include="Resources\download2.png" />
     <None Include="Resources\download3.png" />
     <Content Include="Resources\FreeVector-Travel-Background.jpg" />
+    <None Include="Resources\images.png" />
     <Content Include="Resources\images2.jpeg" />
     <None Include="Resources\istockphoto-1226810736-170667a.jpg" />
     <None Include="Resources\istockphoto-1226810736-170667a1.jpg" />

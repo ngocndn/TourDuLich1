@@ -142,7 +142,11 @@ namespace Tour.UI.QLDiemDen
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            DelDiaDiem();
+            var Delete = MessageBox.Show("Dữ liệu sẽ bị xóa vĩnh viễn!", "Lưu ý!!!", MessageBoxButtons.YesNo);
+            if (Delete == DialogResult.Yes)
+            {
+                DelDiaDiem();
+            }
         }
 
         private void btnDetail_Click(object sender, EventArgs e)
@@ -158,6 +162,11 @@ namespace Tour.UI.QLDiemDen
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             Search();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

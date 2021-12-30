@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tour.BUS;using Tour.DAO;
@@ -49,6 +50,10 @@ namespace Tour.UI.QLDoan
             txtmadoan.Text = Doanid.ToString();
             txtmatour.Text = tid.ToString();
         }
+        public void Clear()
+        {
+            txtprice.Text = "";
+        }
         public bool Checked()
         {
             if (String.IsNullOrEmpty(txtprice.Text))
@@ -57,6 +62,14 @@ namespace Tour.UI.QLDoan
                 txtprice.Focus();
                 return false;
             }
+            if (!Regex.IsMatch(txtprice.Text, @"^[0-9]*$"))
+            {
+
+                MessageBox.Show("Giá chỉ bao gồm chữ số", "Lưu ý!!!");
+                txtprice.Focus();
+                return false;
+            }
+
             return true;
         }
         public void Add()
@@ -82,6 +95,7 @@ namespace Tour.UI.QLDoan
                         LoadCP();
                         fM.LoadDoan();
                         fM.GiaOnChange();
+                        Clear();
                         MessageBox.Show("Thêm chi phí thành công!", "Thông báo");
                     }
                 }
@@ -167,7 +181,11 @@ namespace Tour.UI.QLDoan
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            Del();
+            var Delete = MessageBox.Show("Dữ liệu sẽ bị xóa vĩnh viễn!", "Lưu ý!!!", MessageBoxButtons.YesNo);
+            if (Delete == DialogResult.Yes)
+            {
+                Del();
+            }
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

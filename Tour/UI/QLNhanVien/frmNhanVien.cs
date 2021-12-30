@@ -47,17 +47,20 @@ namespace Tour.UI.QLNhanVien
                 txtSDT.Focus();
                 return false;
             }
-
-            //Kiểm tra kí tự đặc biệt và số
             Regex regex = new Regex(@"[""!#$%&'()*+,-./:;<=>?@[\\\]^_`{|}~0-9]");
-
             if (regex.IsMatch(txtTenNV.Text))
             {
                 MessageBox.Show("Không được chứa ký tự đặc biệt!", "Lưu ý!!!");
                 txtTenNV.Focus();
                 return false;
             }
-       
+            if (!Regex.IsMatch(txtSDT.Text, @"^(0+[0-9]{9})$"))
+            {
+                MessageBox.Show("Số điện thoại gồm 10 chữ số và bắt đầu bằng 0", "Thông báo");
+                txtSDT.Focus();
+                return false;
+            }
+
             return true;
         }
 
@@ -148,7 +151,11 @@ namespace Tour.UI.QLNhanVien
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            Del();
+            var Delete = MessageBox.Show("Dữ liệu sẽ bị xóa vĩnh viễn!", "Lưu ý!!!", MessageBoxButtons.YesNo);
+            if (Delete == DialogResult.Yes)
+            {
+                Del();
+            }
         }
 
         private void btnDetail_Click(object sender, EventArgs e)
@@ -169,6 +176,11 @@ namespace Tour.UI.QLNhanVien
         private void txtsearch_TextChanged(object sender, EventArgs e)
         {
             Search();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

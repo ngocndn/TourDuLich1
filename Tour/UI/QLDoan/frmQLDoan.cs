@@ -25,10 +25,15 @@ namespace Tour.UI.QLDoan
             LoadCBHDV();
             LoadCBTour();
         }
+        //public void LoadDanhSachDoan()
+        //{
+            //dataGridView1.DataSource = db.getall();
+           // dataGridView1.Columns["Column8"].DefaultCellStyle.Format = "#,##0";
+           // dataGridView1.Columns["Column9"].DefaultCellStyle.Format = "#,##0";
+       // }
         public void LoadDanhSachDoan()
         {
-            dataGridView1.DataSource = db.getall();
-            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.DataSource = db.GetListDoan();
             dataGridView1.Columns["Column8"].DefaultCellStyle.Format = "#,##0";
             dataGridView1.Columns["Column9"].DefaultCellStyle.Format = "#,##0";
         }
@@ -92,6 +97,7 @@ namespace Tour.UI.QLDoan
                 D.NgayKetThuc = DateTime.Parse(dpk2.Value.Date.ToString("yyyy-MM-dd hh:mm:ss.ss"));
                 D.Soluong = 0;
                 D.MaTour = (int)cbbtour.SelectedValue;
+                D.ChiPhi = 0;
                 //foreach (var item in listT)
                 //{
                     //if (item.TenTour.Equals(cbbtour.Text))
@@ -113,16 +119,17 @@ namespace Tour.UI.QLDoan
                 {
                     if (db.Add(D))
                     {
-
-                        System.Diagnostics.Debug.WriteLine("Success");
+                        LoadDanhSachDoan();
                         Clear();
                         MessageBox.Show("Thêm đoàn thành công");
-                        LoadDanhSachDoan();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm thất bại!", "Lưu ý!!!");
                     }
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show("Thêm không thành công!", "Lưu ý!!!");
                     System.Diagnostics.Debug.WriteLine(e);
                 }
             }
@@ -141,7 +148,7 @@ namespace Tour.UI.QLDoan
             foreach (DataGridViewRow row in dataGridView1.SelectedRows)
             {
                 String DoanID = row.Cells[0].Value.ToString();
-                String TourID = row.Cells[4].Value.ToString();
+                String TourID = row.Cells[2].Value.ToString();
 
                 frmEditDoan fE = new frmEditDoan(int.Parse(DoanID), int.Parse(TourID) , this);
                 fE.ShowDialog();
@@ -169,7 +176,11 @@ namespace Tour.UI.QLDoan
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            Del();
+            var Delete = MessageBox.Show("Dữ liệu sẽ bị xóa vĩnh viễn!", "Lưu ý!!!", MessageBoxButtons.YesNo);
+            if (Delete == DialogResult.Yes)
+            {
+                Del();
+            }
         }
 
         private void btnDetail_Click(object sender, EventArgs e)
@@ -195,6 +206,16 @@ namespace Tour.UI.QLDoan
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRf_Click(object sender, EventArgs e)
+        {
+            LoadDanhSachDoan();
         }
     }
 }

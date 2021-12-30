@@ -177,6 +177,25 @@ namespace Tour.DAO
 
             }
         }
+        public bool XoaTourTheoLH(int LHID)
+        {
+            using (tour = new TourENT())
+            {
+                try
+                {
+                    TOURDULICH T = tour.TOURDULICHes.Where(t => t.MaLoaiHinh == LHID).SingleOrDefault();
+                    tour.TOURDULICHes.Remove(T);
+                    tour.SaveChanges();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex);
+                    return false;
+                }
+
+            }
+        }
         public bool SuaGiaTour(TOURDULICH T, int T_ID)
         {
             using (tour = new TourENT())

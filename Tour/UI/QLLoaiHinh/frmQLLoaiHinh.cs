@@ -14,6 +14,7 @@ namespace Tour.UI.QLLoaiHinh
     public partial class frmQLLoaiHinh : Form
     {
         LoaiHinhBUS LHB = new LoaiHinhBUS();
+        TourBUS tb = new TourBUS();
         public frmQLLoaiHinh()
         {
             InitializeComponent();
@@ -99,12 +100,14 @@ namespace Tour.UI.QLLoaiHinh
         public void Del()
         {
             LOAIHINHDULICH LH = new LOAIHINHDULICH();
+            TOURDULICH T = new TOURDULICH();
+            List<TOURDULICH> listT = tb.GetAllTour();
             if (dataGridView_LoaiHinh.SelectedRows.Count > 0)
             {
                 foreach (DataGridViewRow row in dataGridView_LoaiHinh.SelectedRows)
                 {
                     int LoaiHinhID = Convert.ToInt32(row.Cells[0].Value.ToString());
-                    LHB.Del(LH, LoaiHinhID);
+                    LHB.Del(LH, LoaiHinhID);    
                     LoadLH();
                     MessageBox.Show("Xóa thành công", "Thông báo");
                     Clear();
@@ -134,13 +137,22 @@ namespace Tour.UI.QLLoaiHinh
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            Del();
-            LoadLH();
+            var Delete = MessageBox.Show("Dữ liệu sẽ bị xóa vĩnh viễn!", "Lưu ý!!!", MessageBoxButtons.YesNo);
+            if (Delete == DialogResult.Yes)
+            {
+                Del();
+                LoadLH();
+            }
         }
 
         private void txtsearch_TextChanged(object sender, EventArgs e)
         {
             Search();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

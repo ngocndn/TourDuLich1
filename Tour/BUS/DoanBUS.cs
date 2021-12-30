@@ -14,9 +14,9 @@ namespace Tour.BUS
         {
             return DD.getall();
         }
-        public List<DOANDL> Searching(string searchValue)
+        public List<dynamic> Searching(string searchValue)
         {
-            return DD.Searching(searchValue);
+            return DD.Searching1(searchValue);
         }
         public List<DOANDL> Get1(int DoanID)
         {

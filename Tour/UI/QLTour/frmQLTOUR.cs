@@ -69,6 +69,7 @@ namespace Tour.UI.QLTour
                 GIATOUR G = new GIATOUR();
                 T.TenTour = txtTenTour.Text;
                 T.DacDiem = txtDD.Text;
+                T.IDGiaTour = 32;
                 foreach (var itemDD in listDD)
                 {
                     if (itemDD.TenDiaDiem.Equals(comboBox_DiaDiem.Text))
@@ -177,9 +178,12 @@ namespace Tour.UI.QLTour
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            Del();
+            var Delete = MessageBox.Show("Dữ liệu sẽ bị xóa vĩnh viễn!", "Lưu ý!!!", MessageBoxButtons.YesNo);
+            if (Delete == DialogResult.Yes)
+            {
+                Del();
+            }
         }
-
         private void btnDetail_Click(object sender, EventArgs e)
         {
             Detail();

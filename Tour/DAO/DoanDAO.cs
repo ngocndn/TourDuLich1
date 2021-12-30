@@ -21,6 +21,29 @@ namespace Tour.DAO
             return getD.ToList<DOANDL>();
 
         }
+        public List<dynamic> Searching1(string searchValue)
+        {
+            {
+                var getD = (from tbD in tour.DOANDLs
+                            join tbT in tour.TOURDULICHes on tbD.MaTour equals tbT.MaTour
+                            join tbN in tour.NHANVIENs on tbD.MaNV equals tbN.MaNV
+
+                            select new
+                            {
+                                DoanID = tbD.MaDOANDL,
+                                Ten = tbD.TenDoan,
+                                TourID = tbT.MaTour,
+                                NgayKH = tbD.NgayKhoiHanh,
+                                KT = tbD.NgayKetThuc,
+                                HDV = tbN.TenNV,
+                                ChiPhi = tbD.ChiPhi,
+                                Soluong = tbD.Soluong,
+                                TongTien = tbD.TongTien
+                                //MCP1 = tbL.TenCP,MCP2 = tbL.TenCP
+                            }).Where(t => t.Ten.Contains(searchValue));
+                return getD.ToList<dynamic>();
+            }
+        }
         public List<DOANDL> GetOneDoan(int DoanID)
         {
             {
@@ -39,10 +62,13 @@ namespace Tour.DAO
                                    {
                                    DoanID = tbD.MaDOANDL,
                                    Ten = tbD.TenDoan ,
+                                   TourID = tbT.MaTour,
                                    NgayKH = tbD.NgayKhoiHanh,
                                    KT=tbD.NgayKetThuc,
-                                   TenTour = tbT.TenTour,
                                    HDV = tbN.TenNV,
+                                   ChiPhi = tbD.ChiPhi,
+                                   Soluong = tbD.Soluong,
+                                   TongTien = tbD.TongTien
                                    //MCP1 = tbL.TenCP,MCP2 = tbL.TenCP
                                    });
                 return getListDoan.ToList<dynamic>();

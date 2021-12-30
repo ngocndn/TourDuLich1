@@ -213,6 +213,7 @@ namespace Tour.UI.QLDiemDen
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(762, 402);
             this.panel2.TabIndex = 25;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // frmDD
             // 

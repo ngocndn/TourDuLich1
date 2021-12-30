@@ -57,11 +57,14 @@ namespace Tour.UI.QLDoan
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
             this.btnPrice = new System.Windows.Forms.Button();
             this.btnPricing = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -336,11 +339,24 @@ namespace Tour.UI.QLDoan
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Beige;
+            this.panel1.Controls.Add(this.label15);
+            this.panel1.Controls.Add(this.label14);
             this.panel1.Location = new System.Drawing.Point(-5, -9);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(790, 479);
             this.panel1.TabIndex = 91;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.DarkRed;
+            this.label14.Location = new System.Drawing.Point(571, 93);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(180, 9);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "TOUR CHƯA CÓ GIÁ , HÃY NHẬP GIÁ!!";
             // 
             // btnPrice
             // 
@@ -382,6 +398,17 @@ namespace Tour.UI.QLDoan
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.DarkRed;
+            this.label15.Location = new System.Drawing.Point(533, 129);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(250, 9);
+            this.label15.TabIndex = 1;
+            this.label15.Text = "ĐOÀN CHƯA CÓ CHI PHÍ, HÃY NHẬP CHI PHÍ ĐOÀN!!!";
+            // 
             // frmEditDoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -422,6 +449,8 @@ namespace Tour.UI.QLDoan
             this.Text = "Chi tiết đoàn";
             this.Load += new System.EventHandler(this.frmEditDoan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -460,5 +489,7 @@ namespace Tour.UI.QLDoan
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
     }
 }
