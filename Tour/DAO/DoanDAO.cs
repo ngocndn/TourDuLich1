@@ -242,6 +242,28 @@ namespace Tour.DAO
                 }
             }
         }
+        public bool EditW(DOANDL D, int DoanID)
+        {
+            {
+                try
+                {
+                    DOANDL d = tour.DOANDLs.Where(t => t.MaDOANDL == DoanID).SingleOrDefault();
+                    d.TenDoan = D.TenDoan;
+                    d.MaTour = D.MaTour;
+                    d.NgayKhoiHanh = D.NgayKhoiHanh;
+                    d.NgayKetThuc = D.NgayKetThuc;
+                    d.MaNV = D.MaNV;
+                    tour.SaveChanges();
+                    return true;
+
+                }
+                catch (Exception e)
+                {
+                    System.Diagnostics.Debug.WriteLine(e);
+                    return false;
+                }
+            }
+        }
         public bool SoLuongChange(DOANDL D, int DoanID)
         {
             {

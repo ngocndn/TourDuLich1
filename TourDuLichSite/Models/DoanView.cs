@@ -23,6 +23,8 @@ namespace TourDuLichSite
         public string TenNV { get; set; }
         public string TenTour { get; set; }
         public int id { get; set; }
+        public float TongTien { get; set; }
+        public float ChiPhi { get; set; }
     
     }
 }

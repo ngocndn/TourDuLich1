@@ -95,10 +95,10 @@ namespace Tour.UI.QLLoaiHinh
             this.Column1,
             this.Column2,
             this.Column3});
-            this.dataGridView_LoaiHinh.Location = new System.Drawing.Point(-1, 258);
+            this.dataGridView_LoaiHinh.Location = new System.Drawing.Point(12, 258);
             this.dataGridView_LoaiHinh.Name = "dataGridView_LoaiHinh";
             this.dataGridView_LoaiHinh.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_LoaiHinh.Size = new System.Drawing.Size(758, 302);
+            this.dataGridView_LoaiHinh.Size = new System.Drawing.Size(731, 279);
             this.dataGridView_LoaiHinh.TabIndex = 8;
             // 
             // Column1
@@ -208,9 +208,9 @@ namespace Tour.UI.QLLoaiHinh
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Beige;
-            this.panel2.Location = new System.Drawing.Point(-1, 56);
+            this.panel2.Location = new System.Drawing.Point(-1, 40);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(758, 504);
+            this.panel2.Size = new System.Drawing.Size(758, 520);
             this.panel2.TabIndex = 74;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 

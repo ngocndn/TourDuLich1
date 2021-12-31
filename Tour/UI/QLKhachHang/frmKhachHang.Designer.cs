@@ -382,9 +382,9 @@ namespace Tour.UI.QLKhachHang
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Beige;
-            this.panel2.Location = new System.Drawing.Point(-2, 63);
+            this.panel2.Location = new System.Drawing.Point(-2, 34);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(762, 482);
+            this.panel2.Size = new System.Drawing.Size(762, 511);
             this.panel2.TabIndex = 79;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 

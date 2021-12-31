@@ -23,6 +23,7 @@ namespace TourDuLichSite
         public string TenLoaiHinh { get; set; }
         public string TenDiaDiem { get; set; }
         public float ThanhTien { get; set; }
+        public int STT { get; set; }
 
     }
 }

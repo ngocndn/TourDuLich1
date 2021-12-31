@@ -44,19 +44,19 @@
                                     <tbody>
                                         @foreach (var item in listResults)
                                         {
-                                            <tr>
-                                                <td class="cell">@item.MaDOANDL</td>
-                                                <td class="cell"><span class="truncate">@item.TenDoan</span></td>
-                                                <td class="cell">@item.TenTour</td>
-                                                <td class="cell">@item.TenNV</td>
-                                                <td class="cell"><span>@item.NgayKhoiHanh</span></td>
-                                                <td class="cell"><span>@item.NgayKetThuc</span></td>
-                                                <td class="cell">
-                                                    <a class="btn btn-warning" style="color: white;" data-bs-toggle="modal" data-bs-target="#EditModal" onclick="GetIDUpdate(@item.MaDOANDL)"><i class="fas fa-pencil-alt"></i></a>
-                                                    <a class="btn btn-danger" style="color: white;" data-bs-toggle="modal" data-bs-target="#DeleteModal" id="deleteButton" onclick="GetIDDelete(@item.MaDOANDL)"><i class="fas fa-trash-alt"></i></a>
-                                                    <a class="btn btn-secondary" style="color: white; margin-top: 5px;" data-bs-toggle="modal" data-bs-target="#InfoModal" id="xemChiTietButton"  onclick="GetIDInfo(@item.MaDOANDL)"><i class="fas fa-eye"></i> Xem chi tiết</a>
-                                                </td>
-                                            </tr>
+                                        <tr>
+                                            <td class="cell">@item.MaDOANDL</td>
+                                            <td class="cell"><span class="truncate">@item.TenDoan</span></td>
+                                            <td class="cell">@item.TenTour</td>
+                                            <td class="cell">@item.TenNV</td>
+                                            <td class="cell"><span>@item.NgayKhoiHanh</span></td>
+                                            <td class="cell"><span>@item.NgayKetThuc</span></td>
+                                            <td class="cell">
+                                                <a class="btn btn-warning" style="color: white;" data-bs-toggle="modal" data-bs-target="#EditModal" onclick="GetIDUpdate(@item.MaDOANDL)"><i class="fas fa-pencil-alt"></i></a>
+                                                <a class="btn btn-danger" style="color: white;" data-bs-toggle="modal" data-bs-target="#DeleteModal" id="deleteButton" onclick="GetIDDelete(@item.MaDOANDL)"><i class="fas fa-trash-alt"></i></a>
+                                                <a class="btn btn-secondary" style="color: white; margin-top: 5px;" data-bs-toggle="modal" data-bs-target="#InfoModal" id="xemChiTietButton" onclick="GetIDInfo(@item.MaDOANDL)"><i class="fas fa-eye"></i> Xem chi tiết</a>
+                                            </td>
+                                        </tr>
                                         }
 
                                     </tbody>
@@ -168,6 +168,14 @@
                                     <select class="form-select" aria-label="Default select example" id="cbbHDV_Info" style="border-color: #6e6e6f;" required disabled>
                                         <option value="0" selected>-- Chọn HDV --</option>
                                     </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Chi phí</label>
+                                    <input type="text" class="form-control" style="border-color: #6e6e6f;" id="txtChiPhi_Info" placeholder="Nhập tên gọi đoàn..." required readonly />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Tổng tiền</label>
+                                    <input type="text" class="form-control" style="border-color: #6e6e6f;" id="txtTongTien_Info" placeholder="Nhập tên gọi đoàn..." required readonly />
                                 </div>
                                 <div class="mb-3">
                                     <h6 style="text-align: center; margin-top: 10px;">Danh sách Hành Khách</h6>
@@ -583,6 +591,9 @@
                     $('#txtTenDoan_Info').val(result[0].TenDoan);
                     $('#cbbTour_Info').val(result[0].MaTour);
                     $('#cbbHDV_Info').val(result[0].MaNV);
+                    $('#txtChiPhi_Info').val(String(result[0].ChiPhi).replace(/(.)(?=(\d{3})+$)/g, '$1,'));
+                    $('#txtTongTien_Info').val(String(result[0].TongTien).replace(/(.)(?=(\d{3})+$)/g, '$1,'));
+                    ///String(result[index].ThanhTien).replace(/(.)(?=(\d{3})+$)/g, '$1,')
                 },
                 error: function (errorMessage) {
                     alert(errorMessage.responseText);

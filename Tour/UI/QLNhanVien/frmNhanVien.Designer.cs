@@ -225,15 +225,15 @@ namespace Tour.UI.QLNhanVien
             this.panel1.Controls.Add(this.label6);
             this.panel1.Location = new System.Drawing.Point(0, -2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(758, 53);
+            this.panel1.Size = new System.Drawing.Size(766, 53);
             this.panel1.TabIndex = 73;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Beige;
-            this.panel2.Location = new System.Drawing.Point(0, 57);
+            this.panel2.Location = new System.Drawing.Point(0, 49);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(766, 516);
+            this.panel2.Size = new System.Drawing.Size(766, 524);
             this.panel2.TabIndex = 74;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 

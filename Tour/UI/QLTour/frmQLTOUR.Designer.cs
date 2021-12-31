@@ -294,9 +294,9 @@ namespace Tour.UI.QLTour
             this.panel2.Controls.Add(this.comboBox_DiaDiem);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.comboBox_LoaiHinh);
-            this.panel2.Location = new System.Drawing.Point(2, 54);
+            this.panel2.Location = new System.Drawing.Point(2, 42);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(756, 460);
+            this.panel2.Size = new System.Drawing.Size(756, 472);
             this.panel2.TabIndex = 73;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 

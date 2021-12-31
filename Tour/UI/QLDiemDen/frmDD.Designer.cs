@@ -209,9 +209,9 @@ namespace Tour.UI.QLDiemDen
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Beige;
-            this.panel2.Location = new System.Drawing.Point(-1, 56);
+            this.panel2.Location = new System.Drawing.Point(-1, 41);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(762, 402);
+            this.panel2.Size = new System.Drawing.Size(762, 417);
             this.panel2.TabIndex = 25;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 

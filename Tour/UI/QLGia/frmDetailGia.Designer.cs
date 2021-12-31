@@ -32,13 +32,13 @@ namespace Tour.UI.QLGia
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnDetail = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -72,23 +72,15 @@ namespace Tour.UI.QLGia
             this.Column2.HeaderText = "Thành Tiền";
             this.Column2.Name = "Column2";
             // 
-            // btnDetail
-            // 
-            this.btnDetail.Image = global::Tour.Properties.Resources.edit__1_;
-            this.btnDetail.Location = new System.Drawing.Point(225, 396);
-            this.btnDetail.Name = "btnDetail";
-            this.btnDetail.Size = new System.Drawing.Size(42, 42);
-            this.btnDetail.TabIndex = 33;
-            this.btnDetail.UseVisualStyleBackColor = true;
-            // 
             // btnClose
             // 
             this.btnClose.Image = global::Tour.Properties.Resources.remove;
-            this.btnClose.Location = new System.Drawing.Point(273, 396);
+            this.btnClose.Location = new System.Drawing.Point(248, 356);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(42, 42);
             this.btnClose.TabIndex = 50;
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // panel1
             // 
@@ -113,9 +105,10 @@ namespace Tour.UI.QLGia
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Beige;
-            this.panel2.Location = new System.Drawing.Point(0, 59);
+            this.panel2.Controls.Add(this.btnClose);
+            this.panel2.Location = new System.Drawing.Point(0, 40);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(546, 403);
+            this.panel2.Size = new System.Drawing.Size(546, 422);
             this.panel2.TabIndex = 52;
             // 
             // frmDetailGia
@@ -124,8 +117,6 @@ namespace Tour.UI.QLGia
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(536, 450);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnDetail);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel2);
             this.Name = "frmDetailGia";
@@ -135,6 +126,7 @@ namespace Tour.UI.QLGia
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -142,7 +134,6 @@ namespace Tour.UI.QLGia
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btnDetail;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;

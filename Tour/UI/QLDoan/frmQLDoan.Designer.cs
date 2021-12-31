@@ -40,6 +40,15 @@ namespace Tour.UI.QLDoan
             this.dpk1 = new System.Windows.Forms.DateTimePicker();
             this.dpk2 = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label10 = new System.Windows.Forms.Label();
             this.txtsearch = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -50,15 +59,6 @@ namespace Tour.UI.QLDoan
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDetail = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -178,6 +178,72 @@ namespace Tour.UI.QLDoan
             this.dataGridView1.Size = new System.Drawing.Size(749, 165);
             this.dataGridView1.TabIndex = 14;
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "DoanID";
+            this.Column1.HeaderText = "Mã Đoàn";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Ten";
+            this.Column2.HeaderText = "Tên Đoàn";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "TourID";
+            this.Column5.HeaderText = "Mã Tour";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "NgayKH";
+            this.Column3.HeaderText = "Ngày Khởi Hành";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "KT";
+            this.Column4.HeaderText = "Ngày Kết Thúc";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "HDV";
+            this.Column6.HeaderText = "Tên HDV";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "Soluong";
+            this.Column7.HeaderText = "Số Lượng Khách";
+            this.Column7.Name = "Column7";
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "ChiPhi";
+            this.Column8.HeaderText = "Giá Chi Phí";
+            this.Column8.Name = "Column8";
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "TongTien";
+            this.Column9.HeaderText = "Tổng Tiền";
+            this.Column9.Name = "Column9";
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -244,7 +310,7 @@ namespace Tour.UI.QLDoan
             // btnRf
             // 
             this.btnRf.Image = global::Tour.Properties.Resources.images;
-            this.btnRf.Location = new System.Drawing.Point(485, 362);
+            this.btnRf.Location = new System.Drawing.Point(437, 362);
             this.btnRf.Name = "btnRf";
             this.btnRf.Size = new System.Drawing.Size(42, 42);
             this.btnRf.TabIndex = 46;
@@ -255,7 +321,7 @@ namespace Tour.UI.QLDoan
             // btnDelete
             // 
             this.btnDelete.Image = global::Tour.Properties.Resources.delete__2_;
-            this.btnDelete.Location = new System.Drawing.Point(437, 362);
+            this.btnDelete.Location = new System.Drawing.Point(389, 362);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(42, 42);
             this.btnDelete.TabIndex = 45;
@@ -265,7 +331,7 @@ namespace Tour.UI.QLDoan
             // btnAdd
             // 
             this.btnAdd.Image = global::Tour.Properties.Resources.plus;
-            this.btnAdd.Location = new System.Drawing.Point(341, 362);
+            this.btnAdd.Location = new System.Drawing.Point(293, 362);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(42, 42);
             this.btnAdd.TabIndex = 43;
@@ -275,78 +341,12 @@ namespace Tour.UI.QLDoan
             // btnDetail
             // 
             this.btnDetail.Image = global::Tour.Properties.Resources.edit__1_;
-            this.btnDetail.Location = new System.Drawing.Point(389, 362);
+            this.btnDetail.Location = new System.Drawing.Point(341, 362);
             this.btnDetail.Name = "btnDetail";
             this.btnDetail.Size = new System.Drawing.Size(42, 42);
             this.btnDetail.TabIndex = 44;
             this.btnDetail.UseVisualStyleBackColor = true;
             this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "DoanID";
-            this.Column1.HeaderText = "Mã Đoàn";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "Ten";
-            this.Column2.HeaderText = "Tên Đoàn";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "TourID";
-            this.Column5.HeaderText = "Mã Tour";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "NgayKH";
-            this.Column3.HeaderText = "Ngày Khởi Hành";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "KT";
-            this.Column4.HeaderText = "Ngày Kết Thúc";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "HDV";
-            this.Column6.HeaderText = "Tên HDV";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "Soluong";
-            this.Column7.HeaderText = "Số Lượng Khách";
-            this.Column7.Name = "Column7";
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "ChiPhi";
-            this.Column8.HeaderText = "Giá Chi Phí";
-            this.Column8.Name = "Column8";
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "TongTien";
-            this.Column9.HeaderText = "Tổng Tiền";
-            this.Column9.Name = "Column9";
             // 
             // frmQLDoan
             // 

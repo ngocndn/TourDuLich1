@@ -55,7 +55,7 @@ namespace TourDuLichSite.Controllers
         [Route("Update")]
         public JsonResult Update(DOANDL D, int MaDOANDL)
         {
-            return Json(dd.Edit(D, MaDOANDL), JsonRequestBehavior.AllowGet);
+            return Json(dd.EditW(D, MaDOANDL), JsonRequestBehavior.AllowGet);
 
         }
 

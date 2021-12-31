@@ -46,20 +46,20 @@
                                     <tbody>
                                         @foreach (var item in listTour)
                                         {
-                                        <tr>
-                                            <td class="cell">@item.MaTour</td>
-                                            <td class="cell"><span class="truncate">@item.TenTour</span></td>
-                                            <td class="cell">@item.TenLoaiHinh</td>
-                                            <td class="cell">@item.TenDiaDiem</td>
-                                            <td class="cell"><span>@item.DacDiem</span></td>
+                                            <tr>
+                                                <td class="cell">@item.MaTour</td>
+                                                <td class="cell"><span class="truncate">@item.TenTour</span></td>
+                                                <td class="cell">@item.TenLoaiHinh</td>
+                                                <td class="cell">@item.TenDiaDiem</td>
+                                                <td class="cell"><span>@item.DacDiem</span></td>
 
-                                            <td class="cell">
-                                                <a class="btn btn-warning" style="color: white;" data-bs-toggle="modal" data-bs-target="#EditModal" onclick="GetIDUpdate(@item.MaTour)" id="editButton"><i class="fas fa-pencil-alt"></i> Sửa</a>
-                                                <a class="btn btn-danger" style="color: white;" data-bs-toggle="modal" data-bs-target="#DeleteModal" id="deleteButton" onclick="GetIDDelete(@item.MaTour)"><i class="fas fa-trash-alt"></i> Xóa</a>
-                                                <a class="btn btn-info" style="color: white; margin-top: 5px;" data-bs-toggle="modal" data-bs-target="#BangGiaModal" id="bangGiaButton" onclick="GetIDTourBangGia(@item.MaTour)"><i class="fas fa-tags"></i> Xem bảng giá</a>
-                                            </td>
-                                        </tr>
-}
+                                                <td class="cell">
+                                                    <a class="btn btn-warning" style="color: white;" data-bs-toggle="modal" data-bs-target="#EditModal" onclick="GetIDUpdate(@item.MaTour)" id="editButton"><i class="fas fa-pencil-alt"></i> Sửa</a>
+                                                    <a class="btn btn-danger" style="color: white;" data-bs-toggle="modal" data-bs-target="#DeleteModal" id="deleteButton" onclick="GetIDDelete(@item.MaTour)"><i class="fas fa-trash-alt"></i> Xóa</a>
+                                                    <a class="btn btn-info" style="color: white; margin-top: 5px;" data-bs-toggle="modal" data-bs-target="#BangGiaModal" id="bangGiaButton" onclick="GetIDTourBangGia(@item.MaTour)"><i class="fas fa-tags"></i> Xem bảng giá</a>
+                                                </td>
+                                            </tr>
+                                        }
 
                                     </tbody>
                                 </table>
@@ -214,6 +214,17 @@
                                     <label class="form-label">Mã số tour</label>
                                     <input type="text" class="form-control" style="border-color: #6e6e6f;" id="inputMaSoTour_ModalBangGia" placeholder="Nhập mã số tour..." required readonly />
                                 </div>
+                                @*<div class="mb-3">
+                                        <label class="form-label">Giá</label>
+                                        <input type="text" class="form-control" style="border-color: #6e6e6f;" id="inputGiaTour_ModalBangGia" placeholder="Nhập giá tour" required />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Ngày hết hạn</label>
+                                        <input type="date" class="form-control" style="border-color: #6e6e6f;" id="inputNgayHetHan_ModalBangGia" required />
+                                    </div>*@
+                                @*<div class="input-group">
+                                        <button class="btn btn-success" style="color: white;" onclick="GetIDThemGiaTour(@item.MaTour)">Thêm</button>
+                                    </div>*@
                                 <div class="mb-3">
                                     <h6 style="text-align: center; margin-top: 10px;">Danh sách giá của tour</h6>
                                     <table class="table table-hover" id="tableBangGia">
@@ -233,14 +244,47 @@
 
                                         </tbody>
                                     </table>
-                                    <div style="margin-top: 10px;">
-                                        <button class="btn btn-primary" style="color: white; float: right; background: #e38148;" onclick="ApDungGia()">Áp dụng giá</button>
-                                    </div>
-                                    <div style="margin-top: 10px;">
-
-                                    </div>
+                                   
                                 </div>
 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn app-btn-primary" style="color: white; float: left;" onclick="ApDungGia()">Áp dụng giá</button>
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*////MODEL THEM GIA*@
+    <!--<div class="modal fade" id="ThemGiaModal" tabindex="-1" aria-labelledby="ThemGiaModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-tags"></i>Thêm giá tour</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="app-card app-card-settings shadow-sm p-4">
+                    <div class="app-card-body">
+                        <div class="settings-form">
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label class="form-label">Mã số tour</label>
+                                    <input type="text" class="form-control" style="border-color: #6e6e6f;" id="inputMaSoTour_ThemGiaModal" placeholder="Nhập mã số tour..." required readonly />
+                                </div>
+                                <div class="mb-3">
+                                        <label class="form-label">Giá</label>
+                                        <input type="text" class="form-control" style="border-color: #6e6e6f;" id="inputGiaTour_ThemGiaModal" placeholder="Nhập giá tour" required />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Ngày hết hạn</label>
+                                        <input type="date" class="form-control" style="border-color: #6e6e6f;" id="inputNgayHetHan_ThemGiaModal" required />
+                                    </div>
+                                <div class="input-group">
+                                        <button class="btn btn-success" style="color: white;" onclick="ThemGiaMoi()">Thêm</button>
+                                    </div>
                             </div>
                         </div>
                     </div>
@@ -250,7 +294,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
     <script>
         function LoadInfoModalAdd() {
             document.getElementById('cbbLHDL').options.length = 0; //clear dropdown
@@ -376,38 +420,38 @@
                     button: "Đóng",
                 });
             } else {
-                    //Thêm tour
-                    var objTour = {
-                        TenTour: TenTour,
-                        DacDiem: DacDiem,
-                        MaLoaiHinh: LHDL,
-                        MaDiaDiem: DD,
-                        IDGiaTour: null,
-                    };
+                //Thêm tour
+                var objTour = {
+                    TenTour: TenTour,
+                    DacDiem: DacDiem,
+                    MaLoaiHinh: LHDL,
+                    MaDiaDiem: DD,
+                    IDGiaTour: null,
+                };
 
-                    $.ajax({
-                        url: "/Tour/Create",
-                        data: JSON.stringify(objTour),
-                        type: "POST",
-                        contentType: "application/json;charset=utf-8",
-                        dataType: "json",
-                        success: function (result) {
-                            $('#AddModal').modal('hide');
-                            swal({
-                                title: "Thêm thành công!",
-                                icon: "success",
-                                timer: 2000
-                            })
-                            window.setTimeout(function () { location.reload() }, 2000)
-                        },
-                        error: function (errorMessage) {
-                            alert(errorMessage.responseText);
-                        }
-                    });
-                }
-
+                $.ajax({
+                    url: "/Tour/Create",
+                    data: JSON.stringify(objTour),
+                    type: "POST",
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+                        $('#AddModal').modal('hide');
+                        swal({
+                            title: "Thêm thành công!",
+                            icon: "success",
+                            timer: 2000
+                        })
+                        window.setTimeout(function () { location.reload() }, 2000)
+                    },
+                    error: function (errorMessage) {
+                        alert(errorMessage.responseText);
+                    }
+                });
             }
-        
+
+        }
+
 
         function Update() {
             var _maSoTour = $('#inputMaSoTour_Edit').val();
@@ -423,38 +467,38 @@
                     button: "Đóng",
                 });
             } else {
-                
-                    //Sửa tour
-                    var objTour = {
-                        MaTour: _maSoTour,
-                        TenTour: _tenGoiTour,
-                        DacDiem: _dacDiemTour,
-                        MaLoaiHinh: _dropdownLoaiHinhDuLich,
-                        MaDiaDiem: _dropdownDiaDiem
-                        
-                    };
-                    $.ajax({
-                        url: "/Tour/Update",
-                        data: JSON.stringify(objTour),
-                        type: "POST",
-                        contentType: "application/json;charset=utf-8",
-                        dataType: "json",
-                        success: function (result) {
-                            $('#EditModal').modal('hide');
-                            swal({
-                                title: "Sửa thành công!",
-                                icon: "success",
-                                timer: 2000
-                            })
-                            window.setTimeout(function () { location.reload() }, 2000)
-                        },
-                        error: function (errorMessage) {
-                            alert(errorMessage.responseText);
-                        }
-                    });
-                }
+
+                //Sửa tour
+                var objTour = {
+                    MaTour: _maSoTour,
+                    TenTour: _tenGoiTour,
+                    DacDiem: _dacDiemTour,
+                    MaLoaiHinh: _dropdownLoaiHinhDuLich,
+                    MaDiaDiem: _dropdownDiaDiem
+
+                };
+                $.ajax({
+                    url: "/Tour/Update",
+                    data: JSON.stringify(objTour),
+                    type: "POST",
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+                        $('#EditModal').modal('hide');
+                        swal({
+                            title: "Sửa thành công!",
+                            icon: "success",
+                            timer: 2000
+                        })
+                        window.setTimeout(function () { location.reload() }, 2000)
+                    },
+                    error: function (errorMessage) {
+                        alert(errorMessage.responseText);
+                    }
+                });
             }
-        
+        }
+
 
         function GetIDUpdate(MaTour) {
             LoadInfoModalUpdate();
@@ -482,7 +526,11 @@
         function GetIDDelete(MaTour) {
             $('#maSoTourDeleteModal').html(MaTour);
         }
+        //function GetIDThemGiaTour(MaTour) {
+        //    $('#inputMaSoTour_ThemGiaModal').val(MaTour);
+        //    var _maSoTour = MaTour;
 
+        //}
         function Delete() {
             var _maSoTour = $('#maSoTourDeleteModal').html();
 
@@ -511,25 +559,7 @@
             });
 
         }
-        function LoadBangDanhSachGia(MaTour)
-        {
-            $('#tableBangGia tbody tr').remove();
 
-            $.ajax({
-                url: "/Tour/GetBangGiaTour?MaTour=" + MaTour,
-                type: "GET",
-                contentType: "application/json;charset=utf-8",
-                dataType: "json",
-                success: function (result) {
-                    $.each(result, function (index) {
-                        $('#tableBangGia tbody').append($('<tr><td><input class="form-check-input" type="radio" name="checkBoxGia" value="' + result[index].IDGIATOUR + '" id="flexCheckDefault"></td><td>' + result[index].IDGIATOUR + '</td><td>' + String(result[index].ThanhTien).replace(/(.)(?=(\d{3})+$)/g, '$1,') + '</td><td>' + FormatDate(result[index].TGBatDau) + '</td><td>' + FormatDate(result[index].TGKetThuc) + '</td></tr>'));
-                    })
-                },
-                error: function (errorMessage) {
-                    alert(errorMessage.responseText);
-                }
-            });
-        }
         function GetIDTourBangGia(MaTour) {
             $('#inputMaSoTour_ModalBangGia').val(MaTour);
             var _maSoTour = MaTour;
@@ -550,14 +580,25 @@
                     alert(errorMessage.responseText);
                 }
             });
-
-
         }
+        function LoadBangDanhSachGia(MaTour) {
+            $('#tableBangGia tbody tr').remove();
 
-        
-
-
-        //Hàm convert date bang gia
+            $.ajax({
+                url: "/Tour/GetBangGiaTour?MaTour=" + MaTour,
+                type: "GET",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    $.each(result, function (index) {
+                        $('#tableBangGia tbody').append($('<tr><td><input class="form-check-input" type="radio" name="checkBoxGia" value="' + result[index].IDGIATOUR + '" id="flexCheckDefault"></td><td>' + result[index].IDGIATOUR + '</td><td>' + String(result[index].ThanhTien).replace(/(.)(?=(\d{3})+$)/g, '$1,') + '</td><td>' + FormatDate(result[index].TGBatDau) + '</td><td>' + FormatDate(result[index].TGKetThuc) + '</td></tr>'));
+                    })
+                },
+                error: function (errorMessage) {
+                    alert(errorMessage.responseText);
+                }
+            });
+        }
         function FormatDate(inputDate) {
             var str, year, month, day, d, finalDate;
 
@@ -572,6 +613,71 @@
 
             return finalDate;
         }
+        function CheckNumberGia(strCheck) {
+            var numberRegex = /^[+-]?\d+(\.\d+)?([eE][+-]?\d+)?$/;
+            if (numberRegex.test(strCheck)) {
+                return true;
+            }
+            return false;
+        }
+        //function ThemGiaMoi()
+        //{
+        //    var _maTour = $('#inputMaSoTour_ModalBangGia').val();
+        //    var _giaTour = $('#inputGiaTour_ModalBangGia').val();
+        //    var _ngayKT = $('#inputNgayHetHan_ModalBangGia').val();
+        //    var _ngayThem = Date.now;
+
+        //    if (_maTour == '' || _giaTour == '' || _ngayKT== '') {
+        //        swal({
+        //            title: "Không được để trống!",
+        //            text: "Vui lòng nhập đầy đủ thông tin!",
+        //            icon: "warning",
+        //            button: "Đóng",
+        //        });
+        //    } else {
+        //        if (!CheckNumberGia(_giaTour)) {
+        //            swal({
+        //                title: "Giá phải là số!",
+        //                text: "Vui lòng nhập số vào ô giá!",
+        //                icon: "warning",
+        //                button: "Đóng",
+        //            });
+        //        } else {
+        //            var objGiaTour = {
+        //                MaTour: _maTour,
+        //                ThanhTien: _giaTour,
+        //                TGKetThuc: _ngayKT,
+        //                //TGBatDau: _ngayThem,
+        //                ///STT: 1
+        //            };
+
+        //            $.ajax({
+        //                url: "/Tour/CreateGiaTour",
+        //                data: JSON.stringify(objGiaTour),
+        //                type: "POST",
+        //                contentType: "application/json;charset=utf-8",
+        //                dataType: "json",
+        //                success: function (result) {
+        //                    swal({
+        //                        title: "Thêm thành công!",
+        //                        icon: "success",
+        //                        timer: 2000
+        //                    })
+        //                    //clear field
+        //                    $('#inputGiaTourModalBangGia').val('');
+        //                    $('#inputNoiDungGiaModalBangGia').val('');
+        //                    $('#inputNgayHetHanModalBangGia').val('');
+
+        //                    LoadBangDanhSachGia(MaTour);
+        //                },
+        //                error: function (errorMessage) {
+        //                    alert(errorMessage.responseText);
+        //                }
+        //            });
+        //        }
+
+
+        //    }
         function ApDungGia() {
             var _maGiaChecked = $('#tableBangGia tbody tr td input:checked').val();
             var _maTour = $('#inputMaSoTour_ModalBangGia').val();

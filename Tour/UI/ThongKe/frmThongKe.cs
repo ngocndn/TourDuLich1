@@ -30,6 +30,8 @@ namespace Tour.UI.ThongKe
             dataGridView2.AutoGenerateColumns = false;
             dataGridView2.Columns["Column2"].DefaultCellStyle.Format = "#,##0";
             dataGridView2.Columns["Column7"].DefaultCellStyle.Format = "#,##0";
+            dataGridView3.DataSource = tb.GetLanThamGiaNV(N);
+            dataGridView3.AutoGenerateColumns = false;
         }
         public void LoadChart()
         {
@@ -76,6 +78,11 @@ namespace Tour.UI.ThongKe
         }
 
         private void frmThongKe_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

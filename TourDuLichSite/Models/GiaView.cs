@@ -16,5 +16,6 @@ namespace TourDuLichSite
         public double ThanhTien { get; set; }
 
         public int MaTour { get; set; }
+        public int STT { get; set; }
     }
 }
