@@ -36,6 +36,8 @@ namespace Tour.UI.QLDoan
             dataGridView1.DataSource = db.GetListDoan();
             dataGridView1.Columns["Column8"].DefaultCellStyle.Format = "#,##0";
             dataGridView1.Columns["Column9"].DefaultCellStyle.Format = "#,##0";
+            dpk1.MinDate = DateTime.Today;
+            dpk2.MinDate = DateTime.Today;
         }
 
         public void LoadCBTour()
@@ -88,54 +90,57 @@ namespace Tour.UI.QLDoan
             List<TOURDULICH> listT = tb.GetAllTour();
             List<NHANVIEN> listN = nvb.GetAll();
             if (Checked() == true)
-            {
-                TOURDULICH T = new TOURDULICH();
-                DOANDL D = new DOANDL();
+            { 
+                if(Checkday() == true)
+                {
+                    TOURDULICH T = new TOURDULICH();
+                    DOANDL D = new DOANDL();
 
-                D.TenDoan = txtTenDoan.Text;
-                D.NgayKhoiHanh = DateTime.Parse(dpk1.Value.Date.ToString("yyyy-MM-dd hh:mm:ss.ss"));
-                D.NgayKetThuc = DateTime.Parse(dpk2.Value.Date.ToString("yyyy-MM-dd hh:mm:ss.ss"));
-                D.Soluong = 0;
-                D.MaTour = (int)cbbtour.SelectedValue;
-                D.ChiPhi = 0;
-                //foreach (var item in listT)
-                //{
+                    D.TenDoan = txtTenDoan.Text;
+                    D.NgayKhoiHanh = DateTime.Parse(dpk1.Value.Date.ToString("yyyy-MM-dd hh:mm:ss.ss"));
+                    D.NgayKetThuc = DateTime.Parse(dpk2.Value.Date.ToString("yyyy-MM-dd hh:mm:ss.ss"));
+                    D.Soluong = 0;
+                    D.MaTour = (int)cbbtour.SelectedValue;
+                    D.ChiPhi = 0;
+                    //foreach (var item in listT)
+                    //{
                     //if (item.TenTour.Equals(cbbtour.Text))
                     //{
-                      //  D.MaTour = item.MaTour;
-                   // }
-               // }
-                foreach (var item in listN)
-                {
-                    if (item.TenNV.Equals(cbbhdv.Text))
+                    //  D.MaTour = item.MaTour;
+                    // }
+                    // }
+                    foreach (var item in listN)
                     {
-                        D.MaNV = item.MaNV;
+                        if (item.TenNV.Equals(cbbhdv.Text))
+                        {
+                            D.MaNV = item.MaNV;
+                        }
                     }
-                }
-                //D.MaTour = Convert.ToInt32(cbbTour.SelectedValue);
-                //D.MaNV = Convert.ToInt32(cbbHDV.SelectedValue);
+                    //D.MaTour = Convert.ToInt32(cbbTour.SelectedValue);
+                    //D.MaNV = Convert.ToInt32(cbbHDV.SelectedValue);
 
-                try
-                {
-                    if (db.Add(D))
+                    try
                     {
-                        LoadDanhSachDoan();
-                        Clear();
-                        MessageBox.Show("Thêm đoàn thành công");
+                        if (db.Add(D))
+                        {
+                            LoadDanhSachDoan();
+                            Clear();
+                            MessageBox.Show("Thêm đoàn thành công");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Thêm thất bại!", "Lưu ý!!!");
+                        }
                     }
-                    else
+                    catch (Exception e)
                     {
-                        MessageBox.Show("Thêm thất bại!", "Lưu ý!!!");
+                        System.Diagnostics.Debug.WriteLine(e);
                     }
                 }
-                catch (Exception e)
-                {
-                    System.Diagnostics.Debug.WriteLine(e);
-                }
-            }
             else
-            {
-                MessageBox.Show("Thêm không thành công!! Kiểm tra lại dữ liệu nhập!!!", "Lưu ý!!!");
+                {
+                    MessageBox.Show("Thêm không thành công!! Kiểm tra lại dữ liệu nhập!!!", "Lưu ý!!!");
+                }
             }
         }
 
@@ -155,14 +160,21 @@ namespace Tour.UI.QLDoan
 
             }
         }
+        public bool Checkday()
+        {
+            if(dpk2.Value <= dpk1.Value)
+            {
+                MessageBox.Show("Ngày bắt đầu phải nhỏ hơn ngày kết thúc", "Lưu ý!!!");
+                return false;
+            }
+            return true;
+        }
         public void Search()
         {
             if (!String.IsNullOrWhiteSpace(txtsearch.Text))
             {
                 string searchValue = txtsearch.Text;
-
                 dataGridView1.DataSource = db.Searching(searchValue);
-
             }
             else
             {

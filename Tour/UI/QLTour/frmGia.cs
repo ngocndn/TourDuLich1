@@ -30,6 +30,7 @@ namespace Tour.UI.QLTour
             txtMaTour.Text = T_ID.ToString();
             dataGridView1.DataSource = gb.GetGiaTourWithMaTour(T_ID);
             dataGridView1.Columns["Column5"].DefaultCellStyle.Format = "#,##0";
+            dateTimePicker1.MinDate = DateTime.Today;
         }
 
         private bool Checked()
@@ -134,6 +135,11 @@ namespace Tour.UI.QLTour
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
